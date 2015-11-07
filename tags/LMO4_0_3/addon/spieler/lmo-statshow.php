@@ -34,7 +34,7 @@ if (is_readable($filename) && $filepointer = fopen($filename, "r+b")) {
   $spalten = array(); //Spaltenbezeichnung
   $data = array(); //Daten
   $typ = array(); //Spaltentyp (TRUE=String)
-  $spalten = fgetcsv($filepointer, 10000, "�"); //Zeile mit Spaltenbezeichnern
+  $spalten = fgetcsv($filepointer, 10000, "ï¿½"); //Zeile mit Spaltenbezeichnern
   $formel = FALSE;
   for ($i = 0; $i < count($spalten); $i++) {
     if (strstr($spalten[$i], "*_*-*")) {
@@ -45,12 +45,12 @@ if (is_readable($filename) && $filepointer = fopen($filename, "r+b")) {
       $vereinsspalte = $i;
     }
   }
-  if ($formel) fgetcsv($filepointer, 10000, "�"); //Zeile mit Formeln
+  if ($formel) fgetcsv($filepointer, 10000, "ï¿½"); //Zeile mit Formeln
    
-  $linkspalte = array_search($text['spieler'][32], $spalten); //Linkunterst�tzung aktiviert?
+  $linkspalte = array_search($text['spieler'][32], $spalten); //Linkunterstï¿½tzung aktiviert?
    
   $zeile = 0;
-  while ($data[$zeile] = fgetcsv ($filepointer, 10000, "�")) {
+  while ($data[$zeile] = fgetcsv ($filepointer, 10000, "ï¿½")) {
     if ((isset($vereinsspalte) && isset($data[$zeile][$vereinsspalte]) && $spieler_vereinsweise_anzeigen == 1 && $team == $data[$zeile][$vereinsspalte]) || $team == '') {
       for($i = 0; $i < count($data[$zeile]); $i++) {
         if (!is_numeric($data[$zeile][$i])) $typ[$i] = TRUE;
@@ -151,14 +151,14 @@ if (is_readable($filename) && $filepointer = fopen($filename, "r+b")) {
     if ($begin==0){
       
     }elseif (($newbegin=$begin-$spieler_anzeige_pro_seite)>=0) {
-      ?><a href="<?php echo $_SERVER['PHP_SELF']."?file=$file&amp;action=$action&amp;begin=$newbegin&amp;sort=$sort&amp;direction=$direction&amp;team=$team";?>">�&nbsp;<?php echo $text['spieler'][16]?></a><?php
+      ?><a href="<?php echo $_SERVER['PHP_SELF']."?file=$file&amp;action=$action&amp;begin=$newbegin&amp;sort=$sort&amp;direction=$direction&amp;team=$team";?>">ï¿½&nbsp;<?php echo $text['spieler'][16]?></a><?php
     }else{
-      ?><a href="<?php echo $_SERVER['PHP_SELF']."?file=$file&amp;action=$action&amp;begin=0&amp;sort=$sort&amp;direction=$direction&amp;team=$team";?>">�&nbsp;<?php echo $text['spieler'][16]?></a><?php
+      ?><a href="<?php echo $_SERVER['PHP_SELF']."?file=$file&amp;action=$action&amp;begin=0&amp;sort=$sort&amp;direction=$direction&amp;team=$team";?>">ï¿½&nbsp;<?php echo $text['spieler'][16]?></a><?php
     }
     $newbegin=0;
     ?>&nbsp;|&nbsp;<a href="<?php echo $_SERVER['PHP_SELF']."?file=$file&amp;action=$action&amp;begin=$newbegin&amp;sort=$sort&amp;direction=$direction&amp;team=$team";?>"><?php echo $text['spieler'][17]?>&nbsp;<?php echo $spieler_anzeige_pro_seite?></a>&nbsp;|&nbsp;<?php
     if (($newbegin=$begin+$maxdisplay)<$zeile) {
-      ?><a href="<?php echo $_SERVER['PHP_SELF']."?file=$file&amp;action=$action&amp;begin=$newbegin&amp;sort=$sort&amp;direction=$direction&amp;team=$team";?>"><?php echo $text['spieler'][15]?>&nbsp;�</a><?php
+      ?><a href="<?php echo $_SERVER['PHP_SELF']."?file=$file&amp;action=$action&amp;begin=$newbegin&amp;sort=$sort&amp;direction=$direction&amp;team=$team";?>"><?php echo $text['spieler'][15]?>&nbsp;ï¿½</a><?php
     }?>
             </th>
           </tr>
@@ -271,8 +271,8 @@ function cmpInt ($a1, $a2) {
 }
 function cmpStr ($a2, $a1) {
   global $sort;
-  $a1[$sort]=strtr($a1[$sort],"��������������������������������������������������������������","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
-  $a2[$sort]=strtr($a2[$sort],"��������������������������������������������������������������","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+  $a1[$sort]=strtr($a1[$sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+  $a2[$sort]=strtr($a2[$sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
   $c = strnatcasecmp($a2[$sort],$a1[$sort]);
   return $c;
 }
@@ -283,8 +283,8 @@ function cmpInt2 ($a1, $a2) {
 }
 function cmpStr2 ($a2, $a1) {
   global $sort;
-  $a1[$sort]=strtr($a1[$sort],"��������������������������������������������������������������","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
-  $a2[$sort]=strtr($a2[$sort],"��������������������������������������������������������������","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+  $a1[$sort]=strtr($a1[$sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+  $a2[$sort]=strtr($a2[$sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
   $c = strnatcasecmp($a2[$sort],$a1[$sort]);
   return -1*$c;
 }

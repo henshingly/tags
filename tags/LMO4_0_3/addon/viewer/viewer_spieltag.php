@@ -25,7 +25,7 @@ for($i=1; $i<=$anzahl_ligen; $i++) {
   $akt_liga=new liga();
   // Ligenfile vorhanden?
   if ($akt_liga->loadFile(PATH_TO_LMO.'/'.$dirliga.$fav_liga[$i]) == TRUE) {
-    $template->setCurrentBlock("Liga");                                   // �usserer Block f�r die Liga
+    $template->setCurrentBlock("Liga");                                   // ï¿½usserer Block fï¿½r die Liga
     //$template->setVariable("Liganame",$akt_liga->name);																							//Ausgabe Liganame
     $rounds=$akt_liga->options->keyValues['Rounds'];
     $aktueller_spieltag=$akt_liga->options->keyValues['Actual'];

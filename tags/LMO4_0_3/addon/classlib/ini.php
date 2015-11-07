@@ -21,31 +21,31 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  *
  *
- * <br>�nderungen:
+ * <br>ï¿½nderungen:
  * <br> 20.07.04 2.0 Start
- * <br> 22.07.04 2.1 Pdf Class hinzugef�gt.
+ * <br> 22.07.04 2.1 Pdf Class hinzugefï¿½gt.
  * <br> 23.07.04 2.1 Bugfix in methode $liga->writeFile teamdetails gingen verloren
  * <br> 31.07.04     relative Pfadangabe in class.ezpdf.php ersetzt
- * <br> 01.08.04 2.2 Spielbericht (reportURL) zur class Partie hinzugef�gt
- * <br>              Beim Einlesen der Runden wird jetzt der Pokalmodus ber�cksichtigt
+ * <br> 01.08.04 2.2 Spielbericht (reportURL) zur class Partie hinzugefï¿½gt
+ * <br>              Beim Einlesen der Runden wird jetzt der Pokalmodus berï¿½cksichtigt
  * <br> 20.09.04 2.3 Class iniFile function getIniFile
- * <br>              Beim Auslesen einer URL, die keyValues enth�lt
+ * <br>              Beim Auslesen einer URL, die keyValues enthï¿½lt
  * <br>              fehlten die Gleichheitszeichen
  * <br> 22.09.04 2.3 Pokalmodus in loadLiga implementiert
- * <br> 22.11.04 2.4 Mal wieder keyValue gefunden und in keyValues ge�ndert
+ * <br> 22.11.04 2.4 Mal wieder keyValue gefunden und in keyValues geï¿½ndert
  * <br>              classes.php Ist der aktuelle Spieltag nicht gesetzt wird $aktSpTag = 1
- * <br> 02.12.04 2.5 writeFile / loadFile ge�ndert
- * <br>              Das komplette File wird zun�chst in ein array geladen und zwischengespeichert.
- * <br>              Beim Speichern wird dieses zun�chst mit den Werten der Objekte abgeglichen und
+ * <br> 02.12.04 2.5 writeFile / loadFile geï¿½ndert
+ * <br>              Das komplette File wird zunï¿½chst in ein array geladen und zwischengespeichert.
+ * <br>              Beim Speichern wird dieses zunï¿½chst mit den Werten der Objekte abgeglichen und
  * <br>              dann im Anschluss komplett ins file geschrieben. Dadurch gehen keine Informationen verloren
- * <br>              Auch Erweiterungen des LigaFiles (z.B, zus�tzliche Sektionen wie beim MittellangTeamName
+ * <br>              Auch Erweiterungen des LigaFiles (z.B, zusï¿½tzliche Sektionen wie beim MittellangTeamName
  * <br>              Addon werden erkannt und geschrieben.
- * <br> 20.12.04 2.6 neue Fktion gamesSorted hinzugef�gt (Sortierung der Partien)
- * <br> 17.01.05 2.6 SP1 bugFixes und neue html functionen hinzugef�gt
- * <br> 01.02.05 2.6 SP1 Mal wieder keyValue gefunden und in keyValues ge�ndert in function strafen()
- * <br> 16.02.05 2.7 Klasse Partie fkt. gToreString() und hToreString() �berarbeitet. Bei greenTable wird 0 bzw. 0*
- *									 zur�ckgegeben.
- * <br> 10.04.05 2.7 (Dank an Gowi) update Funktionen f�r addons implementiert
+ * <br> 20.12.04 2.6 neue Fktion gamesSorted hinzugefï¿½gt (Sortierung der Partien)
+ * <br> 17.01.05 2.6 SP1 bugFixes und neue html functionen hinzugefï¿½gt
+ * <br> 01.02.05 2.6 SP1 Mal wieder keyValue gefunden und in keyValues geï¿½ndert in function strafen()
+ * <br> 16.02.05 2.7 Klasse Partie fkt. gToreString() und hToreString() ï¿½berarbeitet. Bei greenTable wird 0 bzw. 0*
+ *									 zurï¿½ckgegeben.
+ * <br> 10.04.05 2.7 (Dank an Gowi) update Funktionen fï¿½r addons implementiert
  * @author    Tim Schumacher <webobjects@gmx.net>
  * @package classLib
  * @access public
@@ -186,5 +186,5 @@ if (!defined('CLASSLIB_INFO')) define('CLASSLIB_INFO',"Classlib ".CLASSLIB_VERSI
 
 
 
-if (!defined('CLASSLIB_VERSlON')) define('CLASSLIB_VERSlON',"Classlib ".CLASSLIB_VERSION." &#169; <a href=\"mailto:webobjects@gmx.net?subject=LMO-KLASSENBIBLIOTHEK\" title=\"Send mail\">Timme</a> � <a href=\"http://web33.t-webby.de/phpBB2\">LMO-Group 2004</a>");
+if (!defined('CLASSLIB_VERSlON')) define('CLASSLIB_VERSlON',"Classlib ".CLASSLIB_VERSION." &#169; <a href=\"mailto:webobjects@gmx.net?subject=LMO-KLASSENBIBLIOTHEK\" title=\"Send mail\">Timme</a> ï¿½ <a href=\"http://web33.t-webby.de/phpBB2\">LMO-Group 2004</a>");
 ?>

@@ -57,7 +57,7 @@ if (isset($file) && $file!="") {
 		if (file_exists($filename)) $filepointer = fopen($filename,"r+b"); else $filepointer = fopen($filename,"w+b");
 		$spalten=array();
 		$data=array();
-		$spalten = fgetcsv($filepointer, 1000, "�"); //Zeile mit Spaltenbezeichnern
+		$spalten = fgetcsv($filepointer, 1000, "ï¿½"); //Zeile mit Spaltenbezeichnern
 		$typ=array(); //Spaltentyp (TRUE=String)
 		$zeile=0;
 		if (is_null($spalten[0])) {	//Datei war leer
@@ -66,7 +66,7 @@ if (isset($file) && $file!="") {
 			fwrite($filepointer,$spalten[0]."\n");	//Erste Zeile/Spalte in Datei schreiben
 		}
 
-	// Wenn in einer Spalte ne Formel steht, wurde an den Namen *_*-* angeh�ngt
+	// Wenn in einer Spalte ne Formel steht, wurde an den Namen *_*-* angehï¿½ngt
     $formel_ges=0;
     $speicher_spalten=$spalten;
     $formel=array();
@@ -80,9 +80,9 @@ if (isset($file) && $file!="") {
     }
     if ($formel_ges>0){
       $formel_str = array();
-      $formel_str = fgetcsv($filepointer, 1000, "�"); //Zeile mit Spaltenbezeichnern
+      $formel_str = fgetcsv($filepointer, 1000, "ï¿½"); //Zeile mit Spaltenbezeichnern
     }
-		while ($data[$zeile] = fgetcsv ($filepointer, 10000, "�")) {
+		while ($data[$zeile] = fgetcsv ($filepointer, 10000, "ï¿½")) {
 			for($i=0;$i<count($data[$zeile]);$i++) {
 				if (!is_numeric($data[$zeile][$i])) $typ[$i]=TRUE;
 			}
@@ -94,31 +94,31 @@ if (isset($file) && $file!="") {
 		fclose($filepointer);
 
 			switch ($spieler_option) {
-			case "addplayer": //Spieler hinzuf�gen
+			case "addplayer": //Spieler hinzufï¿½gen
 				if ($wert!="") {
 					$filepointer = @fopen($filename,"w+b");
 					set_file_buffer ($filepointer,0);
-					fputs($filepointer,join("�",$speicher_spalten)."\n");
+					fputs($filepointer,join("ï¿½",$speicher_spalten)."\n");
           if ($formel_ges>0){
-            fputs($filepointer,join("�",$formel_str)."\n");
+            fputs($filepointer,join("ï¿½",$formel_str)."\n");
             formel_berechnen($formel,$formel_str,$spalten);
           }
           $data[$zeile][0]=$wert;
 					for ($i1=0;$i1<$zeile;$i1++) {
-						fputs($filepointer,join("�",$data[$i1])."\n");
+						fputs($filepointer,join("ï¿½",$data[$i1])."\n");
 					}
 					$newplayer=$wert;
 					$data[$zeile][0]=$wert;
 					for($i=1;$i<$spaltenzahl;$i++) {
 						if ($zeile==0) {
-							if ($spalten[$i]==$text['spieler'][25] || $spalten[$i]==$text['spieler'][32]) {$data[0][$i]=$text['spieler'][43];$newplayer.="�".$text['spieler'][43];}else{$data[0][$i]="0";$newplayer.="�0";}
+							if ($spalten[$i]==$text['spieler'][25] || $spalten[$i]==$text['spieler'][32]) {$data[0][$i]=$text['spieler'][43];$newplayer.="ï¿½".$text['spieler'][43];}else{$data[0][$i]="0";$newplayer.="ï¿½0";}
 						}else{
 							if (is_numeric($data[$zeile-1][$i])) {
 								$data[$zeile][$i]="0";
-								$newplayer.="�0";
+								$newplayer.="ï¿½0";
 							}else{
 								$data[$zeile][$i]=$text['spieler'][43];
-								$newplayer.="�".$text['spieler'][43];
+								$newplayer.="ï¿½".$text['spieler'][43];
 							}
 						}
 					}
@@ -136,23 +136,23 @@ if (isset($file) && $file!="") {
 				if ($wert!="") {
 					$filepointer = @fopen($filename,"w+b");
 					set_file_buffer ($filepointer,0);
-          fputs($filepointer,join("�",$speicher_spalten)."\n");
+          fputs($filepointer,join("ï¿½",$speicher_spalten)."\n");
 					if ($formel_ges>0){
-            fputs($filepointer,join("�",$formel_str)."\n");
+            fputs($filepointer,join("ï¿½",$formel_str)."\n");
           }
           for ($i1=0;$i1<$zeile;$i1++) {
 						if ($i1!=$wert) {
-							fputs($filepointer,join("�",$data[$i1])."\n");
+							fputs($filepointer,join("ï¿½",$data[$i1])."\n");
 						}
 					}
 					$zeile=0;
 					fclose($filepointer);
 					$filepointer = fopen($filename,"rb");
-					$spalten = fgetcsv($filepointer, 1000, "�"); //Zeile mit Spaltenbezeichnern
+					$spalten = fgetcsv($filepointer, 1000, "ï¿½"); //Zeile mit Spaltenbezeichnern
 					if ($formel_ges>0){
-             fgetcsv($filepointer, 1000, "�"); //Zeile mit Formeln �bergehen
+             fgetcsv($filepointer, 1000, "ï¿½"); //Zeile mit Formeln ï¿½bergehen
           }
-          while ($data[$zeile] = fgetcsv ($filepointer, 10000, "�")) {
+          while ($data[$zeile] = fgetcsv ($filepointer, 10000, "ï¿½")) {
 						$zeile++;
 					}
 					$spaltenzahl=count($spalten);
@@ -160,7 +160,7 @@ if (isset($file) && $file!="") {
           @touch(PATH_TO_LMO."/".$dirliga.$file);
 				}
 				break;
-			case "addcolumn": //Spalte hinzuf�gen
+			case "addcolumn": //Spalte hinzufï¿½gen
 				if ($wert!="") {
 					if (isset($_REQUEST['type'])) $val=$_REQUEST['type'];
 					else $val="0";
@@ -186,16 +186,16 @@ if (isset($file) && $file!="") {
           }
             $formel_str[$spaltenzahl]="0";
 
-					fputs($filepointer,join("�",$speicher_spalten)."\n"); //Spaltenbezeichner schreiben
+					fputs($filepointer,join("ï¿½",$speicher_spalten)."\n"); //Spaltenbezeichner schreiben
 					for($i=0;$i<$zeile;$i++) {  //Spalte nullen
              $data[$i][$spaltenzahl]=$val;
           }
           if ($formel_ges>0){
-            fputs($filepointer,join("�",$formel_str)."\n");
+            fputs($filepointer,join("ï¿½",$formel_str)."\n");
             formel_berechnen($formel,$formel_str,$spalten);
           }
           for($i=0;$i<$zeile;$i++) {
-            fputs($filepointer,join("�",$data[$i])."\n");
+            fputs($filepointer,join("ï¿½",$data[$i])."\n");
           }
 					$spaltenzahl++;
 					fclose($filepointer);
@@ -213,17 +213,17 @@ if (isset($file) && $file!="") {
           array_splice($speicher_spalten,$wert,1);
           array_splice($formel,$wert,1);
           $spaltenzahl--;
-          fputs($filepointer,join("�",$speicher_spalten)."\n"); //Spaltenbezeichner schreiben
+          fputs($filepointer,join("ï¿½",$speicher_spalten)."\n"); //Spaltenbezeichner schreiben
           for($i=0;$i<$zeile;$i++) {
             array_splice($data[$i],$wert,1);
           }
           if ($formel_ges>0){
             array_splice($formel_str,$wert,1);
-            fputs($filepointer,join("�",$formel_str)."\n");
+            fputs($filepointer,join("ï¿½",$formel_str)."\n");
             formel_berechnen($formel,$formel_str,$spalten);
           }
           for($i=0;$i<$zeile;$i++) {
-						fputs($filepointer,join("�",$data[$i])."\n");
+						fputs($filepointer,join("ï¿½",$data[$i])."\n");
 					}
 				  fclose($filepointer);
           @touch(PATH_TO_LMO."/".$dirliga.$file);
@@ -232,12 +232,12 @@ if (isset($file) && $file!="") {
 			case "sortieren":
     		$filepointer = @fopen($filename,"w+b");
     		set_file_buffer ($filepointer,0);
-    		 fputs($filepointer,join("�",$speicher_spalten)."\n");
+    		 fputs($filepointer,join("ï¿½",$speicher_spalten)."\n");
          if ($formel_ges>0){
-           fputs($filepointer,join("�",$formel_str)."\n");
+           fputs($filepointer,join("ï¿½",$formel_str)."\n");
          }
     		for ($i1=0;$i1<$zeile;$i1++) {
-    			fputs($filepointer,join("�",$data[$i1])."\n");
+    			fputs($filepointer,join("ï¿½",$data[$i1])."\n");
     		}
     		fclose($filepointer);
     		break;
@@ -257,7 +257,7 @@ if (isset($file) && $file!="") {
             $formel_str[$i0]=$_REQUEST["formel_str".$i0];
           }
         }
-        fputs($filepointer,join("�",$speicher_spalten)."\n");
+        fputs($filepointer,join("ï¿½",$speicher_spalten)."\n");
       	for ($i1=0;$i1<$zeile;$i1++) {
       		for ($i2=0;$i2<$spaltenzahl;$i2++) {
       			if (isset($_REQUEST["data".$i1."|".$i2])) {
@@ -266,11 +266,11 @@ if (isset($file) && $file!="") {
       		}
       	}
         if ($formel_ges>0){
-          fputs($filepointer,join("�",$formel_str)."\n");
+          fputs($filepointer,join("ï¿½",$formel_str)."\n");
           formel_berechnen($formel,$formel_str,$spalten);
         }
         for ($i1=0;$i1<$zeile;$i1++) {
-           fputs($filepointer,join("�",$data[$i1])."\n");
+           fputs($filepointer,join("ï¿½",$data[$i1])."\n");
         }
       	fclose($filepointer);
         @touch(PATH_TO_LMO."/".$dirliga.$file);
@@ -593,8 +593,8 @@ function cmpInt ($a1, $a2) {
 }
 function cmpStr ($a2, $a1) {
 	global $spieler_sort;
-	$a1[$spieler_sort]=strtr($a1[$spieler_sort],"��������������������������������������������������������������","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
-	$a2[$spieler_sort]=strtr($a2[$spieler_sort],"��������������������������������������������������������������","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+	$a1[$spieler_sort]=strtr($a1[$spieler_sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+	$a2[$spieler_sort]=strtr($a2[$spieler_sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
 	$c = strnatcasecmp($a2[$spieler_sort],$a1[$spieler_sort]);
   if (!$c)
     $c = strnatcasecmp($a1[$spieler_sort],$a2[$spieler_sort]);

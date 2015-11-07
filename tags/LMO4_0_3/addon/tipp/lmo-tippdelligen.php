@@ -25,7 +25,7 @@ if (($action == "tipp") && ($todo == "delligen")) {
       foreach($xtipperligen as $key => $value) {
         $tippfile = PATH_TO_ADDONDIR."/tipp/".$tipp_dirtipp.$value."_".$_SESSION['lmotippername'].".tip";
         if (file_exists($tippfile)) {
-          @unlink($tippfile); // Tipps l�schen
+          @unlink($tippfile); // Tipps lï¿½schen
         }
       }
     }
@@ -60,7 +60,7 @@ if (($action == "tipp") && ($todo == "delligen")) {
     <td colspan="3" align="center"><?php echo getMessage($text['tipp'][269]); ?></td>
   </tr><?php
   }
-  if($newpage==1 || $i==0){ /* zur�ck zur �bersicht */?>
+  if($newpage==1 || $i==0){ /* zurï¿½ck zur ï¿½bersicht */?>
   <tr>
     <td colspan="3" class="lmoFooter" align="right"><a href="<?php echo $_SERVER['PHP_SELF']."?action=tipp&amp;todo=" ?>"><?php echo $text[5]." ".$text['tipp'][1]; ?></a></td>
   </tr><?php

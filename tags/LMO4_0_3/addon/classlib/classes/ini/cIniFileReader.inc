@@ -362,7 +362,7 @@ class IniFileReader {
                             if (count($arrKeyVal) == 2 and trim($arrKeyVal[0]) == $key) {
                                 return trim($arrKeyVal[1]);
                             }
-                            // Workaround um auch values die '=' enthalten zur�ckzugeben
+                            // Workaround um auch values die '=' enthalten zurï¿½ckzugeben
                             // Timme
                             elseif (count($arrKeyVal) > 2 and trim($arrKeyVal[0]) == $key) {
                                 $tmp='';
@@ -434,7 +434,7 @@ class IniFileReader {
                         if ($this->issection($line)) {
                             $finished = true;
                         } else {
-                            // Leerzeilen unterdr�cken
+                            // Leerzeilen unterdrï¿½cken
                             if (!$this->isEmtyLine($line)) {
                               $arrKeyVal = explode("=", $line);
                               $keys[$i] = $arrKeyVal[0];

@@ -94,7 +94,7 @@ for($k = $begin; $k < $ende; $k++) {
       <br/><?php
 }
 if ($begin-1>0) {?>
-    <a href='<?php echo $_SERVER['PHP_SELF']?>?begin=<?php echo $begin-$wap_anzahl_ligen_pro_seite?>'>zur�ck</a><?php
+    <a href='<?php echo $_SERVER['PHP_SELF']?>?begin=<?php echo $begin-$wap_anzahl_ligen_pro_seite?>'>zurï¿½ck</a><?php
 }
 if ($begin-1>0 && $ende+1<count($dummy)) echo "&#160;|&#160; ";
 if ($ende<count($dummy)) {?>

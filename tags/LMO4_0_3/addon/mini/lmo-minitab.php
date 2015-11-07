@@ -19,14 +19,14 @@
 
 require_once(dirname(__FILE__).'/../../init.php');
 
-// Durch Get bestimmter Parameter (f�r IFRAME)
+// Durch Get bestimmter Parameter (fï¿½r IFRAME)
 $m_liga=       isset($_GET['mini_liga'])?             urldecode($_GET['mini_liga']):       '';
 $m_ueber=      isset($_GET['mini_ueber'])?            urldecode($_GET['mini_ueber']):      2;
 $m_unter=      isset($_GET['mini_unter'])?            urldecode($_GET['mini_unter']):      2;
 $m_template=   isset($_GET['mini_template'])?         urldecode($_GET['mini_template']):   "standard";
 $m_platz=      !empty($_GET['mini_platz'])?           urldecode($_GET['mini_platz']):      NULL;
 
-// Direkt bestimmte Parameter (f�r include/require)
+// Direkt bestimmte Parameter (fï¿½r include/require)
 $m_liga=       isset($mini_liga)?             $mini_liga:       $m_liga;
 $m_ueber=      isset($mini_ueber)?            $mini_ueber:      $m_ueber;
 $m_unter=      isset($mini_unter)?            $mini_unter:      $m_unter;
@@ -40,7 +40,7 @@ if (basename($_SERVER['PHP_SELF'])=="lmo-minitab.php") {?>
 <html>
 <head>
 <title>Minitab</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 <style type="text/css">
   html,body {margin:0;padding:0;background:transparent;}
 </style>

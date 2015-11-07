@@ -24,10 +24,10 @@
    *
    * Schreibt die Kreuztabelle der Begegnungen (Format s.u.).<br>
    * Das Vergabesystem arbeitet mit einem Tischemodell.<br>
-   * An jedem Tisch sitzen sich 2 Spieler gegen�ber.<br>
-   * Jeder Tisch hat eine Heimrecht- und eine Ausw�rtsseite.<br>
-   * <u>Beispiel mit 4 Tischen und 8 Sitzpl�tzen:</u><br>
-   * Die Pl�tze werden in der Reihenfolge 0-7 vergeben.<br>
+   * An jedem Tisch sitzen sich 2 Spieler gegenï¿½ber.<br>
+   * Jeder Tisch hat eine Heimrecht- und eine Auswï¿½rtsseite.<br>
+   * <u>Beispiel mit 4 Tischen und 8 Sitzplï¿½tzen:</u><br>
+   * Die Plï¿½tze werden in der Reihenfolge 0-7 vergeben.<br>
    * 7 1 2 3<br>
    * X o-o-o\<br>
    * T/T l T|<br>
@@ -43,11 +43,11 @@
    * Zu Beginn eines neues Spieltages rutschen alle Spieler ohne festen Sitzplatz (0-6) jeweils einen Platz gegen den
    * Uhrzeigersin weiter.<br>
    * <br>
-   * Die Positionsnummer von X ist immer der h�chste auftretende Index.<br>
+   * Die Positionsnummer von X ist immer der hï¿½chste auftretende Index.<br>
    * <u>Format der Kreuztabelle:</u><br>
    * Der erste Index des Arrays (Zeilen) greift auf den Spieltag zu, der zweite
    * Index bestimmt den Spieler mit Heimrecht. Der Wert an der Stelle des Arrays entspricht der
-   * Spaltennummer (=Spielernummer) des gegnerischen Spielers, dieser spielt ausw�rts. Wenn
+   * Spaltennummer (=Spielernummer) des gegnerischen Spielers, dieser spielt auswï¿½rts. Wenn
    * kein Spiel eingetragen ist, ist der Wert -1 (Array-Initilialisierung mit -1).<br>
    */
 
@@ -55,7 +55,7 @@
 
 require_once(PATH_TO_LMO."/lmo-admintest.php");
 
-/** �nderungen:
+/** ï¿½nderungen:
  * a) 1. Index verdoppelt, entspricht jetzt den Spieltagen statt Spieler-Nummer.
  * b) Indizes beginnen bei 0 statt 1.
  * c) Kreuztabellen-Initialiserung komplett mit '-1' statt Hauptdiagonale mit '0'
@@ -63,7 +63,7 @@ require_once(PATH_TO_LMO."/lmo-admintest.php");
  
 /*
  * dummy wird true, wenn der virtuelle Spieler "Spielfrei"
- * bei einer ungeraden Spielerzahl hinzugef�gt wird.
+ * bei einer ungeraden Spielerzahl hinzugefï¿½gt wird.
  * Falls es einen Dummy gibt, hat dieser die Spielernummer
  * des Spieler auf dem festen Platz ($anzteams - 1).
  */
@@ -84,7 +84,7 @@ for($i = 0; $i < 40; $i++) {
   }
 }
 
-// Selbsterkl�rend
+// Selbsterklï¿½rend
 $spieltageHinrunde = $anzteams - 1;
 $spieltage = ($anzteams - 1) * 2;
 
@@ -97,8 +97,8 @@ $spielerNrFesterPlatz = $anzteams - 1;
 // Tischpartner von Spieler X
 $spielerNrGegenueberFesterPlatz = 0;
 
-/* Hauptschleife, l�uft sequentiell �ber die Spieltage der Hinrunde.
- * Die R�ckrunde wird sofort gespiegelt mit geschrieben.
+/* Hauptschleife, lï¿½uft sequentiell ï¿½ber die Spieltage der Hinrunde.
+ * Die Rï¿½ckrunde wird sofort gespiegelt mit geschrieben.
  */
 for ($spieltag = 0; $spieltag < $spieltageHinrunde; $spieltag++) {
 
@@ -115,7 +115,7 @@ for ($spieltag = 0; $spieltag < $spieltageHinrunde; $spieltag++) {
   else {
     // Hinrunde
     $plan[$spieltag][$spielerNrGegenueberFesterPlatz] = $spielerNrFesterPlatz;
-    // R�ckrunde
+    // Rï¿½ckrunde
     $plan[$spieltag+$spieltageHinrunde][$spielerNrFesterPlatz] = $spielerNrGegenueberFesterPlatz;
   }
 
@@ -129,12 +129,12 @@ for ($spieltag = 0; $spieltag < $spieltageHinrunde; $spieltag++) {
   $zielSitzUngeradeVerschoben = ($zielSitzUngerade + $spieltag) % $beweglicheSpieler;
 
   /**
-   * Innere Schleife, l�uft �ber alle Paarungen EINES Spieltages.
+   * Innere Schleife, lï¿½uft ï¿½ber alle Paarungen EINES Spieltages.
    */
   while ($zielSitzGerade < $beweglicheSpieler) {
     // Hinrunde
     $plan[$spieltag][$zielSitzGeradeVerschoben] = $zielSitzUngeradeVerschoben;
-    // R�ckrunde
+    // Rï¿½ckrunde
     $plan[$spieltag+$spieltageHinrunde][$zielSitzUngeradeVerschoben] = $zielSitzGeradeVerschoben;
 
     // Weiterrutschen der beweglichen Spieler
@@ -148,11 +148,11 @@ for ($spieltag = 0; $spieltag < $spieltageHinrunde; $spieltag++) {
 }
 
 /**
- * Abbildungstabelle, die eine bijektive Abbildung zwischen urspr�nglicher
+ * Abbildungstabelle, die eine bijektive Abbildung zwischen ursprï¿½nglicher
  * und neuer Spielernummer beinhaltet.
  * Die alte Spielernummer 0 bis $anzteams-1 ist der Zugriffsindex,
  * die neue Spielernummer ist der Wert an der Indexstelle.
- * Die neue Spielernummer ist bereits um +1 erh�ht,
+ * Die neue Spielernummer ist bereits um +1 erhï¿½ht,
  * da der LMO Indizes von 1 bis $anzteams erwartet.
  */
 $abbildungsarray = range(1,$anzteams);
@@ -175,7 +175,7 @@ for($spieltag = 0; $spieltag < $spieltage; $spieltag++) {
       $heim_abbild = $abbildungsarray[$heim];
       $ausw_abbild = $abbildungsarray[$ausw];
       // Dummyspieler "Spielfrei" drinnen ja/nein?
-      // Ber�cksichtige hier Indexverschiebung +1 zwischen meinen Spielernummern und LMO
+      // Berï¿½cksichtige hier Indexverschiebung +1 zwischen meinen Spielernummern und LMO
       if (!$dummy || ($heim_abbild!=$spielerNrFesterPlatz+1 && $ausw_abbild!=$spielerNrFesterPlatz+1)) {
         $yteama[$spieltag][$spielnr] = $heim_abbild;
         $yteamb[$spieltag][$spielnr] = $ausw_abbild;

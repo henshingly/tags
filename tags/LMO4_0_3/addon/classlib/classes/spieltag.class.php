@@ -2,7 +2,7 @@
 /**
 * Spieltag
 *
-* Repr�sentiert einen Spieltag
+* Reprï¿½sentiert einen Spieltag
 * <BR>Eine Liga hat mehrere Spieltage.
 * <BR>An einem Spieltag finden mehrere Partien statt.
 *
@@ -45,7 +45,7 @@ class spieltag {
   }
 
 /**
-* Gibt Partie der angegebener Nummer zur�ck
+* Gibt Partie der angegebener Nummer zurï¿½ck
 *
 * @access public
 * @parameter integer Partienummer
@@ -60,7 +60,7 @@ class spieltag {
   }
 
 /**
-* Gibt Partie der angegebener Teamnummern zur�ck
+* Gibt Partie der angegebener Teamnummern zurï¿½ck
 *
 * @access public
 * @parameter integer Heimmannschaftsnummer integer Gastmannschaftsnummer
@@ -82,7 +82,7 @@ class spieltag {
   }
 
 /**
-* Gibt Partie der angegebener Teamnamen zur�ck
+* Gibt Partie der angegebener Teamnamen zurï¿½ck
 *
 * @access public
 * @parameter string Heimmannschaftsname string Gastmannschaftsname
@@ -101,11 +101,11 @@ class spieltag {
 
 
 /**
-* L�scht Partie
+* Lï¿½scht Partie
 *
 * @access public
 * @parameter objekt Partie
-* @return bool Partie wurde gel�scht TRUE / FALSE
+* @return bool Partie wurde gelï¿½scht TRUE / FALSE
 */
   function removePartie(&$rmvPartie) {
     $result = False;
@@ -145,7 +145,7 @@ class spieltag {
   }
 
 /**
-* F�gt Partie zum Spieltage hinzu
+* Fï¿½gt Partie zum Spieltage hinzu
 *
 * @access public
 * @parameter Object die Partie
@@ -181,8 +181,8 @@ class spieltag {
 /**
 * Gibt den Zeitrahmen aus, an dem der Spieltag ausgetragen wird
 *
-* Sind das vonDatum und das bisDatum gesetzt wird zB. 10.10.2003 - 19.10.2003 zur�ckgegeben
-* <BR> Ist eines der beiden nicht gesetzt, wird nur das Datum zur�ckgeben ohne Verbinder
+* Sind das vonDatum und das bisDatum gesetzt wird zB. 10.10.2003 - 19.10.2003 zurï¿½ckgegeben
+* <BR> Ist eines der beiden nicht gesetzt, wird nur das Datum zurï¿½ckgeben ohne Verbinder
 * <BR> zB. ist das vonDatum nicht gesetzt wird nur das bisDatum ausgegeben 19.10.2003 ohne Bindestrich
 * @access public
 * @return string

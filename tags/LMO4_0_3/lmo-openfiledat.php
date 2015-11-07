@@ -154,7 +154,7 @@ if ($file != "") {
       $op7 = substr($dum[1], -1)-1;
       $op8 = substr($dum[1], 0, 2);
       if ($op3 == $st-1) {
-        ////////////////////////////////////////////////// nur der ben�tigte Spieltag wird eingelesen
+        ////////////////////////////////////////////////// nur der benï¿½tigte Spieltag wird eingelesen
         if (($op2 == "Round") && ($dum[1] == "D1")) {
           $datum1[$op3] = $dum[2];
         }

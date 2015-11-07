@@ -56,7 +56,7 @@ if ($einsichtfile != "") {
         }
       }
       if ($nick != $_SESSION['lmotippername']) {
-        //////////// nur die unver�nderten Tipps werden zur�ckgeschrieben
+        //////////// nur die unverï¿½nderten Tipps werden zurï¿½ckgeschrieben
         fputs($datei, $daten[$l]."\n");
       } elseif($daten[$l] != "") {
         $nick2 = $l;
@@ -99,7 +99,7 @@ if ($einsichtfile != "") {
         for($k = $start2; $k <= $i; $k++) {
           $sp = substr($daten[$l], 2, strpos($daten[$l], "=")-2);
           if ($sp == $spiel[$k]) {
-            break; // nicht zur�ckschreiben
+            break; // nicht zurï¿½ckschreiben
           }
         }
         if ($k == ($i+1)) {

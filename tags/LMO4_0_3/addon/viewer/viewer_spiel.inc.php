@@ -76,7 +76,7 @@ foreach ($fav_team[$i] as $akt_team) {
       }
     }//Ende Favteam hervorheben
 
-    //Trotz Konfigwert auch andere Variablen zur Verf�gung stellen
+    //Trotz Konfigwert auch andere Variablen zur Verfï¿½gung stellen
     $template->setVariable("HeimKurz",$myPartie->heim->kurz);
     $template->setVariable("GastKurz",$myPartie->gast->kurz);
     $template->setVariable("HeimMittel",$myPartie->heim->mittel);
@@ -116,9 +116,9 @@ foreach ($fav_team[$i] as $akt_team) {
     $SpBer_link=$myPartie->reportUrl;
     if ($SpBer_link != "") {
       if ($multi_cfgarray['spielberichte_neues_fenster']=='1' ) {
-        $tlink="<a href='".$SpBer_link."' target='_blank' title='".$text['viewer'][38]." (".$text['viewer'][33].")'><img src='".URL_TO_IMGDIR."/viewer/".$multi_cfgarray['spielberichtesymbol']."' border='0' alt='�'></a>";
+        $tlink="<a href='".$SpBer_link."' target='_blank' title='".$text['viewer'][38]." (".$text['viewer'][33].")'><img src='".URL_TO_IMGDIR."/viewer/".$multi_cfgarray['spielberichtesymbol']."' border='0' alt='ï¿½'></a>";
       } else {
-        $tlink="<a href='".$SpBer_link."' title='".$text['viewer'][38]." (".$text['viewer'][34].")'><img src='".URL_TO_IMGDIR."/viewer/".$multi_cfgarray['spielberichtesymbol']."' border='0' alt='�'></a>";
+        $tlink="<a href='".$SpBer_link."' title='".$text['viewer'][38]." (".$text['viewer'][34].")'><img src='".URL_TO_IMGDIR."/viewer/".$multi_cfgarray['spielberichtesymbol']."' border='0' alt='ï¿½'></a>";
       }
       $template->setVariable("Spielbericht", $tlink);
     }//Ende Spielbericht

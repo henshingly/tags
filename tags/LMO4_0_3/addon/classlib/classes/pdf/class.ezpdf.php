@@ -1,7 +1,7 @@
 <?php
 
 //include_once('class.pdf.php');
-// Relative Pfade führten zu Problemen. 31.7.2004 Timme
+// Relative Pfade fÃ¼hrten zu Problemen. 31.7.2004 Timme
 include (PATH_TO_ADDONDIR.'/classlib/classes/pdf/class.pdf.php');
 
 class Cezpdf extends Cpdf {

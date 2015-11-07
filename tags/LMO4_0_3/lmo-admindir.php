@@ -65,7 +65,7 @@ while($files=readdir($verz)){
             if($option_name=="Type"){
               if($option_wert=="1"){$ligadatei[$liga_counter]['rundenbezeichnung']=$text[370];}
             }
-            //Alle ben�tigten Werte gefunden -> Abbruch
+            //Alle benï¿½tigten Werte gefunden -> Abbruch
             if($ligadatei[$liga_counter]['liga_name']!="" && 
                $ligadatei[$liga_counter]['aktueller_spieltag']!="" && 
                $ligadatei[$liga_counter]['anz_teams']!='')break;
@@ -125,8 +125,8 @@ function cmp ($a1, $a2) {
     if ($a2[$sort]==$a1[$sort]) return 0;
     return ($a1[$sort]>$a2[$sort]) ? 1 : -1;
   }else{ //Stringvergleich
-    $a1[$sort]=strtr($a1[$sort],"��������������������������������������������������������������","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
-  	$a2[$sort]=strtr($a2[$sort],"��������������������������������������������������������������","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+    $a1[$sort]=strtr($a1[$sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+  	$a2[$sort]=strtr($a2[$sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
   	return  strnatcasecmp($a1[$sort],$a2[$sort]);
   }
 }

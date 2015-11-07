@@ -51,7 +51,7 @@ if ($file != "") {
     for ($j = $hoy; $j < $endtab; $j++) {
       for ($i = 0; $i < $anzsp; $i++) {
         if ($m == 0 && $a == 1) {
-          // nur beim ersten Tipper berechnen, ob das Spiel in die Tipp-Tabelle einflie�en darf
+          // nur beim ersten Tipper berechnen, ob das Spiel in die Tipp-Tabelle einflieï¿½en darf
           if ($tipp_einsichterst == 1) {
             $plus = 0;
             $btip[$j][$i] = tippaenderbar($mterm[$j][$i], $datum1[$j], $datum2[$j]);

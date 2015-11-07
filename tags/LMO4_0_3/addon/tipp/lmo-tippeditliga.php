@@ -301,11 +301,11 @@ if($spez==1){ ?>
     if ($spez==1) {
       $lmo_spielnotiz.=" ".$mspez[$st-1][$i];
     }
-    //Gr�ner Tisch: Heimteam siegt
+    //Grï¿½ner Tisch: Heimteam siegt
     if ($msieg[$st-1][$i]==1) {
       $lmo_spielnotiz.="\n\n<strong>".$text[219].":</strong> ".$teams[$teama[$st-1][$i]]." ".$text[211];
     }
-    //Gr�ner Tisch: Gastteam siegt
+    //Grï¿½ner Tisch: Gastteam siegt
     if ($msieg[$st-1][$i]==2) {
       $lmo_spielnotiz.="\n\n<strong>".$text[219].":</strong> ".addslashes($teams[$teamb[$st-1][$i]]." ".$text[211]);
     }

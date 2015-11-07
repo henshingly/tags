@@ -48,7 +48,7 @@ if ($einhinrueck==1 || $einheimausw==1) {
   }
 }?>
   </caption><?php
-/*Inklusive Heim & Ausw�rts*/
+/*Inklusive Heim & Auswï¿½rts*/
 if($tabonres==2){?>
   <tr>
     <th align="left" colspan="7"><?php echo $tabdat; ?>&nbsp;</th>

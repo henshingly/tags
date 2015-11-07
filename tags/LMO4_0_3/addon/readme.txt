@@ -1,13 +1,13 @@
 Addons:
 
 - Ein Verzeichnis = Ein Addon
-- Wenn benötigt eine Konfigurationsdatei /config/[Addonname]/cfg.txt (Format wie cfg.txt im in /config)
-- Wenn benötigt eine Datei /lang/[Addonname]/lang-[LMO-Sprache].txt erstellen
-- An den Anfang der Startdatei(en) des Addons diese Zeile einfügen
+- Wenn benÃ¶tigt eine Konfigurationsdatei /config/[Addonname]/cfg.txt (Format wie cfg.txt im in /config)
+- Wenn benÃ¶tigt eine Datei /lang/[Addonname]/lang-[LMO-Sprache].txt erstellen
+- An den Anfang der Startdatei(en) des Addons diese Zeile einfÃ¼gen
   
   require(dirname(__FILE__).'/../../init.php');
 
-  Jetzt stehen zur Verfügung:
+  Jetzt stehen zur VerfÃ¼gung:
 
     # Die Konstanten 
 	PATH_TO_LMO, 
@@ -30,15 +30,15 @@ Addons:
       z.B. require('lmo-addondatei.php'); wird zu require(PATH_TO_ADDONDIR.'/addon/lmo-addondatei.php');
 
     # Alle Konfigurationsvariablen als Variablen der Form $<Addonname>_<Variablenname>
-      z.B. der Wert foo=bar in der cfg-Datei des Addons brain steht als $brain_foo mit dem Wert bar zur Verfügung
+      z.B. der Wert foo=bar in der cfg-Datei des Addons brain steht als $brain_foo mit dem Wert bar zur VerfÃ¼gung
 
     # Alle Textvariablen als Variablen der Form $text[<Addonname>][<Textnummer>] 
-      z.B. der Wert 001=Hallo in der lang-Datei des Addons brain steht als $text['brain'][1] zur Verfügung
+      z.B. der Wert 001=Hallo in der lang-Datei des Addons brain steht als $text['brain'][1] zur VerfÃ¼gung
 
     # Die globalen Konfigurationsvariablen des LMO aus der config/cfg.txt
 
     # Die globale Sprache des LMO (das $text[xxx]-Array]
 
-- Das Ändern der Konfigurationsvariablen geschieht im Adminbereich des LMO oder (besser) mittels 
-  einer eigenen Konfigurationsoberfläche - das Speichern der Konfigurationsvariablen übernimmt dabei 
+- Das Ã„ndern der Konfigurationsvariablen geschieht im Adminbereich des LMO oder (besser) mittels 
+  einer eigenen KonfigurationsoberflÃ¤che - das Speichern der Konfigurationsvariablen Ã¼bernimmt dabei 
   immer die Datei lmo/savecfg.php (per include einzubinden)
