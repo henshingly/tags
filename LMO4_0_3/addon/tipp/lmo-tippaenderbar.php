@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -18,7 +18,7 @@
   */
   
   
-// Tipp noch änderbar oder nicht
+// Tipp noch ï¿½nderbar oder nicht
 
 function tippaenderbar($mterm0, $datum1, $datum2) {
   global $plus; // eine Minute Sicherheitsabstand zwischen Seitenaufruf und abspeichern

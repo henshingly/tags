@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -54,16 +54,16 @@ td.calwe a:hover, td.calwe a:active { color:#ddd; background-color:#f00;}
 </style>
 <script type="text/javascript">
 <!--
-opener.document.forms.<?=$abs; ?>.<?=$feld; ?>.select();
+opener.document.forms.<?php echo $abs; ?>.<?php echo $feld; ?>.select();
 function lmogeben(x){
-  opener.document.forms.<?=$abs; ?>.<?=$feld; ?>.value=x;
+  opener.document.forms.<?php echo $abs; ?>.<?php echo $feld; ?>.value=x;
   self.close();
   }
 // -->
 </script>
 </head>
 <body>
-<?
+<?php
 $addi=$_SERVER['PHP_SELF']."?abs=".$abs."&amp;feld=".$feld;
 $dat = time();
 $dat0 = getdate($dat);
@@ -81,16 +81,16 @@ $dat2 = getdate(strtotime($dat5." -1 month"));
 $datr=$dat2['month']." ".$dat2['year'];
 $dat3 = getdate(strtotime($dat5." +1 month"));
 $datv=$dat3['month']." ".$dat3['year'];
-$mn=array("0","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
+$mn=array("0","Januar","Februar","Mï¿½rz","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
 $erster=$dat1['wday'];?>
 <table class="caltab">
   <tr>
     <td align="center">
       <table class="caltab1" width=100%>
         <tr>
-          <td align="left"><a href="<?=$addi?>&amp;calshow=<?=$datr?>" title="zum vorigen Monat">&nbsp;&lt;&nbsp;</a></td>
-          <td align="center" class="caltz"><?=$mn[$dat1['mon']]." ".$dat1['year'];?></td>
-          <td align="right"><a href="<?=$addi?>" title="zum aktuellen Monat">&nbsp;#&nbsp;</a><a href="<?=$addi?>&amp;calshow=<?=$datv?>" title="zum nächsten Monat">&nbsp;&gt;&nbsp;</a></td>
+          <td align="left"><a href="<?php echo $addi?>&amp;calshow=<?php echo $datr?>" title="zum vorigen Monat">&nbsp;&lt;&nbsp;</a></td>
+          <td align="center" class="caltz"><?php echo $mn[$dat1['mon']]." ".$dat1['year'];?></td>
+          <td align="right"><a href="<?php echo $addi?>" title="zum aktuellen Monat">&nbsp;#&nbsp;</a><a href="<?php echo $addi?>&amp;calshow=<?php echo $datv?>" title="zum nï¿½chsten Monat">&nbsp;&gt;&nbsp;</a></td>
         </tr>
       </table>
     </td>
@@ -106,11 +106,11 @@ $erster=$dat1['wday'];?>
           <td align="center" class="calwt">Fr</td>
           <td align="center" class="calwt">Sa</td>
           <td align="center" class="calwt">So</td>
-        </tr><?
+        </tr><?php
 if($erster==0){$erster=7;}?>
-        <tr><?
+        <tr><?php
 for($i=0;$i<$erster-1;$i++){?>
-          <td class="calat">&nbsp;</td><?
+          <td class="calat">&nbsp;</td><?php
 }
 for($i=1;$i<=31;$i++){
   $dat4 = getdate(strtotime($i." ".$dath));
@@ -128,20 +128,20 @@ for($i=1;$i<=31;$i++){
     }
     if ($i<=9){$k="0";}else{$k="";}
     if($heute==1){?>
-          <tr><?
+          <tr><?php
     }?>
-            <td align="center" class="<?=$stil?>"><a href="#" onclick='lmogeben("<?=strftime("%d.%m.%Y",strtotime($i." ".$dath))?>")' title="Datum übernehmen"><?="$k$i"?></a></td><?
+            <td align="center" class="<?php echo $stil?>"><a href="#" onclick='lmogeben("<?php echo strftime("%d.%m.%Y",strtotime($i." ".$dath))?>")' title="Datum ï¿½bernehmen"><?php echo "$k$i"?></a></td><?php
     if($heute==7){?>
-          </tr><?
+          </tr><?php
       $j=$heute;
     }
   }
 }
 if ($j!=7){
   for ($i=0;$i<7-$j;$i++){?>
-            <td class="calat">&nbsp;</td><?
+            <td class="calat">&nbsp;</td><?php
   }?>
-          </tr><?
+          </tr><?php
 }?>
           </td>
         </tr>
@@ -149,6 +149,6 @@ if ($j!=7){
     </td>
   </tr>
   <tr>
-    <td align="right"><a href="#" onclick="self.close()" title="Kalender schließen, ohne ein Datum zu übernehmen">[schließen]</a></td>
+    <td align="right"><a href="#" onclick="self.close()" title="Kalender schlieï¿½en, ohne ein Datum zu ï¿½bernehmen">[schlieï¿½en]</a></td>
   </tr>
 </table>

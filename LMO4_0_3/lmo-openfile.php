@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -283,7 +283,7 @@ if(!empty($file) && check_hilfsadmin($file)){
           if($dum[1]=="NOT"){$teamn[$op5]=$dum[2];}
         }
 
-        if(!isset($lmo_only_st) || ($lmo_only_st==true && $op3==$st-1)){ // nur der benötigte Spieltag wird eingelesen
+        if(!isset($lmo_only_st) || ($lmo_only_st==true && $op3==$st-1)){ // nur der benï¿½tigte Spieltag wird eingelesen
 
         if($op2=="Round") {
           switch($dum[1]) {
@@ -388,7 +388,7 @@ if(!empty($file) && check_hilfsadmin($file)){
           $teamk[$j] = trim(substr($teams[$j],0,5));
         }
       }
-      //echo "<br>".((mictime()-$a)*1000)." µS ".$dum[1];
+      //echo "<br>".((mictime()-$a)*1000)." ï¿½S ".$dum[1];
     } else {
       echo getMessage($text[224],TRUE);
     }

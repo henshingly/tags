@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -33,13 +33,13 @@ if (($action == "admin") && ($todo == "delete") && ($_SESSION['lmouserok'] == 2)
   }?>
 <table class="lmoMiddle" width="99%" cellspacing="0" cellpadding="0" border="0">
   <tr>
-    <td align="center"><h1><?=$text[295]; ?></h1></td>
+    <td align="center"><h1><?php echo $text[295]; ?></h1></td>
   </tr>
   <tr>
     <td align="center">
       <table class="lmoInner" cellspacing="0" cellpadding="0" border="0">
         <tr>
-          <td class="nobr" align="left"><? 
+          <td class="nobr" align="left"><?php
   $ftype=".l98"; 
   require(PATH_TO_LMO."/lmo-admindeldir.php"); ?>
           </nobr></td>
@@ -47,5 +47,5 @@ if (($action == "admin") && ($todo == "delete") && ($_SESSION['lmouserok'] == 2)
       </table>
     </td>
   </tr>
-</table><?
+</table><?php
 }?>

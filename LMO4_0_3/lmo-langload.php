@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -19,7 +19,7 @@
   */
 
 // Langdateien laden (zuerst Standarddatei, wenn vorhanden werden die alten Werte
-// von der neuen Sprache überschrieben (So werden auch unvollständige Übersetzungen
+// von der neuen Sprache ï¿½berschrieben (So werden auch unvollstï¿½ndige ï¿½bersetzungen
 // akzeptiert)
 
 $languages=array(
@@ -35,7 +35,7 @@ $languages=array(
     'Italiano'=>array('it_IT'),
     'Portugues'=>array('pt_BR'),
     'Romanian'=>array('ro_RO'),
-    'Türkce'=>array('tr_TR')
+    'Tï¿½rkce'=>array('tr_TR')
     );
 
 $text=array();
@@ -69,7 +69,7 @@ if (isset($lmouserlang) && $lmouserlang!=$deflang) {
   setlocale (LC_TIME, $languages[$lmouserlang]);     //PHP >4.3
 }
 
-setlocale (LC_NUMERIC, 'en_EN');  // Wichtig: Für Arithmetik immer englische Trennzeichen
+setlocale (LC_NUMERIC, 'en_EN');  // Wichtig: Fï¿½r Arithmetik immer englische Trennzeichen
 
 
 //Alle lang-Dateien im Addon-Verzeichnis

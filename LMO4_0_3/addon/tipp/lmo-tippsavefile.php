@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -62,7 +62,7 @@ if ($tippfile != "") {
         $round = substr($daten[$i], 6, -1);
       }
       if ($round != $st) {
-        //////////// nur die unveränderten Spieltage werden zurückgeschrieben
+        //////////// nur die unverï¿½nderten Spieltage werden zurï¿½ckgeschrieben
         fputs($datei, $daten[$i]."\n");
       }
     }

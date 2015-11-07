@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Team
  *
@@ -52,7 +52,7 @@ class team {
   }
 
 /**
- * Fügt ein neues KeyValue Paar hinzu
+ * Fï¿½gt ein neues KeyValue Paar hinzu
  *
  * @access private
 */
@@ -60,7 +60,7 @@ class team {
     $this->keyValues[$new_key]=$new_value;
   }
 /**
- * Gibt value zu einem Key zurück
+ * Gibt value zu einem Key zurï¿½ck
  *
  * @access private
 */

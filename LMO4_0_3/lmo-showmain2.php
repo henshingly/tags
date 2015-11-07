@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -60,7 +60,7 @@ if($file!=""){
   }
 }
 
-//Alle Teile für die Startansicht
+//Alle Teile fï¿½r die Startansicht
 $output_titel="";
 $output_sprachauswahl="";
 $output_kalender="";
@@ -82,8 +82,8 @@ $p1="";
 
 if (!defined("LMO_TEMPLATE")) define("LMO_TEMPLATE","lmo-standard.tpl.php");
 
-//Wenn ein Template der Form [liganame].tpl.php existiert, wird dieses benutzt. Das ermöglicht
-// die Nutzung verschiedener Templates für unterschiedliche Ligen
+//Wenn ein Template der Form [liganame].tpl.php existiert, wird dieses benutzt. Das ermï¿½glicht
+// die Nutzung verschiedener Templates fï¿½r unterschiedliche Ligen
 $template = new HTML_Template_IT( PATH_TO_TEMPLATEDIR );
 if (file_exists(PATH_TO_TEMPLATEDIR.'/'.basename($file).".tpl.php")){
   $template->loadTemplatefile(basename($file).".tpl.php");
@@ -115,7 +115,7 @@ if ($einsprachwahl==1){
 ob_start();
 if ($file!="") {
 
-  //Für normale Ligen
+  //Fï¿½r normale Ligen
   if($lmtype==0){
 
     //Kalenderlink
@@ -223,24 +223,24 @@ if ($file!="") {
   if ($einsavehtml==1) {
       ob_start();?>
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
-          <tr><?
+          <tr><?php
           if($lmtype==0 && $druck==1){
             include(PATH_TO_LMO."/lmo-savehtml.php");
             include(PATH_TO_LMO."/lmo-savehtml1.php");
       }?>
-           <td align="center"><?
+           <td align="center"><?php
       if($lmtype==0 && $druck==1 && file_exists(PATH_TO_LMO.'/'.$diroutput.basename($file).'-st.html')){echo "<a href='".URL_TO_LMO.'/'.$diroutput.basename($file)."-st.html' title='{$text[477]}'>{$text[478]}</a>&nbsp;";}?>
             </td>
-            <td align="center"><?
+            <td align="center"><?php
       if($lmtype==0 && $druck==1 && file_exists(PATH_TO_LMO.'/'.$diroutput.basename($file).'-sp.html')){echo "<a href='".URL_TO_LMO.'/'.$diroutput.basename($file)."-sp.html' title='{$text[479]}'>{$text[480]}</a>&nbsp;";}?>
             </td>
           </tr>
-        </table><?
+        </table><?php
         $output_savehtml.=ob_get_contents();ob_end_clean();
   }
 }
 
-//Ligenübersicht
+//Ligenï¿½bersicht
 if($backlink==1 && ($file!="" || $action=="tipp")){
   if (basename($file)==$file) {
     $output_ligenuebersicht.="<a href='".$_SERVER['PHP_SELF']."' title='{$text[392]}'>{$text[391]}</a>&nbsp;&nbsp;&nbsp;";
