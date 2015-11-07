@@ -149,11 +149,11 @@ if ($_SESSION['lmouserok']==2) {
           </tr>
           <tr>
             <td>&nbsp;</td>
-            <td align="left"><input class="lmo-formular-input" type="checkbox" name="xadmin_erweitert<?php echo $show?>" <?php if (isset($lmo_admin[4]) && $lmo_admin[4]==1) echo " checked";?> <?php if ($lmo_admin[2]==2) echo " disabled";?>><acronym title="<?php echo $text[560]?>"><?php echo $text[559]?></acronym></td>
+            <td align="left"><input class="lmo-formular-input" type="checkbox" name="xadmin_erweitert<?php echo $show?>" <?php if (isset($lmo_admin[4]) && $lmo_admin[4]==1) echo " checked";?> <?php if ($lmo_admin[2]==2) echo " disabled";?>><abbr title="<?php echo $text[560]?>"><?php echo $text[559]?></abbr></td>
           </tr><?php
       if($lmo_admin[2]==1){?>
           <tr>
-            <th colspan="3"><acronym title="<?php echo $text[398]?>"><?php echo $text[397]?></acronym></th>
+            <th colspan="3"><abbr title="<?php echo $text[398]?>"><?php echo $text[397]?></abbr></th>
           </tr><?php
         $helfer_ligen=explode(',',$lmo_admin_data[$testshow][3]);
         $handle=opendir(PATH_TO_LMO.'/'.$dirliga);
@@ -169,7 +169,7 @@ if ($_SESSION['lmouserok']==2) {
       }?>
           <tr>
             <td>&nbsp;</td>
-            <td align="center"><acronym title="<?php echo $text[327]?>"><input class="lmo-formular-button" type="submit" value="<?php echo $text[329]?>"></acronym></th><?php
+            <td align="center"><abbr title="<?php echo $text[327]?>"><input class="lmo-formular-button" type="submit" value="<?php echo $text[329]?>"></abbr></th><?php
       if ($testshow!=0){?>      
             <td align="right">
               <a href="<?php echo $_SERVER['PHP_SELF']?>?action=admin&amp;todo=user&amp;del=<?php echo $show?>" onclick="return confirm('<?php echo $text[499]?>');"><img border="0" width="11" heigth="13" src="<?php echo URL_TO_IMGDIR?>/delete.gif" alt="<?php echo $text[330]?>" title="<?php echo $text[328]?>"></a>

@@ -37,12 +37,12 @@ if($file!=""){
   for($i=1;$i<=$anzteams;$i++){?>
         <tr>
           <td align="right">
-            <acronym title="<?php echo $text[57]." ".$teams[$i]?>"><?php
+            <abbr title="<?php echo $text[57]." ".$teams[$i]?>"><?php
     if($i!=$show_stat1){?>
             <a href="<?php echo $adds.$i?>&amp;stat2=<?php echo $show_stat2?>"><?php echo $teamk[$i]; ?></a><?php
     } else {
       echo $teamk[$i];
-    }     ?></acronym>
+    }     ?></abbr>
           </td>
           <td><?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?>&nbsp;</td>
         </tr><?php
@@ -306,13 +306,13 @@ if ($ligaLoaded	and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
         <tr>
           <td><?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?>&nbsp;</td>
           <td align="left">
-            <acronym title="<?php echo $text[57]." ".$teams[$i]?>"><?php
+            <abbr title="<?php echo $text[57]." ".$teams[$i]?>"><?php
     if($i!=$show_stat2){
                ?><a href="<?php echo $adds.$show_stat1?>&amp;stat2=<?php echo $i?>"><?php echo $teamk[$i]?></a><?php
     } else {
       echo $teamk[$i];
     }
-          ?></acronym>
+          ?></abbr>
           </td>
         </tr><?php
   }?>

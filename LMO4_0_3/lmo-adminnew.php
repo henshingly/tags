@@ -214,25 +214,25 @@ if($newpage<3){ ?>
 if($newpage==0){ ?>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[245]; ?>"><?php echo $text[244]; ?></acronym></td>
-            <td class="nobr" align="left"><acronym title="<?php echo $text[245]; ?>"><?php echo $dirliga; ?><input class="lmo-formular-input" type="text" name="xfile" size="28" maxlength="28" value="<?php echo $xfile; ?>" onChange="lmofilename()">.l98</acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[245]; ?>"><?php echo $text[244]; ?></abbr></td>
+            <td class="nobr" align="left"><abbr title="<?php echo $text[245]; ?>"><?php echo $dirliga; ?><input class="lmo-formular-input" type="text" name="xfile" size="28" maxlength="28" value="<?php echo $xfile; ?>" onChange="lmofilename()">.l98</abbr></td>
           </tr>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[118] ?>"><?php echo $text[113]; ?></acronym></td>
-            <td class="nobr" align="left"><acronym title="<?php echo $text[118] ?>"><input class="lmo-formular-input" type="text" name="xtitel" size="40" maxlength="60" value="<?php echo $xtitel; ?>" onChange="lmotitelname()"></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[118] ?>"><?php echo $text[113]; ?></abbr></td>
+            <td class="nobr" align="left"><abbr title="<?php echo $text[118] ?>"><input class="lmo-formular-input" type="text" name="xtitel" size="40" maxlength="60" value="<?php echo $xtitel; ?>" onChange="lmotitelname()"></abbr></td>
           </tr>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[175] ?>"><?php echo $text[174]; ?></acronym></td>
-            <td class="nobr" align="left"><acronym title="<?php echo $text[175] ?>"><select class="lmo-formular-input" name="xtype" onChange="dolmoedit()"><?php echo "<option value=\"0\""; if($xtype==0){echo " selected";} echo ">".$text[176]."</option>"; echo "<option value=\"1\""; if($xtype==1){echo " selected";} echo ">".$text[177]."</option>"; ?></select></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[175] ?>"><?php echo $text[174]; ?></abbr></td>
+            <td class="nobr" align="left"><abbr title="<?php echo $text[175] ?>"><select class="lmo-formular-input" name="xtype" onChange="dolmoedit()"><?php echo "<option value=\"0\""; if($xtype==0){echo " selected";} echo ">".$text[176]."</option>"; echo "<option value=\"1\""; if($xtype==1){echo " selected";} echo ">".$text[177]."</option>"; ?></select></abbr></td>
           </tr><?php
 }
 if($newpage==1){
   if($xtype==0){?>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[272] ?>"><?php echo $text[271]; ?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[272] ?>"><?php echo $text[271]; ?></abbr></td>
             <td class="nobr" align="left">
               <table cellpadding="0" cellspacing="0" border="0">
                 <tr>
@@ -259,7 +259,7 @@ if($newpage==1){
           </tr>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[275] ?>"><?php echo $text[274]; ?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[275] ?>"><?php echo $text[274]; ?></abbr></td>
             <td class="nobr" align="left">
               <table cellpadding="0" cellspacing="0" border="0">
                 <tr>
@@ -286,7 +286,7 @@ if($newpage==1){
           </tr>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[278] ?>"><?php echo $text[277]; ?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[278] ?>"><?php echo $text[277]; ?></abbr></td>
             <td class="nobr" align="left">
               <table cellpadding="0" cellspacing="0" border="0">
                 <tr>
@@ -314,7 +314,7 @@ if($newpage==1){
   }else{ ?>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[272] ?>"><?php echo $text[271]; ?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[272] ?>"><?php echo $text[271]; ?></abbr></td>
             <td class="nobr" align="left">
               <select class="lmo-formular-input" name="xteams" onChange="dolmoedit()"><?php  if($xteams==""){$xteams=16;}for($i=2;$i<129;$i=$i*2){echo "<option value=\"".$i."\""; if($xteams==$i){echo " selected";} echo ">".$i."</option>";} ?></select>
             </td>
@@ -330,7 +330,7 @@ if($newpage==2){
   if($xtype==0){?>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right" valign="top"><acronym title="<?php echo $text[285] ?>"><?php echo $text[284]; ?></acronym></td>
+            <td class="nobr" align="right" valign="top"><abbr title="<?php echo $text[285] ?>"><?php echo $text[284]; ?></abbr></td>
             <td class="nobr" align="left">
               <input type="radio" name="xprogram" value="none"<?php  if($xprogram=="none"){echo " checked";} ?> onChange="dolmoedit()"><?php echo $text[286]; ?><br><br>
               <?php echo $text[287]; ?>:<br><?php
@@ -356,7 +356,7 @@ if($newpage==2){
     for($i=1;$i<=$xanzst;$i++){?>
           <tr>
             <td width="20">&nbsp;</td>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[352] ?>"><?php echo $text[351]." ".$i; ?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[352] ?>"><?php echo $text[351]." ".$i; ?></abbr></td>
             <td class="nobr" align="left">
               <select class="lmo-formular-input" name="xmod<?php echo $i; ?>" onChange="dolmoedit()">
                 <option value="1"<?php if($xmodus[$i-1]==1){echo " selected";}?>><?php echo $text[353]?></option>

@@ -539,9 +539,9 @@ class liga {
 
       }
     }
-  // aktualisierte Optionen setzen <acronym title="Liga Manager Online">LMO</acronym>
+  // aktualisierte Optionen setzen <abbr title="Liga Manager Online">LMO</abbr>
     $this->options->keyValues['Title'] =
-       "<acronym title='Liga Manager Online ".CLASSLIB_VERSION."'>LMO</acronym>";
+       "<abbr title='Liga Manager Online ".CLASSLIB_VERSION."'>LMO</abbr>";
     $this->options->keyValues['Matches'] = $maxSp;
     $this->options->keyValues['Actual'] = isset($aktSpTag)?$aktSpTag:1;
 

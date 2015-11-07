@@ -310,23 +310,23 @@ if ($tipp_viewertipp == 1 && $viewermode == 1) {
           }?></th><?php
         }?>
           <th class="nobr" align="center" colspan="<?php  if($tipp_pfeiltipp==1){echo "5";}else{echo "3";} ?>">
-            <acronym title="<?php echo $text['tipp'][241].":".$text['tipp'][242] ?>"><?php echo $text['tipp'][209]; /* Dein Tipp */?></acronym><br><?php
+            <abbr title="<?php echo $text['tipp'][241].":".$text['tipp'][242] ?>"><?php echo $text['tipp'][209]; /* Dein Tipp */?></abbr><br><?php
         if ($goalfaktor[$i]!=1) {
           echo "(".$text[553+log10($goalfaktor[$i])].")";
         }?></th><?php
       }
       if($tipp_tippmodus==0){ ?>
-          <th class="nobr" align="center"><acronym title="<?php echo $text['tipp'][95] ?>">1</acronym></th><?php
+          <th class="nobr" align="center"><abbr title="<?php echo $text['tipp'][95] ?>">1</abbr></th><?php
         if($hidr[$i]==0){ ?>
-          <th class="nobr" align="center"><acronym title="<?php echo $text['tipp'][96] ?>">0</acronym></th><?php
+          <th class="nobr" align="center"><abbr title="<?php echo $text['tipp'][96] ?>">0</abbr></th><?php
         }else{ ?>
           <th>&nbsp;</th><?php
         }?>
-          <th class="nobr" align="center"><acronym title="<?php echo $text['tipp'][97] ?>">2</acronym></th><?php
+          <th class="nobr" align="center"><abbr title="<?php echo $text['tipp'][97] ?>">2</abbr></th><?php
       }
       if ($tipp_jokertipp==1){ ?>
           <th class="nobr" align="center">
-            <acronym title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?></acronym>
+            <abbr title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?></abbr>
           </th><?php
       }?>
           <th class="nobr" colspan="5" align="center"><?php echo $text['tipp'][31]; /* Ergebnis*/ ?></th>

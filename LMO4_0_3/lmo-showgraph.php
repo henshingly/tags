@@ -36,7 +36,7 @@ if(($file!="") && ($kurve==1)){
   for ($i=1; $i<=$anzteams; $i++) {?>
         <tr>
           <td align="right">
-            <acronym title="<?php echo $text[134]." ".$teams[$i]?>">
+            <abbr title="<?php echo $text[134]." ".$teams[$i]?>">
             	<?php
     if($i!=$show_stat1){?>
             <a href="<?php echo $addp.$i?>" ><?php echo $teamk[$i]?></a>
@@ -44,7 +44,7 @@ if(($file!="") && ($kurve==1)){
     } else {
       echo $teamk[$i];
     }
-          ?></acronym>
+          ?></abbr>
           </td>
           <td>&nbsp;<?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?>&nbsp;</td>
         </tr><?php
@@ -92,13 +92,13 @@ if(($file!="") && ($kurve==1)){
         <tr>
           <td>&nbsp;<?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?>&nbsp;</td>
           <td align="right">
-            <acronym title="<?php echo $text[134]." ".$teams[$i]?>"><?php
+            <abbr title="<?php echo $text[134]." ".$teams[$i]?>"><?php
     if($i!=$show_stat2){?>
             <a href="<?php echo $addp.$show_stat1."&amp;stat2=".$i?>" ><?php echo $teamk[$i]?></a><?php
     } else {
       echo $teamk[$i];
     }
-          ?></acronym>
+          ?></abbr>
           </td>
         </tr><?php
   }?>

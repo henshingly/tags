@@ -292,7 +292,7 @@ if ($mini_cache_counter==0 || $mini_cache_counter > $mini_cache_refresh) {
         $template->setVariable("where",$paarung['where']);
         if (isset($paarung['match']) && strtolower($paarung['match']) != strtolower($team_b->name) ) {
           //echo "<br>Vergleich: ".strtolower($paarung['match'])." = ".strtolower($team_b->name);
-          $template->setVariable("matchingName","<acronym title='".$paarung['match']."'>*</acronym>");
+          $template->setVariable("matchingName","<abbr title='".$paarung['match']."'>*</abbr>");
         }
         $valuate = $paarung['partie']->valuateGame();
         if ($paarung['where']==$text['mini'][13] && $valuate == 1) {

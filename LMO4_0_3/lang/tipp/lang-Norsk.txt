@@ -46,7 +46,7 @@
 045=Hvis du ennå ikke er registrert:
 046=Her kan du registrere deg for tippespillet:
 047=Hvilket Team vil du tilhøre?
-048=<acronym title="i paranteser: [Tipper i Team]">bli med i team:</acronym>
+048=<abbr title="i paranteser: [Tipper i Team]">bli med i team:</abbr>
 049=lage nytt team:
 050=Inget
 051=Vennligst velg

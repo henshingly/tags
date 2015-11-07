@@ -112,7 +112,7 @@ $lang=array(
     manuell vergeben.',
       'STEP4_TEXT3'=>'Bitte löschen Sie jetzt unbedingt den Ordner <code>install</code> vom Server oder geben Sie dem Ordner chmod 000.',
       'STEP4_TEXT4'=>'<ul class="attention">
-                        <li><strong>Link zum <acronym title="Liga Manager Online">LMO</acronym>:</strong> <a href="%s">%s</a></li>
+                        <li><strong>Link zum <abbr title="Liga Manager Online">LMO</abbr>:</strong> <a href="%s">%s</a></li>
                         <li><strong>Link zum Adminbereich:</strong> <a href="%s">%s</a> <small>(Standardlogin ist <kbd>admin</kbd> / <kbd>lmo</kbd>)</small></li>
                         <li><strong>Link zur Benutzeranleitung:</strong> <a href="%s">%s</a></li>
                       </ul>',
@@ -177,7 +177,7 @@ $lang=array(
     <code>config/init-parameters.php</code> with an common text editor and chmod the files with your FTP tool.',
       'STEP4_TEXT3'=>'Please delete the folder <code>install</code> or chmod it to 000.',
       'STEP4_TEXT4'=>'<ul class="attention">
-                        <li><strong>Link to <acronym title="Liga Manager Online">LMO</acronym>:</strong> <a href="%s">%s</a></li>
+                        <li><strong>Link to <abbr title="Liga Manager Online">LMO</abbr>:</strong> <a href="%s">%s</a></li>
                         <li><strong>Link to admin area:</strong> <a href="%s">%s</a> <small>(Login is <kbd>admin</kbd> / <kbd>lmo</kbd>)</small></li>
                         <li><strong>Link to Help:</strong> <a href="%s">%s</a></li>
                       </ul>',
@@ -236,7 +236,7 @@ $lang=array(
       'STEP4_TEXT2'=>'Si des erreurs apparaissent, veuillez répéter l\'installation ou bien installer le LMO manuellement en adaptant le fichier <code>config/init-parameters.php</code> avec un éditeur de texte et donner les droits d\'accès manuellement avec un programme FTP.',
       'STEP4_TEXT3'=>'Veuillez supprimer à tout prix le répertoire <code>install</code> de votre serveur ou bien lui donner les droits d\accès chmod 000.',
       'STEP4_TEXT4'=>'<ul class="attention">
-                        <li><strong>Le <acronym title="Liga Manager Online">LMO</acronym>:</strong> <code><a href="%s">%s</a></code>
+                        <li><strong>Le <abbr title="Liga Manager Online">LMO</abbr>:</strong> <code><a href="%s">%s</a></code>
                         <li><strong>Le secteur d\'administration:</strong> <code><a href="%s">%s</a></code> (L\'indentifiant par défaut est <kbd>admin</kbd>/<kbd>lmo</kbd>)
                         <li><strong>Description d\'utlisation:</strong> <code><a href="%s">%s</a></code>
                       </ul>',
@@ -289,7 +289,7 @@ $lang=array(
       'STEP4_TEXT1'=>'Liga Manager Online 4 instalada exitosamente!',
       'STEP4_TEXT2'=>'Si usted experimenta errores repita la instalación o instale manualmente. Para instalar manualmente edite el archivo <code>init-parameters.php</code> con un editor de textos común y cambie los permisos chmod de los archivos con su herramienta FTP.',
       'STEP4_TEXT3'=>'Por favor elimine el archivo <code>install.php</code> o cambie los permisos chmod a 000.',
-      'STEP4_TEXT4'=>'<acronym title="Liga Manager Online">LMO</acronym> ahora está disponible en <code><a href="lmo.php">lmo.php</a></code>. El área de la administración está disponible en <code><a href="lmoadmin.php">lmoadmin.php</a></code> (la conexión estándar es <kbd>admin</kbd>/<kbd>lmo</kbd>).',
+      'STEP4_TEXT4'=>'<abbr title="Liga Manager Online">LMO</abbr> ahora está disponible en <code><a href="lmo.php">lmo.php</a></code>. El área de la administración está disponible en <code><a href="lmoadmin.php">lmoadmin.php</a></code> (la conexión estándar es <kbd>admin</kbd>/<kbd>lmo</kbd>).',
       'STEP4_TEXT5'=>'Por favor consulte el <a href="http://www.liga-manager-online.de/">manual en nuestro sitio web</a> para obtener ayuda.',
       'STEP4_TEXT6'=>'Disfrútalo!',
   )
@@ -479,7 +479,7 @@ if ($lmo_install_step==3) {
     <style type="text/css">
       @media all {
         body     {  max-width:60em;margin: 0.5em auto;padding:0 0.9em;font-size:85%;background-color: #ffffff;color: #000000;font-family:Tahoma, Verdana, sans-serif;border:1px solid #999;-moz-border-radius:8px;}
-        acronym  {  cursor:help;border-bottom:1px dotted;}
+        abbr  {  cursor:help;border-bottom:1px dotted;}
         table    {  margin:auto;}
         em       {  font-style:normal;font-weight:bold;color:#080;}
         img      {  border:0;}

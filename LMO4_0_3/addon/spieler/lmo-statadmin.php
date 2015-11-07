@@ -334,7 +334,7 @@ function mark(el){
 				<tr>
 					<td class="nobr" align="right">
 						<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-							<acronym title="<?php echo $text['spieler'][9]?>"><input type="text" name="wert"></acronym>&nbsp;<input class="lmo-formular-button" type="submit" value=" + ">
+							<abbr title="<?php echo $text['spieler'][9]?>"><input type="text" name="wert"></abbr>&nbsp;<input class="lmo-formular-button" type="submit" value=" + ">
 							<input type="hidden" name="option" value="addplayer">
 							<input type="hidden" name="sort" value="<?php echo $spieler_sort?>">
 							<input type="hidden" name="todo" value="edit">
@@ -344,11 +344,11 @@ function mark(el){
 					</td>
 					<td class="nobr" align="left">
 						<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
-							<acronym title="<?php echo $text['spieler'][10]?>"><select name="wert" size="1"><?php
+							<abbr title="<?php echo $text['spieler'][10]?>"><select name="wert" size="1"><?php
 								for ($x=0;$x<$zeile;$x++) {?>
 								<option value="<?php echo $x?>"><?php echo htmlentities(stripslashes($data[$x][0]),ENT_COMPAT);?></option><?php
 								}?>
-							</select></acronym>&nbsp;<input class="lmo-formular-button" type="submit" value=" &minus; ">
+							</select></abbr>&nbsp;<input class="lmo-formular-button" type="submit" value=" &minus; ">
 							<input type="hidden" name="option" value="delplayer">
 							<input type="hidden" name="sort" value="<?php echo $spieler_sort?>">
 							<input type="hidden" name="todo" value="edit">
@@ -364,9 +364,9 @@ function mark(el){
 				<tr>
 					<td class="nobr" align="right">
 						<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" name="spalten">
-							<acronym title="<?php echo $text['spieler'][7]?>"><input type="text" name="wert"></acronym>
+							<abbr title="<?php echo $text['spieler'][7]?>"><input type="text" name="wert"></abbr>
               <input class="lmo-formular-button" type="submit" value=" + "><br>
-							<acronym title="<?php echo $text['spieler'][30]?>"><?php echo $text['spieler'][38]?>:</acronym>
+							<abbr title="<?php echo $text['spieler'][30]?>"><?php echo $text['spieler'][38]?>:</abbr>
               <input type="radio" name="type" value="0" checked>&nbsp;<?php echo $text['spieler'][52]?>
               <input type="radio" name="type" value="<?php echo $text['spieler'][43]?>">&nbsp;<?php echo $text['spieler'][53]?>
               <input type="radio" name="type" value="F">&nbsp;<?php echo $text['spieler'][54]?>
@@ -379,11 +379,11 @@ function mark(el){
 					</td>
 					<td class="nobr" align="left" valign="top">
 						<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" name="spieler">
-							<acronym title="<?php echo $text['spieler'][8]?>"><select name="wert" size="1"><?php
+							<abbr title="<?php echo $text['spieler'][8]?>"><select name="wert" size="1"><?php
 								for ($x=0;$x<$spaltenzahl;$x++) {?>
 								<option value="<?php echo $x?>"<?php if ($x==0){?> disabled<?php }if ($x==1){?> selected<?php }?>><?php echo htmlentities(stripslashes($spalten[$x]),ENT_COMPAT);?></option><?php
 								}?>
-							</select></acronym>&nbsp;<input class="lmo-formular-button" type="submit" value=" &minus; ">
+							</select></abbr>&nbsp;<input class="lmo-formular-button" type="submit" value=" &minus; ">
 							<input type="hidden" name="option" value="delcolumn">
 							<input type="hidden" name="todo" value="edit">
               <input type="hidden" name="st" value="<?php echo $st; ?>">

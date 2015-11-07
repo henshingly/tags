@@ -230,44 +230,44 @@ if( $wertung=="einzel"  || $wertung=="intern"){
           <th class="nobr"> <?php echo $text['tipp'][27]; /* Team */?> </th><?php
   }
 } else { /* Teamwertung*/?>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][120]?>"><?php echo $text['tipp'][26]; /* Anzahl Tipper*/ ?></acronym>&nbsp;</th>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][208]?>"><?php echo $text['tipp'][26]."ï¿½"; /* Anzahl Tipper Durchschnitt*/ ?></acronym>&nbsp;</th><?php
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][120]?>"><?php echo $text['tipp'][26]; /* Anzahl Tipper*/ ?></abbr>&nbsp;</th>
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][208]?>"><?php echo $text['tipp'][26]."ï¿½"; /* Anzahl Tipper Durchschnitt*/ ?></abbr>&nbsp;</th><?php
 }?>
-          <th class="nobr" <?php echo $dummy; ?>>&nbsp;<acronym title="<?php echo $text['tipp'][117]?>"><?php
+          <th class="nobr" <?php echo $dummy; ?>>&nbsp;<abbr title="<?php echo $text['tipp'][117]?>"><?php
 if($gewicht!="spiele"){
   echo "<a href=\"".$addt5."spiele\">";
 }
 echo $text['tipp'][123]; // Spiele getippt
 if($gewicht!="spiele"){
   echo "</a>";
-}         ?></acronym>&nbsp;
+}         ?></abbr>&nbsp;
           </th><?php
 if($tipp_showzus==1){
   if($tipp_tippmodus==1){
     if($tipp_rergebnis>0){ ?>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][34].": ".$tipp_rergebnis." ".$text['tipp'][38]?>"><?php echo $text['tipp'][221]; /* RE */?></acronym>&nbsp;</th><?php
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][34].": ".$tipp_rergebnis." ".$text['tipp'][38]?>"><?php echo $text['tipp'][221]; /* RE */?></abbr>&nbsp;</th><?php
     } 
     if($tipp_rtendenzdiff>$tipp_rtendenz){ ?>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][35].": ".$tipp_rtendenzdiff." ".$text['tipp'][38]?>"><?php echo $text['tipp'][222]; /* RTD */?></acronym>&nbsp;</th><?php
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][35].": ".$tipp_rtendenzdiff." ".$text['tipp'][38]?>"><?php echo $text['tipp'][222]; /* RTD */?></abbr>&nbsp;</th><?php
     }
     if($tipp_rtendenz>0){ ?>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][36].": ".$tipp_rtendenz." ".$text['tipp'][38]?>"><?php echo $text['tipp'][223]; /* RT */?></acronym>&nbsp;</th><?php
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][36].": ".$tipp_rtendenz." ".$text['tipp'][38]?>"><?php echo $text['tipp'][223]; /* RT */?></abbr>&nbsp;</th><?php
     } 
     if($tipp_rtor>0){ ?>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][37].": ".$tipp_rtor." ".$text['tipp'][38]?>"><?php echo $text['tipp'][224]; /* RG */?></acronym>&nbsp;</th><?php
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][37].": ".$tipp_rtor." ".$text['tipp'][38]?>"><?php echo $text['tipp'][224]; /* RG */?></abbr>&nbsp;</th><?php
     } 
   } // ende if($tipp_tippmodus==1) 
   if($tipp_rremis>0){ ?>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][192].": ".$tipp_rremis." ".$text['tipp'][38]?>"><?php echo $text['tipp'][225]; /* UB */?></acronym>&nbsp;</th><?php
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][192].": ".$tipp_rremis." ".$text['tipp'][38]?>"><?php echo $text['tipp'][225]; /* UB */?></abbr>&nbsp;</th><?php
   } 
   if($tipp_jokertipp==1){ ?>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][227]?>"><?php echo $text['tipp'][226]; /* JP */?></acronym>&nbsp;</th><?php
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][227]?>"><?php echo $text['tipp'][226]; /* JP */?></abbr>&nbsp;</th><?php
   }
 } // ende if($tipp_showzus==1) 
 if($tipp_showstsiege==1){ ?>
-          <th class="nobr" align="right">&nbsp;<acronym title="<?php echo $text['tipp'][271]?>"><?php echo $text['tipp'][90]; /* GS */?></acronym>&nbsp;</th><?php
+          <th class="nobr" align="right">&nbsp;<abbr title="<?php echo $text['tipp'][271]?>"><?php echo $text['tipp'][90]; /* GS */?></abbr>&nbsp;</th><?php
 }?>
-          <th class="nobr" <?php echo $dummy; ?>>&nbsp;<acronym title="<?php if ($tipp_tippmodus == 1) { echo $text['tipp'][124];} else { echo $text['tipp'][125]."%";}?>"><?php
+          <th class="nobr" <?php echo $dummy; ?>>&nbsp;<abbr title="<?php if ($tipp_tippmodus == 1) { echo $text['tipp'][124];} else { echo $text['tipp'][125]."%";}?>"><?php
 if ($gewicht != "relativ") {
   echo "<a href=\"".$addt5."relativ\">";
 }
@@ -278,9 +278,9 @@ if ($tipp_tippmodus == 1) {
 }
 if ($gewicht != "relativ") {
   echo "</a>";
-}         ?></acronym>&nbsp;
+}         ?></abbr>&nbsp;
           </th>
-          <th class="nobr" <?php echo $dummy; ?>>&nbsp;<acronym title="<?php echo $text['tipp'][118]?>"><?php
+          <th class="nobr" <?php echo $dummy; ?>>&nbsp;<abbr title="<?php echo $text['tipp'][118]?>"><?php
 if ($gewicht != "absolut") {
   echo "<a href=\"".$addt5."absolut\" title=\"".$text['tipp'][149]."\">";
 }
@@ -291,7 +291,7 @@ if ($tipp_tippmodus == 1) {
 }
 if ($gewicht != "absolut") {
   echo "</a>";
-}       ?></acronym>&nbsp;</th>
+}       ?></abbr>&nbsp;</th>
         </tr><?php
 $eigplatz = $anztipper+2;
 $j = 1;

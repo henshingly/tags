@@ -61,14 +61,14 @@ for($i = 0; $i <= ($anzteams+1); $i++) {
       echo "<a href=\"".$addc.$j."\" title=\"".$teams[$j].": ".$text[26]."\">"."".$teamk[$j].""."</a>";
     }
     if ($j == $anzteams+1 && $i > 0 && $i <= $anzteams || $i == $anzteams+1 && $j > 0 && $j <= $anzteams) {
-      echo "<acronym title='".$teams[$j]."'>";
+      echo "<abbr title='".$teams[$j]."'>";
       echo HTML_smallTeamIcon($file,$teams[$j]," alt='.$teamk[$j].'");
-      echo "</acronym>";
+      echo "</abbr>";
     }
     if ($j == $anzteams+1 && $i > 0 && $i <= $anzteams) {
-      echo "<acronym title='".$teams[$i]."'>";
+      echo "<abbr title='".$teams[$i]."'>";
       echo HTML_smallTeamIcon($file,$teams[$i]," alt='.$teamk[$i].'");
-      echo "</acronym>";
+      echo "</abbr>";
     }
 
     if (($i > 0) && ($i <= $anzteams) && ($j > 0) && ($j <= $anzteams) && ($j != $i)) {

@@ -50,11 +50,11 @@ a:visited {
                   <!-- BEGIN Inhalt -->
                     <tr class="<!--Zeilenklasse-->">
                       <td><!--Datum--></td>
-                      <td align="right"><acronym title="<!--HeimLang-->"><!--Heim--></acronym></td>
+                      <td align="right"><abbr title="<!--HeimLang-->"><!--Heim--></abbr></td>
                       <td align="center"><!--Iconheim--></td>
                       <td>&nbsp;-&nbsp;</td>
                       <td  align="center"><!--Icongast--></td>
-                      <td align="left"><acronym title="<!--GastLang-->"><!--Gast--></acronym></td>
+                      <td align="left"><abbr title="<!--GastLang-->"><!--Gast--></abbr></td>
                       <td><!--Tore--></td>
                     </tr>
                   <!-- END Inhalt -->

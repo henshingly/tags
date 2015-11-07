@@ -184,20 +184,20 @@ if ($file != "" && $todo == "einsicht" && $tipp_tippeinsicht == 1) {
             }
             if ($lmtype != 0) {
               if ($mtipp[$st-1][$i][$n] == 1) {
-                echo "<acronym title='".$text['tipp'][231]."'><del>";
+                echo "<abbr title='".$text['tipp'][231]."'><del>";
               }
               echo applyFactor($goala[$st-1][$i][$n],$goalfaktor).":".applyFactor($goalb[$st-1][$i][$n],$goalfaktor);
               if ($mtipp[$st-1][$i][$n] == 1) {
-                echo '</del></acronym>';
+                echo '</del></abbr>';
                 $nw = 1;
               }
             } else {
               if ($mtipp[$st-1][$i] == 1) {
-                echo "<acronym title='".$text['tipp'][231]."'><del>";
+                echo "<abbr title='".$text['tipp'][231]."'><del>";
               }
               echo applyFactor($goala[$st-1][$i],$goalfaktor).":".applyFactor($goalb[$st-1][$i],$goalfaktor);
               if ($mtipp[$st-1][$i] == 1) {
-                echo '</del></acronym>';
+                echo '</del></abbr>';
                 $nw = 1;
               }
             }

@@ -46,7 +46,7 @@
 045=Daca nu esti inregistrat:
 046=-aici te poti inregistra pentru pronosticuri
 047=In care echipa doresti sa te inscrii?
-048=<acronym title="in paranteze: [Utilizator in echipa]">alege echipa:</acronym>
+048=<abbr title="in paranteze: [Utilizator in echipa]">alege echipa:</abbr>
 049=Creeaza o echipa noua:
 050=nici o echipa
 051=Alege
