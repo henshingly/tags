@@ -46,7 +46,7 @@
 045=Si vous n&#39;êtes pas encore inscrit:
 046=Pour le concours de pronostique, vous pouvez
 047=A quelle équipe voulez-vous appartenir?
-048=<acronym title="entre paranthèses: [Pronosticeur de l&#39;équipe]">s&#39;inscrire dans l&#39;équipe:</acronym>
+048=<abbr title="entre paranthèses: [Pronosticeur de l&#39;équipe]">s&#39;inscrire dans l&#39;équipe:</abbr>
 049=créer une nouvelle équipe:
 050=aucune
 051=Veuillez choisir svp

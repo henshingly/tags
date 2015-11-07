@@ -68,9 +68,9 @@
                       <td><!--Spieltag--></td>
                       <td><!--Datum--></td>
                       <td><!--Uhrzeit--></td>
-                      <td align="right"><acronym title="<!--HeimLang-->"><!--Heim--></acronym></td><td><!--Iconheim--></td>
+                      <td align="right"><abbr title="<!--HeimLang-->"><!--Heim--></abbr></td><td><!--Iconheim--></td>
                       <td>&nbsp;-&nbsp;</td>
-                      <td><!--Icongast--></td><td align="left"><acronym title="<!--GastLang-->"><!--Gast--></acronym></td>
+                      <td><!--Icongast--></td><td align="left"><abbr title="<!--GastLang-->"><!--Gast--></abbr></td>
                       <td><!--Tore--></td>
                       <td><!--Tabellenlink--></td>
                       <td><!--Notiz--></td>

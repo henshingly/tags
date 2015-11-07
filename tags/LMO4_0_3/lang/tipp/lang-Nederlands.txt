@@ -46,7 +46,7 @@
 045=Als u nog niet geregistreerd bent:
 046=U kan zich hier registreren voor het Bingoal Game
 047=Van welk Team wil je lid worden?
-048=<acronym title="in Klammern: [Tipper im Team]">Wordt lid van een bestaand Team:</acronym>
+048=<abbr title="in Klammern: [Tipper im Team]">Wordt lid van een bestaand Team:</abbr>
 049=Maak Nieuw Team aan:
 050=Geen
 051=Selecteer

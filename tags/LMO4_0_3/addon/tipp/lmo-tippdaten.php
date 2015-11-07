@@ -216,7 +216,7 @@ if (($action == "tipp") && ($todo == "daten")) {
     if ($tipp_freischaltcode==1) {?>
           <tr>
             <td width="20">&nbsp;</td>
-            <td align="right"><acronym title="<?php echo $text['tipp'][300]?>"><?php echo " ".$text['tipp'][16]." ".$text['tipp'][19]; ?></acronym></td>
+            <td align="right"><abbr title="<?php echo $text['tipp'][300]?>"><?php echo " ".$text['tipp'][16]." ".$text['tipp'][19]; ?></abbr></td>
             <td align="left"><input class="lmo-formular-input" type="text" name="xtipperemail2" size="25" maxlength="64" value="<?php echo $tipp_tipper_daten[4]; ?>"></td>
           </tr><?php
     } ?>

@@ -323,7 +323,7 @@ if($form3) {
                  </tr>
                  <tr>
                    <td class="nobr" align="right"><input class="lmo-formular-input" type="text" name="cache_refresh" size="3" value="0"></td>
-                   <td class="nobr" align="left">&nbsp;<acronym title="<?php  echo $text['viewer'][53]; ?>"><?php  echo $text['viewer'][52]; ?></acronym></td>
+                   <td class="nobr" align="left">&nbsp;<abbr title="<?php  echo $text['viewer'][53]; ?>"><?php  echo $text['viewer'][52]; ?></abbr></td>
                    <td class="nobr" align="right"><?php  echo $text['viewer'][12];  ?></td>
                    <td class="nobr" align="left">&nbsp;<input class="lmo-formular-input" type="text" name="tordummy" size="1" value="_"></td>
                  </tr>

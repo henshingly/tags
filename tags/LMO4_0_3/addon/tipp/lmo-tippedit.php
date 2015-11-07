@@ -284,7 +284,7 @@ if ($file!="") {
             </th><?php
     } ?>
             <th class="nobr" align="center" colspan="<?php  if($tipp_pfeiltipp==1){echo "5";}else{echo "3";} ?>">
-              <acronym title="<?php echo $text['tipp'][241].":".$text['tipp'][242] ?>"><?php echo $text['tipp'][209]; /* Dein Tipp */?></acronym><br><?php
+              <abbr title="<?php echo $text['tipp'][241].":".$text['tipp'][242] ?>"><?php echo $text['tipp'][209]; /* Dein Tipp */?></abbr><br><?php
     if ($goalfaktor!=1) {
       echo "(".$text[553+log10($goalfaktor)].")";
     }?>
@@ -293,15 +293,15 @@ if ($file!="") {
   
 /**TENDENZMODUS*/
   if($tipp_tippmodus==0){ ?>
-            <th class="nobr" align="center"><acronym title="<?php echo $text['tipp'][95] ?>">1</acronym></th><?php
+            <th class="nobr" align="center"><abbr title="<?php echo $text['tipp'][95] ?>">1</abbr></th><?php
     if($hidr==0){ ?>
-            <th class="nobr" align="center"><acronym title="<?php echo $text['tipp'][96] ?>">0</acronym></th><?php
+            <th class="nobr" align="center"><abbr title="<?php echo $text['tipp'][96] ?>">0</abbr></th><?php
     }?>
-            <th class="nobr" align="center"><acronym title="<?php echo $text['tipp'][97] ?>">2</acronym></th><?php
+            <th class="nobr" align="center"><abbr title="<?php echo $text['tipp'][97] ?>">2</abbr></th><?php
   }
 /**BEIDE*/
   if ($tipp_jokertipp==1){ ?>
-            <th class="nobr" align="center"><acronym title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?></acronym></th><?php
+            <th class="nobr" align="center"><abbr title="<?php echo $text['tipp'][290] ?>"><?php echo $text['tipp'][289]; ?></abbr></th><?php
   } ?>
             <th class="nobr" colspan="3" align="center"><?php echo $text['tipp'][31]; /* Ergebnis */?></th><?php
   if($spez==1){?>

@@ -52,7 +52,7 @@
 051=Dummy
 052=Bine ati venit!
 053=Alegeti un campionat
-054=<acronym title="Liga Manager Online">LMO</acronym>4
+054=<abbr title="Liga Manager Online">LMO</abbr>4
 055=¦ 1997-2004 LMO-Group
 056=[ <a href="http://www.liga-manager-online.de/" target="_blank" title="Vizitati site-ul nostru">LMO-Projekt</a> | <a href="http://ligaliste.hollwitz.de/" target="_blank" title="Aici gasiti diferite competitii pentru LMO">Lista cu competitii</a> ]
 057=Statistica 1 din

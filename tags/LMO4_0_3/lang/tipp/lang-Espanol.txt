@@ -46,7 +46,7 @@
 045=Si no está Registrado:
 046=Puede registrarse aquí para el Juego de Predicción
 047=¿Qué equipo desea representar?
-048=<acronym title="en paréntesis: [Cerca del Equipo]">Represente a un equipo actual:</acronym>
+048=<abbr title="en paréntesis: [Cerca del Equipo]">Represente a un equipo actual:</abbr>
 049=Crear Nuevo Equipo:
 050=Nada
 051=Por favor seleccione

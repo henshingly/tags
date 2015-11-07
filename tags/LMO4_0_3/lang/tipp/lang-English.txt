@@ -46,7 +46,7 @@
 045=If You are not Registered:
 046=You can Register here for the Prediction Game
 047=Which Team would you like to Join?
-048=<acronym title="in Klammern: [Tipper im Team]">Join a current Team:</acronym>
+048=<abbr title="in Klammern: [Tipper im Team]">Join a current Team:</abbr>
 049=Make New Team:
 050=None
 051=Please Select

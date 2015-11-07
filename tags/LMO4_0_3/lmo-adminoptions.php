@@ -103,7 +103,7 @@ if($save==1){
         <table class="lmoInner" cellspacing="0" cellpadding="0" border="0"><?php
 if ($show==0) {?>          
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[506]?>"><?php echo $text[505];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[506]?>"><?php echo $text[505];?></abbr></td>
             <td class="nobr" colspan="4">
               <select class="lmo-formular-input" name="xdeflang" onchange="dolmoedit()"><?php
               $handle=opendir (PATH_TO_LANGDIR);
@@ -117,14 +117,14 @@ if ($show==0) {?>
               </select></td>
           </tr>
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[222]?>"><?php echo $text[221];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[222]?>"><?php echo $text[221];?></abbr></td>
             <td class="nobr" colspan="4"><input class="lmo-formular-input" type="text" name="xdirliga" size="20" maxlength="80" value="<?php echo $dirliga;?>" onChange="dolmoedit()"></td>
           </tr>
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[240]?>"><?php echo $text[239];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[240]?>"><?php echo $text[239];?></abbr></td>
             <td class="nobr" colspan="4"><input class="lmo-formular-input" type="text" name="xdeftime" size="5" maxlength="5" value="<?php echo $deftime;?>" onChange="dolmoedit()"></td>
           </tr><tr>
-            <td class="nobr" rowspan="2" align="right"><acronym title="<?php  echo $text[256] ?>"><?php  echo $text[257]; ?></acronym>&nbsp;</td>
+            <td class="nobr" rowspan="2" align="right"><abbr title="<?php  echo $text[256] ?>"><?php  echo $text[257]; ?></abbr>&nbsp;</td>
             <td class="nobr" align="left">
               <input type="radio" name="xdefdateselect" value="1" checked>
               <select class="lmo-formular-input" name="xdefdateformat" onChange="dolmoedit();document.getElementsByName('xdefdateselect')[0].checked=true;"><?php
@@ -166,11 +166,11 @@ if ($show==0) {?>
             </td>
           </tr>
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[344]?>"><?php echo $text[343];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[344]?>"><?php echo $text[343];?></abbr></td>
             <td class="nobr" colspan="4"><input class="lmo-formular-input" type="text" name="xadr" size="40" maxlength="128" value="<?php echo $aadr;?>" onChange="dolmoedit()"></td>
           </tr>
           <tr>
-            <td class="nobr" align="right" rowspan="2"><acronym title="<?php echo $text[532]?>"><?php echo $text[533];?></acronym></td>
+            <td class="nobr" align="right" rowspan="2"><abbr title="<?php echo $text[532]?>"><?php echo $text[533];?></abbr></td>
             <td class="nobr" colspan="2" rowspan="2">
               <select class="lmo-formular-input" name="xliga_sort" onChange="dolmoedit()">
                 <option value="liga_name"<?php if ($liga_sort=="liga_name") echo " selected";?>><?php echo $text[529]?></option>
@@ -185,7 +185,7 @@ if ($show==0) {?>
           </tr><?php
 }elseif ($show==1) {?>          
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[228]?>"><?php echo $text[227];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[228]?>"><?php echo $text[227];?></abbr></td>
             <td class="nobr" colspan="4">
               <select class="lmo-formular-input" name="xtabpkt" onChange="dolmoedit()">
                 <option value="0"<?php if($tabpkt==0){echo " selected";}?>><?php echo $text[229]?></option>
@@ -194,7 +194,7 @@ if ($show==0) {?>
             </td>
           </tr>
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[232]?>"><?php echo $text[231]?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[232]?>"><?php echo $text[231]?></abbr></td>
             <td class="nobr" colspan="4">
               <select class="lmo-formular-input" name="xtabonres" onChange="dolmoedit()">
                 <option value="0"<?php if($tabonres==0){echo " selected";}?>><?php echo $text[233]?></option>
@@ -205,42 +205,42 @@ if ($show==0) {?>
           </tr><?php
 }elseif ($show==2) {?>          
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[390]?>"><?php echo $text[389];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[390]?>"><?php echo $text[389];?></abbr></td>
             <td class="nobr"><input type="checkbox" class="lmo-formular-input" name="xbacklink" onChange="dolmoedit()"<?php if($backlink==1){echo " checked";}?>></td>
             <td class="nobr" width="15%">&nbsp;</td>
             <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xarchivlink" onChange="dolmoedit()"<?php if($archivlink==1){echo " checked";}?>></td>
-            <td class="nobr"><acronym title="<?php echo $text[510]?>"><?php echo $text[509];?></acronym></td>
+            <td class="nobr"><abbr title="<?php echo $text[510]?>"><?php echo $text[509];?></abbr></td>
           </tr>
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[473]?>"><?php echo $text[472];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[473]?>"><?php echo $text[472];?></abbr></td>
             <td class="nobr"><input type="checkbox" class="lmo-formular-input" name="xcalctime" onChange="dolmoedit()"<?php if($calctime==1){echo " checked";}?>></td>
             <td>&nbsp;</td>
             <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xeinsavehtml" onChange="dolmoedit()"<?php if($einsavehtml==1){echo " checked";}?>></td>
-            <td class="nobr"><acronym title="<?php echo $text[484]?>"><?php echo $text[483];?></acronym></td>
+            <td class="nobr"><abbr title="<?php echo $text[484]?>"><?php echo $text[483];?></abbr></td>
           </tr>
           <tr>
-            <?php /*<td class="nobr" align="right"><acronym title="<?php echo $text[494]?>"><?php echo $text[493];?></acronym></td>
+            <?php /*<td class="nobr" align="right"><abbr title="<?php echo $text[494]?>"><?php echo $text[493];?></abbr></td>
             <td class="nobr"><input type="checkbox" class="lmo-formular-input" name="xeinhinrueck" onChange="dolmoedit()"<?php if($einhinrueck==1){echo " checked";}?>></td>*/?>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[486]?>"><?php echo $text[485];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[486]?>"><?php echo $text[485];?></abbr></td>
             <td class="nobr"><input type="checkbox" class="lmo-formular-input" name="xeinspieler" onChange="dolmoedit()"<?php if($einspieler==1){echo " checked";}?>></td>
             <td>&nbsp;</td>
             <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xeinzustats" onChange="dolmoedit()"<?php if($einzustats==1){echo " checked";}?>></td>
-            <td class="nobr"><acronym title="<?php echo $text[496]?>"><?php echo $text[495];?></acronym></td>
+            <td class="nobr"><abbr title="<?php echo $text[496]?>"><?php echo $text[495];?></abbr></td>
           </tr>
           <tr>
-            <td class="nobr" align="right"><acronym title="<?php echo $text[535]?>"><?php echo $text[534];?></acronym></td>
+            <td class="nobr" align="right"><abbr title="<?php echo $text[535]?>"><?php echo $text[534];?></abbr></td>
             <td class="nobr"><input type="checkbox" class="lmo-formular-input" name="xeinspielfrei" onChange="dolmoedit()"<?php if($einspielfrei==1){echo " checked";}?>></td>
             <td>&nbsp;</td>
             <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xeintippspiel" onChange="dolmoedit()"<?php if($eintippspiel==1){echo " checked";}?>></td>
-            <td class="nobr"><acronym title="<?php echo $text[488]?>"><?php echo $text[487];?></acronym></td>
+            <td class="nobr"><abbr title="<?php echo $text[488]?>"><?php echo $text[487];?></abbr></td>
           </tr>
           <tr>
             <td colspan="3">&nbsp;</td>
             <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xeinsprachwahl" onChange="dolmoedit()"<?php if($einsprachwahl==1){echo " checked";}?>></td>
-            <td class="nobr"><acronym title="<?php  echo $text[520] ?>"><?php  echo $text[519]; ?></acronym></td>
+            <td class="nobr"><abbr title="<?php  echo $text[520] ?>"><?php  echo $text[519]; ?></abbr></td>
           </tr>
           <tr>
-            <td class="nobr" rowspan="2" align="right"><acronym title="<?php echo $text[490]?>"><?php echo $text[489];?></acronym></td>
+            <td class="nobr" rowspan="2" align="right"><abbr title="<?php echo $text[490]?>"><?php echo $text[489];?></abbr></td>
             <td class="nobr" colspan="4"><input type="checkbox" class="lmo-formular-input" name="xeinzutoretab" onChange="dolmoedit()"<?php if($einzutoretab==1){echo " checked";}?>>&nbsp;<?php echo $text[491]?>
           </tr>
           <tr>

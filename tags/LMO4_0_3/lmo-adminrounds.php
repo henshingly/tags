@@ -161,7 +161,7 @@ if(($file!="") && ($_SESSION['lmouserok']==2)){
 ?>
         <tr>
             <th class="nobr" colspan="10">
-              <acronym title="<?php  echo $text[114] ?>"><input class="lmo-formular-button" type="submit" name="spPlan" value="<?php  echo $text[5009]; ?>"></acronym>
+              <abbr title="<?php  echo $text[114] ?>"><input class="lmo-formular-button" type="submit" name="spPlan" value="<?php  echo $text[5009]; ?>"></abbr>
             </th>
         </tr>
         </table>

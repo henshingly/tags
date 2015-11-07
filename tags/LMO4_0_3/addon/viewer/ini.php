@@ -18,7 +18,7 @@
   * $Id$
   */
 
-if (!defined('VIEWER_VERSION'))  define('VIEWER_VERSION','[<acronym title="Viewer 4.0.0 &copy; LMO-Group">&copy;</acronym>]');
+if (!defined('VIEWER_VERSION'))  define('VIEWER_VERSION','[<abbr title="Viewer 4.0.0 &copy; LMO-Group">&copy;</abbr>]');
 require_once(PATH_TO_ADDONDIR."/classlib/ini.php");
 require_once(PATH_TO_ADDONDIR."/viewer/viewer_functions.php");
 

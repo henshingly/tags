@@ -32,13 +32,13 @@ if($file!=""){
   for ($i=1; $i<=$anzteams; $i++) {?>
         <tr>
           <td align="right">
-            <acronym title="<?php echo $text[23]." ".$teams[$i]?>"><?php
+            <abbr title="<?php echo $text[23]." ".$teams[$i]?>"><?php
     if($i!=$selteam){?>
             <a href="<?php echo $addp.$i?>" ><?php echo $teamk[$i]?></a><?php
     } else {
       echo $teamk[$i];
     }
-          ?></acronym>
+          ?></abbr>
           </td>
           <td>&nbsp;<?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?></td>
         </tr><?php

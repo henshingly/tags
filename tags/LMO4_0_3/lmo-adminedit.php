@@ -373,8 +373,8 @@ if ($file != "") {
     $dum2 = "";
   }
   if($_SESSION['lmouserok']==2 || $_SESSION['lmouserokerweitert']==1){ ?> 
-              <acronym title="<?php echo $text[105] ?>"> <?php echo $text[3]?></acronym> <input class="lmo-formular-input" type="text" name="xdatum1" tabindex="1" size="10" maxlength="10" value="<?php echo $datum1[$st-1]; ?>" onChange="dolmoedit()"> <script type="text/javascript">document.write('<a href="#" onclick="opencal(\'xdatum1\',\'<?php echo $dum1; ?>\')" title="<?php echo $text[139]; ?>" onMouseOver="lmoimg(\'d1\',img5)" onMouseOut="lmoimg(\'d1\',img4)"><img src="<?php echo URL_TO_IMGDIR?>/lmo-admin4.gif" name="ximgd1" width="12" height="11" border="0"></a>');</script>
-              <acronym title="<?php echo $text[106] ?>"> <?php echo $text[4]?></acronym> <input class="lmo-formular-input" type="text" name="xdatum2" tabindex="2" size="10" maxlength="10" value="<?php echo $datum2[$st-1]; ?>" onChange="dolmoedit()"> <script type="text/javascript">document.write('<a href="#" onclick="opencal(\'xdatum2\',\'<?php echo $dum2; ?>\')" title="<?php echo $text[139]; ?>" onMouseOver="lmoimg(\'d2\',img5)" onMouseOut="lmoimg(\'d2\',img4)"><img src="<?php echo URL_TO_IMGDIR?>/lmo-admin4.gif" name="ximgd2" width="12" height="11" border="0"></a>');</script><?php
+              <abbr title="<?php echo $text[105] ?>"> <?php echo $text[3]?></abbr> <input class="lmo-formular-input" type="text" name="xdatum1" tabindex="1" size="10" maxlength="10" value="<?php echo $datum1[$st-1]; ?>" onChange="dolmoedit()"> <script type="text/javascript">document.write('<a href="#" onclick="opencal(\'xdatum1\',\'<?php echo $dum1; ?>\')" title="<?php echo $text[139]; ?>" onMouseOver="lmoimg(\'d1\',img5)" onMouseOut="lmoimg(\'d1\',img4)"><img src="<?php echo URL_TO_IMGDIR?>/lmo-admin4.gif" name="ximgd1" width="12" height="11" border="0"></a>');</script>
+              <abbr title="<?php echo $text[106] ?>"> <?php echo $text[4]?></abbr> <input class="lmo-formular-input" type="text" name="xdatum2" tabindex="2" size="10" maxlength="10" value="<?php echo $datum2[$st-1]; ?>" onChange="dolmoedit()"> <script type="text/javascript">document.write('<a href="#" onclick="opencal(\'xdatum2\',\'<?php echo $dum2; ?>\')" title="<?php echo $text[139]; ?>" onMouseOver="lmoimg(\'d2\',img5)" onMouseOut="lmoimg(\'d2\',img4)"><img src="<?php echo URL_TO_IMGDIR?>/lmo-admin4.gif" name="ximgd2" width="12" height="11" border="0"></a>');</script><?php
   }?>
             </th><?php
   if ($goalfaktor!=1) {?>
@@ -383,12 +383,12 @@ if ($file != "") {
             <th colspan="<?php echo $breite-13; ?>">&nbsp;</th><?php
   }
   if($lmtype==0){ ?>
-            <th class="nobr"><acronym title="<?php echo $text[213] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/paragraph.gif" width="17" height="17" alt="<?php echo $text[217]; ?>"></acronym></th><?php
+            <th class="nobr"><abbr title="<?php echo $text[213] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/paragraph.gif" width="17" height="17" alt="<?php echo $text[217]; ?>"></abbr></th><?php
   }?>
-            <th class="nobr"><acronym title="<?php echo $text[112] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/notiz.gif" width="17" height="17" alt="<?php echo $text[218]; ?>"></acronym></th>
-            <th class="nobr"><acronym title="<?php echo $text[263] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/spielbericht.gif" width="17" height="17" alt="<?php echo $text[262]; ?>"></acronym></th><?php
+            <th class="nobr"><abbr title="<?php echo $text[112] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/notiz.gif" width="17" height="17" alt="<?php echo $text[218]; ?>"></abbr></th>
+            <th class="nobr"><abbr title="<?php echo $text[263] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/spielbericht.gif" width="17" height="17" alt="<?php echo $text[262]; ?>"></abbr></th><?php
   if($_SESSION['lmouserok']==2 && $ftest0==1){ ?>
-            <th class="nobr"><acronym title="<?php echo $text['tipp'][57] ?>"><?php echo $text['tipp'][57]; ?></acronym></th><?php
+            <th class="nobr"><abbr title="<?php echo $text['tipp'][57] ?>"><?php echo $text['tipp'][57]; ?></abbr></th><?php
   }?>
           </tr><?php
   if ($lmtype != 0) {
@@ -671,7 +671,7 @@ if ($file != "") {
           </tr>
           <tr>
             <td class="nobr" colspan="<?php echo $breite; ?>" align="center">
-              <acronym title="<?php echo $text[192] ?>"><?php echo $text[191]; ?></acronym>
+              <abbr title="<?php echo $text[192] ?>"><?php echo $text[191]; ?></abbr>
               <select class="lmo-formular-input" name="xstx" onChange="dolmoedit()" tabindex="<?php echo $i.$n;?>12"><?php
   for($y = 0; $y <= $anzst; $y++) {
     echo "<option value=\"".$y."\"";
@@ -697,7 +697,7 @@ if ($file != "") {
           </tr>
           <tr>
             <td colspan="<?php echo $breite; ?>" align="center">
-              <acronym title="<?php echo $text[208] ?>"><?php echo $text[207]; ?></acronym>
+              <abbr title="<?php echo $text[208] ?>"><?php echo $text[207]; ?></abbr>
               <select class="lmo-formular-input" name="xnticker" onChange="dolmoedit()">
                 <option value="1"<?php if($nticker==1){echo " selected";}?>><?php echo $text[181]?></option>
                 <option value="0"<?php if($nticker==0){echo " selected";}?>><?php echo $text[182]?></option>
@@ -706,7 +706,7 @@ if ($file != "") {
           </tr>
           <tr>
             <td colspan="<?php echo $breite; ?>" align="center">
-              <acronym title="<?php echo $text[210] ?>">Tickertext: </acronym><textarea class="lmo-formular-input" name="xnlines" cols="50" rows="4" onChange="dolmoedit()"><?php  if(count($nlines)>0){foreach($nlines as $y){echo $y."\n";}} ?></textarea>
+              <abbr title="<?php echo $text[210] ?>">Tickertext: </abbr><textarea class="lmo-formular-input" name="xnlines" cols="50" rows="4" onChange="dolmoedit()"><?php  if(count($nlines)>0){foreach($nlines as $y){echo $y."\n";}} ?></textarea>
             </td>
           </tr>
           <tr>

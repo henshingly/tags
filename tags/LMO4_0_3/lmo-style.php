@@ -22,7 +22,7 @@ require(dirname(__FILE__)."/init.php");
   margin: 0; 
 }
 
-.lmoMain acronym {
+.lmoMain abbr {
   cursor:help;
   border-bottom:1px dotted;
 }

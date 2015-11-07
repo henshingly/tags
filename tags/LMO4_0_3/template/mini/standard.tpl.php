@@ -4,7 +4,7 @@
   <tr style="<!--Style-->">
     <td align="right"><!--Platz--></td>
     <td align="center"><!--TeamBild--></td>
-    <td><acronym title="<!--TeamLang-->"><!--Team--></acronym></td>
+    <td><abbr title="<!--TeamLang-->"><!--Team--></abbr></td>
     <td align="right"><!--Punkte--></td>
     <td align="right"><!--Tordifferenz--></td>
   </tr>

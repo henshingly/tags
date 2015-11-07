@@ -8,7 +8,7 @@
 .nextgame .result  {font-weight:bold;font-size:160%;}
 .nextgame ul {margin:1em 0;padding:0;list-style:none;}
 .nextgame caption { background:#69c;color:#fff;font-weight:bold;margin-bottom:0.3em;padding:0.2em;}
-.nextgame acronym { cursor:help;border-bottom:1px dotted;color:blue; }
+.nextgame abbr { cursor:help;border-bottom:1px dotted;color:blue; }
 .nextgame small{font-size:11px;}
 </style>
 <table class="nextgame">

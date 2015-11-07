@@ -201,12 +201,12 @@ if ($file != "" && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
         <input type="hidden" name="st" value="<?php echo $st; ?>">
         <table class="lmoInner" cellspacing="0" cellpadding="0" border="0">
           <tr>
-            <th class="nobr" align="left"><acronym title="<?php echo $text[125].", ".$text[572].", ".$text[126]?>"><?php echo $text[127]; ?></acronym>&nbsp;</th>
+            <th class="nobr" align="left"><abbr title="<?php echo $text[125].", ".$text[572].", ".$text[126]?>"><?php echo $text[127]; ?></abbr>&nbsp;</th>
 <?php 
 	if ($lmtype==0) { 
 ?>
-            <th class="nobr" colspan="2" align="center"><acronym title="<?php echo $text[131] ?>"><?php echo $text[542]."/".$text[543]; ?></acronym>&nbsp;</th>
-            <th class="nobr" align="center"><acronym title="<?php echo $text[523] ?>"><?php echo $text[524]; ?></acronym>&nbsp;</th>
+            <th class="nobr" colspan="2" align="center"><abbr title="<?php echo $text[131] ?>"><?php echo $text[542]."/".$text[543]; ?></abbr>&nbsp;</th>
+            <th class="nobr" align="center"><abbr title="<?php echo $text[523] ?>"><?php echo $text[524]; ?></abbr>&nbsp;</th>
 <?php 
 	} 
 ?>
@@ -215,12 +215,12 @@ if ($file != "" && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
 	if ($lmtype==0) { 
 /** Titel Notiz */
 ?> 
-						<th class="nobr" align="center"><acronym title="<?php echo $text[405] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/notiz.gif" width="17" height="17" alt="<?php echo $text[404]; ?>"></acronym></th>
+						<th class="nobr" align="center"><abbr title="<?php echo $text[405] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/notiz.gif" width="17" height="17" alt="<?php echo $text[404]; ?>"></abbr></th>
 <?php
 	} 
 /** Titel Homepage */	
 ?>
-            <th class="nobr" align="center"><acronym title="<?php echo $text[130] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/spielbericht.gif" width="17" height="17" alt="<?php echo $text[129]; ?>"></acronym></th>
+            <th class="nobr" align="center"><abbr title="<?php echo $text[130] ?>"><img src="<?php echo URL_TO_IMGDIR;?>/spielbericht.gif" width="17" height="17" alt="<?php echo $text[129]; ?>"></abbr></th>
             <th class="nobr" colspan="<?php echo $breite; ?>" align="center">&nbsp;</th>
           </tr>
 <?php

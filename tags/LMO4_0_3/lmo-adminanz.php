@@ -79,7 +79,7 @@ if($file!="" && ($_SESSION['lmouserok']==2 || $_SESSION['lmouserokerweitert']==1
           </tr>
           <tr>
             <td width="20">&nbsp;</td>
-            <td align="right"><acronym title="<?php echo $text[275] ?>"><?php echo $text[274]; ?></acronym></td>
+            <td align="right"><abbr title="<?php echo $text[275] ?>"><?php echo $text[274]; ?></abbr></td>
             <td align="right"><input class="lmo-formular-input" type="text" name="xanzst" size="3" maxlength="3" value="<?php echo $anzst?>" onChange="lmoanzstauf('xanzst',0)" onKeyDown="lmoanzstclk('xanzst',event.keyCode)"></td>
             <td align="center">
               <table cellpadding="0" cellspacing="0" border="0">
@@ -94,7 +94,7 @@ if($file!="" && ($_SESSION['lmouserok']==2 || $_SESSION['lmouserokerweitert']==1
           </tr>
           <tr>
             <td width="20">&nbsp;</td>
-            <td align="right"><acronym title="<?php echo $text[278] ?>"><?php echo $text[277]; ?></acronym></td>
+            <td align="right"><abbr title="<?php echo $text[278] ?>"><?php echo $text[277]; ?></abbr></td>
             <td align="right"><input class="lmo-formular-input" type="text" name="xanzsp" size="2" maxlength="2" value="<?php echo $anzsp?>" onChange="lmoanzspauf('xanzsp',0)" onKeyDown="lmoanzspclk('xanzsp',event.keyCode)"></td>
             <td align="center">
               <table cellpadding="0" cellspacing="0" border="0">

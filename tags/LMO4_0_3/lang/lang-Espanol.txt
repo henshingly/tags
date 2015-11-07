@@ -515,7 +515,7 @@
 514=¿Quieres mostrar las estadísticas?
 515=abs.
 516=Total
-517=<acronym title="Promedio">~</acronym>
+517=<abbr title="Promedio">~</abbr>
 518=%
 519=Selección de idioma
 520=¿Quieres mostrar banderas nacionales para la seleccion del idioma?

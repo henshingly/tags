@@ -28,7 +28,7 @@ h4 {font-weight:bold; margin:0.5em 0 1em 1em; color:white; background:#0266AE; f
 .error {font-weight: bolder; color: red; padding: 3px; }
 #paypal dl {margin:0.3em auto; }
 caption {font-weight: bold; font-size: 110%; }
-acronym {cursor:help; border-bottom:1px dotted; }
+abbr {cursor:help; border-bottom:1px dotted; }
 #content img {border:0; }
 /* {font-size: 105%; font-weight: bolder; color: #0266AE; padding: 2px 5px; background-color: #D7E6FF; margin-top:-10px; }*/
 .active {font-weight: bold; background: url(../media/navpfeil_submenu.gif) no-repeat 3px; }

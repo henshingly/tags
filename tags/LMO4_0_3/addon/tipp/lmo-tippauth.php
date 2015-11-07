@@ -119,7 +119,7 @@ if ($action == "tipp") {
           </tr><?php
       }?>
           <tr>
-            <td align="right"><acronym title="<?php  echo $text[307] ?>"><?php  echo " ".$text['tipp'][23]; ?></acronym></td>
+            <td align="right"><abbr title="<?php  echo $text[307] ?>"><?php  echo " ".$text['tipp'][23]; ?></abbr></td>
             <td align="left"><input class="lmo-formular-input" type="text" name="xtippername" size="16" maxlength="32" value="<?php  echo $_SESSION['lmotippername']; ?>"></td>
           </tr><?php
       // Passwort falsch 
@@ -129,7 +129,7 @@ if ($action == "tipp") {
           </tr><?php
       }?>
           <tr>
-            <td align="right"><acronym title="<?php  echo $text[309] ?>"><?php  echo " ".$text[308]; ?></acronym></td>
+            <td align="right"><abbr title="<?php  echo $text[309] ?>"><?php  echo " ".$text[308]; ?></abbr></td>
             <td align="left"><input class="lmo-formular-input" type="password" name="xtipperpass" size="16" maxlength="32" value="<?php  echo $_SESSION['lmotipperpass']; ?>"></td>
           </tr>
           <tr>
@@ -210,7 +210,7 @@ if ($action == "tipp") {
           </tr><?php
             }?>
           <tr>
-            <td align="right"><acronym title="<?php  echo $text[307] ?>"><?php  echo " ".$text['tipp'][23]." ".$text['tipp'][218]." ".$text['tipp'][219]; ?></acronym></td>
+            <td align="right"><abbr title="<?php  echo $text[307] ?>"><?php  echo " ".$text['tipp'][23]." ".$text['tipp'][218]." ".$text['tipp'][219]; ?></abbr></td>
             <td align="left"><input class="lmo-formular-input" type="text" name="xtippername2" size="16" maxlength="32" value="<?php  echo $xtippername2; ?>"></td>
           </tr>
           <tr>

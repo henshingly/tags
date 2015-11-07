@@ -71,7 +71,7 @@ if ($file != "") {
   for($i = 1; $i <= floor($anzteams/2); $i++) {?>
         <tr>
           <td align="right">
-            <acronym title="<?php echo $text[23]." ".$teams[$i]?>">
+            <abbr title="<?php echo $text[23]." ".$teams[$i]?>">
             	<?php
     if($i!=$selteam){?>
             <a href="<?php echo $addp.$i?>" ><?php echo $teamk[$i]?></a>
@@ -79,7 +79,7 @@ if ($file != "") {
     } else {
       echo $teamk[$i];
     }
-       ?></acronym>
+       ?></abbr>
           </td>          
           <td>&nbsp;<?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?>&nbsp;</td>
         </tr><?php
@@ -152,8 +152,8 @@ if ($file != "") {
           for($n = 0; $n < $modus[$j]; $n++) {
             if ($datm == 1) {
               if ($mterm[$j][$i][$n] > 0) {
-                $dumn1 = "<acronym title=\"".strftime($datf, $mterm[$j][$i][$n])."\">";
-                $dumn2 = "</acronym>";
+                $dumn1 = "<abbr title=\"".strftime($datf, $mterm[$j][$i][$n])."\">";
+                $dumn2 = "</abbr>";
               } else {
                 $dumn1 = "";
                 $dumn2 = "";
@@ -213,7 +213,7 @@ if ($file != "") {
         <tr>
           <td>&nbsp;<?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?></td>
           <td align="left">
-            <acronym title="<?php echo $text[23]." ".$teams[$i]?>">
+            <abbr title="<?php echo $text[23]." ".$teams[$i]?>">
             	<?php
     if($i!=$selteam){?>
             <a href="<?php echo $addp.$i?>"><?php echo $teamk[$i]?></a>
@@ -221,7 +221,7 @@ if ($file != "") {
     } else {
       echo $teamk[$i];
     }
-       ?></acronym>
+       ?></abbr>
           </td>
         </tr><?php
   }?>

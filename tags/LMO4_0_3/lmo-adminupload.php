@@ -48,7 +48,7 @@ if (($action=="admin") && ($todo=="upload") && ($_SESSION['lmouserok']==2)) {
       <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <table class="lmoInner" cellspacing="0" cellpadding="0" border="0">
           <tr>
-            <td align="center"><acronym title="<?php echo $text[302] ?>"><?php echo $text[300]; ?>:</acronym></td>
+            <td align="center"><abbr title="<?php echo $text[302] ?>"><?php echo $text[300]; ?>:</abbr></td>
           </tr>
           <tr>
             <td align="center">              
