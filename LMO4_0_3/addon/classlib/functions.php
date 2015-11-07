@@ -40,7 +40,7 @@ function const_array($constant) {
  * <BR>SM Straf-/Bonuspunkte rechts (nur wenn es Minuspunkte gibt)
  * <BR>TOR1 Straf-/Bonustore links
  * <BR>TOR2 Straf-/Bonustore rechts
- * <BR>STDA ab wann zählt Strafe/Bonus
+ * <BR>STDA ab wann zÃ¤hlt Strafe/Bonus
  *
  * @author    Tim Schumacher <webobjects@gmx.net>
  * @package classLib
@@ -77,7 +77,7 @@ function const_array($constant) {
 
 
 /**
- * Gibt ein multidim Array zurück, das die sortierten partien enthält,
+ * Gibt ein multidim Array zurÃ¼ck, das die sortierten partien enthÃ¤lt,
  * <BR>Aufbau array[0..n](
  * <BR>			'date'  [timestamp des Spieldatums]
  * <BR> 		'spTag'  [integer],
@@ -119,7 +119,7 @@ function &gamesSorted ($liga,$roundSort=true) {
 }
 
 /**
- * Gibt ein multidim Array zurück, das die sortierten partien einer bestimmten mannschaft enthält,
+ * Gibt ein multidim Array zurÃ¼ck, das die sortierten partien einer bestimmten mannschaft enthÃ¤lt,
  * <BR>Aufbau array[0..n](
  * <BR>			'spieltag' [Object spieltag]
  * <BR>  		'partie' [Object partie] )
@@ -162,8 +162,8 @@ function &gamesSortedForTeam ($liga,$team=null,$roundSort=true, $sortDir = SORT_
 	else {
   	array_multisort($sort_1,$sortDir,$games);
   }
-	unset($games['date']); // wurde nur zum sortieren benötigt
-	unset($games['spTag']);// wurde nur zum sortieren benötigt
+	unset($games['date']); // wurde nur zum sortieren benÃ¶tigt
+	unset($games['spTag']);// wurde nur zum sortieren benÃ¶tigt
 	return $games;
 }
 

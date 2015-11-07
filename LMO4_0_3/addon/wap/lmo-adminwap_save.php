@@ -28,7 +28,7 @@ if($result) {
   $file2=$file;
 
   //ob_start();
-  /*Zus�tzliche Auswertungen*/
+  /*Zusï¿½tzliche Auswertungen*/
   if ($einsavehtml==1) {
     if (file_exists("lmo-savehtml.php")) {
       include(PATH_TO_LMO."/lmo-savehtml.php");
@@ -75,5 +75,5 @@ if($result) {
   echo "Speicherung fehlgeschlagen";
 }?>
 	</p>
-	<p><a href="<?php  echo $_SERVER['PHP_SELF']."?wap_file=$file2"; ?>&amp;st=<?php echo $st?>&amp;op=day">zur�ck</a></p>
+	<p><a href="<?php  echo $_SERVER['PHP_SELF']."?wap_file=$file2"; ?>&amp;st=<?php echo $st?>&amp;op=day">zurï¿½ck</a></p>
 </card>

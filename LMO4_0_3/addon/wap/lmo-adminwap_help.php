@@ -8,5 +8,5 @@ for($j=0;$j<$anzteams;$j++){
 	  ?><b><?php echo $teamk[$j1]?></b>=<?php echo $teams[$j1]?><br/>---<br/><?php
 }?> </small>
   </p>
-  <p><a href='<?php echo $_SERVER['PHP_SELF']."?wap_file=$file"?>&amp;op=nav'>zur�ck</a></p>
+  <p><a href='<?php echo $_SERVER['PHP_SELF']."?wap_file=$file"?>&amp;op=nav'>zurï¿½ck</a></p>
 </card>

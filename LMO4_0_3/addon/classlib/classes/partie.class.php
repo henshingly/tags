@@ -74,9 +74,9 @@ class partie {
   /**
    * Spielende
    * Neu ab 2.2 Spielende
-   * 0 = regul�res Ende
-   * 2 = Verl�ngerung
-   * 1 = 11-Meter-Schie�en
+   * 0 = regulï¿½res Ende
+   * 2 = Verlï¿½ngerung
+   * 1 = 11-Meter-Schieï¿½en
    * @var integer
    * @access public
   */
@@ -100,37 +100,37 @@ class partie {
 
 
   /**
-  * Gibt Tore der Heimmanschaft f�r die Bildschirmausgabe zur�ck.
+  * Gibt Tore der Heimmanschaft fï¿½r die Bildschirmausgabe zurï¿½ck.
   *
-  * Die Ausgabe von negativen Werten wird zur Bildschirmausgabe unterdr�ckt.
+  * Die Ausgabe von negativen Werten wird zur Bildschirmausgabe unterdrï¿½ckt.
   * So werden negative Ergebnisse bzw Ergebnisse von Partien die noch nicht
-  * stattfanden durch den Parameterwert f�r $leer angezeigt.
+  * stattfanden durch den Parameterwert fï¿½r $leer angezeigt.
   * @access public
-  * @param  string $leer Der R�ckgabewert wenn Ergebnis vorhanden ist
+  * @param  string $leer Der Rï¿½ckgabewert wenn Ergebnis vorhanden ist
   * @return string
   */
   function hToreString($leer="_") {
     if ($this->hTore == -1) $str = $leer;
     elseif ($this->hTore == -2) $str = "0*"; // Markieren als greenTable
-    elseif ($this->gTore == -2) $str = "0"; // Wenn Gast der Sieg zugesprochen wurde O Tore f�r Heim anzeigen
+    elseif ($this->gTore == -2) $str = "0"; // Wenn Gast der Sieg zugesprochen wurde O Tore fï¿½r Heim anzeigen
     else $str = $this->hTore;
     return $str;
   }
 
   /**
-  * Gibt Tore der Gastmannschaft f�r die Bildschirmausgabe zur�ck.
+  * Gibt Tore der Gastmannschaft fï¿½r die Bildschirmausgabe zurï¿½ck.
   *
-  * Die Ausgabe von negativen Werten wird zur Bildschirmausgabe unterdr�ckt.
+  * Die Ausgabe von negativen Werten wird zur Bildschirmausgabe unterdrï¿½ckt.
   * So werden negative Ergebnisse bzw Ergebnisse von Partien die noch nicht
-  * stattfanden durch den Parameterwert f�r $leer angezeigt.
+  * stattfanden durch den Parameterwert fï¿½r $leer angezeigt.
   * @access public
-  * @param  string $leer Der R�ckgabewert wenn kein Ergebnis vorhanden ist
+  * @param  string $leer Der Rï¿½ckgabewert wenn kein Ergebnis vorhanden ist
   * @return string
   */
   function gToreString($leer = "_") {
     if ($this->gTore == -1) $str = $leer;
     elseif ($this->gTore == -2) $str = "0*"; // Markieren als greenTable
-    elseif ($this->hTore == -2) $str = "0"; // Wenn Heim der Sieg zugesprochen wurde O Tore f�r Gast anzeigen
+    elseif ($this->hTore == -2) $str = "0"; // Wenn Heim der Sieg zugesprochen wurde O Tore fï¿½r Gast anzeigen
     else $str = $this->gTore;
     return $str;
   }
@@ -172,7 +172,7 @@ class partie {
 
 
   /**
-  * Gibt das SpielDatum als formatierten String zur�ck. "d.m.Y" = Standard
+  * Gibt das SpielDatum als formatierten String zurï¿½ck. "d.m.Y" = Standard
   *
   * @access public
   * @param string leer Ausgabe, falls kein Datum vorhanden
@@ -185,7 +185,7 @@ class partie {
   }
 
   /**
-  * Gibt die Anfangszeit als formatierten String zur�ck "Stunden:Minuten" = Standard
+  * Gibt die Anfangszeit als formatierten String zurï¿½ck "Stunden:Minuten" = Standard
   *
   * @access public
   * @param string leer Ausgabe, falls keine Zeit vorhanden
@@ -199,7 +199,7 @@ class partie {
   }
 
   /**
-  * Gibt f�r eine Partie aus, ob Verl�ngerung oder 11/7-Meterschie�en
+  * Gibt fï¿½r eine Partie aus, ob Verlï¿½ngerung oder 11/7-Meterschieï¿½en
   *
   * @access public
   * @param array text Referenz auf Sprachvariablen

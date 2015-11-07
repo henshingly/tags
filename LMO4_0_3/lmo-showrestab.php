@@ -109,7 +109,7 @@ if (isset($file) && $file != "") {
   </tr><?php
   }
   
-  /** Vor und Zur�ck-Pfeile*/?>
+  /** Vor und Zurï¿½ck-Pfeile*/?>
   <tr>
     <td>
       <table width="100%" cellspacing="0" cellpadding="0" border="0">

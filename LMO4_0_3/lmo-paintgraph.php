@@ -112,7 +112,7 @@ for($i = 1; $i <= $pgst; $i++) {
   imagestring($image, 1, 31-$lmo_faktorhorizontal+$i*$lmo_faktorhorizontal, 30-$lmo_faktorvertikal+(($pgteams+1) * $lmo_faktorvertikal), $j, $farbe_a);  //horizontale Spieltagsbeschriftung unten
 }
 
-//K�stchen
+//Kï¿½stchen
 for($i = 0; $i < $pgteams; $i++) {
   imagerectangle($image, 29, 28+$i*$lmo_faktorvertikal, (29-$lmo_faktorhorizontal)+(($pgst+1) * $lmo_faktorhorizontal), 28+$lmo_faktorvertikal+($i*$lmo_faktorvertikal), $farbe_b); //horizontal
 }

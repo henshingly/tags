@@ -337,17 +337,17 @@ if($newpage==2){
     $ftype=".l98";
     require(PATH_TO_LMO."/lmo-adminnewdir.php"); ?><br><?php
     
-    // �nderungen s.janke@tu-bs.de - Beginn
+    // ï¿½nderungen s.janke@tu-bs.de - Beginn
     if ($xteams>=4) {
       $soll_anzsp = floor($xteams/2);
       $soll_anzst = floor($xteams*($xteams-1)/$soll_anzsp);
-      // Pr�fe: 1. Stimmt die Anzahl der Spiele pro Spieltag?
-      //             2. Ist die Spieltaganzahl gleich Hin- und R�ckrunde oder nur Hinrunde?
+      // Prï¿½fe: 1. Stimmt die Anzahl der Spiele pro Spieltag?
+      //             2. Ist die Spieltaganzahl gleich Hin- und Rï¿½ckrunde oder nur Hinrunde?
       if(($xanzsp==$soll_anzsp) && (($xanzst==$soll_anzst) || ($xanzst==$soll_anzst/2))){ ?>
               <input type="radio" name="xprogram" value="random"<?php  if($xprogram=="random"){echo " checked";} ?> onChange="dolmoedit()"><?php echo $text[288];
       }
     }
-    // �nderungen s.janke@tu-bs.de - Ende
+    // ï¿½nderungen s.janke@tu-bs.de - Ende
     
     ?>
             </td>

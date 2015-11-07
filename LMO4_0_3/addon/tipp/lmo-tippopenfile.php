@@ -71,7 +71,7 @@ for($i = 1; $i <= count($tippdaten); $i++) {
   $op2 = substr($dum[0], 0, 5);
   $op3 = substr($dum[0], 5)-1;
   if ($op3 == $st-1) {
-    ////////////////////////////////////////////////// nur der ben�tigte Spieltag wird eingelesen
+    ////////////////////////////////////////////////// nur der benï¿½tigte Spieltag wird eingelesen
     $jksp = $dum[3];
     $op4 = substr($dum[1], 2)-1;
     $op6 = substr($dum[1], 2, -1)-1;
@@ -124,7 +124,7 @@ for($i = 1; $i <= count($tippdaten); $i++) {
         }
       }
     } // ende else
-  } // ende nur ben�tigter st
+  } // ende nur benï¿½tigter st
 } // ende for($i=1;$i<=count($tippdaten);$i++)
 clearstatcache();
 

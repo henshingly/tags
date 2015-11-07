@@ -290,7 +290,7 @@ if ($file != "" && ($_SESSION['lmouserok'] == 2 || $_SESSION['lmouserokerweitert
             </td>
 <?php
 		if ($lmtype==0) { 
-/** Mannschaft l�schen */
+/** Mannschaft lï¿½schen */
 ?>
             <td class="nobr">
               <a href='<?php echo $addz.$i; ?>' onclick="return dteamlmolink(this.href,'<?php echo $teams[$i]; ?>');" title="<?php echo $text[334]; ?>">

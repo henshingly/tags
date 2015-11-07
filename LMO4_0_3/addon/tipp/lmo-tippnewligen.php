@@ -83,7 +83,7 @@ if (($action == "tipp") && ($todo == "newligen")) {
   </tr><?php
   }
   
-  if($newpage==1 || $i==0){ /* zur�ck zur �bersicht */?>
+  if($newpage==1 || $i==0){ /* zurï¿½ck zur ï¿½bersicht */?>
   <tr>
     <td class="lmoFooter" align="right"><a href="<?php echo $_SERVER['PHP_SELF']."?action=tipp&amp;todo=" ?>"><?php echo $text[5]." ".$text['tipp'][1]; ?></a></td>
   </tr><?php

@@ -41,7 +41,7 @@ if ($file!="") {
     </p>
     <p align="center"><?php
   if($st>1){?>
-    <a href="<?php echo $_SERVER['PHP_SELF']?>?wap_file=<?php echo $file?>&amp;op=day&amp;st=<?php echo $st_before?>">�</a>&#160;|<?php
+    <a href="<?php echo $_SERVER['PHP_SELF']?>?wap_file=<?php echo $file?>&amp;op=day&amp;st=<?php echo $st_before?>">ï¿½</a>&#160;|<?php
   }?>
     <anchor>Speichern
 	    <go href="<?php echo $_SERVER['PHP_SELF']?>" method="post"><?php
@@ -57,7 +57,7 @@ if ($file!="") {
   }?>	</go> 
     </anchor><?php
   if($st<$anzst){?>
-    |&#160;<a href="<?php echo $_SERVER['PHP_SELF']?>?wap_file=<?php echo $file?>&amp;op=day&amp;st=<?php echo $st_next?>">�</a>&#160;<?php
+    |&#160;<a href="<?php echo $_SERVER['PHP_SELF']?>?wap_file=<?php echo $file?>&amp;op=day&amp;st=<?php echo $st_next?>">ï¿½</a>&#160;<?php
   }?>
   </p>
   <p><a href="<?php echo $_SERVER['PHP_SELF']."?wap_file=$file";?>&amp;op=table&amp;st=<?php echo $st?>"><?php echo $text[16];?></a> | <a href="<?php echo $_SERVER['PHP_SELF']."?wap_file=$file";?>&amp;op=help&amp;st=<?php echo $st; ?>"><?php echo $text[20];?></a></p><?php

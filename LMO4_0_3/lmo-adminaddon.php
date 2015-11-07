@@ -23,11 +23,11 @@ isset($_POST['save'])?$save=$_POST['save']:$save=0;
 isset($_REQUEST['show'])?$show=$_REQUEST['show']:$show=0;
 if($save==1){
   // Es werden alle Addon-Konfigurationen dargestellt als Texteingabe behandelt
-  // und anschliessend abgespeichert - Es erfolgen keine Pr�fungen auf Variablentyp und -wert
+  // und anschliessend abgespeichert - Es erfolgen keine Prï¿½fungen auf Variablentyp und -wert
   foreach($cfgarray as $addon_name => $addon_cfg) {    //Alle Addons abklappern
     if (is_array($addon_cfg)) {                 //Addon gefunden 
       foreach ($addon_cfg as $cfg_name => $cfg_value) {
-        if (isset($_POST["x$cfg_name"])) ${$addon_name."_".$cfg_name}=trim($_POST["x$cfg_name"]);    //Alle Post-vars mit x davor werden abgefragt und als Variable mit Pr�fix gespeichert
+        if (isset($_POST["x$cfg_name"])) ${$addon_name."_".$cfg_name}=trim($_POST["x$cfg_name"]);    //Alle Post-vars mit x davor werden abgefragt und als Variable mit Prï¿½fix gespeichert
       }
     }
   }

@@ -55,7 +55,7 @@ class liga {
 */
   var $spieltage;
 /**
- * Vollständiger Pfad und Dateiname der Liga
+ * VollstÃ¤ndiger Pfad und Dateiname der Liga
  * @var string
  * @access public
 */
@@ -87,7 +87,7 @@ class liga {
   }
 
 /**
- * Gibt die Anzahl der teilnehmenden Mannschaften zurück
+ * Gibt die Anzahl der teilnehmenden Mannschaften zurÃ¼ck
  *
 */
   function teamCount() {
@@ -95,7 +95,7 @@ class liga {
   }
 
 /**
- * Fügt ein Teamobjekt zur Liga hinzu
+ * FÃ¼gt ein Teamobjekt zur Liga hinzu
  * @access private
 */
   function addTeam(&$neuesTeam) {
@@ -103,7 +103,7 @@ class liga {
   }
 
 /**
- * Gibt die Referenz auf das Teamobjekt zu einem Teamnamen zurück
+ * Gibt die Referenz auf das Teamobjekt zu einem Teamnamen zurÃ¼ck
  *
 */
   function &teamForName($teamName) {
@@ -121,7 +121,7 @@ class liga {
   }
 
 /**
- * Gibt die Referenz auf das Teamobjekt zu einer Teamnummer zurück
+ * Gibt die Referenz auf das Teamobjekt zu einer Teamnummer zurÃ¼ck
  *
 */
   function &teamForNumber($teamNumber) {
@@ -132,7 +132,7 @@ class liga {
   }
 
 /**
- * Gibt ein Array mit Strings zurück, in dem sämtliche Mannschaftsnamen enthalten sind
+ * Gibt ein Array mit Strings zurÃ¼ck, in dem sÃ¤mtliche Mannschaftsnamen enthalten sind
  *
 */
   function teamNames() {
@@ -152,7 +152,7 @@ class liga {
   }
 
 /**
- * Fügt eine Partie zur Liga hinzu
+ * FÃ¼gt eine Partie zur Liga hinzu
  *
  * @access private
 */
@@ -160,7 +160,7 @@ class liga {
     $this->partien[] = $neuePartie;
   }
 /**
- * Gibt die Referenz auf das Partieobjekt zu einer Nummer zurück
+ * Gibt die Referenz auf das Partieobjekt zu einer Nummer zurÃ¼ck
  *
 */
   function &partieForNumber($number) {
@@ -172,7 +172,7 @@ class liga {
   }
 
 /**
- * Gibt die Referenz auf das Partieobjekt zurück, an der die Mannschaften
+ * Gibt die Referenz auf das Partieobjekt zurÃ¼ck, an der die Mannschaften
  * aufeinandertreffen
 */
     function &partieForTeams(&$heim,&$gast) {
@@ -187,9 +187,9 @@ class liga {
   }
 
 /**
- * Gibt ein Array von Referenzen auf die Partieobjekte zurück, an denen die Mannschaften
+ * Gibt ein Array von Referenzen auf die Partieobjekte zurÃ¼ck, an denen die Mannschaften
  * aufeinandertreffen - wenn der dritte Parameter both gesetzt ist, werden Partien
- * a vs b UND b vs a zurückgegeben
+ * a vs b UND b vs a zurÃ¼ckgegeben
 */
   function &allPartieForTeams(&$heim,&$gast,$both=FALSE) {
     $result = array();
@@ -202,7 +202,7 @@ class liga {
   }
   
 /**
- * Gibt die Referenz auf das Partieobjekt zurück, an der die Mannschaften
+ * Gibt die Referenz auf das Partieobjekt zurÃ¼ck, an der die Mannschaften
  * mit den anzugebenen Namen aufeinandertreffen
 */
     function &partieForTeamNames($heimName,$gastName) {
@@ -220,7 +220,7 @@ class liga {
   }
 
 /**
- * Fügt einen Spieltag zur Liga hinzu
+ * FÃ¼gt einen Spieltag zur Liga hinzu
  *
  * @access private
  *
@@ -230,7 +230,7 @@ class liga {
   }
 
 /**
- * Gibt die Anzahl der Spieltage der Liga zurück
+ * Gibt die Anzahl der Spieltage der Liga zurÃ¼ck
  *
  * @access public
  * @return interger Anzahl der Spieltage
@@ -241,7 +241,7 @@ class liga {
   }
 
 /**
- * Gibt die Referenz des Spieltags mit der angegebenen Nummer zurück
+ * Gibt die Referenz des Spieltags mit der angegebenen Nummer zurÃ¼ck
  *
  * @access public
  * @return object Spieltag der Nummer
@@ -263,7 +263,7 @@ class liga {
   }
 
 /**
- * Gibt die Referenz des aktuellen Spieltags zurück
+ * Gibt die Referenz des aktuellen Spieltags zurÃ¼ck
  *
  * @access public
  * @return object Spieltag der Nummer
@@ -321,7 +321,7 @@ class liga {
   }
 
 /**
- * Gibt das FileDatum als String zurück. Wird keine Formatierung angegeben,
+ * Gibt das FileDatum als String zurÃ¼ck. Wird keine Formatierung angegeben,
  * wird die Standardformatierung aus den Ligaoptionen verwendet
  * @access public
  * @return String
@@ -333,7 +333,7 @@ class liga {
   }
 
 /**
- * Lädt das angegebene LigaFile und erstellt den Objektbaum
+ * LÃ¤dt das angegebene LigaFile und erstellt den Objektbaum
  *
  * @access public
  * @return Boolean
@@ -458,7 +458,7 @@ class liga {
               $partie = new partie($pCounter,$zeit,$notiz,$heimTeam,$gastTeam,$theim,$tgast,"","");
               $partie->reportUrl = $reportUrl;
               $partie->spielEnde = $spEnde;
-              $this->addPartie($partie);  // Partien werden zusätzlich zu der Liga hinzugefügt
+              $this->addPartie($partie);  // Partien werden zusÃ¤tzlich zu der Liga hinzugefÃ¼gt
               $spieltag->addPartie($partie);
             }
             $pCounter++;
@@ -514,12 +514,12 @@ class liga {
     $aktSpTag = 1;
     $maxSp = 0;
     if ($this->options->keyValues['Type']==1){
-      echo "<font color=\"#ff0000\"><b>classlib Addon</b> Pokalturniere können noch nicht gespeichert werden</font>";
+      echo "<font color=\"#ff0000\"><b>classlib Addon</b> Pokalturniere kÃ¶nnen noch nicht gespeichert werden</font>";
       exit;
     }
     $datei = fopen($fileName,"w");
     if (!$datei) {
-      echo "<font color=\"#ff0000\">Kann File zum Schreiben nicht öffnen (Schreibrechte?) CLASS liga function writeFile()</font>";
+      echo "<font color=\"#ff0000\">Kann File zum Schreiben nicht Ã¶ffnen (Schreibrechte?) CLASS liga function writeFile()</font>";
       exit;
     }else if ($datei and $message==1){
       echo "<font color=\"#008800\">Writing File $fileName (".$datei.")</font>";
@@ -561,7 +561,7 @@ class liga {
       }
     }
 
-		// Jetzt die unbekannten Sectionen einfügen
+		// Jetzt die unbekannten Sectionen einfÃ¼gen
 		foreach ($this->sections as $section=>$keys) {
       foreach ($keys as $key=>$val) {
 				$iniData[$section][$key] = $val;
@@ -662,10 +662,10 @@ class liga {
     }
   }
 /**
- * Berechnet den Tabellenstand für einen Spieltag
+ * Berechnet den Tabellenstand fÃ¼r einen Spieltag
  *
- * Berechnet den Tabellenstand für einen Spieltag und gibt
- * ein mehrdimensionales Array zurück:
+ * Berechnet den Tabellenstand fÃ¼r einen Spieltag und gibt
+ * ein mehrdimensionales Array zurÃ¼ck:
  *    <BR>mit n = anzahlTeams - 1;
  *    <BR>$myArray[0..n]["pos"]        Tabellenposition
  *    <BR>$myArray[0..n]["team"]       Referenz auf Team
@@ -726,17 +726,17 @@ function calcTable($spTag=1) {
         if ($heimCount>-1 and $gastCount>-1) break;
         $count++;
       }
-      // Strafen berücksichtigen
+      // Strafen berÃ¼cksichtigen
       strafen($tableArray[$heimCount],$spTagCount,$minusPkte);
       strafen($tableArray[$gastCount],$spTagCount,$minusPkte);
 
       if ($partie->hTore>-1) {
-        // Tore für Heim hinzufügen
+        // Tore fÃ¼r Heim hinzufÃ¼gen
         $tableArray[$heimCount]["pTor"] += $partie->hTore;
         $tableArray[$gastCount]["mTor"] += $partie->hTore;
       }
       if ($partie->gTore>-1) {
-        // Tore für Gast hinzufügen
+        // Tore fÃ¼r Gast hinzufÃ¼gen
         $tableArray[$gastCount]["pTor"] += $partie->gTore;
         $tableArray[$heimCount]["mTor"] += $partie->gTore;
       }
@@ -792,7 +792,7 @@ function calcTable($spTag=1) {
               $tableArray[$heimCount]["ser3"] =0;
               $tableArray[$gastCount]["ser3"] =0;
           }
-          else { // nur während der Entwicklung
+          else { // nur wÃ¤hrend der Entwicklung
               echo "Fehler in Punkteermittlung (Normales Ergebnis)";
             echo $partie->showDetailsHTML();
             }
@@ -863,7 +863,7 @@ function calcTable($spTag=1) {
     $tableArray[$i]["pos"]=$i+1;
     $i++;
   }
-  // Hier fehlt noch die Prüfung  wie bei Pkt und Torgleichen Teams
+  // Hier fehlt noch die PrÃ¼fung  wie bei Pkt und Torgleichen Teams
   // verfahren werden soll (Direkter Vergleich etc)
   return $tableArray;
 }

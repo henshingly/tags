@@ -139,7 +139,7 @@ if ($file != "" && $todo == "einsicht" && $tipp_tippeinsicht == 1) {
       echo $text['tipp'][188];
     } /* Tipptendenz*/
     elseif($l == ($ende+1) && $anztipper > 0 && $tipp_tippmodus == 1) {
-      echo "�-".$text['tipp'][30];
+      echo "ï¿½-".$text['tipp'][30];
     } /* Durchschnittstipp */?>
           </th><?php
     $punktetipper = 0;

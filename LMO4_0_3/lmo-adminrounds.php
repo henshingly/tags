@@ -154,7 +154,7 @@ if(($file!="") && ($_SESSION['lmouserok']==2)){
         } // if
       }   // foreach ($liga->teams as $team)
     }
-    // teamnummern die an einem spieltag antreten. f�r eine js-Funktion, die verhindert
+    // teamnummern die an einem spieltag antreten. fï¿½r eine js-Funktion, die verhindert
     // das ein team mehrmals an einem spieltag antreten muss js-funktion muss noch gebaut werden
     //  echo "<input type='hidden' name='sptext_".$spTag->nr."' value='".implode(",",$teamArray)."'>";
   }      // foreach ($spTag->partien as $partie)

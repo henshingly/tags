@@ -40,10 +40,10 @@ if($file!=""){?>
   }
   echo "</table></p><p>";
   if ($st > 1) {
-    echo "<a href=\"".$_SERVER['PHP_SELF'].'?wap_file='.$file."&amp;op=day&amp;st=".$st_before."\">�</a>&#160;\n";
+    echo "<a href=\"".$_SERVER['PHP_SELF'].'?wap_file='.$file."&amp;op=day&amp;st=".$st_before."\">ï¿½</a>&#160;\n";
   }
   if ($st < $anzst) {
-    echo "<a href=\"".$_SERVER['PHP_SELF'].'?wap_file='.$file."&amp;op=day&amp;st=".$st_next."\">�</a>\n";
+    echo "<a href=\"".$_SERVER['PHP_SELF'].'?wap_file='.$file."&amp;op=day&amp;st=".$st_next."\">ï¿½</a>\n";
   }
   echo "<br/>";	?>
 <br/><a href="<?php echo $_SERVER['PHP_SELF'].'?wap_file='.$file;?>&amp;op=table&amp;st=<?php echo $st?>"><?php echo $text[16];?></a> | <a href="<?php echo $_SERVER['PHP_SELF'].'?wap_file='.$file;?>&amp;op=help&amp;st=<?php echo $st?>"><?php echo $text[20];?></a><?php

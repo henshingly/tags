@@ -76,7 +76,7 @@ require(PATH_TO_LMO."/lmo-langload.php");
 
 //Functions
 require_once(PATH_TO_LMO."/lmo-functions.php");
-//�bergang Classlib
+//ï¿½bergang Classlib
 require_once(PATH_TO_ADDONDIR."/classlib/ini.php");
 //Template System
 require_once(PATH_TO_LMO."/includes/IT.php");

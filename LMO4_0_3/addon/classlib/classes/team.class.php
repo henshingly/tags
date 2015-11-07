@@ -52,7 +52,7 @@ class team {
   }
 
 /**
- * F�gt ein neues KeyValue Paar hinzu
+ * Fï¿½gt ein neues KeyValue Paar hinzu
  *
  * @access private
 */
@@ -60,7 +60,7 @@ class team {
     $this->keyValues[$new_key]=$new_value;
   }
 /**
- * Gibt value zu einem Key zur�ck
+ * Gibt value zu einem Key zurï¿½ck
  *
  * @access private
 */

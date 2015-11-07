@@ -3,33 +3,33 @@
  * LMO Class Library Version (01/2004)
  *
  * Die LMO Class Library (classlib) bildet ein Ligadatei (.l98) des LMO
- * in Form eines Objektbaums ab und ermöglicht so die Entwicklung von
- * objektorientierten Erweiterung in Form von sog. Addons für den Liga Manager Online.
+ * in Form eines Objektbaums ab und ermÃ¶glicht so die Entwicklung von
+ * objektorientierten Erweiterung in Form von sog. Addons fÃ¼r den Liga Manager Online.
  *
- * <br>Änderungen:
+ * <br>Ã„nderungen:
  * <br> 20.07.04 2.0 Start
- * <br> 22.07.04 2.1 Pdf Class hinzugefügt.
+ * <br> 22.07.04 2.1 Pdf Class hinzugefÃ¼gt.
  * <br> 23.07.04 2.1 Bugfix in methode $liga->writeFile teamdetails gingen verloren
  * <br> 31.07.04     relative Pfadangabe in class.ezpdf.php ersetzt
- * <br> 01.08.04 2.2 Spielbericht (reportURL) zur class Partie hinzugefügt
- * <br>              Beim Einlesen der Runden wird jetzt der Pokalmodus berücksichtigt
+ * <br> 01.08.04 2.2 Spielbericht (reportURL) zur class Partie hinzugefÃ¼gt
+ * <br>              Beim Einlesen der Runden wird jetzt der Pokalmodus berÃ¼cksichtigt
  * <br> 20.09.04 2.3 Class iniFile function getIniFile
- * <br>              Beim Auslesen einer URL, die keyValues enthält
+ * <br>              Beim Auslesen einer URL, die keyValues enthÃ¤lt
  * <br>              fehlten die Gleichheitszeichen
  * <br> 22.09.04 2.3 Pokalmodus in loadLiga implementiert
- * <br> 22.11.04 2.4 Mal wieder keyValue gefunden und in keyValues geändert
+ * <br> 22.11.04 2.4 Mal wieder keyValue gefunden und in keyValues geÃ¤ndert
  * <br>              classes.php Ist der aktuelle Spieltag nicht gesetzt wird $aktSpTag = 1
- * <br> 02.12.04 2.5 writeFile / loadFile geändert
- * <br>              Das komplette File wird zunächst in ein array geladen und zwischengespeichert.
- * <br>              Beim Speichern wird dieses zunächst mit den Werten der Objekte abgeglichen und
+ * <br> 02.12.04 2.5 writeFile / loadFile geÃ¤ndert
+ * <br>              Das komplette File wird zunÃ¤chst in ein array geladen und zwischengespeichert.
+ * <br>              Beim Speichern wird dieses zunÃ¤chst mit den Werten der Objekte abgeglichen und
  * <br>              dann im Anschluss komplett ins file geschrieben. Dadurch gehen keine Informationen verloren
- * <br>              Auch Erweiterungen des LigaFiles (z.B, zusätzliche Sektionen wie beim MittellangTeamName
+ * <br>              Auch Erweiterungen des LigaFiles (z.B, zusÃ¤tzliche Sektionen wie beim MittellangTeamName
  * <br>              Addon werden erkannt und geschrieben.
- * <br> 20.12.04 2.6 neue Fktion gamesSorted hinzugefügt (Sortierung der Partien)
+ * <br> 20.12.04 2.6 neue Fktion gamesSorted hinzugefÃ¼gt (Sortierung der Partien)
  * <br> 14.01.05 2.6 SP1 Klasse Partie function valuateGame() Ermittelt die Wertung einer Partie (beta Status)
- * <br> 16.02.05 2.7 Klasse Partie fkt. gToreString() und hToreString() überarbeitet. Bei greenTable wird 0 bzw. 0*
- *									 zurückgegeben.
- * <br> 10.04.05 2.7 (Dank an Gowi) update Funktionen für addons implementiert
+ * <br> 16.02.05 2.7 Klasse Partie fkt. gToreString() und hToreString() Ã¼berarbeitet. Bei greenTable wird 0 bzw. 0*
+ *									 zurÃ¼ckgegeben.
+ * <br> 10.04.05 2.7 (Dank an Gowi) update Funktionen fÃ¼r addons implementiert
  * @author    Tim Schumacher <webobjects@gmx.net>
  * @version   2.7
  * @package   classLib
