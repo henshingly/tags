@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -28,12 +28,12 @@ function zeitberechnung($modus,$wert)  {
   switch($modus) {
     case "1":
       return mktime(0,0,0,date("m"),date("d")+$wert ,date("Y"));
-      // Gibt heutigen Tag + $wert (Tage) um 0:00 Uhr als Zeitstempel zurück
+      // Gibt heutigen Tag + $wert (Tage) um 0:00 Uhr als Zeitstempel zurï¿½ck
       break;
 
     case "2":
       return mktime(23,59,0,date("m"), date("d")+$wert,date("Y"));
-      // Gibt heutigen Tag + $wert (Tage) um 23:59 Uhr als Zeitstempel zurück
+      // Gibt heutigen Tag + $wert (Tage) um 23:59 Uhr als Zeitstempel zurï¿½ck
       break;
 
     default:

@@ -56,19 +56,19 @@
     
 
   Zurzeit kan mann:
-    - Sections erstellen, lesen, löschen, umbenennen oder verschieben
-    - Items erstellen, lesen, löschen, umbenennen oder verschieben
-    - Values erstellen, lesen, löschen oder verändern
+    - Sections erstellen, lesen, lï¿½schen, umbenennen oder verschieben
+    - Items erstellen, lesen, lï¿½schen, umbenennen oder verschieben
+    - Values erstellen, lesen, lï¿½schen oder verï¿½ndern
     - mehrere aufeinanderfolgende Leerzeilen entfernen (clean up)
       
   Die Idee hinter myIniFunctions ist es, eine Textdatei anstatt eine Datenbank (wie
   zum Beispiel MySQL) zu nutzen, um kleine Datenmengen zu verwalten. Dies ist
-  insbesondere für kleine Sites ohne Datenbank sehr hilfreich.
+  insbesondere fï¿½r kleine Sites ohne Datenbank sehr hilfreich.
 
-  Mit myIniFunctions kann man leicht kleine Gästebücher, Linklisten, FAQ's, Adress-
-  bücher oder was auch immer erstellen und verwalten. Ein Web basierendes Administrations
+  Mit myIniFunctions kann man leicht kleine Gï¿½stebï¿½cher, Linklisten, FAQ's, Adress-
+  bï¿½cher oder was auch immer erstellen und verwalten. Ein Web basierendes Administrations
   Tool (myInfoTool) ist unter http://sourceforge.net/projects/myinfotool/ oder
-  http://www.myinfotool.de erhältlich.
+  http://www.myinfotool.de erhï¿½ltlich.
 
     
     
@@ -84,16 +84,16 @@
  Installation
 --------------
 
-  Die myIniFunctions in ein Verzeichnis des Webservers kopieren. Am besten außerhalb des
+  Die myIniFunctions in ein Verzeichnis des Webservers kopieren. Am besten auï¿½erhalb des
   DocumentRoot. In den Scripten, die die Funktionen nutzen sollen, einfach per include_once()
   oder require_once() die Datei "inc.fct" integrieren.
 
-  Die Funktionen können unter Linux auch remote inkludet werden.
+  Die Funktionen kï¿½nnen unter Linux auch remote inkludet werden.
 
   ------------------------------------------
   <html>
   <head>
-    <?
+    <?php
       require_once("inc.fct");
     ?>
   <title>Meine Homepage</title>
@@ -101,8 +101,8 @@
 
   <body>
 
-  <?
-    <!-- Hier können die Funktionen genutzt werden. -->
+  <?php
+    <!-- Hier kï¿½nnen die Funktionen genutzt werden. -->
   ?>
 
   </body>
@@ -116,11 +116,11 @@
   ReadIniSections(string filename[, boolean sort])
   ================================================
 
-  Der Rückgabewert der Funktion ist ein Array mit allen Sections einer
+  Der Rï¿½ckgabewert der Funktion ist ein Array mit allen Sections einer
   Ini-Datei. Wenn keine Section gefunden wurde oder die Ini-Datei nicht
-  existiert, wird FALSE zurückgegeben.
+  existiert, wird FALSE zurï¿½ckgegeben.
 
-  Als zweiter Parameter kann angegeben werden, ob die zurückgegebenen
+  Als zweiter Parameter kann angegeben werden, ob die zurï¿½ckgegebenen
   Sections alphabethisch sortiert werden sollen (TRUE). Wenn dieser
   Parameter nicht angegeben wird, werden die Sections nicht sortiert
   (default ist FALSE).
@@ -140,12 +140,12 @@
   ReadIniItems(string filename, string sectionname[, boolean sort])
   =================================================================
 
-  Der Rückgabewert der Funktion ist ein Array mit allen Items einer Section.
+  Der Rï¿½ckgabewert der Funktion ist ein Array mit allen Items einer Section.
   Wenn kein Item gefunden wurde oder die Ini-Datei nicht existiert, wird
-  FALSE zurückgegeben.
+  FALSE zurï¿½ckgegeben.
 
-  Auch hier kann als zusätzlicher Parameter (sort) angegeben werden, ob die
-  zurückgegebenen Items alphabethisch sortiert werden sollen (TRUE). Wenn dieser
+  Auch hier kann als zusï¿½tzlicher Parameter (sort) angegeben werden, ob die
+  zurï¿½ckgegebenen Items alphabethisch sortiert werden sollen (TRUE). Wenn dieser
   Parameter nicht angegeben wird, werden die Items nicht sortiert (default ist FALSE).
 
   Beispiel:
@@ -163,8 +163,8 @@
   ReadIniValue(string filename, string sectionname, string itemname)
   ==================================================================
 
-  Der Rückgabewert der Funktion ist der Wert eines Items einer Section. Wenn die
-  Ini-Datei oder das Item nicht existiert, wird ein leerer String zurückgegeben.
+  Der Rï¿½ckgabewert der Funktion ist der Wert eines Items einer Section. Wenn die
+  Ini-Datei oder das Item nicht existiert, wird ein leerer String zurï¿½ckgegeben.
 
   Beispiel:
 
@@ -178,11 +178,11 @@
   WriteIniValue(string filename, string sectionname, string itemname, string value)
   =================================================================================
 
-  Der Rückgabewert der Funktion ist TRUE, wenn der item=value Eintrag geschrieben wurde, 
+  Der Rï¿½ckgabewert der Funktion ist TRUE, wenn der item=value Eintrag geschrieben wurde, 
   ansonsten FALSE.
 
   Wenn die Ini-Datei, Section oder Item nicht existieren, werden sie angelegt. Wenn
-  der Pfad nicht existiert, wird keine Ini-Datei angelegt und FALSE zurückgegeben.
+  der Pfad nicht existiert, wird keine Ini-Datei angelegt und FALSE zurï¿½ckgegeben.
 
   Beispiel:
 
@@ -196,12 +196,12 @@
 
   Dieses Beispiel weist in der INI-Datei "my.ini" unter der Section "Meine Section"
   dem Item "Feld 1" den Wert aus $MyText zu. Das if-Statement ist hier nicht unbedingt
-  erforderlich, aber zur Prüfung, ob überhaupt etwas geschrieben wurde, nützlich.
+  erforderlich, aber zur Prï¿½fung, ob ï¿½berhaupt etwas geschrieben wurde, nï¿½tzlich.
 
   DeleteIniItem(string filename, string sectionname, string itemname)
   ===================================================================
 
-  Der Rückgabewert der Funktion ist TRUE, wenn das Item gelöscht wurde, ansonsten
+  Der Rï¿½ckgabewert der Funktion ist TRUE, wenn das Item gelï¿½scht wurde, ansonsten
   FALSE, zum Beispiel wenn das Item oder die Ini-Datei nicht existieren.
 
   Beispiel:
@@ -213,36 +213,36 @@
     }
     ...
 
-  Dieses Beispiel löscht aus der INI-Datei "my.ini" unter der Section "Meine Section"
+  Dieses Beispiel lï¿½scht aus der INI-Datei "my.ini" unter der Section "Meine Section"
   das Item "Feld 1". Auch hier ist das if-Statement nicht erforderlich, aber zur
-  Prüfung nützlich.
+  Prï¿½fung nï¿½tzlich.
 
   DeleteIniSection(string filename, string sectionname[, boolean recursive[, boolean DeleteIfEmpty])
   ==================================================================================================
 
-  Der Rückgabewert der Funktion ist TRUE, wenn die Section gelöscht wurde, ansonsten
+  Der Rï¿½ckgabewert der Funktion ist TRUE, wenn die Section gelï¿½scht wurde, ansonsten
   FALSE, zum Beispiel wenn die Section nicht gefunden wurde.
 
-  Wenn innerhalb der Section noch Items existieren, wird die Section nur gelöscht, wenn
+  Wenn innerhalb der Section noch Items existieren, wird die Section nur gelï¿½scht, wenn
   als dritter Parameter (recursive) "TRUE" angegeben wird. Ansonsten wird die Section nicht
-  gelöscht und FALSE zurückgegeben. Wenn die zu löschende Section die letzte Section der Datei
+  gelï¿½scht und FALSE zurï¿½ckgegeben. Wenn die zu lï¿½schende Section die letzte Section der Datei
   ist und als vierter Parameter (DeleteIfEmpty) "TRUE" angegeben wird, wird auch die Ini-Datei
-  gelöscht, auch wenn noch Kommentarzeilen enthalten sind. Default für recursive ist FALSE und
-  für DeleteIfEmpty TRUE.
+  gelï¿½scht, auch wenn noch Kommentarzeilen enthalten sind. Default fï¿½r recursive ist FALSE und
+  fï¿½r DeleteIfEmpty TRUE.
 
   Beispiel:
 
     DeleteIniSection("my.ini", "Meine Section", TRUE)
     ...
 
-  Dieses Beispiel löscht aus der INI-Datei "my.ini" die Section "Meine Section". Die
-  Section wird auch gelöscht, wenn noch Items in der Section vorhanden sind. Eine
-  Prüfung, ob das Löschen erfolgreich war, findet in diesem Beispiel nicht statt.
+  Dieses Beispiel lï¿½scht aus der INI-Datei "my.ini" die Section "Meine Section". Die
+  Section wird auch gelï¿½scht, wenn noch Items in der Section vorhanden sind. Eine
+  Prï¿½fung, ob das Lï¿½schen erfolgreich war, findet in diesem Beispiel nicht statt.
 
   RenameIniSection(string filename, string old_sectionname, string new_sectionname)
   =================================================================================
 
-  Der Rückgabewert der Funktion ist TRUE, wenn die Section umbenannt wurde, ansonsten
+  Der Rï¿½ckgabewert der Funktion ist TRUE, wenn die Section umbenannt wurde, ansonsten
   FALSE, zum Beispiel wenn die Section nicht gefunden wurde. Die section wird nur umbenannt,
   wenn new_sectionname nicht schon existiert. Dadurch werden doppelte Section Namen und
   somit Inkonsistenz ausgeschlossen.
@@ -253,26 +253,26 @@
     ...
 
   Dieses Beispiel benennt die Section "Meine Section" aus der INI-Datei "my.ini" in
-  "Andere Section" um. Eine Prüfung, ob das Umbenennen erfolgreich war, findet in
+  "Andere Section" um. Eine Prï¿½fung, ob das Umbenennen erfolgreich war, findet in
   diesem Beispiel nicht statt.
 
   MoveSection(string filename, string sectionname[, string direction[, int UpperOffset[, int LowerOfset]]])
   =========================================================================================================
 
-  Der Rückgabewert der Funktion ist TRUE, wenn die Section verschoben wurde, ansonsten
+  Der Rï¿½ckgabewert der Funktion ist TRUE, wenn die Section verschoben wurde, ansonsten
   FALSE, zum Beispiel wenn die Section nicht gefunden wurde oder eine nicht erlaubte
   Operation versucht wurde (z. B. erste Section nach oben verschieben).
 
   Neben der Angabe der INI-Datei "filename" wird die Section "section" erwartete, die
-  verschoben werden soll. Wird für direction "up" angegeben, wird die Section nach oben
+  verschoben werden soll. Wird fï¿½r direction "up" angegeben, wird die Section nach oben
   verschoben. Bei "down" (oder jedem anderen Wert), wird die Section nach unten verschoben
   (default).
 
-  Mit den beiden Offsetangaben "UpperOffset" und "LowerOffset" können Sections am Anfang
-  oder Ende der Datei ausgespart werden. Die ist zum Beispiel nützlich, wenn man am Anfang
-  oder Ende der INI-Datei besondere Einträge wie zum Beispiel Konfigurationen zur INI-Datei
-  oder Log-Daten stehen hat, die bei dem Verschieben nicht berücksichtigt werden sollen,
-  also ihre Position nicht verändern dürfen.
+  Mit den beiden Offsetangaben "UpperOffset" und "LowerOffset" kï¿½nnen Sections am Anfang
+  oder Ende der Datei ausgespart werden. Die ist zum Beispiel nï¿½tzlich, wenn man am Anfang
+  oder Ende der INI-Datei besondere Eintrï¿½ge wie zum Beispiel Konfigurationen zur INI-Datei
+  oder Log-Daten stehen hat, die bei dem Verschieben nicht berï¿½cksichtigt werden sollen,
+  also ihre Position nicht verï¿½ndern dï¿½rfen.
 
   Beispiel:
 
@@ -284,13 +284,13 @@
 
   Dieses Beispiel verschiebt die Section "1023" aus der Datei "myIni.ini" eine Position
   nach oben. Die erste Section (eventuell Konfigurationseinstellungen) wird nicht
-  berücksichtigt. Das bedeutet mit anderen Worten, das "section" in der physischen INI-Datei
-  nie auf die erste Stelle rücken kann.
+  berï¿½cksichtigt. Das bedeutet mit anderen Worten, das "section" in der physischen INI-Datei
+  nie auf die erste Stelle rï¿½cken kann.
 
   MoveItem(string filename, string sectionname, string itemname[, string direction])
   ==================================================================================
 
-  Der Rückgabewert der Funktion ist TRUE, wenn das Item verschoben wurde, ansonsten
+  Der Rï¿½ckgabewert der Funktion ist TRUE, wenn das Item verschoben wurde, ansonsten
   FALSE, zum Beispiel wenn das Item oder die Section nicht gefunden wurde.
 
   Neben der Angabe der INI-Datei "filename" und der Section "section" wird das Item
@@ -298,7 +298,7 @@
   verschoben. Bei "down" (oder jedem anderen Wert), wird die Section nach unten 
   verschoben (default).
   
-  Wenn beim letzten Item "down" oder beim ersten Item "up" angegeben wird, wird es über
+  Wenn beim letzten Item "down" oder beim ersten Item "up" angegeben wird, wird es ï¿½ber
   die Grenzen verschoben. Das Letzte wird bei "down" also zum ersten und das Erste bei "up"
   zum Letzten.
 
@@ -319,8 +319,8 @@
 
   Die Funktion CleanIni() ist eigentlich eine "Helper Function".
   
-  Der Rückgabewert der Funktion ist FALSE, wenn die angegebene Datei nicht gefunden wurde,
-  ansonsten TRUE, auch wenn keine mehrfach vorkommenden Leerzeilen gefunden und gelöscht wurden.
+  Der Rï¿½ckgabewert der Funktion ist FALSE, wenn die angegebene Datei nicht gefunden wurde,
+  ansonsten TRUE, auch wenn keine mehrfach vorkommenden Leerzeilen gefunden und gelï¿½scht wurden.
 
   Beispiel:
 
@@ -338,8 +338,8 @@
   Automatisches erstellen der INI Dateien
   =======================================
   
-  Eine INI Datei muß nicht manuell angelegt werden. Die Funktion WriteIniValue() erstellt
-  die angegebene INI Datei automatisch, wenn sie nicht existiert. Allerdings muß der 
+  Eine INI Datei muï¿½ nicht manuell angelegt werden. Die Funktion WriteIniValue() erstellt
+  die angegebene INI Datei automatisch, wenn sie nicht existiert. Allerdings muï¿½ der 
   angegebene Pfad zur INI Datei existieren und entsprechende Schreibrechte in dem 
   Verzeichnis gesetzt sein.
 
@@ -349,40 +349,40 @@
   
   Innerhalb der INI-Datei sind Kommentare erkaubt. Welches Zeichen als Kommentarzeichen
   interpretiert wird, wird am Anfang der ini.fct unter 'Global Constants' festgelegt 
-  (_REMARK_). Bei mir ist es das Semikolon ';'. Dies kann aber den eigenen Bedürfnisen 
-  angepasst werden. Funktionen, um gezielt Kommentare einzufügen, zu ändern oder zu 
-  löschen, gibt es nicht. Kommentare müssen 'von Hand' angelegt und bearbeitet werden.
+  (_REMARK_). Bei mir ist es das Semikolon ';'. Dies kann aber den eigenen Bedï¿½rfnisen 
+  angepasst werden. Funktionen, um gezielt Kommentare einzufï¿½gen, zu ï¿½ndern oder zu 
+  lï¿½schen, gibt es nicht. Kommentare mï¿½ssen 'von Hand' angelegt und bearbeitet werden.
 
-  Das Kommentarzeichen muß als erstes Zeichen in einer Zeile stehen. Whitespaces (Tabs
-  oder Leerzeichen) sind als Ausnahme erlaubt und können vor dem Kommentarzeichen stehen.
-  Es ist aber bei der Verwendung von Kommentaren zu bedenken, daß diese mit der INI-Datei 
-  gelöscht werden, wenn die letzte Section gelöscht wird und DeleteIfEmpty = TRUE ist.
+  Das Kommentarzeichen muï¿½ als erstes Zeichen in einer Zeile stehen. Whitespaces (Tabs
+  oder Leerzeichen) sind als Ausnahme erlaubt und kï¿½nnen vor dem Kommentarzeichen stehen.
+  Es ist aber bei der Verwendung von Kommentaren zu bedenken, daï¿½ diese mit der INI-Datei 
+  gelï¿½scht werden, wenn die letzte Section gelï¿½scht wird und DeleteIfEmpty = TRUE ist.
 
 
-  Speichern von Umbrüchen
+  Speichern von Umbrï¿½chen
   =======================
 
-  Manchmal möchte man auch längeren Text zum Beispiel aus einem Textfeld speichern. Da 
-  hier Zeilenumbrüche enthalten sein können, würden diese die Struktur der INI-Datei 
-  zerstören. Längere Texte (mit möglichen Zeilenumbrüchen) müssen mit der Funktion
+  Manchmal mï¿½chte man auch lï¿½ngeren Text zum Beispiel aus einem Textfeld speichern. Da 
+  hier Zeilenumbrï¿½che enthalten sein kï¿½nnen, wï¿½rden diese die Struktur der INI-Datei 
+  zerstï¿½ren. Lï¿½ngere Texte (mit mï¿½glichen Zeilenumbrï¿½chen) mï¿½ssen mit der Funktion
   urlencode(WriteIniVaue(filename, sectionname, itemname, value)) in die INI-Datei 
   geschrieben und mit urldecode(ReadIniValue(filename, sectionname, itemname)) wieder 
   ausgelesen werden.
 
-  Länge einer Zeile
+  Lï¿½nge einer Zeile
   =================
 
-  Die Länge des Textes (genaugenommen einer Zeile) wird am Anfang der ini.fct unter 
-  'Global Constants' festgelegt (_LineLength_). Dies kann natürlich angepasst werden. 
-  Zu beachten ist hierbei, daß durch urlencode() der Text bzw. die Zeile länger wird. 
-  Unter normalen Umständen sollte die vorgegebene Zeichenanzahl reichen.
+  Die Lï¿½nge des Textes (genaugenommen einer Zeile) wird am Anfang der ini.fct unter 
+  'Global Constants' festgelegt (_LineLength_). Dies kann natï¿½rlich angepasst werden. 
+  Zu beachten ist hierbei, daï¿½ durch urlencode() der Text bzw. die Zeile lï¿½nger wird. 
+  Unter normalen Umstï¿½nden sollte die vorgegebene Zeichenanzahl reichen.
 
 ----------
  Download
 ----------
 
   Die neuste Version ist unter http://sourceforge.net/projects/myinifunctions/ oder
-  http://www.myinifunctions.de/ erhältlich.
+  http://www.myinifunctions.de/ erhï¿½ltlich.
 
 
   

@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -17,7 +17,7 @@
   *
   * $Id$
   */
-  
+
 
 require_once(dirname(__FILE__).'/../../init.php');
 
@@ -42,11 +42,11 @@ if (isset($file) && $file!="") {
 		if (isset($_REQUEST['adminbereich_standard_sortierung'])) { $spieler_adminbereich_standard_sortierung=$_REQUEST['adminbereich_standard_sortierung']; }
 		if (isset($_REQUEST['ligalink']))                         { $spieler_ligalink=$_REQUEST['ligalink']; }
 		if (isset($_REQUEST['anzeige_pro_seite']))                { $spieler_anzeige_pro_seite=$_REQUEST['anzeige_pro_seite']; }
-		
+
 
 		if (isset($_REQUEST['nullwerte_anzeigen']))                   $spieler_nullwerte_anzeigen=1;                   else {if ($spieler_option=="saveconfig") $spieler_nullwerte_anzeigen=0;}
     if (isset($_REQUEST['vereinsweise_anzeigen']))                $spieler_vereinsweise_anzeigen=1;                else {if ($spieler_option=="saveconfig") $spieler_vereinsweise_anzeigen=0;}
-    
+
 		if (isset($_REQUEST['extra_sortierspalte']))                  $spieler_extra_sortierspalte=1;                  else {if ($spieler_option=="saveconfig") $spieler_extra_sortierspalte=0;}
 		if ($_SESSION['lmouserok']==2) {
       if (isset($_REQUEST['adminbereich_hilfsadmin_zulassen']))     $spieler_adminbereich_hilfsadmin_zulassen=1;     else {if ($spieler_option=="saveconfig") $spieler_adminbereich_hilfsadmin_zulassen=0;}
@@ -57,7 +57,7 @@ if (isset($file) && $file!="") {
 		if (file_exists($filename)) $filepointer = fopen($filename,"r+b"); else $filepointer = fopen($filename,"w+b");
 		$spalten=array();
 		$data=array();
-		$spalten = fgetcsv($filepointer, 1000, "§"); //Zeile mit Spaltenbezeichnern
+		$spalten = fgetcsv($filepointer, 1000, "ï¿½"); //Zeile mit Spaltenbezeichnern
 		$typ=array(); //Spaltentyp (TRUE=String)
 		$zeile=0;
 		if (is_null($spalten[0])) {	//Datei war leer
@@ -65,8 +65,8 @@ if (isset($file) && $file!="") {
 	    set_file_buffer ($filepointer,0);
 			fwrite($filepointer,$spalten[0]."\n");	//Erste Zeile/Spalte in Datei schreiben
 		}
-	
-	// Wenn in einer Spalte ne Formel steht, wurde an den Namen *_*-* angehängt
+
+	// Wenn in einer Spalte ne Formel steht, wurde an den Namen *_*-* angehï¿½ngt
     $formel_ges=0;
     $speicher_spalten=$spalten;
     $formel=array();
@@ -80,9 +80,9 @@ if (isset($file) && $file!="") {
     }
     if ($formel_ges>0){
       $formel_str = array();
-      $formel_str = fgetcsv($filepointer, 1000, "§"); //Zeile mit Spaltenbezeichnern
+      $formel_str = fgetcsv($filepointer, 1000, "ï¿½"); //Zeile mit Spaltenbezeichnern
     }
-		while ($data[$zeile] = fgetcsv ($filepointer, 10000, "§")) {
+		while ($data[$zeile] = fgetcsv ($filepointer, 10000, "ï¿½")) {
 			for($i=0;$i<count($data[$zeile]);$i++) {
 				if (!is_numeric($data[$zeile][$i])) $typ[$i]=TRUE;
 			}
@@ -94,31 +94,31 @@ if (isset($file) && $file!="") {
 		fclose($filepointer);
 
 			switch ($spieler_option) {
-			case "addplayer": //Spieler hinzufügen
+			case "addplayer": //Spieler hinzufï¿½gen
 				if ($wert!="") {
 					$filepointer = @fopen($filename,"w+b");
 					set_file_buffer ($filepointer,0);
-					fputs($filepointer,join("§",$speicher_spalten)."\n");
+					fputs($filepointer,join("ï¿½",$speicher_spalten)."\n");
           if ($formel_ges>0){
-            fputs($filepointer,join("§",$formel_str)."\n");
+            fputs($filepointer,join("ï¿½",$formel_str)."\n");
             formel_berechnen($formel,$formel_str,$spalten);
           }
           $data[$zeile][0]=$wert;
 					for ($i1=0;$i1<$zeile;$i1++) {
-						fputs($filepointer,join("§",$data[$i1])."\n");
+						fputs($filepointer,join("ï¿½",$data[$i1])."\n");
 					}
 					$newplayer=$wert;
 					$data[$zeile][0]=$wert;
 					for($i=1;$i<$spaltenzahl;$i++) {
 						if ($zeile==0) {
-							if ($spalten[$i]==$text['spieler'][25] || $spalten[$i]==$text['spieler'][32]) {$data[0][$i]=$text['spieler'][43];$newplayer.="§".$text['spieler'][43];}else{$data[0][$i]="0";$newplayer.="§0";}
+							if ($spalten[$i]==$text['spieler'][25] || $spalten[$i]==$text['spieler'][32]) {$data[0][$i]=$text['spieler'][43];$newplayer.="ï¿½".$text['spieler'][43];}else{$data[0][$i]="0";$newplayer.="ï¿½0";}
 						}else{
 							if (is_numeric($data[$zeile-1][$i])) {
 								$data[$zeile][$i]="0";
-								$newplayer.="§0";
+								$newplayer.="ï¿½0";
 							}else{
 								$data[$zeile][$i]=$text['spieler'][43];
-								$newplayer.="§".$text['spieler'][43];
+								$newplayer.="ï¿½".$text['spieler'][43];
 							}
 						}
 					}
@@ -136,23 +136,23 @@ if (isset($file) && $file!="") {
 				if ($wert!="") {
 					$filepointer = @fopen($filename,"w+b");
 					set_file_buffer ($filepointer,0);
-          fputs($filepointer,join("§",$speicher_spalten)."\n");
+          fputs($filepointer,join("ï¿½",$speicher_spalten)."\n");
 					if ($formel_ges>0){
-            fputs($filepointer,join("§",$formel_str)."\n");
+            fputs($filepointer,join("ï¿½",$formel_str)."\n");
           }
           for ($i1=0;$i1<$zeile;$i1++) {
 						if ($i1!=$wert) {
-							fputs($filepointer,join("§",$data[$i1])."\n");
+							fputs($filepointer,join("ï¿½",$data[$i1])."\n");
 						}
 					}
 					$zeile=0;
 					fclose($filepointer);
 					$filepointer = fopen($filename,"rb");
-					$spalten = fgetcsv($filepointer, 1000, "§"); //Zeile mit Spaltenbezeichnern
+					$spalten = fgetcsv($filepointer, 1000, "ï¿½"); //Zeile mit Spaltenbezeichnern
 					if ($formel_ges>0){
-             fgetcsv($filepointer, 1000, "§"); //Zeile mit Formeln übergehen
+             fgetcsv($filepointer, 1000, "ï¿½"); //Zeile mit Formeln ï¿½bergehen
           }
-          while ($data[$zeile] = fgetcsv ($filepointer, 10000, "§")) {
+          while ($data[$zeile] = fgetcsv ($filepointer, 10000, "ï¿½")) {
 						$zeile++;
 					}
 					$spaltenzahl=count($spalten);
@@ -160,7 +160,7 @@ if (isset($file) && $file!="") {
           @touch(PATH_TO_LMO."/".$dirliga.$file);
 				}
 				break;
-			case "addcolumn": //Spalte hinzufügen
+			case "addcolumn": //Spalte hinzufï¿½gen
 				if ($wert!="") {
 					if (isset($_REQUEST['type'])) $val=$_REQUEST['type'];
 					else $val="0";
@@ -176,7 +176,7 @@ if (isset($file) && $file!="") {
                 $formel_str[$i]="0";
               }
             }
-            
+
             $formel_ges++;
             $speicher_spalten[$spaltenzahl].="*_*-*";
             $val="0";
@@ -185,17 +185,17 @@ if (isset($file) && $file!="") {
             $formel[$spaltenzahl]=FALSE;
           }
             $formel_str[$spaltenzahl]="0";
-          
-					fputs($filepointer,join("§",$speicher_spalten)."\n"); //Spaltenbezeichner schreiben
+
+					fputs($filepointer,join("ï¿½",$speicher_spalten)."\n"); //Spaltenbezeichner schreiben
 					for($i=0;$i<$zeile;$i++) {  //Spalte nullen
              $data[$i][$spaltenzahl]=$val;
           }
           if ($formel_ges>0){
-            fputs($filepointer,join("§",$formel_str)."\n");
+            fputs($filepointer,join("ï¿½",$formel_str)."\n");
             formel_berechnen($formel,$formel_str,$spalten);
           }
           for($i=0;$i<$zeile;$i++) {
-            fputs($filepointer,join("§",$data[$i])."\n");
+            fputs($filepointer,join("ï¿½",$data[$i])."\n");
           }
 					$spaltenzahl++;
 					fclose($filepointer);
@@ -213,17 +213,17 @@ if (isset($file) && $file!="") {
           array_splice($speicher_spalten,$wert,1);
           array_splice($formel,$wert,1);
           $spaltenzahl--;
-          fputs($filepointer,join("§",$speicher_spalten)."\n"); //Spaltenbezeichner schreiben
+          fputs($filepointer,join("ï¿½",$speicher_spalten)."\n"); //Spaltenbezeichner schreiben
           for($i=0;$i<$zeile;$i++) {
             array_splice($data[$i],$wert,1);
           }
           if ($formel_ges>0){
             array_splice($formel_str,$wert,1);
-            fputs($filepointer,join("§",$formel_str)."\n");
+            fputs($filepointer,join("ï¿½",$formel_str)."\n");
             formel_berechnen($formel,$formel_str,$spalten);
           }
           for($i=0;$i<$zeile;$i++) {
-						fputs($filepointer,join("§",$data[$i])."\n");
+						fputs($filepointer,join("ï¿½",$data[$i])."\n");
 					}
 				  fclose($filepointer);
           @touch(PATH_TO_LMO."/".$dirliga.$file);
@@ -232,12 +232,12 @@ if (isset($file) && $file!="") {
 			case "sortieren":
     		$filepointer = @fopen($filename,"w+b");
     		set_file_buffer ($filepointer,0);
-    		 fputs($filepointer,join("§",$speicher_spalten)."\n");
+    		 fputs($filepointer,join("ï¿½",$speicher_spalten)."\n");
          if ($formel_ges>0){
-           fputs($filepointer,join("§",$formel_str)."\n");
+           fputs($filepointer,join("ï¿½",$formel_str)."\n");
          }
     		for ($i1=0;$i1<$zeile;$i1++) {
-    			fputs($filepointer,join("§",$data[$i1])."\n");
+    			fputs($filepointer,join("ï¿½",$data[$i1])."\n");
     		}
     		fclose($filepointer);
     		break;
@@ -257,7 +257,7 @@ if (isset($file) && $file!="") {
             $formel_str[$i0]=$_REQUEST["formel_str".$i0];
           }
         }
-        fputs($filepointer,join("§",$speicher_spalten)."\n");
+        fputs($filepointer,join("ï¿½",$speicher_spalten)."\n");
       	for ($i1=0;$i1<$zeile;$i1++) {
       		for ($i2=0;$i2<$spaltenzahl;$i2++) {
       			if (isset($_REQUEST["data".$i1."|".$i2])) {
@@ -266,11 +266,11 @@ if (isset($file) && $file!="") {
       		}
       	}
         if ($formel_ges>0){
-          fputs($filepointer,join("§",$formel_str)."\n");
+          fputs($filepointer,join("ï¿½",$formel_str)."\n");
           formel_berechnen($formel,$formel_str,$spalten);
         }
         for ($i1=0;$i1<$zeile;$i1++) {
-           fputs($filepointer,join("§",$data[$i1])."\n");
+           fputs($filepointer,join("ï¿½",$data[$i1])."\n");
         }
       	fclose($filepointer);
         @touch(PATH_TO_LMO."/".$dirliga.$file);
@@ -284,10 +284,10 @@ if (isset($file) && $file!="") {
         fputs($filepointer,$text['spieler'][13]."=".$spieler_standard_richtung."\n");
 				fputs($filepointer,$text['spieler'][40]."=".$spieler_adminbereich_standard_sortierung."\n");
 				fputs($filepointer,$text['spieler'][22]."=".$spieler_anzeige_pro_seite."\n");
-				
+
 				fputs($filepointer,$text['spieler'][23]."=".$spieler_nullwerte_anzeigen."\n");
 				fputs($filepointer,$text['spieler'][24]."=".$spieler_extra_sortierspalte."\n");
-        
+
         fputs($filepointer,$text['spieler'][50]."=".$spieler_vereinsweise_anzeigen."\n");
 				if ($_SESSION['lmouserok']==2) fputs($filepointer,$text['spieler'][31]."=".$spieler_adminbereich_hilfsadmin_zulassen."\n");
 				if ($_SESSION['lmouserok']==2) fputs($filepointer,$text['spieler'][46]."=".$spieler_adminbereich_hilfsadmin_fuer_spalten."\n");
@@ -323,167 +323,167 @@ function mark(el){
 </script>
 <table class="lmoMiddle">
   <tr>
-		<th align="center"><h1><?=$text['spieler'][18]?></h1></th>
+		<th align="center"><h1><?php echo $text['spieler'][18]?></h1></th>
 	</tr>
 	<tr>
 		<td>
 			<table class="lmoInner">
 				<tr>
-					<th align="left" colspan="2"><?=$text['spieler'][6]?></th>
+					<th align="left" colspan="2"><?php echo $text['spieler'][6]?></th>
 				</tr>
 				<tr>
 					<td class="nobr" align="right">
-						<form action="<?= $_SERVER['PHP_SELF']?>" method="post">
-							<acronym title="<?=$text['spieler'][9]?>"><input type="text" name="wert"></acronym>&nbsp;<input class="lmo-formular-button" type="submit" value=" + ">
+						<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+							<acronym title="<?php echo $text['spieler'][9]?>"><input type="text" name="wert"></acronym>&nbsp;<input class="lmo-formular-button" type="submit" value=" + ">
 							<input type="hidden" name="option" value="addplayer">
-							<input type="hidden" name="sort" value="<?=$spieler_sort?>">
+							<input type="hidden" name="sort" value="<?php echo $spieler_sort?>">
 							<input type="hidden" name="todo" value="edit">
-              <input type="hidden" name="st" value="<?=$st; ?>">
-							<input type="hidden" name="file" value="<?=$file?>">
+              <input type="hidden" name="st" value="<?php echo $st; ?>">
+							<input type="hidden" name="file" value="<?php echo $file?>">
 						</form>
 					</td>
 					<td class="nobr" align="left">
-						<form action="<?= $_SERVER['PHP_SELF']?>" method="post">
-							<acronym title="<?=$text['spieler'][10]?>"><select name="wert" size="1"><?
+						<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+							<acronym title="<?php echo $text['spieler'][10]?>"><select name="wert" size="1"><?php
 								for ($x=0;$x<$zeile;$x++) {?>
-								<option value="<?=$x?>"><?=htmlentities(stripslashes($data[$x][0]),ENT_COMPAT);?></option><?
+								<option value="<?php echo $x?>"><?php echo htmlentities(stripslashes($data[$x][0]),ENT_COMPAT);?></option><?php
 								}?>
 							</select></acronym>&nbsp;<input class="lmo-formular-button" type="submit" value=" &minus; ">
 							<input type="hidden" name="option" value="delplayer">
-							<input type="hidden" name="sort" value="<?=$spieler_sort?>">
+							<input type="hidden" name="sort" value="<?php echo $spieler_sort?>">
 							<input type="hidden" name="todo" value="edit">
-              <input type="hidden" name="st" value="<?=$st; ?>">
-							<input type="hidden" name="file" value="<?=$file?>">
+              <input type="hidden" name="st" value="<?php echo $st; ?>">
+							<input type="hidden" name="file" value="<?php echo $file?>">
 						</form>
 					</td>
-				</tr><?
+				</tr><?php
 				if ($_SESSION['lmouserok']==2 || ($_SESSION['lmouserok']==1 && $spieler_adminbereich_hilfsadmin_zulassen==1 && $spieler_adminbereich_hilfsadmin_fuer_spalten==1)) {?>
 				<tr>
-					<th align="left" colspan="2"><?=$text['spieler'][5]?></th>
+					<th align="left" colspan="2"><?php echo $text['spieler'][5]?></th>
 				</tr>
 				<tr>
 					<td class="nobr" align="right">
-						<form action="<?= $_SERVER['PHP_SELF']?>" method="post" name="spalten">
-							<acronym title="<?=$text['spieler'][7]?>"><input type="text" name="wert"></acronym> 
+						<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" name="spalten">
+							<acronym title="<?php echo $text['spieler'][7]?>"><input type="text" name="wert"></acronym>
               <input class="lmo-formular-button" type="submit" value=" + "><br>
-							<acronym title="<?=$text['spieler'][30]?>"><?=$text['spieler'][38]?>:</acronym>
-              <input type="radio" name="type" value="0" checked>&nbsp;<?=$text['spieler'][52]?>
-              <input type="radio" name="type" value="<?=$text['spieler'][43]?>">&nbsp;<?=$text['spieler'][53]?>
-              <input type="radio" name="type" value="F">&nbsp;<?=$text['spieler'][54]?>
+							<acronym title="<?php echo $text['spieler'][30]?>"><?php echo $text['spieler'][38]?>:</acronym>
+              <input type="radio" name="type" value="0" checked>&nbsp;<?php echo $text['spieler'][52]?>
+              <input type="radio" name="type" value="<?php echo $text['spieler'][43]?>">&nbsp;<?php echo $text['spieler'][53]?>
+              <input type="radio" name="type" value="F">&nbsp;<?php echo $text['spieler'][54]?>
               <input type="hidden" name="option" value="addcolumn">
-							<input type="hidden" name="sort" value="<?=$spieler_sort?>">
+							<input type="hidden" name="sort" value="<?php echo $spieler_sort?>">
 							<input type="hidden" name="todo" value="edit">
-              <input type="hidden" name="st" value="<?=$st; ?>">
-							<input type="hidden" name="file" value="<?=$file?>">
+              <input type="hidden" name="st" value="<?php echo $st; ?>">
+							<input type="hidden" name="file" value="<?php echo $file?>">
 						</form>
 					</td>
 					<td class="nobr" align="left" valign="top">
-						<form action="<?= $_SERVER['PHP_SELF']?>" method="post" name="spieler">
-							<acronym title="<?=$text['spieler'][8]?>"><select name="wert" size="1"><?
+						<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" name="spieler">
+							<acronym title="<?php echo $text['spieler'][8]?>"><select name="wert" size="1"><?php
 								for ($x=0;$x<$spaltenzahl;$x++) {?>
-								<option value="<?=$x?>"<?if ($x==0){?> disabled<?}if ($x==1){?> selected<?}?>><?=htmlentities(stripslashes($spalten[$x]),ENT_COMPAT);?></option><?
+								<option value="<?php echo $x?>"<?php if ($x==0){?> disabled<?php }if ($x==1){?> selected<?php }?>><?php echo htmlentities(stripslashes($spalten[$x]),ENT_COMPAT);?></option><?php
 								}?>
 							</select></acronym>&nbsp;<input class="lmo-formular-button" type="submit" value=" &minus; ">
 							<input type="hidden" name="option" value="delcolumn">
 							<input type="hidden" name="todo" value="edit">
-              <input type="hidden" name="st" value="<?=$st; ?>">
-							<input type="hidden" name="sort" value="<?=$spieler_sort?>">
-							<input type="hidden" name="file" value="<?=$file?>">
+              <input type="hidden" name="st" value="<?php echo $st; ?>">
+							<input type="hidden" name="sort" value="<?php echo $spieler_sort?>">
+							<input type="hidden" name="file" value="<?php echo $file?>">
 						</form>
 					</td>
-				</tr><?
+				</tr><?php
 				}?>
 			</table>
 		</td>
 	</tr>
 	<tr>
-		<th align="center"><h1><?=$text['spieler'][1]?></h1></th>
+		<th align="center"><h1><?php echo $text['spieler'][1]?></h1></th>
 	</tr>
 	<tr>
 	  <td>
-			<form action="<?= $_SERVER['PHP_SELF']?>" method="post">
+			<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
         <table id="stats" class="lmoInner" >
 					<thead>
-						<tr><?
+						<tr><?php
 							for ($i=0;$i<$spaltenzahl;$i++) {
                 $stat_sort=$_SERVER['PHP_SELF']."?action=admin&amp;todo=statistik&amp;sort=".$i."&amp;file=".$file."&amp;direction=";?>
 								<th colspan="2" class="nobr" align="center">
-                  <a href="<?=$stat_sort?>asc" title="<?=$text[527].' '.$text[526]?>" onClick="return chklmolink();"><img src="<?=URL_TO_IMGDIR?>/upsimple.png" width="7" height="7" border="0" alt="&and;"></a>
-                  <input type="text" name="spalten<?=$i?>" onChange="mark(this)" value="<?=$spalten[$i]?>" size="<?=strlen($spalten[$i]);?>">
-                  <a href="<?=$stat_sort?>desc" title="<?=$text[528].' '.$text[526]?>" onClick="return chklmolink();"><img src="<?=URL_TO_IMGDIR?>/downsimple.png" width="7" height="7" border="0" alt="&or;"></a>
-								</th><?
+                  <a href="<?php echo $stat_sort?>asc" title="<?php echo $text[527].' '.$text[526]?>" onClick="return chklmolink();"><img src="<?php echo URL_TO_IMGDIR?>/upsimple.png" width="7" height="7" border="0" alt="&and;"></a>
+                  <input type="text" name="spalten<?php echo $i?>" onChange="mark(this)" value="<?php echo $spalten[$i]?>" size="<?php echo strlen($spalten[$i]);?>">
+                  <a href="<?php echo $stat_sort?>desc" title="<?php echo $text[528].' '.$text[526]?>" onClick="return chklmolink();"><img src="<?php echo URL_TO_IMGDIR?>/downsimple.png" width="7" height="7" border="0" alt="&or;"></a>
+								</th><?php
 							}?>
 						</tr>
 					</thead>
-					<tfoot><?
+					<tfoot><?php
               if ($formel_ges>0){?>
-              <tr><?
+              <tr><?php
                 for ($i=0;$i<$spaltenzahl;$i++) {?>
-                  <th colspan="2" align="center"><?
+                  <th colspan="2" align="center"><?php
                   if ($formel[$i]){?>
-                    <input type="text" onClick="sel('formel_str<?=$i?>')" onChange="mark(this)" name="formel_str<?=$i?>" value="<?=$formel_str[$i]?>" size="<?=strlen($formel_str[$i]);?>"><?
+                    <input type="text" onClick="sel('formel_str<?php echo $i?>')" onChange="mark(this)" name="formel_str<?php echo $i?>" value="<?php echo $formel_str[$i]?>" size="<?php echo strlen($formel_str[$i]);?>"><?php
                   } elseif ($i==0) {
                     echo "<strong>".$text['spieler'][54].":</strong>";
                   } else {
                     echo "&nbsp;";
                   }?>
-                  </th><?
+                  </th><?php
                 }?>
               </tr>
-            <?}?>						
+            <?php }?>
 						<tr>
-							<td align="right" colspan="<?=$spaltenzahl*2?>">
+							<td align="right" colspan="<?php echo $spaltenzahl*2?>">
 								<input type="hidden" name="option" value="statupdate">
 								<input type="hidden" name="todo" value="edit">
-                <input type="hidden" name="st" value="<?=$st; ?>">
-								<input type="hidden" name="sort" value="<?=$spieler_sort?>">
-								<input type="hidden" name="file" value="<?=$file?>">
+                <input type="hidden" name="st" value="<?php echo $st; ?>">
+								<input type="hidden" name="sort" value="<?php echo $spieler_sort?>">
+								<input type="hidden" name="file" value="<?php echo $file?>">
 								<input class="lmo-formular-button" type="submit" value="Statistik updaten">
 							</td>
 						</tr>
 					</tfoot>
-					<tbody><?
+					<tbody><?php
 				$display=$zeile;$statstart=0;
 				if ($display>$zeile) $display=$zeile;
 				for ($j1=$statstart;$j1<$display;$j1++) {?>
-				     <tr><?
+				     <tr><?php
 					for ($j2=0;$j2<$spaltenzahl;$j2++) {
             $data[$j1][$j2]=htmlentities(stripslashes($data[$j1][$j2]),ENT_COMPAT);
             if (isset($formel[$j2]) && $formel[$j2]==1){?>
     			    <td colspan="2" align="center">
-                <input type="text" name="data<?=$j1."|".$j2?>" value="<?=$data[$j1][$j2]?>" size="<?=strlen($data[$j1][$j2]);?>" disabled>
-              </td><?
+                <input type="text" name="data<?php echo $j1."|".$j2?>" value="<?php echo $data[$j1][$j2]?>" size="<?php echo strlen($data[$j1][$j2]);?>" disabled>
+              </td><?php
             }elseif (is_numeric($data[$j1][$j2])){?>
 							<td align="right">
-                <input type="text" name="data<?=$j1."|".$j2?>" value="<?= $data[$j1][$j2]?>" size="<?=strlen($data[$j1][$j2]);?>">
+                <input type="text" name="data<?php echo $j1."|".$j2?>" value="<?php echo $data[$j1][$j2]?>" size="<?php echo strlen($data[$j1][$j2]);?>">
               </td>
               <td align="left">
   							<table cellpadding="0" cellspacing="0">
                   <tr>
-                    <td><script type="text/javascript">document.write('<a href="#" onclick="return change(\'+\',\'data<?=$j1?>|<?=$j2?>\');" title="<?=$text[120]; ?>" onMouseOver="lmoimg(\'<?=$i; ?>a\',img1)" onMouseOut="lmoimg(\'<?=$i; ?>a\',img0)"><img src="<?=URL_TO_IMGDIR?>/lmo-admin0.gif" name="ximg<?=$i; ?>a" width="7" height="7" border="0"><\/a>')</script></td>
+                    <td><script type="text/javascript">document.write('<a href="#" onclick="return change(\'+\',\'data<?php echo $j1?>|<?php echo $j2?>\');" title="<?php echo $text[120]; ?>" onMouseOver="lmoimg(\'<?php echo $i; ?>a\',img1)" onMouseOut="lmoimg(\'<?php echo $i; ?>a\',img0)"><img src="<?php echo URL_TO_IMGDIR?>/lmo-admin0.gif" name="ximg<?php echo $i; ?>a" width="7" height="7" border="0"><\/a>')</script></td>
                   </tr>
                   <tr>
-                    <td><script type="text/javascript">document.write('<a href="#" onclick="return change(\'-\',\'data<?=$j1?>|<?=$j2?>\');" title="<?=$text[120]; ?>" onMouseOver="lmoimg(\'<?=$i; ?>b\',img3)" onMouseOut="lmoimg(\'<?=$i; ?>b\',img2)"><img src="<?=URL_TO_IMGDIR?>/lmo-admin2.gif" name="ximg<?=$i; ?>b" width="7" height="7" border="0"><\/a>')</script></td>
+                    <td><script type="text/javascript">document.write('<a href="#" onclick="return change(\'-\',\'data<?php echo $j1?>|<?php echo $j2?>\');" title="<?php echo $text[120]; ?>" onMouseOver="lmoimg(\'<?php echo $i; ?>b\',img3)" onMouseOut="lmoimg(\'<?php echo $i; ?>b\',img2)"><img src="<?php echo URL_TO_IMGDIR?>/lmo-admin2.gif" name="ximg<?php echo $i; ?>b" width="7" height="7" border="0"><\/a>')</script></td>
                   </tr>
                 </table>
-							</td><?
+							</td><?php
 						}else{
 							if ($spalten[$j2]==$text['spieler'][25]) {?>
 							<td colspan="2" align="left">
-  							<select name="data<?=$j1."|".$j2?>" size="1"><?
+  							<select name="data<?php echo $j1."|".$j2?>" size="1"><?php
   								for($j=0;$j<=$anzteams;$j++){?>
-  									<option <?if ($teams[$j]==$data[$j1][$j2]) echo "selected";?>><?=$teams[$j]?></option><?
+  									<option <?php if ($teams[$j]==$data[$j1][$j2]) echo "selected";?>><?php echo $teams[$j]?></option><?php
   								}?>
   							</select>
-							</td><?
+							</td><?php
 							}else{?>
 							<td colspan="2" align="left">
-								<input type="text" name="data<?=$j1."|".$j2?>"value="<?= $data[$j1][$j2]?>" size="<?=strlen($data[$j1][$j2]);?>">
-							</td><?
+								<input type="text" name="data<?php echo $j1."|".$j2?>"value="<?php echo $data[$j1][$j2]?>" size="<?php echo strlen($data[$j1][$j2]);?>">
+							</td><?php
 							}
 						}
 					}?>
-						</tr><?
+						</tr><?php
 				}?>
 					</tbody>
 				</table>
@@ -491,86 +491,86 @@ function mark(el){
 		</td>
 	</tr>
 	<tr>
-		<th align="center"><h1><?=$text['spieler'][39]?></h1></th>
+		<th align="center"><h1><?php echo $text['spieler'][39]?></h1></th>
 	</tr>
 	<tr>
 		<td>
-			<form action="<?= $_SERVER['PHP_SELF']?>" method="post" name="form1">
+			<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post" name="form1">
 				<input type="hidden" name="option" value="saveconfig">
 				<input type="hidden" name="todo" value="edit">
-        <input type="hidden" name="st" value="<?=$st; ?>">
-				<input type="hidden" name="file" value="<?=$file?>">
+        <input type="hidden" name="st" value="<?php echo $st; ?>">
+				<input type="hidden" name="file" value="<?php echo $file?>">
 				<table class="lmoInner">
 					<tr>
-						<th colspan="3"><?=$text['spieler'][44]?></th>
-            <th colspan="2"><?=$text['spieler'][45]?></th>
+						<th colspan="3"><?php echo $text['spieler'][44]?></th>
+            <th colspan="2"><?php echo $text['spieler'][45]?></th>
 					</tr>
 					<tr>
-						<td class="nobr"><?=$text['spieler'][22]?>: </td>
+						<td class="nobr"><?php echo $text['spieler'][22]?>: </td>
 						<td align="right">
-							<input type="text" name="anzeige_pro_seite"value="<?= $spieler_anzeige_pro_seite?>" size="<?=strlen($spieler_anzeige_pro_seite);?>">
+							<input type="text" name="anzeige_pro_seite"value="<?php echo $spieler_anzeige_pro_seite?>" size="<?php echo strlen($spieler_anzeige_pro_seite);?>">
 						</td>
             <td align="left">
 							<table cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td><script type="text/javascript">document.write('<a href="#" onclick="return change(\'+\',\'anzeige_pro_seite\');" title="<?=$text[120]; ?>" onMouseOver="lmoimg(\'<?=$i; ?>a\',img1)" onMouseOut="lmoimg(\'<?=$i; ?>a\',img0)"><img src="<?=URL_TO_IMGDIR?>/lmo-admin0.gif" name="ximg<?=$i; ?>a" width="7" height="7" border="0"><\/a>')</script></td>
+                  <td><script type="text/javascript">document.write('<a href="#" onclick="return change(\'+\',\'anzeige_pro_seite\');" title="<?php echo $text[120]; ?>" onMouseOver="lmoimg(\'<?php echo $i; ?>a\',img1)" onMouseOut="lmoimg(\'<?php echo $i; ?>a\',img0)"><img src="<?php echo URL_TO_IMGDIR?>/lmo-admin0.gif" name="ximg<?php echo $i; ?>a" width="7" height="7" border="0"><\/a>')</script></td>
                 </tr>
                 <tr>
-                  <td><script type="text/javascript">document.write('<a href="#" onclick="return change(\'-\',\'anzeige_pro_seite\');" title="<?=$text[120]; ?>" onMouseOver="lmoimg(\'<?=$i; ?>b\',img3)" onMouseOut="lmoimg(\'<?=$i; ?>b\',img2)"><img src="<?=URL_TO_IMGDIR?>/lmo-admin2.gif" name="ximg<?=$i; ?>b" width="7" height="7" border="0"><\/a>')</script></td>
+                  <td><script type="text/javascript">document.write('<a href="#" onclick="return change(\'-\',\'anzeige_pro_seite\');" title="<?php echo $text[120]; ?>" onMouseOver="lmoimg(\'<?php echo $i; ?>b\',img3)" onMouseOut="lmoimg(\'<?php echo $i; ?>b\',img2)"><img src="<?php echo URL_TO_IMGDIR?>/lmo-admin2.gif" name="ximg<?php echo $i; ?>b" width="7" height="7" border="0"><\/a>')</script></td>
                 </tr>
               </table>
 					  </td>
-						<td align="left" class="nobr"><?=$text['spieler'][40]?>: </td>
+						<td align="left" class="nobr"><?php echo $text['spieler'][40]?>: </td>
             <td align="left">
-  						<select name="adminbereich_standard_sortierung" onChange="mark(this)" size="1"><?
-  
+  						<select name="adminbereich_standard_sortierung" onChange="mark(this)" size="1"><?php
+
   						for ($x=0;$x<$spaltenzahl;$x++) {?>
-  							<option value="<?=$x?>" <?if ($x==$spieler_adminbereich_standard_sortierung ) echo "selected";?>><?=$spalten[$x]?></option><?
+  							<option value="<?php echo $x?>" <?php if ($x==$spieler_adminbereich_standard_sortierung ) echo "selected";?>><?php echo $spalten[$x]?></option><?php
   						}?>
   						</select>
 						</td>
 					</tr>
 					<tr>
-						<td align="left" class="nobr"><?=$text['spieler'][21]?>: </td>
+						<td align="left" class="nobr"><?php echo $text['spieler'][21]?>: </td>
 						<td align="left" colspan="2">
-  						<select name="standard_sortierung" onChange="mark(this)" size="1"><?
+  						<select name="standard_sortierung" onChange="mark(this)" size="1"><?php
   						for ($x=0;$x<$spaltenzahl;$x++) {?>
-  							<option value="<?=$x?>" <?if ($x==$spieler_standard_sortierung ) echo "selected";?>><?=$spalten[$x]?></option><?
+  							<option value="<?php echo $x?>" <?php if ($x==$spieler_standard_sortierung ) echo "selected";?>><?php echo $spalten[$x]?></option><?php
   						}?>
   						</select>
 						</td>
-						<?if($_SESSION['lmouserok']==2){?>
-            <td align="left" class="nobr"><?=$text['spieler'][31]?>: </td>
-						<td align="left"><input type="checkbox" name="adminbereich_hilfsadmin_zulassen" onChange="mark(this)" value="<?=$spieler_adminbereich_hilfsadmin_zulassen?>" <?if ($spieler_adminbereich_hilfsadmin_zulassen==1) echo "checked";?> onClick="if (this.checked==true) document.form1.adminbereich_hilfsadmin_fuer_spalten.disabled=false; else {document.form1.adminbereich_hilfsadmin_fuer_spalten.disabled=true;document.form1.adminbereich_hilfsadmin_fuer_spalten.checked=false;}"></td>
-            <?}?>
+						<?php if($_SESSION['lmouserok']==2){?>
+            <td align="left" class="nobr"><?php echo $text['spieler'][31]?>: </td>
+						<td align="left"><input type="checkbox" name="adminbereich_hilfsadmin_zulassen" onChange="mark(this)" value="<?php echo $spieler_adminbereich_hilfsadmin_zulassen?>" <?php if ($spieler_adminbereich_hilfsadmin_zulassen==1) echo "checked";?> onClick="if (this.checked==true) document.form1.adminbereich_hilfsadmin_fuer_spalten.disabled=false; else {document.form1.adminbereich_hilfsadmin_fuer_spalten.disabled=true;document.form1.adminbereich_hilfsadmin_fuer_spalten.checked=false;}"></td>
+            <?php }?>
 					</tr>
           <tr>
-            <td align="left" class="nobr" rowspan="2"><?=$text['spieler'][13]?>: </td>
-            <td align="left" class="nobr" colspan="2"><input type="radio" name="standard_richtung" onClick="mark(this)" value="1"<?if ($spieler_standard_richtung==1) echo " checked";?>> <?=$text['spieler'][48]?></td>
-            <?if($_SESSION['lmouserok']==2){?>
-            <td align="left" class="nobr"><?=$text['spieler'][46]?>: </td>
-						<td align="left"><input <?if ($spieler_adminbereich_hilfsadmin_fuer_spalten!=1) echo "disabled"?> type="checkbox" onChange="mark(this)" name="adminbereich_hilfsadmin_fuer_spalten" value="<?=$spieler_adminbereich_hilfsadmin_fuer_spalten?>" <?if ($spieler_adminbereich_hilfsadmin_fuer_spalten==1) echo "checked";?>></td>
-            <?}?>
+            <td align="left" class="nobr" rowspan="2"><?php echo $text['spieler'][13]?>: </td>
+            <td align="left" class="nobr" colspan="2"><input type="radio" name="standard_richtung" onClick="mark(this)" value="1"<?php if ($spieler_standard_richtung==1) echo " checked";?>> <?php echo $text['spieler'][48]?></td>
+            <?php if($_SESSION['lmouserok']==2){?>
+            <td align="left" class="nobr"><?php echo $text['spieler'][46]?>: </td>
+						<td align="left"><input <?php if ($spieler_adminbereich_hilfsadmin_fuer_spalten!=1) echo "disabled"?> type="checkbox" onChange="mark(this)" name="adminbereich_hilfsadmin_fuer_spalten" value="<?php echo $spieler_adminbereich_hilfsadmin_fuer_spalten?>" <?php if ($spieler_adminbereich_hilfsadmin_fuer_spalten==1) echo "checked";?>></td>
+            <?php }?>
           </tr>
           <tr>
-            <td align="left" colspan="2" class="nobr"><input type="radio" name="standard_richtung" onClick="mark(this)" value="0"<?if ($spieler_standard_richtung==0) echo " checked";?>> <?=$text['spieler'][47]?></td>
+            <td align="left" colspan="2" class="nobr"><input type="radio" name="standard_richtung" onClick="mark(this)" value="0"<?php if ($spieler_standard_richtung==0) echo " checked";?>> <?php echo $text['spieler'][47]?></td>
             <td colspan="2" rowspan="4">&nbsp;</td>
           </tr>
           <tr>
-						<td align="left" class="nobr"><?=$text['spieler'][41]?>: </td>
-						<td colspan="2" align="left"><input type="text" name="ligalink" onChange="mark(this)" value="<?= $spieler_ligalink?>" size="<?=strlen($spieler_ligalink);?>"></td>
+						<td align="left" class="nobr"><?php echo $text['spieler'][41]?>: </td>
+						<td colspan="2" align="left"><input type="text" name="ligalink" onChange="mark(this)" value="<?php echo $spieler_ligalink?>" size="<?php echo strlen($spieler_ligalink);?>"></td>
 					</tr>
 					<tr>
-						<td align="left" class="nobr"><?=$text['spieler'][24]?>: </td>
-						<td colspan="2" align="left"><input type="checkbox" name="extra_sortierspalte" onClick="mark(this)" value="<?=$spieler_extra_sortierspalte?>" <?if ($spieler_extra_sortierspalte==1) echo "checked";?>></td>
+						<td align="left" class="nobr"><?php echo $text['spieler'][24]?>: </td>
+						<td colspan="2" align="left"><input type="checkbox" name="extra_sortierspalte" onClick="mark(this)" value="<?php echo $spieler_extra_sortierspalte?>" <?php if ($spieler_extra_sortierspalte==1) echo "checked";?>></td>
 					</tr>
           <tr>
-						<td align="left" class="nobr"><?=$text['spieler'][50]?>: </td>
-						<td colspan="2" align="left"><input type="checkbox" name="vereinsweise_anzeigen" onClick="mark(this)" value="<?=$spieler_vereinsweise_anzeigen?>"<?if ($spieler_vereinsweise_anzeigen==1) echo " checked"; if (array_search($text['spieler'][25],$spalten)==0) { echo " disabled";  }?>></td>
+						<td align="left" class="nobr"><?php echo $text['spieler'][50]?>: </td>
+						<td colspan="2" align="left"><input type="checkbox" name="vereinsweise_anzeigen" onClick="mark(this)" value="<?php echo $spieler_vereinsweise_anzeigen?>"<?php if ($spieler_vereinsweise_anzeigen==1) echo " checked"; if (array_search($text['spieler'][25],$spalten)==0) { echo " disabled";  }?>></td>
 					</tr>
 					<tr>
-						<td class="nobr"><?=$text['spieler'][23]?>: </td>
-						<td colspan="2" align="left"><input type="checkbox" name="nullwerte_anzeigen" onClick="mark(this)" value="<?=$spieler_nullwerte_anzeigen?>" <?if ($spieler_nullwerte_anzeigen==1) echo "checked";?>></td>
+						<td class="nobr"><?php echo $text['spieler'][23]?>: </td>
+						<td colspan="2" align="left"><input type="checkbox" name="nullwerte_anzeigen" onClick="mark(this)" value="<?php echo $spieler_nullwerte_anzeigen?>" <?php if ($spieler_nullwerte_anzeigen==1) echo "checked";?>></td>
 					</tr>
 					<tr>
 						<td colspan="5" align="right"><input class="lmo-formular-button" type="submit" value="Konfiguration speichern"></td>
@@ -580,7 +580,7 @@ function mark(el){
 		</td>
 	</tr>
 </table>
-<?
+<?php
 	}else{
 		echo $text['spieler'][33];
 	}//Hilfsadmin
@@ -593,8 +593,8 @@ function cmpInt ($a1, $a2) {
 }
 function cmpStr ($a2, $a1) {
 	global $spieler_sort;
-	$a1[$spieler_sort]=strtr($a1[$spieler_sort],"¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
-	$a2[$spieler_sort]=strtr($a2[$spieler_sort],"¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+	$a1[$spieler_sort]=strtr($a1[$spieler_sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
+	$a2[$spieler_sort]=strtr($a2[$spieler_sort],"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","YuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy");
 	$c = strnatcasecmp($a2[$spieler_sort],$a1[$spieler_sort]);
   if (!$c)
     $c = strnatcasecmp($a1[$spieler_sort],$a2[$spieler_sort]);

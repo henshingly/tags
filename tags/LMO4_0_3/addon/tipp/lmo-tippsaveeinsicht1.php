@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -51,7 +51,7 @@ if ($file != "" && $st > 0 && $_SESSION['lmotippername'] != "") {
         $nick = substr($daten[$i], 1, -1);
       }
       if ($nick != $_SESSION['lmotippername']) {
-        //////////// nur die unveränderten Tipps werden zurückgeschrieben
+        //////////// nur die unverï¿½nderten Tipps werden zurï¿½ckgeschrieben
         fputs($datei, $daten[$i]."\n");
       }
     }

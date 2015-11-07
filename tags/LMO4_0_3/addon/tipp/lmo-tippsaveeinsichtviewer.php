@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -56,7 +56,7 @@ if ($einsichtfile != "") {
         }
       }
       if ($nick != $_SESSION['lmotippername']) {
-        //////////// nur die unveränderten Tipps werden zurückgeschrieben
+        //////////// nur die unverï¿½nderten Tipps werden zurï¿½ckgeschrieben
         fputs($datei, $daten[$l]."\n");
       } elseif($daten[$l] != "") {
         $nick2 = $l;
@@ -99,7 +99,7 @@ if ($einsichtfile != "") {
         for($k = $start2; $k <= $i; $k++) {
           $sp = substr($daten[$l], 2, strpos($daten[$l], "=")-2);
           if ($sp == $spiel[$k]) {
-            break; // nicht zurückschreiben
+            break; // nicht zurï¿½ckschreiben
           }
         }
         if ($k == ($i+1)) {

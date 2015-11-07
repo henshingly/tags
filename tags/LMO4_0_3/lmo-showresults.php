@@ -20,7 +20,7 @@
   ?>
 <table class="lmoInner" cellspacing="0" cellpadding="0" border="0">
   <tr>
-    <th colspan="<?=$breite; ?>" align="left">
+    <th colspan="<?php echo $breite; ?>" align="left">
     	<?php
 echo $st.". ".$text[2];
 if($dats==1){ 
@@ -32,7 +32,7 @@ if($dats==1){
   }
 }?>
     </th>
-  </tr><?
+  </tr><?php
 // Wenn Spieltermine angegeben und Sortierung eingeschaltet, dann nach Datum sortieren
 $datsort = $mterm[$st-1];
 if($enablegamesort == '1' && filterZero($mterm[$st-1])) { 
@@ -45,14 +45,14 @@ $spielfreib=array();
 while (list ($key, $val) = each ($datsort)) {
   $i = $key;
   if (($teama[$st-1][$i] > 0) && ($teamb[$st-1][$i] > 0)) {?>
-  <tr><?
+  <tr><?php
     if ($datm == 1) {
       if ($mterm[$st-1][$i] > 0) {
         $dum1 = strftime($datf, $mterm[$st-1][$i]);
       } else {
         $dum1 = "";
       }?>
-    <td class="nobr"><?=$dum1; ?></td><?  
+    <td class="nobr"><?php echo $dum1; ?></td><?php
     }
 
     /* Spielfrei-Hack-Beginn1*/
@@ -63,7 +63,7 @@ while (list ($key, $val) = each ($datsort)) {
     /* Spielfrei-Hack-Ende1*/ ?>
 
     <td width="2">&nbsp;</td>
-    <td class="nobr" align="right"><?
+    <td class="nobr" align="right"><?php
  
     if ($plan == "1") {
       echo "<a href=\"".$addp.$teama[$st-1][$i]."\" title=\"".$text[269]."\">";
@@ -82,7 +82,7 @@ while (list ($key, $val) = each ($datsort)) {
     ?>
     </td>
     <td align="center" width="10">-</td>
-    <td class="nobr" align="left"><?
+    <td class="nobr" align="left"><?php
     echo HTML_smallTeamIcon($file,$teams[$teamb[$st-1][$i]]," alt=''")."&nbsp;";
     if ($plan == "1") {
       echo "<a href=\"".$addp.$teamb[$st-1][$i]."\" title=\"".$text[269]."\">";
@@ -100,21 +100,21 @@ while (list ($key, $val) = each ($datsort)) {
       ?>
     </td>
     <td width="2">&nbsp;</td>
-    <td align="right"><?=applyFactor($goala[$st-1][$i],$goalfaktor); ?></td>
+    <td align="right"><?php echo applyFactor($goala[$st-1][$i],$goalfaktor); ?></td>
     <td align="center" width="8">:</td>
-    <td align="left"><?=applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td><?  
+    <td align="left"><?php echo applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td><?php
     if($spez==1) {?>
     <td width="2">&nbsp;</td>
-    <td><?=$mspez[$st-1][$i]; ?></td><?
+    <td><?php echo $mspez[$st-1][$i]; ?></td><?php
     }
     if ($msieg[$st-1][$i]==3){ ?>
     <td width="2">/</td>
-    <td align="right"><?=applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td>
+    <td align="right"><?php echo applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td>
     <td align="center" width="8">:</td>
-    <td align="left"><?=applyFactor($goala[$st-1][$i],$goalfaktor); ?></td><?  
+    <td align="left"><?php echo applyFactor($goala[$st-1][$i],$goalfaktor); ?></td><?php
     }?>
     <td width="2">&nbsp;</td>
-    <td class="nobr" align="left"><? 
+    <td class="nobr" align="left"><?php
     
     /** Mannschaftsicons finden
      */
@@ -147,11 +147,11 @@ while (list ($key, $val) = each ($datsort)) {
       if ($spez==1) {
         $lmo_spielnotiz.=" ".$mspez[$st-1][$i];
       }
-      //Grüner Tisch: Heimteam siegt
+      //Grï¿½ner Tisch: Heimteam siegt
       if ($msieg[$st-1][$i]==1) {
         $lmo_spielnotiz.="\n\n<strong>".$text[219].":</strong> ".$teams[$teama[$st-1][$i]]." ".$text[211];
       }
-      //Grüner Tisch: Gastteam siegt
+      //Grï¿½ner Tisch: Gastteam siegt
       if ($msieg[$st-1][$i]==2) {
         $lmo_spielnotiz.="\n\n<strong>".$text[219].":</strong> ".addslashes($teams[$teamb[$st-1][$i]]." ".$text[211]);
       }
@@ -169,13 +169,13 @@ while (list ($key, $val) = each ($datsort)) {
       echo "&nbsp;";
     }
     ?></td>
-  </tr><? 
+  </tr><?php
   }
 }
 
 if ($einzutore == 1) {?>
   <tr>  
-    <td class="lmoFooter" align="center" width="100%" colspan="<?=$breite; ?>">&nbsp;<?
+    <td class="lmoFooter" align="center" width="100%" colspan="<?php echo $breite; ?>">&nbsp;<?php
   $zustat_file = str_replace(".l98", ".l98.php",  basename($file));
   $zustat_dir = basename($diroutput);
   if (file_exists(PATH_TO_LMO.'/'.$zustat_dir."/".$zustat_file)) {
@@ -183,12 +183,12 @@ if ($einzutore == 1) {?>
     echo $text[38].": ".applyFactor($zutore[$st],$goalfaktor)."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"." ".$text[38].$text[4001].": ".applyFactor($dstore[$st],$goalfaktor);
   }?>
     </td>
-  </tr><?
+  </tr><?php
 }
   
 if ($einspielfrei == 1) {?>
   <tr>  
-    <td align="center" width="100%" colspan="<?=$breite; ?>"><?
+    <td align="center" width="100%" colspan="<?php echo $breite; ?>"><?php
   //if (($anzteams-($anzst/2+1)) == 0) {
     $spielfreic = array_merge($spielfreia, $spielfreib);
     $hoy5 = 1;
@@ -217,6 +217,6 @@ if ($einspielfrei == 1) {?>
       }
     }
   ?></td> 
-  </tr><?
+  </tr><?php
 }?>
 </table>
