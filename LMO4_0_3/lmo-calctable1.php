@@ -167,4 +167,3 @@ if (($file!="") && ($subteams!="")) {
   }
   sort($tab1,SORT_STRING);
 }
-?>

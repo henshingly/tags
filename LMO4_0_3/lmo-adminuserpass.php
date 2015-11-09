@@ -30,4 +30,4 @@ for ($z=0;$z<$rando;$z++)
 for ($z=0;$z<$rando;$z++)
      $ranpass.=$carrier[$z];
 echo $ranpass;
-?>
+

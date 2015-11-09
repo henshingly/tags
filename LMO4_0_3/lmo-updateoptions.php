@@ -31,4 +31,3 @@ if (isset($cfgarray['einhinrueck'])) {
   unset($cfgarray['einhinrueck']);
 }
 /*Zusatzoptionen ab beta3*/
-?>

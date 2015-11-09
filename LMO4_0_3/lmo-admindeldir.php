@@ -61,4 +61,3 @@ if($ftype!=""){
   if($i==0){echo "<li>[".$text[223]."]</li>";}
   echo"</ul>";
   }
-?>

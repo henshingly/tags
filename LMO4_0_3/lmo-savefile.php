@@ -242,4 +242,3 @@ if (($_SESSION['lmouserok']==2)||($_SESSION['lmouserok']==1)) {
   }
 }
 
-?>
