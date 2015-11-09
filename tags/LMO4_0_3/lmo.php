@@ -31,4 +31,4 @@ if (!file_exists(dirname(__FILE__)."/config/init-parameters.php") || isset($_POS
     }
   }
   require(dirname(__FILE__)."/lmo-start.php");
-}?>
+}

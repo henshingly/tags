@@ -36,4 +36,3 @@ if($_SESSION['lmouserok']==2){
       echo getMessage($text[283],TRUE);
   }
 }
-?>

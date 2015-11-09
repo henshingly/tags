@@ -22,4 +22,3 @@ if(!isset($_SESSION['lmouserok']) || $_SESSION['lmouserok']==0){
     }
   }
 }
-?>

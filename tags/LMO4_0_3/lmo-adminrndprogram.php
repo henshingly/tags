@@ -185,4 +185,3 @@ for($spieltag = 0; $spieltag < $spieltage; $spieltag++) {
     }
   }
 }
-?>

@@ -66,4 +66,3 @@ if (($action == "admin") && ($todo == "download") && (($_SESSION["lmouserok"] ==
     }
   }
 }
-?>

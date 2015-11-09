@@ -618,4 +618,3 @@ if ($_SESSION['lmouserok'] > 0) {
 		fclose($zustatfile);
   }
 }
-?>

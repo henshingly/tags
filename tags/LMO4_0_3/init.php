@@ -90,4 +90,4 @@ if (!function_exists('ini_get') || !ini_get("register_globals")) {
   @extract($_GET);
   @extract($_POST);
   @extract($_COOKIE);
-}?>
+}

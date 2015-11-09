@@ -394,4 +394,3 @@ if(!empty($file) && check_hilfsadmin($file)){
     }
   }
 }
-?>

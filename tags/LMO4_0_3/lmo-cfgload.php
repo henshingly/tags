@@ -40,4 +40,3 @@ while (false!==($f=readdir($handle))) {
   } 
 }
 closedir($handle); 
-?>

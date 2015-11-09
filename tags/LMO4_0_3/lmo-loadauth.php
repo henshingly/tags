@@ -33,5 +33,3 @@ if ($datei) {
   echo getMessage($text[283],TRUE);
   exit;
 }
-
-?>

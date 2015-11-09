@@ -46,4 +46,3 @@ if(($xprogram!="") && ($xprogram!="none") && ($xprogram!="random")){
       }
     }
   }
-?>

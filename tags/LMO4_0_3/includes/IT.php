@@ -1035,4 +1035,4 @@ class HTML_Template_IT {
 
     } // end func setVariable
 } // end class IntegratedTemplate
-?>
+

@@ -279,5 +279,4 @@ function send()
  $mime .=  "MIME-Version: 1.0\n".$this->build_multipart();
  return mail($this->to, $this->subject,  "", $mime);
  }
-};  // end of class 
-?>
+}  // end of class

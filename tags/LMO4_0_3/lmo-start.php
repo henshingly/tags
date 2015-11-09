@@ -56,4 +56,3 @@ if($_REQUEST["action"]=="admin"){
 
 include(PATH_TO_LMO."/lmo-showmain2.php");
 
-?>
