@@ -187,4 +187,3 @@ if (!defined('CLASSLIB_INFO')) define('CLASSLIB_INFO',"Classlib ".CLASSLIB_VERSI
 
 
 if (!defined('CLASSLIB_VERSlON')) define('CLASSLIB_VERSlON',"Classlib ".CLASSLIB_VERSION." &#169; <a href=\"mailto:webobjects@gmx.net?subject=LMO-KLASSENBIBLIOTHEK\" title=\"Send mail\">Timme</a> ï¿½ <a href=\"http://web33.t-webby.de/phpBB2\">LMO-Group 2004</a>");
-?>

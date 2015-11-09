@@ -92,7 +92,7 @@ if ($filepointer = fopen($filename, "r+b")) {
     <title><?php echo $text['spieler'][18]?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
     <style type="text/css">
-      body {background:#fff; color:#000; font: sans-serif 10pt; max-width:200mm;max-height:285mm;}
+      body {background:#fff; color:#000; font: 10pt sans-serif; max-width:200mm;max-height:285mm;}
       caption, p, h1 {margin: 3pt auto; text-align:center;}
       table {border:1pt solid #000;margin: 2pt auto;}
       td {padding: 0;white-space:nowrap;}

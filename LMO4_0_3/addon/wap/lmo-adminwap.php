@@ -48,4 +48,3 @@ if(isset($_SESSION['lmouserok']) && $_SESSION['lmouserok']>0) {
 	require(PATH_TO_ADDONDIR."/wap/lmo-adminwap_login.php");
 }
 echo("</wml>\n");
-?>

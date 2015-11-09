@@ -73,4 +73,3 @@ require(PATH_TO_ADDONDIR."/classlib/classes/liga.class.php");
 
 
 
-?>

@@ -111,4 +111,3 @@ if ($file != "" && $st > 0 && $_SESSION['lmotippername'] != "") {
   clearstatcache();
 }
 
-?>

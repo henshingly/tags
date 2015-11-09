@@ -143,4 +143,4 @@ require_once(PATH_TO_ADDONDIR."/viewer/viewer_functions.php");
 
 
 if (!defined('VIEWER_VERSION')) define('VIEWER_VERSION',"Viewer Version ".VIEWER_VERSION." Addon for LMO 4<BR>Copyright &#169; 2005 <a href=\"http://www.liga-manager-online.de/\">LMO-Group</a>");
-?>
+

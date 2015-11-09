@@ -141,4 +141,3 @@ if ($_POST["liga"] != "" && $_POST["st"] != "") {
 clearstatcache();
 $file = "";
 
-?>

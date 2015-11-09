@@ -75,4 +75,3 @@ if (file_exists($einsichtfile)) {
   }
   clearstatcache();
 }
-?>

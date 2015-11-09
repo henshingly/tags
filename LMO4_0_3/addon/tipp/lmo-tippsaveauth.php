@@ -39,4 +39,3 @@ flock($datei, LOCK_UN);
 fclose($datei);
 clearstatcache();
 
-?>

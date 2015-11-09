@@ -54,4 +54,4 @@ for($i=1; $i<=$anzahl_ligen; $i++) {
     echo getMessage($text['viewer'][49].".$fav_liga[$i].".$text['viewer'][50],TRUE); // Ligenfile vorhanden? Frage beantwortet
   }
 }
-?>
+

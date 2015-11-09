@@ -20,6 +20,4 @@
    
 if( !defined('LMO_TIPPAUTH') ) {
   die();
-  exit;
 }
-?>

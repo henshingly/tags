@@ -241,4 +241,3 @@ function tipppunkte($gta0, $gtb0, $ga0, $gb0, $msieg, $msp, $text0, $text1, $jks
   return $punktespiel;
 }
 
-?>

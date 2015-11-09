@@ -68,4 +68,3 @@ if ($_SESSION["lmotipperok"] == -4) {
   require(PATH_TO_ADDONDIR."/tipp/lmo-tippernew.php");
 }
 
-?>

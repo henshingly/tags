@@ -213,4 +213,4 @@ else
  
 echo("<br/><small><a href=\"".$_SERVER['PHP_SELF']."\">Home</a></small>\n");
 echo("</p>\n");
-echo("</card>\n");?>
+echo("</card>\n");

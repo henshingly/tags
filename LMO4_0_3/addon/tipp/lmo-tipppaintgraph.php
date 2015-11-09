@@ -257,4 +257,3 @@ function get_color(&$styleclass) {
   return false;
 }
 
-?>

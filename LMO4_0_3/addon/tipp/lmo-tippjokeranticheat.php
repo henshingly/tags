@@ -82,4 +82,3 @@ for($ia = 1; $ia <= count($tippdaten); $ia++) {
 }
 clearstatcache();
 
-?>

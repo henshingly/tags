@@ -93,4 +93,3 @@ function zeit($mterm0, $datum1, $datum2) {
   }
   return $zeit;
 }
-?>

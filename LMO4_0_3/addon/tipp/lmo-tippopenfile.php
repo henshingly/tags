@@ -128,4 +128,3 @@ for($i = 1; $i <= count($tippdaten); $i++) {
 } // ende for($i=1;$i<=count($tippdaten);$i++)
 clearstatcache();
 
-?>

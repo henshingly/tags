@@ -870,4 +870,3 @@ function calcTable($spTag=1) {
 
 } // End Class Liga
 
-?>
