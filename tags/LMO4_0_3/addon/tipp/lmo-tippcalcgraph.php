@@ -390,6 +390,3 @@ if (!file_exists($auswertfile)) {
     }
   }
 }
-
-
-?>

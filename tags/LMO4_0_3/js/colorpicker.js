@@ -150,7 +150,7 @@ function getColorTable() {
   tableCode += '<table border="0" cellspacing="1" cellpadding="1" style="margin:0">';
   for (i = 0; i < colors.length; i++) {
     if (i % perline == 0) { tableCode += '<tr>'; }
-    tableCode += '<td style="cursor:crosshair;color: '+ colors[i] + '; background: ' + colors[i] + ';font-size: 10px;"><a style="cursor:crosshair;background:transparent;diplay:block;text-decoration:none;" title="' 
+    tableCode += '<td style="cursor:crosshair;color: '+ colors[i] + '; background: ' + colors[i] + ';font-size: 10px;"><a style="cursor:crosshair;background:transparent;display:block;text-decoration:none;" title="'
               + colors[i] + '" href="#" onClick="setColor(\'' + colors[i] + '\');return false;">&nbsp;&nbsp;&nbsp;</a></td>';
     if (i % perline == perline - 1) { tableCode += '</tr>'; }
   }

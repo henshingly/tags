@@ -30,4 +30,3 @@ if ($sent) {
 } else {
   echo getMessage($text['tipp'][80],TRUE);
 }
-?>

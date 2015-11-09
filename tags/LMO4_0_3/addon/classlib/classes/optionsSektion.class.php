@@ -88,4 +88,3 @@ class optionsSektion extends sektion {
 
 } // End CLASS Options
 
-?>

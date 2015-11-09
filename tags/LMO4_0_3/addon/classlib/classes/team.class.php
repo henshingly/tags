@@ -68,4 +68,3 @@ class team {
     return $this->keyValues[$new_key];
   }
 } // class team
-?>

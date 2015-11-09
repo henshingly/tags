@@ -228,4 +228,3 @@ class spieltag {
   }
 
 } // END class spieltag
-?>

@@ -60,4 +60,3 @@ for($ii = 1; $ii <= count($tippdaten); $ii++) {
 }
 clearstatcache();
 
-?>

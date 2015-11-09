@@ -135,4 +135,3 @@ foreach ($fav_team[$i] as $akt_team) {
   }
 }
 $template->parseCurrentBlock();
-?>

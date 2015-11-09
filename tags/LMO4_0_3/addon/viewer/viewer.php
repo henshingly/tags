@@ -117,4 +117,4 @@ if ($viewer_cache_counter == 0 || $viewer_cache_counter > $multi_cfgarray['cache
 }
    
    
-?>
+

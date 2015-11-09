@@ -176,4 +176,3 @@ function findImage ($key,$path,$imgType,$htmlParameter="",$alternative_text='') 
   }
 }
 
-?>

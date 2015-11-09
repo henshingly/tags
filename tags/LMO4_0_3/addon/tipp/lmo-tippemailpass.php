@@ -62,4 +62,3 @@ if (isset($xtippername2)) {
 } else {
   $_SESSION["lmotipperok"] = 0;
 } // kein Name angegeben
-?>

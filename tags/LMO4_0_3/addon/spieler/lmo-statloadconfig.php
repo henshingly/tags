@@ -44,4 +44,3 @@ if (is_readable($configfile) && $config=file($configfile)) {
 		}
 	}
 }
-?>

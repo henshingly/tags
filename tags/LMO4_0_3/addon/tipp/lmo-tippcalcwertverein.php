@@ -90,4 +90,3 @@ if(file_exists($auswertfile)){
 }else{?>
   <?php echo getMessage($text['tipp'][17],TRUE);?><?php
 }
-?>

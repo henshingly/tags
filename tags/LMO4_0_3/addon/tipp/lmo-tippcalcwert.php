@@ -294,4 +294,3 @@ if (!file_exists($auswertfile)) {
   rsort($tab0, SORT_STRING);
 }
 
-?>

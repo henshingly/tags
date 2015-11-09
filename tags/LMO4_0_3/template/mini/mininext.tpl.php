@@ -1,5 +1,5 @@
 <style type="text/css">
-.nextgame caption, .nextgame td, .nextgame th {font-family:sans-serif;font-size:11px;color:000;white-space:nowrap;}
+.nextgame caption, .nextgame td, .nextgame th {font-family:sans-serif;font-size:11px;color:#000;white-space:nowrap;}
 .nextgame table{border:none;border-collapse:collapse;border:1px solid #ccc;margin-bottom:0.5em;}
 .nextgame .lost  {color: #900;}
 .nextgame .win  {color: #090;}

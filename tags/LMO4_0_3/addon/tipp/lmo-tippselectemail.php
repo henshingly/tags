@@ -30,5 +30,3 @@ for($i = 0; $i < count($dumma); $i++) {
   echo "<option value=\"".$dummb[0]."\" ";
   echo ">".$dummb[0]." (".$dummb[3]." - ".$dummb[4].")"."</option>";
 }
-
-?>

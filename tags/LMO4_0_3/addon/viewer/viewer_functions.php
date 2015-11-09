@@ -41,4 +41,3 @@ function zeitberechnung($modus,$wert)  {
   }   // switch
 }
 
-?>

@@ -25,4 +25,3 @@ if (function_exists('ini_get') && @ini_get('safe_mode')=="0") {
 } else {
   $sent=mail($aadr,$text['tipp'][13],$tipp_mailtext,"From:".$text['tipp'][0]." <".$aadr.">");
 }
-?>

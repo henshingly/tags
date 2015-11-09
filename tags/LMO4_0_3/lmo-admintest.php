@@ -20,6 +20,4 @@
   
 if( !defined('LMO_AUTH') ) {
   die ();
-  exit;
 }
-?>

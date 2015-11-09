@@ -256,4 +256,3 @@ function findTeamName(&$teamNamesArray,$search) {
 	return $results;
 }
 
-?>

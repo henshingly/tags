@@ -140,4 +140,3 @@ if ($einsichtfile != "") {
   clearstatcache();
 }
 
-?>

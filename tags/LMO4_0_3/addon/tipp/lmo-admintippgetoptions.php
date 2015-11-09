@@ -138,4 +138,3 @@
       break;
     }
     //isset($_POST["xtippspiel"])?                            $tipp_tippspiel=1:                                      $tipp_tippspiel=0;
-?>

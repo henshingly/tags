@@ -141,4 +141,3 @@ if ($ftype!="") {
 }
 $tippfile="";
 clearstatcache();
-?>
