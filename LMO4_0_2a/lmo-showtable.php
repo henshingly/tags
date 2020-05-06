@@ -76,7 +76,7 @@ if($tabpkt==0){?>
     <th align="right"><?php echo $text[39]; ?></th><?php
 if($tabpkt==1){?>
     <th style="width:2px;">&nbsp;</th>
-    <th <?php echo $dummy?>><?php echo $text[37]; ?></th><?php
+    <th <?=$dummy?>><?php echo $text[37]; ?></th><?php
 }
 if($tabonres==2){?>
     <th style="width:2px;">&nbsp;</th>
@@ -88,14 +88,14 @@ if($tabonres==2){?>
     <th align="right"><?php echo $text[36]; ?></th><?php
   if($tabpkt==0){?>
     <th style="width:2px;">&nbsp;</th>
-    <th <?php echo $dummy?>><?php echo $text[37]; ?></th><?php
+    <th <?=$dummy?>><?php echo $text[37]; ?></th><?php
   } ?>
     <th style="width:2px;">&nbsp;</th>
     <th colspan="3" align="center"><?php echo $text[38]; ?></th>
     <th align="right"><?php echo $text[39]; ?></th><?php
   if($tabpkt==1){?>
     <th style="width:2px;">&nbsp;</th>
-    <th <?php echo $dummy?>><?php echo $text[37]; ?></th><?php
+    <th <?=$dummy?>><?php echo $text[37]; ?></th><?php
   }?>
     <th style="width:2px;">&nbsp;</th>
     <th align="right"><?php echo $text[33]; ?></th>
@@ -106,7 +106,7 @@ if($tabonres==2){?>
     <th align="right"><?php echo $text[36]; ?></th><?php
   if($tabpkt==0){?>
     <th style="width:2px;">&nbsp;</th>
-    <th<?php echo $dummy?>><?php echo $text[37]?></th><?php
+    <th<?=$dummy?>><?php echo $text[37]?></th><?php
   }?>
     <th style="width:2px;">&nbsp;</th>
     <th colspan="3" align="center"><?php echo $text[38]; ?></th>
@@ -164,7 +164,7 @@ for($x = 1; $x <= $anzteams; $x++) {
     <td class="<?php echo $lmo_tabelle_class ?>"><img src='<?php echo URL_TO_IMGDIR."/lmo-tab".$y.".gif"; ?>' width="9" height="9" border="0" alt='' /></td>
     <td class="<?php echo $lmo_tabelle_class ?>" align="center"><?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?></td>
     <td class="<?php echo $lmo_tabelle_class ?>" align="left">
-        <?php
+    	<?php
   echo $dummy.$teams[$i].$dumm2;
   if (($teamu[$i] != "") && ($urlt == 1)) {?>
         <a href="<?php echo $teamu[$i]; ?>" target="_blank"><img border="0" title="<?php echo $text[46]; ?>" width="11" src="<?php echo URL_TO_IMGDIR."/url.png";?>" alt="<?php echo $text[564]?>" /></a><?php
@@ -186,7 +186,7 @@ for($x = 1; $x <= $anzteams; $x++) {
     $lmo_tabellennotiz.=" <strong>".$teams[$i]."</strong>";
     //Straf-/Bonuspunkte
     if ($strafp[$i]!=0 || $strafm[$i]!=0) {
-      $lmo_tabellennotiz.="\n\n<strong>".$text[128].":</strong>\n";
+      $lmo_tabellennotiz.="\n\n<strong>".$text[128].":</strong> ";
       //Punkte
       $lmo_tabellennotiz.=$strafp[$i]<0?"+".((-1)*applyFactor($strafp[$i],$pointsfaktor)):((-1)*applyFactor($strafp[$i],$pointsfaktor));
       //Minuspunkte
@@ -194,23 +194,23 @@ for($x = 1; $x <= $anzteams; $x++) {
         $lmo_tabellennotiz.=":".($strafm[$i]<0?"+".((-1)*applyFactor($strafm[$i],$pointsfaktor)):((-1)*applyFactor($strafm[$i],$pointsfaktor)));
       }
       //Ab ST
-      if ($strafdat[$i]!=0) $lmo_tabellennotiz.=" ({$text[524]} {$text[2]} {$strafdat[$i]})";
+      if ($strafdat[$i]!=0) $lmo_tabellennotiz.=" ({$text[524]} {$text[145]} {$strafdat[$i]})";
     }
     //Straf-/Bonustore
     if ($torkorrektur1[$i]!=0 || $torkorrektur2[$i]!=0) {
-      $lmo_tabellennotiz.="\n<strong>".$text[522].":</strong>\n";
+      $lmo_tabellennotiz.="\n<strong>".$text[522].":</strong> ";
       //Tore
       $lmo_tabellennotiz.=$torkorrektur1[$i]<0?"+".((-1)*applyFactor($torkorrektur1[$i],$goalfaktor)).":":((-1)*applyFactor($torkorrektur1[$i],$goalfaktor)).":";
       //Gegentore
       $lmo_tabellennotiz.=$torkorrektur2[$i]<0?"+".((-1)*applyFactor($torkorrektur2[$i],$goalfaktor)):((-1)*applyFactor($torkorrektur2[$i],$goalfaktor));
       //Ab ST
-      if ($strafdat[$i]!=0) $lmo_tabellennotiz.=" ({$text[524]} {$text[2]} {$strafdat[$i]})";
+      if ($strafdat[$i]!=0) $lmo_tabellennotiz.=" ({$text[524]} {$text[145]} {$strafdat[$i]})";
     }
     //Teamnotizen
     if ($teamn[$i]!="") {
-      $lmo_tabellennotiz.="\n\n<strong>".$text[22].":</strong>\n".$teamn[$i];
+      $lmo_tabellennotiz.="\n\n<strong>".$text[22].":</strong> ".$teamn[$i];
     }?>
-      <a href='#' onclick="alert('<?php echo addcslashes('',htmlentities(strip_tags($lmo_tabellennotiz)))?>');window.focus();return false;"><img src='<?php echo URL_TO_IMGDIR."/lmo-st2.gif"?>' width='10' height='12' border='0' alt='' /><span class='popup'><?php echo nl2br($lmo_tabellennotiz)?></span></a><?php
+      <a href='#' onclick="alert('<?php echo mysql_escape_string(htmlentities(strip_tags($lmo_tabellennotiz)))?>');window.focus();return false;"><img src='<?php echo URL_TO_IMGDIR."/lmo-st2.gif"?>' width='10' height='12' border='0' alt='' /><span class='popup'><?php echo nl2br($lmo_tabellennotiz)?></span></a><?php
     $lmo_tabellennotiz="";
   } else {
     echo "&nbsp;";

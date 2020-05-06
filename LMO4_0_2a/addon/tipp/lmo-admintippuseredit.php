@@ -1,4 +1,4 @@
-<?php
+<?
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -202,20 +202,20 @@ if($action=="admin" && $todo=="tippuseredit" && ($nick!="" || $save==-1)){
     }?>
     <table class="lmoMiddle" cellspacing="0" cellpadding="0" border="0" width="50%">
       <tr>
-        <th class="lmoMenu"><?php echo $text['tipp'][114]?></th>
+        <th class="lmoMenu"><?=$text['tipp'][114]?></th>
       </tr>
       <tr>
         <td align="center">
-          <a href='<?php echo $_SERVER['PHP_SELF']?>?action=admin&amp;todo=tippuser'><?php echo $text[5]." ".$text['tipp'][111]." ".$text['tipp'][53]?></a>
+          <a href='<?=$_SERVER['PHP_SELF']?>?action=admin&amp;todo=tippuser'><?=$text[5]." ".$text['tipp'][111]." ".$text['tipp'][53]?></a>
         </td>
       </tr>
-    </table><?php
+    </table><?
   } else {
 ?>
 
   <table class="lmoMiddle" cellspacing="0" cellpadding="0" border="0">
     <tr>
-      <td align="center"><h1><?php 
+      <td align="center"><h1><? 
       if ($save == count($users)) {
         echo $text['tipp'][136];
       }else {
@@ -224,128 +224,128 @@ if($action=="admin" && $todo=="tippuseredit" && ($nick!="" || $save==-1)){
     </tr>
     <tr>
       <td align="center">
-        <form name="lmotippedit" action="<?php= $_SERVER['PHP_SELF']; ?>" method="post" onSubmit="if (this.nick.value=='') {alert ('<?php echo $text['tipp'][112]?>');this.nick.focus();return false;}">
+        <form name="lmotippedit" action="<?= $_SERVER['PHP_SELF']; ?>" method="post" onSubmit="if (this.nick.value=='') {alert ('<?=$text['tipp'][112]?>');this.nick.focus();return false;}">
           <input type="hidden" name="action" value="admin">
           <input type="hidden" name="todo" value="tippuseredit">
-          <input type="hidden" name="newpage" value="<?php echo $save == count($users)?'1':'0'?>">
+          <input type="hidden" name="newpage" value="<?=$save == count($users)?'1':'0'?>">
           <table class="lmoInner" cellspacing="0" cellpadding="0" border="0">
             <tr>
-              <td align="right">&nbsp;<?php echo $text['tipp'][23]; ?></td>
-              <td align="left"><?php 
+              <td align="right">&nbsp;<?=$text['tipp'][23]; ?></td>
+              <td align="left"><? 
             if ($save == count($users)) {?>
-                <input class="lmo-formular-input" type="text" name="nick" value="<?php= $nick; ?>"><?php
+                <input class="lmo-formular-input" type="text" name="nick" value="<?= $nick; ?>"><?
             }else{?>
-                <input type="hidden" name="nick" value="<?php= $nick; ?>"><strong><?php echo $tipp_tipperdaten[0]?></strong><?php
+                <input type="hidden" name="nick" value="<?= $nick; ?>"><strong><?=$tipp_tipperdaten[0]?></strong><?
             }?>
               </td>
             </tr>
             <tr>
-              <td align="right">&nbsp;<?php 
+              <td align="right">&nbsp;<? 
             if ($save == count($users)) {?>
-              <?php echo $text[323]; ?><?php
+              <?=$text[323]; ?><?
             } else {?>
-              <acronym title="<?php echo $text['tipp'][304]?>"><?php echo $text[323]; ?></acronym><?php
+              <acronym title="<?=$text['tipp'][304]?>"><?=$text[323]; ?></acronym><?
             }?>
               </td>
-              <td align="left"><?php 
+              <td align="left"><? 
             if ($save == count($users)) {?>
-                <input class="lmo-formular-input" type="text" name="xtipperpass" value="<?php include(PATH_TO_LMO."/lmo-adminuserpass.php");?>"><?php
+                <input class="lmo-formular-input" type="text" name="xtipperpass" value="<? include(PATH_TO_LMO."/lmo-adminuserpass.php");?>"><?
             }else{?>
-                <input class="lmo-formular-input" type="password" name="xtipperpass" size="25" maxlength="100" value=""><?php
+                <input class="lmo-formular-input" type="password" name="xtipperpass" size="25" maxlength="100" value=""><?
             }?>
               </td>
             </tr>
             <tr>
-              <td align="right">&nbsp;<?php echo $text['tipp'][14]; ?></td>
-              <td align="left"><input class="lmo-formular-input" type="text" name="xtippervorname" size="25" maxlength="32" value="<?php= substr($tipp_tipperdaten[3],0,strpos($tipp_tipperdaten[3]," ")); ?>"></td>
+              <td align="right">&nbsp;<?=$text['tipp'][14]; ?></td>
+              <td align="left"><input class="lmo-formular-input" type="text" name="xtippervorname" size="25" maxlength="32" value="<?= substr($tipp_tipperdaten[3],0,strpos($tipp_tipperdaten[3]," ")); ?>"></td>
             </tr>
             <tr>
-              <td align="right">&nbsp;<?php echo $text['tipp'][15]; ?></td>
-              <td align="left"><input class="lmo-formular-input" type="text" name="xtippernachname" size="25" maxlength="32" value="<?php= substr($tipp_tipperdaten[3],strpos($tipp_tipperdaten[3]," ")+1); ?>"></td>
+              <td align="right">&nbsp;<?=$text['tipp'][15]; ?></td>
+              <td align="left"><input class="lmo-formular-input" type="text" name="xtippernachname" size="25" maxlength="32" value="<?= substr($tipp_tipperdaten[3],strpos($tipp_tipperdaten[3]," ")+1); ?>"></td>
             </tr>
             <tr>
-              <td align="right">&nbsp;<?php echo $text['tipp'][126]; ?></td>
-              <td align="left"><input class="lmo-formular-input" type="text" name="xtipperstrasse" size="25" maxlength="32" value="<?php= $tipp_tipperdaten[6]; ?>"></td>
+              <td align="right">&nbsp;<?=$text['tipp'][126]; ?></td>
+              <td align="left"><input class="lmo-formular-input" type="text" name="xtipperstrasse" size="25" maxlength="32" value="<?= $tipp_tipperdaten[6]; ?>"></td>
             </tr>
             <tr>
-              <td align="right">&nbsp;<?php echo $text['tipp'][127]; ?></td>
-              <td align="left"><input class="lmo-formular-input" type="text" name="xtipperplz" size="7" maxlength="5" value="<?php= $tipp_tipperdaten[7]; ?>"></td>
+              <td align="right">&nbsp;<?=$text['tipp'][127]; ?></td>
+              <td align="left"><input class="lmo-formular-input" type="text" name="xtipperplz" size="7" maxlength="5" value="<?= $tipp_tipperdaten[7]; ?>"></td>
             </tr>
             <tr>
-              <td align="right">&nbsp;<?php echo $text['tipp'][128]; ?></td>
-              <td align="left"><input class="lmo-formular-input" type="text" name="xtipperort" size="25" maxlength="32" value="<?php= $tipp_tipperdaten[8]; ?>"></td>
+              <td align="right">&nbsp;<?=$text['tipp'][128]; ?></td>
+              <td align="left"><input class="lmo-formular-input" type="text" name="xtipperort" size="25" maxlength="32" value="<?= $tipp_tipperdaten[8]; ?>"></td>
             </tr>
             <tr>
-              <td align="right">&nbsp;<?php echo $text['tipp'][16]; ?></td>
-              <td align="left"><input class="lmo-formular-input" type="text" name="xtipperemail" size="25" maxlength="64" value="<?php= $tipp_tipperdaten[4]; ?>"></td>
+              <td align="right">&nbsp;<?=$text['tipp'][16]; ?></td>
+              <td align="left"><input class="lmo-formular-input" type="text" name="xtipperemail" size="25" maxlength="64" value="<?= $tipp_tipperdaten[4]; ?>"></td>
             </tr>
             <tr>
               <td>&nbsp;</td>
-              <td align="left"><input type="checkbox" name="xfrei" <?php if($tipp_tipperdaten[2]==5){echo "checked";} ?>><?php= $text['tipp'][147] ?></td>
+              <td align="left"><input type="checkbox" name="xfrei" <? if($tipp_tipperdaten[2]==5){echo "checked";} ?>><?= $text['tipp'][147] ?></td>
             </tr>
             <tr>
-              <th align="left" colspan="2"><?php= $text['tipp'][165]; ?></th>
+              <th align="left" colspan="2"><?= $text['tipp'][165]; ?></th>
             </tr>
             <tr>
               <td>&nbsp;</td>
               <td align="left">
-                <input type="checkbox" name="xnews" <?php if(isset($tipp_tipperdaten[9]) && $tipp_tipperdaten[9]!=-1){echo "checked";} ?>><?php= $text['tipp'][206] ?>
+                <input type="checkbox" name="xnews" <? if(isset($tipp_tipperdaten[9]) && $tipp_tipperdaten[9]!=-1){echo "checked";} ?>><?= $text['tipp'][206] ?>
               </td>
             </tr>
             <tr>
               <td>&nbsp;</td>
               <td align="left">
-                <input type="checkbox" name="xremind" <?php if(isset($tipp_tipperdaten[10]) && $tipp_tipperdaten[10]!=-1){echo "checked";} ?>><?php= $text['tipp'][167] ?>
+                <input type="checkbox" name="xremind" <? if(isset($tipp_tipperdaten[10]) && $tipp_tipperdaten[10]!=-1){echo "checked";} ?>><?= $text['tipp'][167] ?>
               </td>
             </tr>
-<?php if($tipp_tipperimteam>=0){ ?>
+<? if($tipp_tipperimteam>=0){ ?>
             <tr>
-              <th align="left" colspan="2"><?php= $text['tipp'][27]; ?></th>
+              <th align="left" colspan="2"><?= $text['tipp'][27]; ?></th>
             </tr>
             <tr>
-              <td align="left" colspan="2"><input type="radio" name="xtippervereinradio" value="0" id="0" <?php if($xtippervereinradio==0){echo "checked";} ?>><?php= $text['tipp'][50]; ?></td>
+              <td align="left" colspan="2"><input type="radio" name="xtippervereinradio" value="0" id="0" <? if($xtippervereinradio==0){echo "checked";} ?>><?= $text['tipp'][50]; ?></td>
             </tr>
             <tr>
-              <td align="left"><input type="radio" name="xtippervereinradio" value="1" id="1" <?php if($xtippervereinradio==1){echo "checked";} ?>><?php= $text['tipp'][48]; ?></td>
+              <td align="left"><input type="radio" name="xtippervereinradio" value="1" id="1" <? if($xtippervereinradio==1){echo "checked";} ?>><?= $text['tipp'][48]; ?></td>
               <td align="left">
-                <select name="xtippervereinalt" onChange="xtippervereinradio[1].checked=true"><?php
+                <select name="xtippervereinalt" onChange="xtippervereinradio[1].checked=true"><?
                 echo "<option value=\"\" "; if($xtippervereinalt==""){echo "selected";} echo ">".$text['tipp'][51]."</option>";
                   require(PATH_TO_ADDONDIR."/tipp/lmo-tippnewteams.php");?>
                 </select>
               </td>
             </tr>
             <tr>
-              <td align="left"><input type="radio" name="xtippervereinradio" value="2" id="2" <?php if($xtippervereinradio==2){echo "checked";} ?>><?php= $text['tipp'][49]; ?></td>
-              <td align="left"><input class="lmo-formular-input" type="text" name="xtippervereinneu" size="25" maxlength="32" value="<?php= $xtippervereinneu; ?>" onFocus="xtippervereinradio[2].checked=true"></td>
-            </tr><?php 
+              <td align="left"><input type="radio" name="xtippervereinradio" value="2" id="2" <? if($xtippervereinradio==2){echo "checked";} ?>><?= $text['tipp'][49]; ?></td>
+              <td align="left"><input class="lmo-formular-input" type="text" name="xtippervereinneu" size="25" maxlength="32" value="<?= $xtippervereinneu; ?>" onFocus="xtippervereinradio[2].checked=true"></td>
+            </tr><? 
   }?>
             <tr>
-              <th align="left" colspan="2"><?php= $text['tipp'][273]; ?></th>
+              <th align="left" colspan="2"><?= $text['tipp'][273]; ?></th>
             </tr>
             <tr>
-              <td class="lmost5" ><?php 
+              <td class="lmost5" ><? 
               $ftype=".l98";
                 require(PATH_TO_ADDONDIR."/tipp/lmo-tippnewdir.php");?>
               </td>
             </tr>
             <tr>
               <td align="left">
-                <a href='<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippuser&amp;del=".$tipp_tipperdaten[0];?>' onClick="return confirm('<?php echo $text[499]?>');"><img src="<?php echo URL_TO_IMGDIR?>/delete.gif" border="0" width="11" height="13" alt="<?php echo $text[82]?>"></a>
-                &nbsp;&nbsp;<a href='<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippuser"?>'><?php echo $text[544]?></a>
+                <a href='<?=$_SERVER['PHP_SELF']."?action=admin&amp;todo=tippuser&amp;del=".$tipp_tipperdaten[0];?>' onClick="return confirm('<?=$text[499]?>');"><img src="<?=URL_TO_IMGDIR?>/delete.gif" border="0" width="11" height="13" alt="<?=$text[82]?>"></a>
+                &nbsp;&nbsp;<a href='<?=$_SERVER['PHP_SELF']."?action=admin&amp;todo=tippuser"?>'><?=$text[544]?></a>
               </td>
               <td align="right">
                 
-                <input class="lmo-formular-button" type="submit" name="xtippersub" value="<?php= $text[329]; ?>">
+                <input class="lmo-formular-button" type="submit" name="xtippersub" value="<?= $text[329]; ?>">
               </td>
             </tr>
             <tr>
-              <td class="lmoFooter" colspan="2" align="right"><?php= "<strong>".$text['tipp'][82]."</strong> ".$text['tipp'][137]; ?></td>
+              <td class="lmoFooter" colspan="2" align="right"><?= "<strong>".$text['tipp'][82]."</strong> ".$text['tipp'][137]; ?></td>
             </tr>
           </table>
         </form>
       </td>
     </tr>
-  </table><?php
+  </table><?
   }
 }
 $file="";?>

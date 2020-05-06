@@ -13,7 +13,7 @@ $Path = PATH_TO_ADDONDIR;
 <table border= '0' cellspacing='0' align='center'>
 <tr>
 <td style='font-size=10pt;background-color=#EEEEEE;border-right-style:solid;border-left-style:solid;border-top-style:solid;border-bottom-style:solid;border-width:1px;border-color:#000000'; align='center'><B>Version Control</B><small><BR>
-<?php echo CLASSLIB_VERSlON;?></small></td>
+<?PHP echo CLASSLIB_VERSlON;?></small></td>
 </td>
 </tR>
 <tr>
@@ -26,13 +26,13 @@ $Path = PATH_TO_ADDONDIR;
   <td width='30'>&nbsp</td>
   <td width='200'>Installed Version</td>
   <td width='30'>=</td>
-  <td width='300'><?php echo CLASSLIB_VERSION;?></td>
+  <td width='300'><?PHP echo CLASSLIB_VERSION;?></td>
 </tr>
 <tr>
   <td>&nbsp</td>
   <td>Installed in</td>
   <td>=</td>
-  <td><small><?php echo $Path;?></small></td>
+  <td><small><?PHP echo $Path;?></small></td>
 </tr>
 <tr>
   <td>&nbsp</td>

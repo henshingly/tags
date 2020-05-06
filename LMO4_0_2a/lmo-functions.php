@@ -130,43 +130,10 @@ function getLangSelector() {
     }
   }
   closedir($handle);
-  if (isset($_SESSION['lmouserok']) && $_SESSION['lmouserok']=='2') {
+  if ($_SESSION['lmouserok']=='2') {
     $output_sprachauswahl .= "&nbsp<a href='".URL_TO_LMO."/lang/translate.php'> » ".$GLOBALS['text'][573]."</a>";
   }
   return $output_sprachauswahl;
-}
-
-function get_timezones() {
-  //load avail timezones
-  if (function_exists('timezone_identifiers_list')) {
-    $zones = array_reverse(timezone_identifiers_list());
-
-    foreach ($zones as $zone)
-    {
-      $zone = explode('/', $zone); // 0 => Continent, 1 => City
-
-      // Only use "friendly" continent names
-      if ($zone[0] == 'Africa' ||
-          $zone[0] == 'America' ||
-          $zone[0] == 'Antarctica' ||
-          $zone[0] == 'Arctic' ||
-          $zone[0] == 'Asia' ||
-          $zone[0] == 'Atlantic' ||
-          $zone[0] == 'Australia' ||
-          $zone[0] == 'Europe' ||
-          $zone[0] == 'Indian' ||
-          $zone[0] == 'Pacific')
-      {
-        if (isset($zone[1]) != '')
-        {
-          $locations[$zone[0]][$zone[0]. '/' . $zone[1]] = str_replace('_', ' ', $zone[1]); // Creates array(DateTimeZone => 'Friendly name')
-        }
-      }
-    }
-  } else {
-    return array();
-  }
-  return array_reverse($locations);
 }
 
 /**
@@ -174,29 +141,25 @@ function get_timezones() {
  *
  * @category    PHP
  * @package     PHP_Compat
- * @license     LGPL - http://www.gnu.org/licenses/lgpl.html
- * @copyright   2004-2007 Aidan Lister <aidan@php.net>, Arpad Ray <arpad@php.net>
  * @link        http://php.net/function.is_a
  * @author      Aidan Lister <aidan@php.net>
- * @version     $Revision$
+ * @version     $Revision: 472 $
  * @since       PHP 4.2.0
  * @require     PHP 4.0.0 (user_error) (is_subclass_of)
  */
-function php_compat_is_a($object, $class) {
-  if (!is_object($object)) {
-    return false;
-  }
-  if (strtolower(get_class($object)) == strtolower($class)) {
-    return true;
-  } else {
-    return is_subclass_of($object, $class);
-  }
+if (!function_exists('is_a')) {
+    function is_a($object, $class)
+    {
+        if (!is_object($object)) {
+            return false;
+        }
+
+        if (get_class($object) == strtolower($class)) {
+            return true;
+        } else {
+            return is_subclass_of($object, $class);
+        }
+    }
 }
 
-// Define
-if (!function_exists('is_a')) {
-  function is_a($object, $class) {
-    return php_compat_is_a($object, $class);
-  }
-}
 ?>

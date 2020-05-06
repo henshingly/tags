@@ -1,4 +1,4 @@
-<?php
+<?
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -54,7 +54,7 @@ if (($_SESSION['lmouserok']==2)||($_SESSION['lmouserok']==1)) {
         }
         if ($lmtype==0) {
           /*Minitabellen-CSV generieren*/
-          //include(PATH_TO_ADDONDIR."/mini/lmo-minitab_save.php");
+          include(PATH_TO_ADDONDIR."/mini/lmo-minitab_save.php");
           /*Minitabellen-CSV generieren*/
           fputs($datei,"Kegel=".$kegel."\n");
           fputs($datei,"HandS=".$hands."\n");
@@ -142,8 +142,8 @@ if (($_SESSION['lmouserok']==2)||($_SESSION['lmouserok']==1)) {
               fputs($datei,"SM=".$strafm[$i]."\n");
             }
             fputs($datei,"TOR1=".$torkorrektur1[$i]."\n"); // Hack-Straftore
-                fputs($datei,"TOR2=".$torkorrektur2[$i]."\n"); // Hack-Straftore
-                fputs($datei,"STDA=".$strafdat[$i]."\n");      // Hack-Straftore
+        		fputs($datei,"TOR2=".$torkorrektur2[$i]."\n"); // Hack-Straftore
+        		fputs($datei,"STDA=".$strafdat[$i]."\n");      // Hack-Straftore
           }
           fputs($datei,"URL=".$teamu[$i]."\n");
           fputs($datei,"NOT=".$teamn[$i]."\n");

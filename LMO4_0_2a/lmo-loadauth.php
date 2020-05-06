@@ -1,4 +1,4 @@
-<?php
+<?
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  *
+  * 
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -17,8 +17,8 @@
   *
   * $id$
   */
-
-
+  
+  
 require_once(PATH_TO_LMO."/lmo-admintest.php");
 
 $lmo_auth_file=PATH_TO_CONFIGDIR."/lmo-auth.php";

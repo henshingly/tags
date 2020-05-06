@@ -1,5 +1,5 @@
 <card id="index" title="Ergebnisdienst">
-    <p><?php
+    <p><?
 $array = array("");
 $verz = opendir(substr(PATH_TO_LMO."/".$dirliga, 0, -1));
 $dummy = array();
@@ -88,17 +88,17 @@ for($k = $begin; $k < $ende; $k++) {
    
   $t0 = ($t0);?>
       <small>
-        <a href='<?php echo $_SERVER['PHP_SELF']?>?file=<?php echo $files?>&amp;op=nav&amp;st=<?php echo $t1?>'><?php echo $t0?></a>
-        <br/><?php=strftime($defdateformat,filemtime(PATH_TO_LMO."/".$dirliga.$files)).$t3?>
+        <a href='<?=$_SERVER['PHP_SELF']?>?file=<?=$files?>&amp;op=nav&amp;st=<?=$t1?>'><?=$t0?></a>
+        <br/><?=strftime($defdateformat,filemtime(PATH_TO_LMO."/".$dirliga.$files)).$t3?>
       </small>
-      <br/><?php  
+      <br/><?  
 }
 if ($begin-1>0) {?>
-    <a href='<?php echo $_SERVER['PHP_SELF']?>?begin=<?php echo $begin-$wap_anzahl_ligen_pro_seite?>'>zurück</a><?php
+    <a href='<?=$_SERVER['PHP_SELF']?>?begin=<?=$begin-$wap_anzahl_ligen_pro_seite?>'>zurück</a><?
 }
 if ($begin-1>0 && $ende+1<count($dummy)) echo "&#160;|&#160; ";
 if ($ende<count($dummy)) {?>
-    <a href='<?php echo $_SERVER['PHP_SELF']?>?begin=<?php echo $begin+$wap_anzahl_ligen_pro_seite?>'>weiter</a><?php
+    <a href='<?=$_SERVER['PHP_SELF']?>?begin=<?=$begin+$wap_anzahl_ligen_pro_seite?>'>weiter</a><?
 }
 if($i==0){ 
   echo $text[223];

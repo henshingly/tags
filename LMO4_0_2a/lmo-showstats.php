@@ -190,110 +190,110 @@ $liga = new liga();
 // Dadurch wird das erneute Laden des Files vermieden. Performance !!!!
 $ligaLoaded = FALSE;
 if ($file && (!isset($liga) || !is_object($liga) || $liga->fileName != $file)) {
-    $liga = new liga();
-    $ligaLoaded = $liga->loadFile(PATH_TO_LMO.'/'.$dirliga.$file);
+	$liga = new liga();
+	$ligaLoaded = $liga->loadFile(PATH_TO_LMO.'/'.$dirliga.$file);
 }
 
-if ($ligaLoaded and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
-    $table = $liga->calcTable($liga->spieltageCount());
-    $team_a = new team();
-    $team_a = $liga->teamForNumber($show_stat1);
-    $rstPrgMinus_a = 0;
-    $rstPrgMinus_b = 0;
-    $rstPrgPlus_a = 0;
-    $rstPrgPlus_b = 0;
-    $faktor = $liga->teamCount();
-    $sortedGames_a = array();
-    $sortedGames_b = array();
-    $sortedGames_a = gamesSortedForTeam ($liga,$team_a,false);
-    echo "<!-- OUTPUT Restprogramm START-->";
-    echo "<tr><td align=\"right\" valign=\"top\">";
-    foreach ($sortedGames_a as $game_a) {
-        $result = $game_a['partie']->valuateGame();
-        $pos = 1;
-        if ( $result == -1 ) {
-            // aktuelle Tabellenposition ermitteln
-            if ($game_a['partie']->heim == $team_a)
-                $gegner_a = &$game_a['partie']->gast;
-            else
-                $gegner_a = &$game_a['partie']->heim;
+if ($ligaLoaded	and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
+	$table = $liga->calcTable($liga->spieltageCount());
+	$team_a = new team();
+	$team_a = $liga->teamForNumber($show_stat1);
+	$rstPrgMinus_a = 0;
+	$rstPrgMinus_b = 0;
+	$rstPrgPlus_a = 0;
+	$rstPrgPlus_b = 0;
+	$faktor = $liga->teamCount();
+	$sortedGames_a = array();
+	$sortedGames_b = array();
+	$sortedGames_a = gamesSortedForTeam ($liga,$team_a,false);
+	echo "<!-- OUTPUT Restprogramm START-->";
+	echo "<tr><td align=\"right\" valign=\"top\">";
+	foreach ($sortedGames_a as $game_a) {
+		$result = $game_a['partie']->valuateGame();
+		$pos = 1;
+		if ( $result == -1 ) {
+			// aktuelle Tabellenposition ermitteln
+			if ($game_a['partie']->heim == $team_a)
+				$gegner_a = &$game_a['partie']->gast;
+			else
+				$gegner_a = &$game_a['partie']->heim;
 
-            foreach ( $table as $position ) {
-                if ($position['team'] == $gegner_a) break;
-                $pos ++;
-            }
-            $rstPrgPlus_a += $position["pPkt"];
-            $rstPrgMinus_a += $position["mPkt"];
+			foreach ( $table as $position ) {
+				if ($position['team'] == $gegner_a) break;
+				$pos ++;
+			}
+			$rstPrgPlus_a += $position["pPkt"];
+			$rstPrgMinus_a += $position["mPkt"];
 
-            if ($game_a['partie']->heim == $team_a)
-                echo $text[73]."&nbsp;".$gegner_a->name;
-            else
-                echo $text[74]."&nbsp;".$gegner_a->name;
-            echo "&nbsp;(".$pos.".)";
-            echo "<br />";
-        }
-    }
-    $rstPrg_a = $rstPrgPlus_a - $rstPrgMinus_a;
-    echo "</td><th valign=\"top\">$text[4020]</th>";
-    echo "<td align=\"left\" valign=\"top\">";
-    if ($show_stat1 <> $show_stat2 and $show_stat2 > 0 and $show_stat2 <= $liga->teamCount() ) {
-        $team_b = new team();
-        $team_b = $liga->teamForNumber($show_stat2);
-        $sortedGames_b = gamesSortedForTeam ($liga,$team_b,false);
+			if ($game_a['partie']->heim == $team_a)
+				echo $text[73]."&nbsp;".$gegner_a->name;
+			else
+				echo $text[74]."&nbsp;".$gegner_a->name;
+			echo "&nbsp;(".$pos.".)";
+			echo "<br />";
+		}
+	}
+	$rstPrg_a = $rstPrgPlus_a - $rstPrgMinus_a;
+	echo "</td><th valign=\"top\">$text[4020]</th>";
+	echo "<td align=\"left\" valign=\"top\">";
+	if ($show_stat1 <> $show_stat2 and $show_stat2 > 0 and $show_stat2 <= $liga->teamCount() ) {
+		$team_b = new team();
+		$team_b = $liga->teamForNumber($show_stat2);
+		$sortedGames_b = gamesSortedForTeam ($liga,$team_b,false);
 
-        foreach ($sortedGames_b as $game_b) {
-            $result = $game_b['partie']->valuateGame();
-            $pos = 1;
-            if ( $result == -1) {
-                // aktuelle Tabellenposition ermitteln
-                if ($game_b['partie']->heim == $team_b)
-                    $gegner_b = &$game_b['partie']->gast;
-                else
-                    $gegner_b = &$game_b['partie']->heim;
+		foreach ($sortedGames_b as $game_b) {
+			$result = $game_b['partie']->valuateGame();
+			$pos = 1;
+			if ( $result == -1) {
+				// aktuelle Tabellenposition ermitteln
+				if ($game_b['partie']->heim == $team_b)
+					$gegner_b = &$game_b['partie']->gast;
+				else
+					$gegner_b = &$game_b['partie']->heim;
 
-                foreach ( $table as $position ) {
-                    if ($position['team'] == $gegner_b) break;
-                    $pos ++;
-                }
-                $rstPrgPlus_b += $position["pPkt"];
-                $rstPrgMinus_b += $position["mPkt"];
+				foreach ( $table as $position ) {
+					if ($position['team'] == $gegner_b) break;
+					$pos ++;
+				}
+				$rstPrgPlus_b += $position["pPkt"];
+				$rstPrgMinus_b += $position["mPkt"];
 
-                echo "(".$pos.".)&nbsp;";
-                if ($game_b['partie']->heim == $team_b)
-                    echo $gegner_b->name."&nbsp;".$text[73];
-                else
-                    echo $gegner_b->name."&nbsp;".$text[74];
-                echo "<br />";
-            }
-        }
-//      echo "</td></tr>";
-        $rstPrg_b = $rstPrgPlus_b - $rstPrgMinus_b;
-        if (($rstPrgPlus_a - $rstPrgMinus_a) < ($rstPrgPlus_b - $rstPrgMinus_b) ) {
-            $text_a = $text[4025];
-            $text_b = $text[4026];
-        }
-        else if (($rstPrgPlus_a - $rstPrgMinus_a) > ($rstPrgPlus_b - $rstPrgMinus_b) ) {
-            $text_a = $text[4026];
-            $text_b = $text[4025];
-        }
-        else {
-            $text_a = $text_b = $text[4024];
-        }
+				echo "(".$pos.".)&nbsp;";
+				if ($game_b['partie']->heim == $team_b)
+					echo $gegner_b->name."&nbsp;".$text[73];
+				else
+					echo $gegner_b->name."&nbsp;".$text[74];
+				echo "<br />";
+			}
+		}
+//		echo "</td></tr>";
+		$rstPrg_b = $rstPrgPlus_b - $rstPrgMinus_b;
+		if (($rstPrgPlus_a - $rstPrgMinus_a) < ($rstPrgPlus_b - $rstPrgMinus_b) ) {
+			$text_a = $text[4025];
+			$text_b = $text[4026];
+		}
+		else if (($rstPrgPlus_a - $rstPrgMinus_a) > ($rstPrgPlus_b - $rstPrgMinus_b) ) {
+			$text_a = $text[4026];
+			$text_b = $text[4025];
+		}
+		else {
+			$text_a = $text_b = $text[4024];
+		}
 
-    }
-    echo "</td></tr>";
+	}
+	echo "</td></tr>";
 
-    if (isset($team_b) and is_object($team_b) ) {
-        echo "<tr><th colspan=\"3\">$text[4021]</th></tr>";
-        echo "<tr><td align=\"right\">";
-        echo $rstPrgPlus_a.":".$rstPrgMinus_a." (".($rstPrg_a>0?"+".$rstPrg_a:$rstPrg_a).")";
-        echo "</td><th valign=\"top\">$text[4022]</th>";
-        echo "<td align=\"left\">";
-        echo $rstPrgPlus_b.":".$rstPrgMinus_b." (".($rstPrg_b>0?"+".$rstPrg_b:$rstPrg_b).")";
-        echo "</td></tr>";
-        echo "<tr><td align=\"right\">".$text_a."</td><th valign=\"top\">$text[4023]</th><td align=\"left\">".$text_b."</td></tr>";
-    }
-    echo "<!-- OUTPUT Restprogramm ENDE-->";
+	if (isset($team_b) and is_object($team_b) ) {
+		echo "<tr><th colspan=\"3\">$text[4021]</th></tr>";
+		echo "<tr><td align=\"right\">";
+		echo $rstPrgPlus_a.":".$rstPrgMinus_a." (".($rstPrg_a>0?"+".$rstPrg_a:$rstPrg_a).")";
+		echo "</td><th valign=\"top\">$text[4022]</th>";
+		echo "<td align=\"left\">";
+		echo $rstPrgPlus_b.":".$rstPrgMinus_b." (".($rstPrg_b>0?"+".$rstPrg_b:$rstPrg_b).")";
+		echo "</td></tr>";
+		echo "<tr><td align=\"right\">".$text_a."</td><th valign=\"top\">$text[4023]</th><td align=\"left\">".$text_b."</td></tr>";
+	}
+	echo "<!-- OUTPUT Restprogramm ENDE-->";
  } // loadFile
 /** ClassLib Statistik Erweiterung end */
     }
@@ -385,13 +385,13 @@ if ($ligaLoaded and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
           <td align="left"><?php echo $hgastsieg1?></td>
           <td colspan="2" align="left"><?php echo applyFactor($hheimsiegtor1,$goalfaktor)?>:<?php echo applyFactor($hgastsiegtor1,$goalfaktor)?> (<?php echo $spieltagflag1?>.<?php echo $text[4014]?>)</td>
         </tr><?php
-        if ($counteranz>2) {
-          $counteranz0=$counteranz-2;?>
-        <tr>
+  	    if ($counteranz>2) {
+  	      $counteranz0=$counteranz-2;?>
+      	<tr>
           <td>&nbsp;</td>
           <td colspan="3" align="right"><small><?php echo $text[4015]?><?php echo $counteranz0?><?php echo $text[4016]?></small></td>
         </tr><?php
-        }
+  	    }
       }
     }
     if ($agastsiegtor>0) {?>
@@ -409,13 +409,13 @@ if ($ligaLoaded and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
           <td align="left"><?php echo $agastsieg1?></td>
           <td colspan="2" align="left"><?php echo applyFactor($aheimsiegtor1,$goalfaktor)?>:<?php echo applyFactor($agastsiegtor1,$goalfaktor)?>  (<?php echo $spieltagflag3?>.<?php echo $text[4014]?>)</td>
         </tr><?php
-        if ($counteranz1>2) {
-          $counteranz4=$counteranz1-2;?>
+  	    if ($counteranz1>2) {
+  	      $counteranz4=$counteranz1-2;?>
         <tr>
           <td>&nbsp;</td>
           <td colspan="3" align="right"><small><?php echo $text[4015]?><?php echo $counteranz4?><?php echo $text[4016]?></small></td>
         </tr><?php
-        }
+  	    }
       }
     }
     if ($spieltagflag4>0) {?>
@@ -433,13 +433,13 @@ if ($ligaLoaded and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
           <td align="left"><?php echo $htorreichm4?></td>
           <td colspan="2" align="left"><?php echo applyFactor($htorreicht3,$goalfaktor)?>:<?php echo applyFactor($htorreicht4,$goalfaktor)?>  (<?php echo $spieltagflag5?>.<?php echo $text[4014]?>)</td>
         </tr><?php
-        if ($counteranz5>2) {
-          $counteranz6=$counteranz5-2;?>
-          <tr>
+  	    if ($counteranz5>2) {
+  	      $counteranz6=$counteranz5-2;?>
+    	  <tr>
            <td>&nbsp;</td>
            <td colspan="3" align="right"><small><?php echo $text[4015]?> <?php echo $counteranz6?> <?php echo $text[4019]?></small></td>
          </tr><?php
-        }
+      	}
       }
     }
     if (isset($akt_gewonnen)) {?>
@@ -491,7 +491,7 @@ if ($ligaLoaded and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
               </tr>
             </table>
           </td>
-        </tr><?php
+        </tr><?
     }?>
       </table>
     </td>

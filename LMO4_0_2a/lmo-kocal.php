@@ -1,4 +1,4 @@
-<?php
+<?
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  *
+  * 
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,7 +16,7 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-
+  
 
 if ($file != "") {
   $addk = $_SERVER['PHP_SELF']."?action=cal&amp;file=".$file."&amp;cal=";
@@ -24,7 +24,7 @@ if ($file != "") {
   $me = array("0", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
   $mb = strftime("%m%Y", strtotime("now"));
   $cal=isset($_GET['cal'])?$_GET['cal']:null;
-
+  
   //Anzeigezeitraum festlegen
   if (isset($cal)) {  //Zeitraum vorgegeben
     if (strlen($cal) > 4) {
@@ -52,7 +52,7 @@ if ($file != "") {
       $lmo_month_next = strtotime("+1 month");
     }
   }
-
+  
   //Datenformate generieren
   if ($lmo_month_this != -1) {
     if (!isset($cal)) {
@@ -73,7 +73,7 @@ if ($file != "") {
       $mj = " ".strftime("%Y", $lmo_month_this);
     }
   }
-
+  
   if (strlen($cal) > 4) {   //Monatsanzeige
     $lmo_arrays=32;
     $lmo_daterule="%B %Y";
@@ -83,11 +83,11 @@ if ($file != "") {
     $lmo_daterule="%Y";
     $lmo_daterule2="%m";
   }
-
+  
   $lmo_stlink = array_pad(array(), $lmo_arrays, '');
   for($j = 0; $j < $anzst; $j++) {
     $lmo_stlink_title = array_pad(array(), $lmo_arrays, '');
-
+      
       //Bezeichnungen generieren
     $anzsp = $anzteams/2;
     if ($j == $anzst-1) {
@@ -106,7 +106,7 @@ if ($file != "") {
       $text1 = ($j+1).". ".$text[370];
       $text2 = ($j+1).". ".$text[376];
     }
-
+      
     for($i = 0; $i < $anzsp; $i++) {
       for($n = 0; $n < $modus[$j]; $n++) {
         if (!empty($mterm[$j][$i][$n]) && strftime($lmo_daterule, $mterm[$j][$i][$n]) == $md) { //konkretes Spieldatum vorhanden
@@ -125,7 +125,7 @@ if ($file != "") {
         }
       }
     }
-
+    
     //Spieltagsdatum
     if (!empty($datum1[$j])) {
       $datum = explode('.', $datum1[$j]);
@@ -139,8 +139,8 @@ if ($file != "") {
     } else {
       $lmo_stdatum2 = '';
     }
-
-    $z=array_filter($lmo_stlink_title,"filterZero");
+    
+    $z=array_filter($lmo_stlink_title,"filterZero");      
     if (!empty($lmo_stdatum1) && empty($z) && strftime($lmo_daterule, $lmo_stdatum1) == $md) {  //Nur Von... vorhanden
       $a = intval(strftime($lmo_daterule2, $lmo_stdatum1));
       $lmo_stlink_title[$a] = ($j+1).". ".$text[2]." &#10;(".$text[155].")";
@@ -154,14 +154,14 @@ if ($file != "") {
       $a = intval(strftime($lmo_daterule2, $lmo_stdatum2));
       $lmo_stlink_title[$a] = ($j+1).". ".$text[2]." &#10;(".$text[155].")";
     }
-
+    
     //Links generieren
     for($i = 0; $i < count($lmo_stlink_title); $i++) {
-      if (!empty($lmo_stlink_title[$i])) {
+      if (!empty($lmo_stlink_title[$i])) { 
         $lmo_stlink[$i] = $lmo_stlink[$i]."&nbsp;&nbsp;<a href=\"".$addr.($j+1)."\" title=\"".$lmo_stlink_title[$i]."\">".($j+1).". ".$text[145]."</a><br>";;
       }
     }
-
+    
   } //for $anzst
   include(PATH_TO_LMO."/lmo-showcal.php");
 }?>

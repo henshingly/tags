@@ -1,4 +1,4 @@
-<?php
+<?
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  *
+  * 
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,8 +16,8 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-
-
+  
+  
 session_start();
 require(dirname(__FILE__)."/init.php");
 if (!isset($_SESSION["lmouserok"]))$_SESSION["lmouserok"]==0;
@@ -33,11 +33,11 @@ $madr=isset($_GET['madr'])  ? $_GET['madr']    :'';
 <head>
 <title>LMO Admin</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
-<link rel="stylesheet" type="text/css" href="<?php echo URL_TO_LMO?>/lmo-style.php">
+<link rel="stylesheet" type="text/css" href="<?=URL_TO_LMO?>/lmo-style.php">
 </head>
 <body>
 <div class="lmoMain">
-<?php
+<?
 if (($action == "admin") && ($todo == "email") && (($_SESSION["lmouserok"] == 1) || ($_SESSION["lmouserok"] == 2))) {
   if (($down != 0) && ($madr != "")) {
     $array = array();
@@ -68,7 +68,7 @@ if (($action == "admin") && ($todo == "email") && (($_SESSION["lmouserok"] == 1)
         }else{
           echo getMessage($text[550],TRUE);
         }?>
-  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?php echo $text[347]?><\/a>');</script></p><?php
+  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?=$text[347]?><\/a>');</script></p><?
       }
     }elseif($down==-1){
       if(count($dummy)>0){
@@ -91,18 +91,18 @@ if (($action == "admin") && ($todo == "email") && (($_SESSION["lmouserok"] == 1)
         }else{
           echo getMessage($text[550],TRUE);
         }?>
-  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?php echo $text[347]?><\/a>');</script></p><?php
+  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?=$text[347]?><\/a>');</script></p><?
       }
     }
   }else{?>
-  <form action="<?php echo $_SERVER['PHP_SELF']?>">
+  <form action="<?=$_SERVER['PHP_SELF']?>">
     <label>Mailadresse: <input name="madr" type="text" class="lmo-formular-input" size="25" maxlength="128"></label>
     <input type="hidden" name="action" value="admin">
     <input type="hidden" name="todo" value="email">
-    <input type="hidden" name="down" value="<?php echo $down?>">
+    <input type="hidden" name="down" value="<?=$down?>">
     <input type="submit" value="Senden">
   </form>
-  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?php echo $text[347]?><\/a>');</script></p><?php
+  <p><script type="text/javascript">document.write('<a href="#" onclick="self.close();"><?=$text[347]?><\/a>');</script></p><?
   }
 }?>
 </body>

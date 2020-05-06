@@ -1,4 +1,4 @@
-<?php
+<?
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  *
+  * 
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -50,7 +50,6 @@ if(!empty($file) && check_hilfsadmin($file)){
               case "DatF":         $datf=$wert;break;
               case "urlT":         $urlt=$wert;break;
               case "urlB":         $urlb=$wert;break;
-              case "stats":        $stats=$wert;break;
               case "Plan":         $plan=$wert;break;
               case "Ergebnis":     $ergebnis=$wert;break;
               case "mittore":      $mittore=$wert;break;
@@ -127,7 +126,6 @@ if(!empty($file) && check_hilfsadmin($file)){
       if(!isset($datf)){                       $datf=$defdateformat;}
       if(!isset($urlt)){                       $urlt=1;}
       if(!isset($urlb)){                       $urlb=0;}
-      if(!isset($stats)){                      $stats=0;}
       if(!isset($goalfaktor) || $goalfaktor=="")    { $goalfaktor=1;}
       if(!isset($pointsfaktor) || $pointsfaktor==""){ $pointsfaktor=1;}
       if(!isset($enablegamesort)){             $enablegamesort=1;}
@@ -264,11 +262,11 @@ if(!empty($file) && check_hilfsadmin($file)){
         if($dum[0]=="Teamk"){$teamk[$dum[1]]=stripslashes($dum[2]);}
         $op1=substr($dum[0],0,4);
         $op2=substr($dum[0],0,5);
-        $op3=((int)substr($dum[0],5)-1);
-        $op4=((int)substr($dum[1],2)-1);
+        $op3=substr($dum[0],5)-1;
+        $op4=substr($dum[1],2)-1;
         $op5=substr($dum[0],4);
-        $op6=((int)substr($dum[1],2,-1)-1);
-        $op7=((int)substr($dum[1],-1)-1);
+        $op6=substr($dum[1],2,-1)-1;
+        $op7=substr($dum[1],-1)-1;
         $op8=substr($dum[1],0,2);
 
         if($op1=="Team" && $dum[0]!="Teams" && $dum[0]!="Teamk" && $dum[0]!="Teamm") {
