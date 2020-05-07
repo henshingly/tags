@@ -35,15 +35,16 @@ if($lmtype==0 && $st>0){
   isset($tab0) ? $table1=$tab0 : $table1=$tab1;
   if (isset($table1)) {
     $wmlfile= fopen(PATH_TO_LMO.'/'.$diroutput.basename($file)."-st.html","wb");
-    ob_start();?>
+    ob_start();
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-          "http://www.w3.org/TR/html4/loose.dtd">
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <title><?php echo $titel?></title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
   <style type="text/css">
-    body {background:#fff; color:#000; font: sans-serif 10pt; max-width:200mm;max-height:285mm;}
+    body {background:#fff; color:#000; font: 10pt sans-serif;padding:auto;}
     caption, p, h1 {margin: 3pt auto; text-align:center;}
     table {border:1pt solid #000;margin: 2pt auto;}
     td {padding: 0;white-space:nowrap;}
@@ -66,7 +67,8 @@ if($lmtype==0 && $st>0){
     $datsort= $mterm[$st-1];
     asort($datsort);
     reset($datsort);
-    while (list ($key, $val) = each ($datsort)) {
+    //while (list ($key, $val) = each ($datsort)) { //Deprecated: The each() function ...
+    foreach($datsort as $key => $val) {
       $i1=$key;
       if(($teama[$st-1][$i1]>0) && ($teamb[$st-1][$i1]>0)){
         $heimteam=$teams[$teama[$actual-1][$i1]];
@@ -124,6 +126,7 @@ if($lmtype==0 && $st>0){
     <tr>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
+      <th>&nbsp;</th>
       <th><?php echo $text[33]?></th>
       <th><?php echo $namepkt?></th>
       <th>&nbsp;</th>
@@ -160,7 +163,7 @@ if($lmtype==0 && $st>0){
      </tr><?php
     }?>
    </table>
-   <p><small>Hinweis: Tabellenstand ohne vorgezogene Spiele!</small></p><?php
+   <p><small><?php echo $text[582];?></small></p><?php 
     if ($actual==$anzst){?>
     <p><strong><?php echo $text[568]?></strong></p><?php
     }else{
@@ -171,7 +174,8 @@ if($lmtype==0 && $st>0){
         $datsort= $mterm[$actual];
         asort($datsort);
         reset($datsort);
-        while (list ($key, $val) = each ($datsort)) {
+        //while (list ($key, $val) = each ($datsort)) { //Deprecated: The each() function ...
+        foreach($datsort as $key => $val) {
           $i1=$key;
           if(($teama[$st][$i1]>0) && ($teamb[$st][$i1]>0)){
             $heimteam=$teams[$teama[$actual][$i1]];

@@ -12,7 +12,7 @@ class sektion {
   var $keyValues;
   var $name;
 
-  function sektion($new_name) {
+  function __construct($new_name) {
     $this->name = $new_name;
     $this->keyValues = array();
   }

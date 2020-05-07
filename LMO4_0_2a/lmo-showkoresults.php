@@ -111,7 +111,8 @@ if ($file != "") {
   $datsort = $mterm[$st-1];
   asort($datsort);
   reset($datsort);
-  while (list ($key, $val) = each ($datsort)) {
+  //while (list ($key, $val) = each ($datsort)) { //Deprecated: The each() function ...
+  foreach($datsort as $key => $val) {
     $i = $key;
     if (($teama[$st-1][$i] > 0) && ($teamb[$st-1][$i] > 0)) {
       for($n = 0; $n < $modus[$st-1]; $n++) {
@@ -218,7 +219,7 @@ if ($file != "") {
           
           $lmo_spielnotiz.="\n\n<strong>".$text[22].":</strong> ".$mnote[$st-1][$i][$n];
           
-          echo " <a href='#' onclick=\"alert('".mysql_escape_string(htmlentities(strip_tags($lmo_spielnotiz)))."');window.focus();return false;\"><span class='popup'>".nl2br($lmo_spielnotiz)."</span><img src='".URL_TO_IMGDIR."/lmo-st2.gif' width='10' height='12' border='0' alt=''></a>";
+          echo " <a href='#' onclick=\"alert('".addcslashes('',htmlentities(strip_tags($lmo_spielnotiz)))."');window.focus();return false;\"><span class='popup'>".nl2br($lmo_spielnotiz)."</span><img src='".URL_TO_IMGDIR."/lmo-st2.gif' width='10' height='12' border='0' alt=''></a>";
           $lmo_spielnotiz="";
         } else {
           echo "&nbsp;";

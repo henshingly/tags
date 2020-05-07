@@ -74,7 +74,7 @@ class liga {
 */
   var $sections;
 
-   function liga($name="",$kurz="") {
+   function __construct($name="",$kurz="") {
     $this->name = $name;
     $this->kurz = $kurz;
     $this->spieltage = array();

@@ -6,12 +6,12 @@
  *
  * folgende Zeile hinzugefügt werden:
  *
- *  include(PATH_TO_LMO."/lmo-savehtml1.php");	
+ *  include(PATH_TO_LMO."/lmo-savehtml1.php");
  *
- * 
+ *
  * Autor: Bernd Hoyer, basierend auf dem LMO3.02
  * Verbesserungen, Bugs etc. bitte nur in das Forum bei Hollwitz.net
- * 
+ *
  */
 
 
@@ -34,23 +34,26 @@ if($lmtype==0){
   if (isset($table1)) {
     $wmlfile= fopen(PATH_TO_LMO.'/'.$diroutput.basename($file)."-sp.html","wb");
     ob_start();
-    ?>
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-					"http://www.w3.org/TR/html4/loose.dtd">
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <title><?php echo $titel?></title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
   <style type="text/css">
-   body {background:#fff; color:#000; font: sans-serif 10pt;padding:auto;}
-   caption, p, h1 {margin: 3pt auto; text-align:center;}
-   table {margin:auto; max-width:200mm;}
-   #tabelle{border:1pt solid #000;}
-   table table {border:1pt solid #000; margin:20pt 0 2pt; width:100%;}
-   td {padding: 0; white-space:nowrap;}
-   th {border-bottom: 1px solid #000;}
-   h1 {font:14pt bolder;}
-   caption {font-weight:bolder;white-space:nowrap;}
+    body {background:#fff; color:#000; font: 10pt sans-serif;padding:auto;}
+    caption, p, h1 {margin: 3pt auto; text-align:center;}
+    table {margin:auto; max-width:200mm;}
+    #tabelle{border:1pt solid #000;}
+    table table {border:1pt solid #000; margin:20pt 0 2pt; width:100%;}
+    td {padding: 0; white-space:nowrap;}
+    th {border-bottom: 1px solid #000;}
+    h1 {font:14pt bolder;}
+    caption {font-weight:bolder;white-space:nowrap;}
+    @media print {
+      a {display:none;}
+    }
   </style>
 </head>
 <body>
@@ -58,17 +61,21 @@ if($lmtype==0){
   <h1><?php echo $titel?></h1>
   <table>
     <tr>
-      <td><?php
+      <td>
+<?php
     for ($y1=1;$y1<$anzst+1;$y1++) {
       $datumanz=$y1-1;
       $z=array_filter($teama[$y1-1],"filterZero");
-      if (!empty($z)) {?>
-    <table>
-      <caption><?php echo $y1?>.  <?php echo $text[2]?><?php if ($datum1[$datumanz]!='') { echo ' - '.$datum1[$datumanz].' '.$text[4].' '.$datum2[$datumanz];}?></caption><?php
+      if (!empty($z)) {
+?>
+        <table>
+        <caption><?php echo $y1?>.  <?php echo $text[2]?><?php if ($datum1[$datumanz]!='') { echo ' - '.$datum1[$datumanz].' '.$text[4].' '.$datum2[$datumanz];}?></caption>
+<?php
         $datsort= $mterm[$y1-1];
         asort($datsort);
         reset($datsort);
-        while (list ($key, $val) = each ($datsort)) {
+        //while (list ($key, $val) = each ($datsort)) { //Deprecated: The each() function ...
+        foreach($datsort as $key => $val) {
           $i1=$key;
           if(($teama[$y1-1][$i1]>0) && ($teamb[$y1-1][$i1]>0)){
             $heimteam=$teams[$teama[$y1-1][$i1]];
@@ -77,7 +84,7 @@ if($lmtype==0){
             $gasttore=applyFactor($goalb[$y1-1][$i1],$goalfaktor);
             if ($gasttore<0) $gasttore="_";
             if ($heimtore<0) $heimtore="_";
-           // * Spielfrei-Hack-Beginn1	- Autor: Bernd Hoyer - eMail: info@salzland-info.de
+            // * Spielfrei-Hack-Beginn1	- Autor: Bernd Hoyer - eMail: info@salzland-info.de
             if (($anzteams-($anzst/2+1))!=0){
               $spielfreiaa[$i1]=$teama[$y1-1][$i1];
               $spielfreibb[$i1]=$teamb[$y1-1][$i1];
@@ -104,9 +111,10 @@ if($lmtype==0){
         }
         $actual=$actual+1;
       }
-      if (!empty($z)) {?>
-  </table>
-  <?php
+      if (!empty($z)) {
+?>
+        </table>
+<?php
       }
       if (($anzteams-($anzst/2+1))!=0){
         $spielfreicc=array_merge($spielfreiaa,$spielfreibb);
@@ -116,23 +124,27 @@ if($lmtype==0){
         for ($j=1;$j<$anzteams+1;$j++) {
           if (!in_array($j,$spielfreicc)) {
             if ($i==1) {?>
-       <p><small><?php echo $text[4004]?>: <?php
+      <p><small><?php echo $text[4004]?>: <?php
             }
             echo $teams[$j]?>&nbsp;&nbsp;<?php
             $i++;
           }
-        }?>
-    </small></p><?php
+        }
+?>
+      </small></p>
+<?php
         unset($spielfreicc);
       }
     }
-  $datumanz=$actual-1;?>
-  </td>
-  </tr>
-</table>
-<table id="tabelle">
+    $datumanz=$actual-1;
+?>
+      </td>
+    </tr>
+  </table>
+  <table id="tabelle">
   <caption><?php echo $text[16]?></caption>
     <tr>
+      <th>&nbsp;</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
       <th><?php echo $text[33]?></th>
@@ -170,15 +182,16 @@ if($lmtype==0){
         <td align="right">&nbsp;&nbsp;<?php echo $torverhaeltnis?></td>
       </tr>
 <?php
-    }?>
+    }
+?>
   </table>
   <script type="text/javascript">document.write('<small><a href="#" onClick="history.back();return false;"><?php echo $text[562]?><\/a><\/small>');</script>
 </body>
 </html>
 <?php
   }
-  fwrite($wmlfile,ob_get_contents());
-  ob_end_clean();
-  fclose($wmlfile);
+    fwrite($wmlfile,ob_get_contents());
+    ob_end_clean();
+    fclose($wmlfile);
 }
 ?>

@@ -37,7 +37,7 @@ class spieltag {
 */
   var $partien;
 
-  function spieltag($new_nr,$new_von,$new_bis,$partien=array()) {
+  function __construct($new_nr,$new_von,$new_bis,$partien=array()) {
     $this->nr = $new_nr;
     $this->von = $new_von;
     $this->bis = $new_bis;

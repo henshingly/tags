@@ -82,7 +82,7 @@ class partie {
   */
   var $spielEnde;
 
-  function partie($n_spNr,$n_time,$n_notiz,
+  function __construct($n_spNr,$n_time,$n_notiz,
   &$n_heim,&$n_gast,$n_htore,
   $n_gtore,$n_hpunkte,$n_gpunkte) {
     $this->spNr = $n_spNr;

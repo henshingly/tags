@@ -65,7 +65,7 @@ class optionsSektion extends sektion {
         );
 
 
-  function optionsSektion($aLiga="",$optionDetails="") {
+  function __construct($aLiga="",$optionDetails="") {
     $this->name = "Options";
     if ($optionDetails <> "") {
             foreach ($optionDetails as $key=>$values) {

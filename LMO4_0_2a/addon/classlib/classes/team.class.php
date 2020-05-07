@@ -43,7 +43,7 @@ class team {
 */
   var $keyValues;
 
-  function team($name="",$kurz="",$nr="",$mittel="") {
+  function __construct($name="",$kurz="",$nr="",$mittel="") {
     $this->name = $name;
     $this->kurz = $kurz;
     $this->mittel = $mittel; 

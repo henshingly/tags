@@ -76,7 +76,7 @@ class IniFileReader {
 
     @access public
     */
-    function IniFileReader($iniFile = "") {
+    function __construct($iniFile = "") {
         if (!(empty($iniFile))) {
             $this->_iniFile = $iniFile;
         } else {
