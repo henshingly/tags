@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,12 +16,13 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
-  
-require(dirname(__FILE__)."/init.php");  
+
+
+require(dirname(__FILE__)."/init.php");
 
 $pgtext1=$text[135];
 $pgtext2=$text[136];
+$font=PATH_TO_ADDONDIR."/classlib/classes/pdf/fonts/FreeSans.ttf";
 
 $pgst=isset($_GET['pgst'])?$_GET['pgst']:1;
 $pgteams=isset($_GET['pgteams'])?$_GET['pgteams']:1;
@@ -54,8 +55,12 @@ if ($breit < $vergleich) {
 $image = imagecreate($breit, $hoch);
 imageinterlace($image, 0);
 
-$color = isset($lmo_inner_background1)?get_color($lmo_inner_background1):array(255, 255, 255);
-$farbe_body = imagecolorallocate($image, $color[0], $color[1], $color[2]);  //Hintergrund
+if (!empty($lmo_inner_background1)) {
+  $color = get_color($lmo_inner_background1);
+  $farbe_body = imagecolorallocate($image, $color[0], $color[1], $color[2]);  //Hintergrund
+} else {
+  $farbe_body = imagecolorallocatealpha($image, 255, 255, 255, 127);  //Hintergrund transparent
+}
 
 $luminanz=0.3*$color[0] + 0.59*$color[1] + 0.11*$color[2];
 $color = $luminanz > 127?array(($color[0]+190-$luminanz),($color[1]+190-$luminanz),($color[2]+190-$luminanz)):array(($color[0]+127-$luminanz),($color[1]+127-$luminanz),($color[2]+127-$luminanz));
@@ -155,9 +160,9 @@ for($i = 1; $i <= $pgteams; $i++) {
   }
 }
 
-imagestring($image, 3, 3, 1, rawurldecode(stripslashes($pgteam1)), $farbe_c);  //Mannschaftsname1
+imagettftext($image , 10, 0, 8, 11, $farbe_c , $font, rawurldecode(stripslashes($pgteam1))); //Mannschaftsname1 geändert wegen der Anzeige für Sonderzeichen
 if ($pganz == 2) {
-  imagestring($image, 3, $breit-imagefontwidth(3) * strlen(stripslashes($pgteam2))-2, 1, rawurldecode(stripslashes($pgteam2)), $farbe_d); //Mannschaftsname2
+  imagettftext($image , 10, 0, $breit-imagefontwidth(3) * strlen(stripslashes($pgteam2))-2, 11, $farbe_d , $font, rawurldecode(stripslashes($pgteam2)));   //Mannschaftsname2 geändert wegen der Anzeige für Sonderzeichen
 }
 $linie = explode(',', $pgplatz1);
 if ($pganz == 2) {
@@ -182,7 +187,7 @@ for($i = 1; $i < $pgst; $i++) {
 
 header("Content-Type: image/png");
 imagepng($image);
- 
+
 function get_color(&$styleclass) {
   if (strlen($styleclass) == 4) {
     return(array(hexdec(substr($styleclass, 1, 1).substr($styleclass, 1, 1)), hexdec(substr($styleclass, 2, 1).substr($styleclass, 2, 1)), hexdec(substr($styleclass, 3, 1).substr($styleclass, 3, 1))));

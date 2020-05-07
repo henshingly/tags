@@ -130,9 +130,6 @@ function getLangSelector() {
     }
   }
   closedir($handle);
-  if ($_SESSION['lmouserok']=='2') {
-    $output_sprachauswahl .= "&nbsp<a href='".URL_TO_LMO."/lang/translate.php'> » ".$GLOBALS['text'][573]."</a>";
-  }
   return $output_sprachauswahl;
 }
 

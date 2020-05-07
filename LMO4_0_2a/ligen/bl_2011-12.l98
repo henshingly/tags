@@ -64,15 +64,15 @@ NC=0
 7=Hannover 96
 8=Hamburger SV
 9=FSV Mainz 05
-10=Borussia Mönchengladbach
+10=Borussia MÃ¶nchengladbach
 11=VfB Stuttgart
-12=1. FC Köln
+12=1. FC KÃ¶ln
 13=FC Augsburg
 14=Hertha BSC Berlin
-15=Bayern München
+15=Bayern MÃ¼nchen
 16=VfL Wolfsburg
 17=SC Freiburg
-18=1. FC Nürnberg
+18=1. FC NÃ¼rnberg
 
 [Teamm]
 1=Dortmund
@@ -86,13 +86,13 @@ NC=0
 9=Mainz
 10=M'Gladbach
 11=Stuttgart
-12=Köln
+12=KÃ¶ln
 13=Augsburg
 14=Hertha
-15=München
+15=MÃ¼nchen
 16=Wolfsburg
 17=Freiburg
-18=Nürnberg
+18=NÃ¼rnberg
 
 [Teamk]
 1=BVB
@@ -106,13 +106,13 @@ NC=0
 9=Mainz
 10=Gladb
 11=Stutt
-12=Köln
+12=KÃ¶ln
 13=Augs
 14=Herth
-15=Münch
+15=MÃ¼nch
 16=Wolfs
 17=Freib
-18=Nürnb
+18=NÃ¼rnb
 
 [Team1]
 SP=0

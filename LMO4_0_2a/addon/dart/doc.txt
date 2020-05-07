@@ -1,0 +1,61 @@
+===== BUG-Fix Tabellen Darstellungsfehler =====
+
+Betroffene Datei(en)
+
+  * lmo-savehtml.php
+  * lmo-savehtml1.php
+  * lmo-openfile.php
+  * lmo-admintab.php
+  
+Neue Datei(en)
+
+	* PATH_TO_ADDONDIR./dart/init.php
+	
+==== Anpassungen ====
+
+=== lmo-openfile.php ===
+
+Nach Zeile 44 wurde der folgende Code ergänzt. 
+
+<code php>
+  // DART PATCH BEGIN
+  case "LigaType": {
+  	if(file_exists(PATH_TO_ADDONDIR.'/dart/init.php')){
+  	 include(PATH_TO_ADDONDIR.'/dart/init.php');
+  	} else {
+  	 $ligaType=stripslashes($wert);
+    }
+  	break;
+  }
+  // DART PATCH END
+</code>
+
+ACHTUNG: Sofern der DART PATCH bereits installiert ist, ersetzt der obige Code die Zeile 45. 
+
+<code php>
+  case "LigaType":         $ligaType=stripslashes($wert);break;
+</code>
+
+=== lmo-savehtml.php ===
+
+Zeile 136 wird ersetzt durch:
+
+<code php>
+ $i4=(int)substr($table1[$i1],$team_pos,7); // Dart Patch: $team_pos Fix fuer manuelle Sortierung!
+</code>
+
+=== lmo-savehtml1.php ===
+
+Zeile 145 wird ersetzt durch:
+
+<code php>
+ $i4=(int)substr($table1[$i1],$team_pos,7); // Dart Patch: $team_pos Fix fuer manuelle Sortierung!
+</code>
+
+=== lmo-admintab.php ===
+
+Zeile 125 wird ersetzt durch:
+
+<code php>
+ $i = intval(substr($tab2[$x-1], $team_pos)); // Dart Patch: $team_pos Fix fuer manuelle Sortierung!
+</code>

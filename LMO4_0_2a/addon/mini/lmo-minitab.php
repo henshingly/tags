@@ -1,4 +1,4 @@
-<?
+<?php
 /** Liga Manager Online 4
   *
   * http://lmo.sourceforge.net/
@@ -45,7 +45,7 @@ if (basename($_SERVER['PHP_SELF'])=="lmo-minitab.php") {?>
   html,body {margin:0;padding:0;background:transparent;}
 </style>
 </head>
-<body><?
+<body><?php
 }
 
 /**Format of CSV-File:
@@ -166,5 +166,5 @@ if (file_exists(PATH_TO_LMO.'/'.$diroutput.basename($m_liga).'-tab.csv')) {
 //Falls IFRAME - komplettes HTML-Dokument
 if (basename($_SERVER['PHP_SELF'])=="lmo-minitab.php") {?>
 </body>
-</html><?
+</html><?php
 }?>

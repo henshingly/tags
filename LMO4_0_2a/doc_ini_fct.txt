@@ -93,7 +93,7 @@
   ------------------------------------------
   <html>
   <head>
-    <?
+    <?php
       require_once("inc.fct");
     ?>
   <title>Meine Homepage</title>
@@ -101,7 +101,7 @@
 
   <body>
 
-  <?
+  <?php
     <!-- Hier können die Funktionen genutzt werden. -->
   ?>
 

@@ -15,7 +15,7 @@
 // | Author: Ulf Wendel <ulf.wendel@phpdoc.de>                            |
 // +----------------------------------------------------------------------+
 //
-// $Id$
+// $Id: IT_Error.php 432 2009-03-08 13:26:56Z jokerlmo $
 
 //jokerlmo: Changed include path
 require_once(PATH_TO_LMO.'/includes/PEAR.php');

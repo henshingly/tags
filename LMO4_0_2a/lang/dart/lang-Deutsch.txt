@@ -1,0 +1,5 @@
+0001=Legs
+0002=Gewonnene Legs Heim (0 - 9999)
+0003=Gewonnene Legs Gast (0 - 9999)
+0004=Typ der Liga (Bis auf Dart noch ohne Funktion)
+0005=Liga Typ

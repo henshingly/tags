@@ -1,4 +1,4 @@
-<?PHP
+<?php
 /**
  * LMO Class Library Version (01/2004)
  *

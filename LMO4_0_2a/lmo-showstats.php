@@ -491,7 +491,7 @@ if ($ligaLoaded	and $show_stat1 > 0 and $show_stat1 <= $liga->teamCount()) {
               </tr>
             </table>
           </td>
-        </tr><?
+        </tr><?php
     }?>
       </table>
     </td>
