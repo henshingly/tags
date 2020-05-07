@@ -338,9 +338,9 @@ $lmo_dir = dirname(dirname(__FILE__));
 
 $path=str_replace('\\','/',$lmo_dir);
 if (strpos(dirname($_SERVER['SCRIPT_NAME']),"/install")!==FALSE) {
-  $url='http://'.$_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['SCRIPT_NAME']));
+  $url=(isset($_SERVER['HTTPS'])?'https':'http').'://' . $_SERVER['HTTP_HOST'].dirname(dirname($_SERVER['SCRIPT_NAME']));
 } else {
-  $url='http://'.$_SERVER['HTTP_HOST'].dirname(($_SERVER['SCRIPT_NAME']));
+  $url=(isset($_SERVER['HTTPS'])?'https':'http').'://' . $_SERVER['HTTP_HOST'].dirname(($_SERVER['SCRIPT_NAME']));
 }
 
 
@@ -475,7 +475,7 @@ if ($lmo_install_step==3) {
 <html lang="<?php echo $userlang?>">
   <head>
     <title><?php echo $lang[$userlang]['HEADER'];?></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
     <style type="text/css">
       @media all {
         body     {  max-width:60em;margin: 0.5em auto;padding:0 0.9em;font-size:85%;background-color: #ffffff;color: #000000;font-family:Tahoma, Verdana, sans-serif;border:1px solid #999;-moz-border-radius:8px;}
