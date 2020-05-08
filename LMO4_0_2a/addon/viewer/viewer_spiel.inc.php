@@ -40,12 +40,12 @@ foreach ($fav_team[$i] as $akt_team) {
     //Neu TeamIcons Heim fuer Bild alt /Anpassung Apache2
     $Heim=$myPartie->heim->name;
     $Gast=$myPartie->gast->name;
-    $template->setVariable("Iconheim",HTML_smallTeamIcon($file,$Heim," alt=''"));
-    $template->setVariable("Icongast",HTML_smallTeamIcon($file,$Gast," alt=''"));
-    $template->setVariable("IconBigheim",HTML_bigTeamIcon($file,$Heim," alt=''"));
-    $template->setVariable("IconBiggast",HTML_bigTeamIcon($file,$Gast," alt=''"));
-    $template->setVariable("IconBigheimalt",HTML_bigTeamIcon($file,$Heim," alt='TeamIcon $Heim'"));
-    $template->setVariable("IconBiggastalt",HTML_bigTeamIcon($file,$Gast," alt='TeamIcon $Gast'"));
+    $template->setVariable("Iconheim",HTML_smallTeamIcon(!isset($file),$Heim," alt=''"));
+    $template->setVariable("Icongast",HTML_smallTeamIcon(!isset($file),$Gast," alt=''"));
+    $template->setVariable("IconBigheim",HTML_bigTeamIcon(!isset($file),$Heim," alt=''"));
+    $template->setVariable("IconBiggast",HTML_bigTeamIcon(!isset($file),$Gast," alt=''"));
+    $template->setVariable("IconBigheimalt",HTML_bigTeamIcon(!isset($file),$Heim," alt='TeamIcon $Heim'"));
+    $template->setVariable("IconBiggastalt",HTML_bigTeamIcon(!isset($file),$Gast," alt='TeamIcon $Gast'"));
     //Ende TeamIcons
 
     $mhp_link_s="";
