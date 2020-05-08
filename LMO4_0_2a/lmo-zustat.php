@@ -19,7 +19,7 @@
 
 
 $zustatoutput = '';
-if ($_SESSION['lmouserok'] > 0) {
+if ($_SESSION['lmouserok'] > 0 || isset($generate_zustat)) {
   if ($lmtype == 0 && $zustatfile = fopen(PATH_TO_LMO.'/'.$diroutput.basename($file).".php", "wb+")) {
 
     $zustatoutput .= "<?php\n";
@@ -88,7 +88,7 @@ if ($_SESSION['lmouserok'] > 0) {
       $sptore1 = 0;
       $sptore = 0;
       $zuanzsp = 0;
-      $dstore = 0;
+      $dsxtore = 0;
       $zusieg1 = 0;
       $zusieg2 = 0;
       $zuunent1 = 0;
@@ -385,9 +385,9 @@ if ($_SESSION['lmouserok'] > 0) {
 
 
       if ($zuanzsp > 0) {
-        $dstore = round($sptore1/$zuanzsp, 2);
+        $dsxtore = round($sptore1/$zuanzsp, 2);
       } else {
-        $dstore = 0;
+        $dsxtore = 0;
       }
 
       if ($gzuanzsp > 0) {
@@ -399,7 +399,7 @@ if ($_SESSION['lmouserok'] > 0) {
         $dsheimtore = 0;
         $dsgasttore = 0;
       }
-      $zustatoutput .= '$dstore['.$y1.']='.$dstore.";\n";
+      $zustatoutput .= '$dstore['.$y1.']='.$dsxtore.";\n";
       // Durchschnitt Tore pro Spiel
     }
 
@@ -451,7 +451,7 @@ if ($_SESSION['lmouserok'] > 0) {
           $counteranz1 = $counteranz1+1;
         }
         $setztemp1 = $htorreicht1+$htorreicht2;
-        $setztemp2 = $goala[$y1-1][$i1]+$goalb[$y1-1][$i1];
+        $setztemp2 = (int)$goala[$y1-1][$i1]+(int)$goalb[$y1-1][$i1];
         if ($setztemp1 == $setztemp2) {
           $counteranz5 = $counteranz5+1;
         }
