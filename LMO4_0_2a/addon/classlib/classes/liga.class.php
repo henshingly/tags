@@ -111,13 +111,15 @@ class liga {
     $i = 0;
     $found=-1;
     $selectedTeam = null;
-    while (($i<$count) and ($found != 0)):
+    while (($i<$count) && ($found != 0)) {
       $found = strcmp($this->teams[$i]->name,$teamName);
- //     $found = $this->teams[$i]->name == $teamName?0:-1;
+      //     $found = $this->teams[$i]->name == $teamName?0:-1;
       $i++;
-    endwhile;
-    if ($found==0) return $this->teams[$i-1];
-    return null;
+    }
+    if ($found==0) {
+      return $this->teams[$i-1];
+    }
+    return $selectedTeam;
   }
 
 /**
