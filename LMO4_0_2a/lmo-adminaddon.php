@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,8 +16,8 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
-  
+
+
 require_once(PATH_TO_LMO."/lmo-admintest.php");
 isset($_POST['save'])?$save=$_POST['save']:$save=0;
 isset($_REQUEST['show'])?$show=$_REQUEST['show']:$show=0;
@@ -25,7 +25,7 @@ if($save==1){
   // Es werden alle Addon-Konfigurationen dargestellt als Texteingabe behandelt
   // und anschliessend abgespeichert - Es erfolgen keine Prüfungen auf Variablentyp und -wert
   foreach($cfgarray as $addon_name => $addon_cfg) {    //Alle Addons abklappern
-    if (is_array($addon_cfg)) {                 //Addon gefunden 
+    if (is_array($addon_cfg)) {                 //Addon gefunden
       foreach ($addon_cfg as $cfg_name => $cfg_value) {
         if (isset($_POST["x$cfg_name"])) ${$addon_name."_".$cfg_name}=trim($_POST["x$cfg_name"]);    //Alle Post-vars mit x davor werden abgefragt und als Variable mit Präfix gespeichert
       }
@@ -55,7 +55,7 @@ if($save==1){
 $testshow=0;
 foreach($cfgarray as $addon_name => $addon_cfg) {
   if (is_array($addon_cfg)) {?>
-        <tr><td align="right"<?php if ($show==$testshow) {?> class="active"><?php echo $addon_name;?><?php}else{?> class="lmost4"><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=addons&amp;show=".$testshow;?>"><?php echo $addon_name;?></a><?php}?></td></tr><?php
+        <tr><td align="right"<?php if ($show==$testshow) {?> class="active"><?php echo $addon_name;?><?php }else{?> class="lmost4"><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=addons&amp;show=".$testshow;?>"><?php echo $addon_name;?></a><?php }?></td></tr><?php
     $testshow++;
   }
 }?>
