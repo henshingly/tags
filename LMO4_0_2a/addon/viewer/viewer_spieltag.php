@@ -49,7 +49,7 @@ for($i=1; $i<=$anzahl_ligen; $i++) {
     $template->setVariable("Endespieltag",$ende);                      														//Ausgabe Spieltag
     
         //all teams
-    if ($all_teams) {
+    if (!isset($all_teams)) {
       $team_count= count($akt_liga->teams);
       for($x=0;$x<$team_count;$x++) {
         $fav_team[$i][] = $x;
