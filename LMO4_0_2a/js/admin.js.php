@@ -94,7 +94,7 @@ function lmotorauf(x,y,z){
   if(ab!=aa){
     if(aa==-1){aa="_";}
     document.getElementsByName("xgoal"+xx+y)[0].value=aa;
-    }  
+    }
   lmotest=false;
   if(a=="X"){lmotorgte(x,y);}
   }
@@ -217,5 +217,4 @@ function fillAll(elm) {
       elm.form.elements[i].value = elm.value;
     }
   }
-
 }

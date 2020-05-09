@@ -55,30 +55,29 @@
 
 
 function SortableTable(oTable, oSortTypes) {
+  this.element = oTable;
+  this.tHead = oTable.tHead;
+  this.tBody = oTable.tBodies[0];
+  this.document = oTable.ownerDocument || oTable.document;
 
-	this.element = oTable;
-	this.tHead = oTable.tHead;
-	this.tBody = oTable.tBodies[0];
-	this.document = oTable.ownerDocument || oTable.document;
+  this.sortColumn = null;
+  this.descending = null;
 
-	this.sortColumn = null;
-	this.descending = null;
+  var oThis = this;
+  this._headerOnclick = function (e) {
+    oThis.headerOnclick(e);
+  };
 
-	var oThis = this;
-	this._headerOnclick = function (e) {
-		oThis.headerOnclick(e);
-	};
+  // only IE needs this
+  var win = this.document.defaultView || this.document.parentWindow;
+  this._onunload = function () {
+    oThis.destroy();
+  };
+  if (win && typeof win.attachEvent != "undefined") {
+    win.attachEvent("onunload", this._onunload);
+  }
 
-	// only IE needs this
-	var win = this.document.defaultView || this.document.parentWindow;
-	this._onunload = function () {
-		oThis.destroy();
-	};
-	if (win && typeof win.attachEvent != "undefined") {
-		win.attachEvent("onunload", this._onunload);
-	}
-
-	this.initHeader(oSortTypes || []);
+  this.initHeader(oSortTypes || []);
 }
 
 SortableTable.gecko = navigator.product == "Gecko";
@@ -100,85 +99,76 @@ SortableTable.prototype._sortTypeInfo = {};
 // also binds sort type to the header cells so that reordering columns does
 // not break the sort types
 SortableTable.prototype.initHeader = function (oSortTypes) {
-	var cells = this.tHead.rows[0].cells;
-	var l = cells.length;
-	var img, c;
-	for (var i = 0; i < l; i++) {
-		c = cells[i];
-		img = this.document.createElement("pre");
+  var cells = this.tHead.rows[0].cells;
+  var l = cells.length;
+  var img, c;
+  for (var i = 0; i < l; i++) {
+    c = cells[i];
+    img = this.document.createElement("pre");
     myText = document.createTextNode("  ");
-		img.appendChild(myText);
+    img.appendChild(myText);
     img.className = "sortarrow";
     //for (i in img.style) alert(i+" "+img.style[i])
-		c.style.cursor="n-resize";
+    c.style.cursor="n-resize";
     c.appendChild(img);
-		if (oSortTypes[i] != null) {
-			c._sortType = oSortTypes[i];
-		}
-		if (typeof c.addEventListener != "undefined")
-			c.addEventListener("click", this._headerOnclick, false);
-		else if (typeof c.attachEvent != "undefined")
-			c.attachEvent("onclick", this._headerOnclick);
-		else
-			c.onclick = this._headerOnclick;
-	}
-	this.updateHeaderArrows();
+    if (oSortTypes[i] != null) {
+      c._sortType = oSortTypes[i];
+    }
+    if (typeof c.addEventListener != "undefined") c.addEventListener("click", this._headerOnclick, false);
+    else if (typeof c.attachEvent != "undefined") c.attachEvent("onclick", this._headerOnclick);
+    else c.onclick = this._headerOnclick;
+  }
+  this.updateHeaderArrows();
 };
 
 // remove arrows and events
 SortableTable.prototype.uninitHeader = function () {
-	var cells = this.tHead.rows[0].cells;
-	var l = cells.length;
-	var c;
-	for (var i = 0; i < l; i++) {
-		c = cells[i];
-		c.removeChild(c.lastChild);
-		if (typeof c.removeEventListener != "undefined")
-			c.removeEventListener("click", this._headerOnclick, false);
-		else if (typeof c.detachEvent != "undefined")
-			c.detachEvent("onclick", this._headerOnclick);
-	}
+  var cells = this.tHead.rows[0].cells;
+  var l = cells.length;
+  var c;
+  for (var i = 0; i < l; i++) {
+    c = cells[i];
+    c.removeChild(c.lastChild);
+    if (typeof c.removeEventListener != "undefined") c.removeEventListener("click", this._headerOnclick, false);
+    else if (typeof c.detachEvent != "undefined") c.detachEvent("onclick", this._headerOnclick);
+  }
 };
 
 SortableTable.prototype.updateHeaderArrows = function () {
-	var cells = this.tHead.rows[0].cells;
-	var l = cells.length;
+  var cells = this.tHead.rows[0].cells;
+  var l = cells.length;
   var img;
-	for (var i = 0; i < l; i++) {
-		img = cells[i].lastChild;
-		if (i == this.sortColumn) {
+  for (var i = 0; i < l; i++) {
+    img = cells[i].lastChild;
+    if (i == this.sortColumn) {
       img.className = "sortarrow " + (this.descending ? "descending" : "ascending");
-		} else {
-			img.className = "sortarrow";
+    } else {
+      img.className = "sortarrow";
     }
-	}
+  }
 };
 
 SortableTable.prototype.headerOnclick = function (e) {
-	// find TD element
-	var el = e.target || e.srcElement;
-	while (el.tagName != "TH")
-		el = el.parentNode;
-
-	this.sort(SortableTable.msie ? SortableTable.getCellIndex(el) : el.cellIndex);
+  // find TD element
+  var el = e.target || e.srcElement;
+  while (el.tagName != "TH") el = el.parentNode;
+  this.sort(SortableTable.msie ? SortableTable.getCellIndex(el) : el.cellIndex);
 };
 
 // IE returns wrong cellIndex when columns are hidden
 SortableTable.getCellIndex = function (oTd) {
-	var cells = oTd.parentNode.childNodes
-	var l = cells.length;
-	var i;
-	for (i = 0; cells[i] != oTd && i < l; i++)
-		;
-	return i;
+  var cells = oTd.parentNode.childNodes
+  var l = cells.length;
+  var i;
+  for (i = 0; cells[i] != oTd && i < l; i++);
+  return i;
 };
 
 SortableTable.prototype.getSortType = function (nColumn) {
-	var cell = this.tHead.rows[0].cells[nColumn];
-	var val = cell._sortType;
-	if (val != "")
-		return val;
-	return "String";
+  var cell = this.tHead.rows[0].cells[nColumn];
+  var val = cell._sortType;
+  if (val != "") return val;
+  return "String";
 };
 
 // only nColumn is required
@@ -186,110 +176,93 @@ SortableTable.prototype.getSortType = function (nColumn) {
 // if sSortType is left out the sort type is found from the sortTypes array
 
 SortableTable.prototype.sort = function (nColumn, bDescending, sSortType) {
-	if (sSortType == null)
-		sSortType = this.getSortType(nColumn);
+  if (sSortType == null) sSortType = this.getSortType(nColumn);
+  // exit if None
+  if (sSortType == "None") return;
+  if (bDescending == null) {
+    if (this.sortColumn != nColumn) this.descending = this.defaultDescending;
+    else this.descending = !this.descending;
+  }
+  else this.descending = bDescending;
+  this.sortColumn = nColumn;
+  if (typeof this.onbeforesort == "function") this.onbeforesort();
+  var f = this.getSortFunction(sSortType, nColumn);
+  var a = this.getCache(sSortType, nColumn);
+  var tBody = this.tBody;
+  a.sort(f);
+  if (this.descending) a.reverse();
+  if (SortableTable.removeBeforeSort) {
+    // remove from doc
+    var nextSibling = tBody.nextSibling;
+    var p = tBody.parentNode;
+    p.removeChild(tBody);
+  }
 
-	// exit if None
-	if (sSortType == "None")
-		return;
+// insert in the new order
+  var l = a.length;
+  for (var i = 0; i < l; i++)
+    tBody.appendChild(a[i].element);
 
-	if (bDescending == null) {
-		if (this.sortColumn != nColumn)
-			this.descending = this.defaultDescending;
-		else
-			this.descending = !this.descending;
-	}
-	else
-		this.descending = bDescending;
+  if (SortableTable.removeBeforeSort) {
+    // insert into doc
+    p.insertBefore(tBody, nextSibling);
+  }
 
-	this.sortColumn = nColumn;
-
-	if (typeof this.onbeforesort == "function")
-		this.onbeforesort();
-
-	var f = this.getSortFunction(sSortType, nColumn);
-	var a = this.getCache(sSortType, nColumn);
-	var tBody = this.tBody;
-
-	a.sort(f);
- 
-	if (this.descending)
-		a.reverse();
-
-	if (SortableTable.removeBeforeSort) {
-		// remove from doc
-		var nextSibling = tBody.nextSibling;
-		var p = tBody.parentNode;
-		p.removeChild(tBody);
-	}
-
-	// insert in the new order
-	var l = a.length;
-	for (var i = 0; i < l; i++)
-		tBody.appendChild(a[i].element);
-
-	if (SortableTable.removeBeforeSort) {
-		// insert into doc
-		p.insertBefore(tBody, nextSibling);
-	}
-
-	this.updateHeaderArrows();
-
-	this.destroyCache(a);
-
-	if (typeof this.onsort == "function")
-		this.onsort();
+  this.updateHeaderArrows();
+  this.destroyCache(a);
+  if (typeof this.onsort == "function")
+  this.onsort();
 };
 
 SortableTable.prototype.asyncSort = function (nColumn, bDescending, sSortType) {
-	var oThis = this;
-	this._asyncsort = function () {
-		oThis.sort(nColumn, bDescending, sSortType);
-	};
-	window.setTimeout(this._asyncsort, 1);
+  var oThis = this;
+  this._asyncsort = function () {
+    oThis.sort(nColumn, bDescending, sSortType);
+  };
+  window.setTimeout(this._asyncsort, 1);
 };
 
 SortableTable.prototype.getCache = function (sType, nColumn) {
-	var rows = this.tBody.rows;
-	var l = rows.length;
-	var a = new Array(l);
-	var r;
-	for (var i = 0; i < l; i++) {
-		r = rows[i];
-		a[i] = {
-			value:		this.getRowValue(r, sType, nColumn),
-			element:	r
-		};
-	};
-	return a;
+  var rows = this.tBody.rows;
+  var l = rows.length;
+  var a = new Array(l);
+  var r;
+  for (var i = 0; i < l; i++) {
+    r = rows[i];
+    a[i] = {
+      value:  this.getRowValue(r, sType, nColumn),
+      element:	r
+    };
+  };
+  return a;
 };
 
 SortableTable.prototype.destroyCache = function (oArray) {
-	var l = oArray.length;
-	for (var i = 0; i < l; i++) {
-		oArray[i].value = null;
-		oArray[i].element = null;
-		oArray[i] = null;
-	}
+  var l = oArray.length;
+  for (var i = 0; i < l; i++) {
+    oArray[i].value = null;
+    oArray[i].element = null;
+    oArray[i] = null;
+  }
 };
 
 SortableTable.prototype.getRowValue = function (oRow, sType, nColumn) {
-	// if we have defined a custom getRowValue use that
-	if (this._sortTypeInfo[sType] && this._sortTypeInfo[sType].getRowValue)
-		return this._sortTypeInfo[sType].getRowValue(oRow, nColumn);
+  // if we have defined a custom getRowValue use that
+  if (this._sortTypeInfo[sType] && this._sortTypeInfo[sType].getRowValue)
+    return this._sortTypeInfo[sType].getRowValue(oRow, nColumn);
 
-	var s;
-	var c = oRow.cells[nColumn];
+  var s;
+  var c = oRow.cells[nColumn];
   if (typeof c != "undefined") {
     s = SortableTable.getInnerText(c);
     var cs = c.childNodes;
-  	var l = cs.length;
-  	return this.getValueFromString(s, sType);
+    var l = cs.length;
+    return this.getValueFromString(s, sType);
   } else return '';
 };
 
 SortableTable.getInnerText = function (oNode) {
-	var s = "";
+  var s = "";
   if (typeof oNode != "undefined") {
     var cs = oNode.childNodes;
     var l = cs.length;
@@ -297,66 +270,66 @@ SortableTable.getInnerText = function (oNode) {
     var l = 0;
   }
   for (var i = 0; i < l; i++) {
-		switch (cs[i].nodeType) {
-			case 1: //ELEMENT_NODE
-				s += SortableTable.getInnerText(cs[i]);
-				break;
-			case 3:	//TEXT_NODE
-				s += cs[i].nodeValue;
-        return s;
-				break;
-      case 8:	//HTML_COMMENT_NODE
-				s += cs[i].nodeValue;
+    switch (cs[i].nodeType) {
+      case 1: //ELEMENT_NODE
+        s += SortableTable.getInnerText(cs[i]);
+        break;
+      case 3:  //TEXT_NODE
+        s += cs[i].nodeValue;
         return s;
         break;
-		}
-	}
+      case 8:	//HTML_COMMENT_NODE
+        s += cs[i].nodeValue;
+        return s;
+        break;
+    }
+  }
   return s;
 };
 
 SortableTable.prototype.getValueFromString = function (sText, sType) {
-	if (this._sortTypeInfo[sType])
-		return this._sortTypeInfo[sType].getValueFromString( sText );
-	return sText;
-	/*
-	switch (sType) {
-		case "Number":
-			return Number(sText);
-		case "CaseInsensitiveString":
-			return sText.toUpperCase();
-		case "Date":
-			var parts = sText.split("-");
-			var d = new Date(0);
-			d.setFullYear(parts[0]);
-			d.setDate(parts[2]);
-			d.setMonth(parts[1] - 1);
-			return d.valueOf();
-	}
-	return sText;
-	*/
-	};
+  if (this._sortTypeInfo[sType])
+    return this._sortTypeInfo[sType].getValueFromString( sText );
+  return sText;
+  /*
+  switch (sType) {
+    case "Number":
+      return Number(sText);
+    case "CaseInsensitiveString":
+      return sText.toUpperCase();
+    case "Date":
+      var parts = sText.split("-");
+      var d = new Date(0);
+      d.setFullYear(parts[0]);
+      d.setDate(parts[2]);
+      d.setMonth(parts[1] - 1);
+      return d.valueOf();
+  }
+  return sText;
+  */
+};
 
 SortableTable.prototype.getSortFunction = function (sType, nColumn) {
-	if (this._sortTypeInfo[sType])
-		return this._sortTypeInfo[sType].compare;
-	return SortableTable.basicCompare;
+  if (this._sortTypeInfo[sType])
+    return this._sortTypeInfo[sType].compare;
+  return SortableTable.basicCompare;
 };
 
 SortableTable.prototype.destroy = function () {
-	this.uninitHeader();
-	var win = this.document.parentWindow;
-	if (win && typeof win.detachEvent != "undefined") {	// only IE needs this
-		win.detachEvent("onunload", this._onunload);
-	}
-	this._onunload = null;
-	this.element = null;
-	this.tHead = null;
-	this.tBody = null;
-	this.document = null;
-	this._headerOnclick = null;
-	this.sortTypes = null;
-	this._asyncsort = null;
-	this.onsort = null;
+  this.uninitHeader();
+  var win = this.document.parentWindow;
+  if (win && typeof win.detachEvent != "undefined") {	// only IE needs this
+    win.detachEvent("onunload", this._onunload);
+  }
+  this._onunload = null;
+  this.element = null;
+  this.tHead = null;
+  this.tBody = null;
+  this.document = null;
+  this._headerOnclick = null;
+  this.sortTypes = null;
+  this._asyncsort = null;
+  this.onsort = null;
 };
 
 // Adds a sort type to all instance of SortableTable
@@ -373,55 +346,55 @@ SortableTable.prototype.destroy = function () {
 //    fGetValueFromString is used to convert that string the desired value and type
 
 SortableTable.prototype.addSortType = function (sType, fGetValueFromString, fCompareFunction, fGetRowValue) {
-	this._sortTypeInfo[sType] = {
-		type:				sType,
-		getValueFromString:	fGetValueFromString || SortableTable.idFunction,
-		compare:			fCompareFunction || SortableTable.basicCompare,
-		getRowValue:		fGetRowValue
-	};
+  this._sortTypeInfo[sType] = {
+    type:      	         sType,
+    getValueFromString:	 fGetValueFromString || SortableTable.idFunction,
+    compare:             fCompareFunction    || SortableTable.basicCompare,
+    getRowValue:         fGetRowValue
+  };
 };
 
 // this removes the sort type from all instances of SortableTable
 SortableTable.prototype.removeSortType = function (sType) {
-	delete this._sortTypeInfo[sType];
+  delete this._sortTypeInfo[sType];
 };
 r=0;
 SortableTable.basicCompare = function compare(n1, n2) {
   //if (r<5) {alert(n1.value);r++;}
   if (n1.value < n2.value)
-		return -1;
-	if (n2.value < n1.value)
-		return 1;
+    return -1;
+  if (n2.value < n1.value)
+    return 1;
   return 0;
 };
 
 SortableTable.idFunction = function (x) {
-	return x;
+  return x;
 };
 
 SortableTable.toUpperCase = function (s) {
-	return s.toUpperCase();
+  return s.toUpperCase();
 };
 
-function LTrim(str) { 
- for (var k=0; k<str.length && str.charAt(k)<=" " ; k++) ;
- return str.substring(k,str.length);
+function LTrim(str) {
+  for (var k=0; k<str.length && str.charAt(k)<=" " ; k++) ;
+  return str.substring(k,str.length);
 }
 function RTrim(str) {
- for (var j=str.length-1; j>=0 && str.charAt(j)<=" " ; j--) ;
- return str.substring(0,j+1);
+  for (var j=str.length-1; j>=0 && str.charAt(j)<=" " ; j--) ;
+  return str.substring(0,j+1);
 }
 function Trim(str) {
- return LTrim(RTrim(str));
-}      
+  return LTrim(RTrim(str));
+}
 
 SortableTable.toDate = function (s) {
-	/*var parts = s.split("-");
-	var d = new Date(0);
-	d.setFullYear(parts[0]);
-	d.setDate(parts[2]);
-	d.setMonth(parts[1] - 1);
-	return d.valueOf();*/
+  /*var parts = s.split("-");
+  var d = new Date(0);
+  d.setFullYear(parts[0]);
+  d.setDate(parts[2]);
+  d.setMonth(parts[1] - 1);
+  return d.valueOf();*/
   return Date.parse(Trim(s));
 };
 
