@@ -47,7 +47,7 @@
 046=Lange
 047=Kurze
 048=Mittellange
-049=Liga 
+049=Liga
 050=nicht gefunden!
 051=Achtung! Nicht alle Arten von KO-Runden werden vom Viewer unterstützt!
 052=Cachefaktor

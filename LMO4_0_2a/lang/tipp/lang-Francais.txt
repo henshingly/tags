@@ -1,7 +1,7 @@
 000=Pronostiques
 001=retour à la vue principale du jeu
 002=Changer l&#39;équipe
-003=DONNER MES PRONOSTIQUES 
+003=DONNER MES PRONOSTIQUES
 004=VOIR LES CLASSEMENTS:
 005=Ajouter cette ligue pour pronostiquer
 006=Supprimer le compte du joueur
@@ -68,7 +68,7 @@
 067=Veuillez entrer votre nom
 068=Veuillez entrer votre adresse électronique
 069=Veuillez entrer votre mot de passe
-070=La répétition du mot de passe est différent 
+070=La répétition du mot de passe est différent
 071=Veuillez choisir votre  équipe
 072=Veuillez donner le nom de votre équipe
 073=Le mot de passe doit avoir au moins 3 caractères
@@ -143,7 +143,7 @@
 142=nombre max. de joueur atteint
 143=Équipe déjà créé
 144=Classement interne de l&#39;équipe
-145=OPTIONS 
+145=OPTIONS
 146=Validation de l&#39;inscription nécessaire
 147=débloquer
 148=Ton inscription n&#39;est pas débloqué
@@ -274,7 +274,7 @@
 273=Ligue abonnée
 274=Quel critère compte en cas d&#39;égalité de points?
 275=Critère
-276=le meilleur quote-part 
+276=le meilleur quote-part
 277=le plus haut nombre de matchs pronostiqués
 278=le nombre de pronostiques exacts
 279=le nombre de tendances et différences de buts corrects
@@ -289,7 +289,7 @@
 288=Permettre d&#39;utiliser un joker? (1 joker par journée)
 289=Joker
 290=Pronostique avec joker (pour doubler les points)
-291=Multiplicateur pour pronostique avec joker 
+291=Multiplicateur pour pronostique avec joker
 292=Pronostique avec joker n&#39;a plus le droit d&#39;être changé
 293=Email à l&#39;administrateur après une nouvelle inscription
 294=montrer

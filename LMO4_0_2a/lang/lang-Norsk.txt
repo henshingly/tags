@@ -20,7 +20,7 @@
 019=Viser statistikk og prognoser for ligaen
 020=Info
 021=Informasjon om dette php skriptet og dets forfattere
-022=Notat: 
+022=Notat:
 023=Terminlisten for
 024=Velg et lag.
 025=Klikk her for å se hele serierunden.
@@ -428,7 +428,7 @@
 427=Her fastsetter du alternativene for kantene (styrke, type og farge)
 428=Skriftype
 429=Her fastsetter du skrifttypen (ADVARSEL: Ikke alle skrifttyper finnes i alle systemer)
-430=Skriftstørrelse 
+430=Skriftstørrelse
 431=Her fastsetter du skriftstørrelsen for normal tekst
 432=Fastsettelse av frontend design
 433=Her fastsetter du forgrunnsfargen (f.eks. #ffffff)
@@ -567,7 +567,7 @@
 566=Skal ekstra Hjemme- og bortetabell vises?
 567=Feil ved laging
 568=Sesongslutt
-4000=Totalt_ 
+4000=Totalt_
 4001=/kamp
 4002=Andre halvdel
 4003=Første halvdel

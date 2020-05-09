@@ -392,7 +392,7 @@
 391=« k výbìru ligy
 392=Zde mùžeš vybrat jinou ligu
 393=Baráž o záchranu
-394=Kolik mužstev bude hrát baráž o záchranu 
+394=Kolik mužstev bude hrát baráž o záchranu
 395=erzielte Tore z&auml;hlen vor Tordiff.
 396=Z&auml;hlen die erzielten Tore bei Punktgleichheit mehr als die Tordifferenz (z.B. beim Kegeln)?
 397=Freigegebene Ligen
@@ -476,9 +476,9 @@
 475=Prohra(y)
 476=2.polovina
 477=Aktuální zápasy TISK (dejte v prohlížeèi soubor/tisk)
-478=Aktuální zápasy TISK 
+478=Aktuální zápasy TISK
 479=Rozpis TISK (dejte v prohlížeèi soubor/tisk)
-480=Rozpis TISK 
+480=Rozpis TISK
 481=Hier kommen die Pfade der zusätzlichen Addons rein, mehrere Addons durch ',' trennen. (mit '/' am Ende, z.B. 'wap/', kann ein absoluter oder relativer Systempfad sein, dieses Verzeichnis muß volle Schreibrechte besitzen)
 482=Addon adresáø
 483=Nastavení tisku

@@ -39,7 +39,7 @@
 038=Gól
 039=+/-
 040=Helyezések
-041=Otthon	
+041=Otthon
 042=Idegenben
 043=Elõzõ forduló utáni helyezések
 044=Következõ forduló utáni helyezések
@@ -70,14 +70,14 @@
 069=Vereség
 070=Legnagyobb vereség
 071=Forma
-072=ellenfél 
+072=ellenfél
 073=(H)
 074=(V)
 075=Meccs veretlenül
 076=Meccs nyeretlenül
-077=Admin felület: 
+077=Admin felület:
 078=Új
-079=Létrehoz egy új bajnokságot 
+079=Létrehoz egy új bajnokságot
 080=Megnyitás
 081=Megnyit egy bajnokságot szerkesztésre
 082=Törlés
@@ -91,7 +91,7 @@
 090=Szerkesztés
 091=Szerkeszti az adott bajnokság eredményeit
 092=Mit kíván most tenni?
-093=Létrehoz egy új bajnokságot 
+093=Létrehoz egy új bajnokságot
 094=Megnyit egy bajnokságot szerkesztésre
 095=Töröl egy bajnokságot a szerverrõl
 096=Feltölt egy bajnokságot a merevlemezrõl a szerverre
@@ -283,7 +283,7 @@
 282=Cs
 283=Mentés nem lehetséges (Ellenõrizze az írási jogosultságokat!)
 284=Menetrend készítés
-285=Itt választhat, hogy késõbb ad meg menetrendet (nincs menetrend), egy másik bajnokságát használja (csak azonos paraméterek esetén) vagy hagyja véletlenszerûen megalkotni azt 
+285=Itt választhat, hogy késõbb ad meg menetrendet (nincs menetrend), egy másik bajnokságát használja (csak azonos paraméterek esetén) vagy hagyja véletlenszerûen megalkotni azt
 286=Nincs menetrend
 287=Más bajnokság menetrendjének használata
 288=Véletlenszerûen készített menetrend
@@ -349,12 +349,12 @@
 348=Küldés sikeres.
 349=Egy bajnokság letöltése vagy email-en való elküldése
 350=A fordulók és meccsek száma függ<br>a csapatok számától.
-351=Bajnokság lebonyolítási módja 
+351=Bajnokság lebonyolítási módja
 352=Válassza ki a bajnokság játékmódját
 353=Egyetlen meccs
 354=Oda- és visszavágó
 355=Legjobb 3-ból
-356=Legjobb 5-bõl 
+356=Legjobb 5-bõl
 357=Legjobb 7-bõl
 358=NyD
 359=Nyolcaddöntõ megtekintése
@@ -369,7 +369,7 @@
 368=Elõzõ forduló megtekintése
 369=Következõ forduló megtekintése
 370=Forduló
-371=Nyolcaddöntõ 
+371=Nyolcaddöntõ
 372=Negyeddöntõ
 373=Elõdöntõ
 374=Döntõ
@@ -476,9 +476,9 @@
 475=Vereség
 476=Visszavágós helyezések
 477=Forduló nyomtatása
-478=Forduló nyomtatása 
+478=Forduló nyomtatása
 479=Menetrend nyomtatása
-480=Menetrend nyomtatása 
+480=Menetrend nyomtatása
 481=Itt tud még elérési utakat megadni a kiegészítésekhez. Válassza el oket ',' jellel. (egy '/'-rel a végén, pl. 'wap/'; lehet abszolút vagy relatív elérési út. A könyvtárnak teljes írhatósági joggal kell rendedlkeznie)
 482=Kiegészítések könyvtárai
 483=Nézet nyomtatása
@@ -543,7 +543,7 @@
 542=Büntetés
 543=Bónusz
 544=Félbeszakítva
-545=Hétköznap	
+545=Hétköznap
 546=Nap
 547=Hónap
 548=Év
@@ -586,4 +586,4 @@
 4016=Ugyanazon eredménnyel zárult meccsek
 4017=Legnagyobb idegenbeli gyozelem
 4018=Legtöbb
-4019=Meccsek ugyanannyi számmal 
+4019=Meccsek ugyanannyi számmal

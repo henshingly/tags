@@ -179,7 +179,7 @@
 178=Platzhalter:
 179=[nick] Nickname<br>[pass] Passwort<br>[name] Name<br>[spiele] Auflistung der noch zu tippenden Spiele (nur Tip-Reminder)
 180=Aktualisierung der Gesamtwertung
-181=asa ar arata clasamentul dupa pronosticurile lui 
+181=asa ar arata clasamentul dupa pronosticurile lui
 182=zu Deiner Tipp-Tabelle
 183=Tipp-Tabelle aller Mitspieler
 184=Asa ar arata clasamentul dupa pronosticuri

@@ -239,7 +239,7 @@
 238=Il formametro deve essere raffigurato? Selezionare 'No' , se ci dovrebbero essere problemi di raffigurazione del formametro o il suo provider non ha istallato il PHP con GD-Lib (Biblioteca grafica).
 239=Inizio di gara standard
 240=Se per gli incontri lei ha indicato una data e nessuno orario d'inizio, verrá preso automaticamente questo. Questo le risparmia molto lavoro di digitazione (Formato OO:MM - se necessario con gli zeri iniziali).
-241=Nascondere la colonna 'Pareggi' della tabella 
+241=Nascondere la colonna 'Pareggi' della tabella
 242=Soll die Spalte 'Unentschieden' in der Tabelle verborgen werden?
 243=Creare nuovo campionato
 244=Nome file
@@ -460,7 +460,7 @@
 457=Classifica "in casa" (nur für unterhalb der Ergebnisse)
 458=Classifica "fuori casa" (nur für unterhalb der Ergebnisse)
 459=Settore torneo
-460=Vincitore di un'incontro 
+460=Vincitore di un'incontro
 461=Perdente di un'incontro
 462=Moduli
 463=Cellule vuote
@@ -523,7 +523,7 @@
 520=Devono essere visualizzati le bandiere per la selezione della lingua?
 521=Detratti/Aggiunzione di reti
 522=Penalizzazioni/Bonusreti
-523=Considerare Punti e reti di penalizzazioni dalla giornata x 
+523=Considerare Punti e reti di penalizzazioni dalla giornata x
 524=dal
 525=al
 526=Assortire
