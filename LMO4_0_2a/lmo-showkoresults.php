@@ -17,8 +17,8 @@
   *
   * $Id: lmo-showkoresults.php 418 2007-04-08 18:30:52Z lmo-plastic $
   */
-  
-  
+
+
 if ($file != "") {
   $addp = $_SERVER['PHP_SELF']."?action=program&amp;file=".$file."&amp;selteam=";
   $addr = $_SERVER['PHP_SELF']."?action=results&amp;file=".$file."&amp;st=";
@@ -96,7 +96,7 @@ if ($file != "") {
   } else {
     $j = $st.". ".$text[370];
   }?>
-          <th colspan="<?php echo $breite; ?>" align="left"><?php 
+          <th colspan="<?php echo $breite; ?>" align="left"><?php
   echo $j;
   if ($dats == 1) {
     if ($datum1[$st-1] != "") {
@@ -119,16 +119,16 @@ if ($file != "") {
         if(($klfin==1) && ($st==$anzst)){ ?>
         <tr>
           <th class="nobr" colspan="<?php echo $breite; ?>"><?php if($i==1){echo "&nbsp;<br>";} echo $text[419+$i]; ?></th>
-        </tr><?php 
+        </tr><?php
         }?>
-        <tr><?php 
+        <tr><?php
         if($datm==1){
           if($mterm[$st-1][$i][$n]>0){
             $dum1=strftime($datf, $mterm[$st-1][$i][$n]);
           } else {
             $dum1="";
           }?>
-          <td class="nobr"><?php echo $dum1; ?></td><?php 
+          <td class="nobr"><?php echo $dum1; ?></td><?php
         }?>
           <td class="nobr" width="2">&nbsp;</td><?php
         if ($n == 0) {
@@ -181,7 +181,7 @@ if ($file != "") {
           }?>
           </td><?php
         } else { ?>
-          <td class="nobr" colspan="3">&nbsp;</td><?php 
+          <td class="nobr" colspan="3">&nbsp;</td><?php
         }?>
           <td class="nobr" width="2">&nbsp;</td>
           <td class="nobr" align="right"><?php echo applyFactor($goala[$st-1][$i][$n],$goalfaktor); ?></td>
@@ -213,24 +213,24 @@ if ($file != "") {
          *
          */
         if ($mnote[$st-1][$i][$n]!="") {
-     
+
           $lmo_spielnotiz=$lmo_teamaicon."<strong>".$teams[$teama[$st-1][$i]]."</strong> - ".$lmo_teambicon."<strong>".$teams[$teamb[$st-1][$i]]."</strong> ".$goala[$st-1][$i][$n].":".$goalb[$st-1][$i][$n];
           //Allgemeine Notiz
-          
+
           $lmo_spielnotiz.="\n\n<strong>".$text[22].":</strong> ".$mnote[$st-1][$i][$n];
-          
+
           echo " <a href='#' onclick=\"alert('".addcslashes('',htmlentities(strip_tags($lmo_spielnotiz)))."');window.focus();return false;\"><span class='popup'>".nl2br($lmo_spielnotiz)."</span><img src='".URL_TO_IMGDIR."/lmo-st2.gif' width='10' height='12' border='0' alt=''></a>";
           $lmo_spielnotiz="";
         } else {
           echo "&nbsp;";
         }?>
           </td>
-        </tr><?php 
+        </tr><?php
       }
       if(($modus[$st-1]>1) && ($i<=$anzsp-1)){ ?>
         <tr>
           <td class="nobr" colspan="<?php echo $breite; ?>">&nbsp;</td>
-        </tr><?php 
+        </tr><?php
       }
     }
   }?>
@@ -241,7 +241,7 @@ if ($file != "") {
   <tr>
     <td>
       <table width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tr><?php  
+        <tr><?php
    $st0 = $st-1;
    if ($st > 1) {?>
           <td align="left">&nbsp;<a href="<?php echo $addr.$st0?>" title="<?php echo $text[6]?>"><?php echo $text[5]?> <?php echo $text[6]?></a>&nbsp;</td><?php
@@ -254,5 +254,5 @@ if ($file != "") {
       </table>
     </td>
   </tr>
-</table><?php 
+</table><?php
 } ?>

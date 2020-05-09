@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,8 +16,8 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
-  
+
+
 
 ?>
 <table class="lmoMiddle" cellspacing="0" cellpadding="0" border="0">
@@ -36,7 +36,7 @@ if ($archivlink==1) {
   $dirs = get_dir($dirliga.$subdir);
   natcasesort($dirs);
   if (!empty($subdir) && substr($subdir,-1)!='/') $subdir.='/';
- 
+
   $output='';
   foreach($dirs as $dir) {
     $descr=@implode("",file($dirliga.$subdir.$dir."/dir-descr.txt"));
@@ -46,7 +46,7 @@ if ($archivlink==1) {
     }
     $output.="</tr>";
   }
-  
+
   if ($output!='') {?>
       <table class='lmoInner' cellspacing="0" width="99%">
         <tr>

@@ -104,7 +104,7 @@ if($lmtype==0){
        <td width="2">/</td>
        <td align="right"><?php echo $gasttore?></td>
        <td align="center" width="8">:</td>
-       <td align="left"><?php echo $heimtore?></td><?php  
+       <td align="left"><?php echo $heimtore?></td><?php
             }?>
      </tr><?php
           }

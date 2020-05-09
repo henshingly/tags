@@ -60,7 +60,7 @@ require_once(PATH_TO_LMO."/lmo-admintest.php");
  * b) Indizes beginnen bei 0 statt 1.
  * c) Kreuztabellen-Initialiserung komplett mit '-1' statt Hauptdiagonale mit '0'
  */
- 
+
 /*
  * dummy wird true, wenn der virtuelle Spieler "Spielfrei"
  * bei einer ungeraden Spielerzahl hinzugefügt wird.
@@ -73,9 +73,9 @@ $dummy = false;
 $anzteams = $xteams;
 if (($xteams%2) == 1) {
   $anzteams++;
-  $dummy = true; 
+  $dummy = true;
 }
- 
+
 $plan = array_pad($array, 80, "");
 for($i = 0; $i < 40; $i++) {
   $plan[$i] = array_pad($array, 40, "");

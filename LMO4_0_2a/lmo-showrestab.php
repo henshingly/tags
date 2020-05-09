@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,7 +16,7 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
+
 
 if (isset($file) && $file != "") {
   $tabtype=isset($_GET['tabtype'])?$_GET['tabtype']:0;
@@ -101,19 +101,19 @@ if (isset($file) && $file != "") {
   <tr>
     <td align="center"><?php include(PATH_TO_LMO."/lmo-spieltagsmenu.php")?></td>
   </tr><?php
-  
+
   /** Ergebnisse*/
   if ($tabonres >= 1 || $action=="results") {?>
   <tr>
     <td align="center"><?php include(PATH_TO_LMO."/lmo-showresults.php")?></td>
   </tr><?php
   }
-  
+
   /** Vor und Zurück-Pfeile*/?>
   <tr>
     <td>
       <table width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tr><?php  
+        <tr><?php
    $st0 = $st-1;
    if ($st > 1) {?>
           <td align="left">&nbsp;<a href="<?php echo $addr.$st0?>" title="<?php echo $text[6]?>"><?php echo $text[5]?> <?php echo $text[6]?></a>&nbsp;</td><?php
@@ -126,7 +126,7 @@ if (isset($file) && $file != "") {
       </table>
     </td>
   </tr><?php
-  
+
   /** Tabelle*/
   if ($tabonres >= 1 || $action=="table") {?>
   <tr>

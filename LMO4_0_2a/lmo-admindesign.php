@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,8 +16,8 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
-  
+
+
 require_once(PATH_TO_LMO."/lmo-admintest.php");
 isset($_REQUEST['show'])?$show=$_REQUEST['show']:$show=0;
 if(isset($_POST['save']) && $_POST['save']==1){
@@ -29,49 +29,49 @@ if ($show==0) {
   $lmo_main_background5=    isset($_POST["xlmo_main_background5"])?    $_POST["xlmo_main_background5"]:    $lmo_main_background5;
   $lmo_main_background6=    isset($_POST["xlmo_main_background6"])?    $_POST["xlmo_main_background6"]:    $lmo_main_background6;
   $lmo_main_background7=    isset($_POST["xlmo_main_background7"])?    $_POST["xlmo_main_background7"]:    $lmo_main_background7;
-  
+
   $lmo_main_color1=         isset($_POST["xlmo_main_color1"])?         $_POST["xlmo_main_color1"]:         $lmo_main_color1;
   $lmo_main_color2=         isset($_POST["xlmo_main_color2"])?         $_POST["xlmo_main_color2"]:         $lmo_main_color2;
   $lmo_main_color4=         isset($_POST["xlmo_main_color4"])?         $_POST["xlmo_main_color4"]:         $lmo_main_color4;
   $lmo_main_color5=         isset($_POST["xlmo_main_color5"])?         $_POST["xlmo_main_color5"]:         $lmo_main_color5;
   $lmo_main_color6=         isset($_POST["xlmo_main_color6"])?         $_POST["xlmo_main_color6"]:         $lmo_main_color6;
   $lmo_main_color7=         isset($_POST["xlmo_main_color7"])?         $_POST["xlmo_main_color7"]:         $lmo_main_color7;
-  
+
   $lmo_main_border1=        isset($_POST["xlmo_main_border1"])?        $_POST["xlmo_main_border1"]:        $lmo_main_border1;
   $lmo_main_border4=        isset($_POST["xlmo_main_border4"])?        $_POST["xlmo_main_border4"]:        $lmo_main_border4;
   $lmo_main_border5=        isset($_POST["xlmo_main_border5"])?        $_POST["xlmo_main_border5"]:        $lmo_main_border5;
   $lmo_main_border6=        isset($_POST["xlmo_main_border6"])?        $_POST["xlmo_main_border6"]:        $lmo_main_border6;
   $lmo_main_border7=        isset($_POST["xlmo_main_border7"])?        $_POST["xlmo_main_border7"]:        $lmo_main_border7;
-  
+
   $lmo_main_fontfamily1=    isset($_POST["xlmo_main_fontfamily1"])?    $_POST["xlmo_main_fontfamily1"]:    $lmo_main_fontfamily1;
   $lmo_main_fontfamily2=    isset($_POST["xlmo_main_fontfamily2"])?    $_POST["xlmo_main_fontfamily2"]:    $lmo_main_fontfamily2;
-  
+
   $lmo_main_fontsize1=      isset($_POST["xlmo_main_fontsize1"])?      $_POST["xlmo_main_fontsize1"]:      $lmo_main_fontsize1;
   $lmo_main_fontsize2=      isset($_POST["xlmo_main_fontsize2"])?      $_POST["xlmo_main_fontsize2"]:      $lmo_main_fontsize2;
-}elseif ($show==1) { 
+}elseif ($show==1) {
   $lmo_middle_background1=  isset($_POST["xlmo_middle_background1"])?  $_POST["xlmo_middle_background1"]:  $lmo_middle_background1;
   $lmo_middle_background2=  isset($_POST["xlmo_middle_background2"])?  $_POST["xlmo_middle_background2"]:  $lmo_middle_background2;
   $lmo_middle_background4=  isset($_POST["xlmo_middle_background4"])?  $_POST["xlmo_middle_background4"]:  $lmo_middle_background4;
   $lmo_middle_background5=  isset($_POST["xlmo_middle_background5"])?  $_POST["xlmo_middle_background5"]:  $lmo_middle_background5;
   $lmo_middle_background6=  isset($_POST["xlmo_middle_background6"])?  $_POST["xlmo_middle_background6"]:  $lmo_middle_background6;
   $lmo_middle_background7=  isset($_POST["xlmo_middle_background7"])?  $_POST["xlmo_middle_background7"]:  $lmo_middle_background7;
-  
+
   $lmo_middle_color1=       isset($_POST["xlmo_middle_color1"])?       $_POST["xlmo_middle_color1"]:       $lmo_middle_color1;
   $lmo_middle_color2=       isset($_POST["xlmo_middle_color2"])?       $_POST["xlmo_middle_color2"]:       $lmo_middle_color2;
   $lmo_middle_color4=       isset($_POST["xlmo_middle_color4"])?       $_POST["xlmo_middle_color4"]:       $lmo_middle_color4;
   $lmo_middle_color5=       isset($_POST["xlmo_middle_color5"])?       $_POST["xlmo_middle_color5"]:       $lmo_middle_color5;
   $lmo_middle_color6=       isset($_POST["xlmo_middle_color6"])?       $_POST["xlmo_middle_color6"]:       $lmo_middle_color6;
   $lmo_middle_color7=       isset($_POST["xlmo_middle_color7"])?       $_POST["xlmo_middle_color7"]:       $lmo_middle_color7;
-  
+
   $lmo_middle_border1=      isset($_POST["xlmo_middle_border1"])?      $_POST["xlmo_middle_border1"]:      $lmo_middle_border1;
   $lmo_middle_border4=      isset($_POST["xlmo_middle_border4"])?      $_POST["xlmo_middle_border4"]:      $lmo_middle_border4;
   $lmo_middle_border5=      isset($_POST["xlmo_middle_border5"])?      $_POST["xlmo_middle_border5"]:      $lmo_middle_border5;
   $lmo_middle_border6=      isset($_POST["xlmo_middle_border6"])?      $_POST["xlmo_middle_border6"]:      $lmo_middle_border6;
   $lmo_middle_border7=      isset($_POST["xlmo_middle_border7"])?      $_POST["xlmo_middle_border7"]:      $lmo_middle_border7;
-  
+
   $lmo_middle_fontfamily1=  isset($_POST["xlmo_middle_fontfamily1"])?  $_POST["xlmo_middle_fontfamily1"]:  $lmo_middle_fontfamily1;
   $lmo_middle_fontfamily2=  isset($_POST["xlmo_middle_fontfamily2"])?  $_POST["xlmo_middle_fontfamily2"]:  $lmo_middle_fontfamily2;
-  
+
   $lmo_middle_fontsize1=    isset($_POST["xlmo_middle_fontsize1"])?    $_POST["xlmo_middle_fontsize1"]:    $lmo_middle_fontsize1;
   $lmo_middle_fontsize2=    isset($_POST["xlmo_middle_fontsize2"])?    $_POST["xlmo_middle_fontsize2"]:    $lmo_middle_fontsize2;
 }elseif ($show==2) {
@@ -81,11 +81,11 @@ if ($show==0) {
   $lmo_inner_color1=        isset($_POST["xlmo_inner_color1"])?        $_POST["xlmo_inner_color1"]:        $lmo_inner_color1;
   $lmo_inner_color2=        isset($_POST["xlmo_inner_color2"])?        $_POST["xlmo_inner_color2"]:        $lmo_inner_color2;
   $lmo_inner_color3=        isset($_POST["xlmo_inner_color3"])?        $_POST["xlmo_inner_color3"]:        $lmo_inner_color3;
-  
+
   $lmo_inner_border1=       isset($_POST["xlmo_inner_border1"])?       $_POST["xlmo_inner_border1"]:       $lmo_inner_border1;
   $lmo_inner_fontfamily1=   isset($_POST["xlmo_inner_fontfamily1"])?   $_POST["xlmo_inner_fontfamily1"]:   $lmo_inner_fontfamily1;
   $lmo_inner_fontsize1=     isset($_POST["xlmo_inner_fontsize1"])?     $_POST["xlmo_inner_fontsize1"]:     $lmo_inner_fontsize1;
-}elseif ($show==3) { 
+}elseif ($show==3) {
   $lmo_tabelle_background1= isset($_POST["xlmo_tabelle_background1"])? $_POST["xlmo_tabelle_background1"]: $lmo_tabelle_background1;
   $lmo_tabelle_background2= isset($_POST["xlmo_tabelle_background2"])? $_POST["xlmo_tabelle_background2"]: $lmo_tabelle_background2;
   $lmo_tabelle_background3= isset($_POST["xlmo_tabelle_background3"])? $_POST["xlmo_tabelle_background3"]: $lmo_tabelle_background3;
@@ -102,33 +102,33 @@ if ($show==0) {
   $lmo_tabelle_color6=      isset($_POST["xlmo_tabelle_color6"])?      $_POST["xlmo_tabelle_color6"]:      $lmo_tabelle_color6;
   $lmo_tabelle_color7=      isset($_POST["xlmo_tabelle_color7"])?      $_POST["xlmo_tabelle_color7"]:      $lmo_tabelle_color7;
   $lmo_tabelle_color8=      isset($_POST["xlmo_tabelle_color8"])?      $_POST["xlmo_tabelle_color8"]:      $lmo_tabelle_color8;
-}elseif ($show==4) { 
+}elseif ($show==4) {
   $lmo_turnier_background1= isset($_POST["xlmo_turnier_background1"])? $_POST["xlmo_turnier_background1"]: $lmo_turnier_background1;
   $lmo_turnier_background2= isset($_POST["xlmo_turnier_background2"])? $_POST["xlmo_turnier_background2"]: $lmo_turnier_background2;
   $lmo_turnier_color1=      isset($_POST["xlmo_turnier_color1"])?      $_POST["xlmo_turnier_color1"]:      $lmo_turnier_color1;
   $lmo_turnier_color2=      isset($_POST["xlmo_turnier_color2"])?      $_POST["xlmo_turnier_color2"]:      $lmo_turnier_color2;
-}elseif ($show==5) { 
+}elseif ($show==5) {
   $lmo_kreuz_fontsize1=     isset($_POST["xlmo_kreuz_fontsize1"])?     $_POST["xlmo_kreuz_fontsize1"]:     $lmo_kreuz_fontsize1;
   $lmo_kreuzkal_background2=isset($_POST["xlmo_kreuzkal_background2"])?$_POST["xlmo_kreuzkal_background2"]:$lmo_kreuzkal_background2;
-  
+
   $lmo_fieber_color1=       isset($_POST["xlmo_fieber_color1"])?       $_POST["xlmo_fieber_color1"]:       $lmo_fieber_color1;
   $lmo_fieber_color2=       isset($_POST["xlmo_fieber_color2"])?       $_POST["xlmo_fieber_color2"]:       $lmo_fieber_color2;
-  
+
   $lmo_footer_fontsize1=    isset($_POST["xlmo_footer_fontsize1"])?    $_POST["xlmo_footer_fontsize1"]:    $lmo_footer_fontsize1;
   $lmo_kreuzkal_background1=isset($_POST["xlmo_kreuzkal_background1"])?$_POST["xlmo_kreuzkal_background1"]:$lmo_kreuzkal_background1;
   $lmo_kreuzkal_color1=     isset($_POST["xlmo_kreuzkal_color1"])?     $_POST["xlmo_kreuzkal_color1"]:     $lmo_kreuzkal_color1;
-  
+
   $lmo_main_underline1=     isset($_POST["xlmo_main_underline1"])?     'underline':                        '';
   $lmo_middle_underline1=   isset($_POST["xlmo_middle_underline1"])?   'underline':                        '';
   $lmo_inner_underline1=    isset($_POST["xlmo_inner_underline1"])?    'underline':                        '';
-}elseif ($show==6) { 
+}elseif ($show==6) {
   $lmo_formular_background1=isset($_POST["xlmo_formular_background1"])?$_POST["xlmo_formular_background1"]:$lmo_formular_background1;
   $lmo_formular_background2=isset($_POST["xlmo_formular_background2"])?$_POST["xlmo_formular_background2"]:$lmo_formular_background2;
   $lmo_formular_color1=     isset($_POST["xlmo_formular_color1"])?     $_POST["xlmo_formular_color1"]:     $lmo_formular_color1;
   $lmo_formular_color2=     isset($_POST["xlmo_formular_color2"])?     $_POST["xlmo_formular_color2"]:     $lmo_formular_color2;
   $lmo_formular_border1=    isset($_POST["xlmo_formular_border1"])?    $_POST["xlmo_formular_border1"]:    $lmo_formular_border1;
   $lmo_formular_border2=    isset($_POST["xlmo_formular_border2"])?    $_POST["xlmo_formular_border2"]:    $lmo_formular_border2;
-}  
+}
   require(PATH_TO_LMO."/lmo-savecfg.php");
 }
 

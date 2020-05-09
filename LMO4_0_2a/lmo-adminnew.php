@@ -336,7 +336,7 @@ if($newpage==2){
               <?php echo  $text[287]; ?>:<br><?php
     $ftype=".l98";
     require(PATH_TO_LMO."/lmo-adminnewdir.php"); ?><br><?php
-    
+
     // Änderungen s.janke@tu-bs.de - Beginn
     if ($xteams>=4) {
       $soll_anzsp = floor($xteams/2);
@@ -348,7 +348,7 @@ if($newpage==2){
       }
     }
     // Änderungen s.janke@tu-bs.de - Ende
-    
+
     ?>
             </td>
           </tr><?php

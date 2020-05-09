@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,26 +16,26 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
-   
+
+
 require_once(PATH_TO_LMO."/lmo-admintest.php");
 if ($_SESSION['lmouserok']==2) {
-  
-  
-  
+
+
+
   isset($_GET['del'])?$del=$_GET['del']:$del=-1;
   isset($_POST['save'])?$save=$_POST['save']:$save=-2;
   isset($_REQUEST['show'])?$show=$_REQUEST['show']:$show=-1;
-  
+
   require(PATH_TO_LMO."/lmo-loadauth.php");
- 
+
   if ($save>=0) {
     if(isset($_POST["xadmin_name".$save]) && isset($_POST["xadmin_pass".$save]) && isset($_POST["xadmin_rang".$save])) {
       $lmo_admin_data[$save]=array(trim($_POST["xadmin_name".$save]),trim($_POST["xadmin_pass".$save]),trim($_POST["xadmin_rang".$save]));
       $lmo_helfer_ligen_neu=array();
       if (trim($_POST["xadmin_rang".$save])==1) {  //Hilfsadmin -> Ligen herausfinden
         $lmo_helfer_ligen=isset($_POST["xhelfer_ligen".$save]) && count($_POST["xhelfer_ligen".$save])>0?$_POST["xhelfer_ligen".$save]:array();
-        if (count($lmo_helfer_ligen)>0) {  
+        if (count($lmo_helfer_ligen)>0) {
           for ($u=0; $u<count($lmo_helfer_ligen); $u++) {  //Alle Ligen durchgehen
             $l=strlen($lmo_helfer_ligen[$u])-4;
             if (substr($lmo_helfer_ligen[$u],-4)==".l98") {
@@ -59,7 +59,7 @@ if ($_SESSION['lmouserok']==2) {
       } else {
         $lmo_admin_data[$save][4]="0";
       }
-      
+
     }
     $main_admin=array_shift($lmo_admin_data);
     usort($lmo_admin_data,"sort_admin");
@@ -86,7 +86,7 @@ if ($_SESSION['lmouserok']==2) {
       echo getMessage($text[567],TRUE);
       $show=-1;
     }
-  } 
+  }
 ?>
 <table class="lmoSubmenu" width="100%" cellspacing="0" cellpadding="0" border="0">
   <tr>
@@ -131,7 +131,7 @@ if ($_SESSION['lmouserok']==2) {
             <td align="center">&nbsp;<br><?php echo $text[318]?><br>&nbsp;</td>
           </tr><?php
     }
-    if ($show==$testshow) {?> 
+    if ($show==$testshow) {?>
           <tr>
             <td align="right"><?php echo $text[322]?></td>
             <td align="left" colspan="2"><input class="lmo-formular-input" type="text" name="xadmin_name<?php echo $testshow?>" size="16" maxlength="32" value="<?php echo $lmo_admin[0]?>"></td>
@@ -170,12 +170,12 @@ if ($_SESSION['lmouserok']==2) {
           <tr>
             <td>&nbsp;</td>
             <td align="center"><acronym title="<?php echo $text[327]?>"><input class="lmo-formular-button" type="submit" value="<?php echo $text[329]?>"></acronym></th><?php
-      if ($testshow!=0){?>      
+      if ($testshow!=0){?>
             <td align="right">
               <a href="<?php echo $_SERVER['PHP_SELF']?>?action=admin&amp;todo=user&amp;del=<?php echo $show?>" onclick="return confirm('<?php echo $text[499]?>');"><img border="0" width="11" heigth="13" src="<?php echo URL_TO_IMGDIR?>/delete.gif" alt="<?php echo $text[330]?>" title="<?php echo $text[328]?>"></a>
             </td><?php
       }?>
-          </tr><?php 
+          </tr><?php
     }//if $show=$testshow
     $testshow++;
   }//foreach

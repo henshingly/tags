@@ -23,7 +23,7 @@
     <th colspan="<?php echo $breite; ?>" align="left">
     	<?php
 echo $st.". ".$text[2];
-if($dats==1){ 
+if($dats==1){
   if($datum1[$st-1]!=""){
     echo " ".$text[3]." ".$datum1[$st-1];
   }
@@ -35,7 +35,7 @@ if($dats==1){
   </tr><?php
 // Wenn Spieltermine angegeben und Sortierung eingeschaltet, dann nach Datum sortieren
 $datsort = $mterm[$st-1];
-if($enablegamesort == '1' && filterZero($mterm[$st-1])) { 
+if($enablegamesort == '1' && filterZero($mterm[$st-1])) {
   $datsort = $mterm[$st-1];
   asort($datsort);
   reset($datsort);
@@ -53,7 +53,7 @@ foreach($datsort as $key => $val) {
       } else {
         $dum1 = "";
       }?>
-    <td class="nobr"><?php echo $dum1; ?></td><?php  
+    <td class="nobr"><?php echo $dum1; ?></td><?php
     }
 
     /* Spielfrei-Hack-Beginn1*/
@@ -65,7 +65,7 @@ foreach($datsort as $key => $val) {
 
     <td width="2">&nbsp;</td>
     <td class="nobr" align="right"><?php
- 
+
     if ($plan == "1") {
       echo "<a href=\"".$addp.$teama[$st-1][$i]."\" title=\"".$text[269]."\">";
     }
@@ -79,7 +79,7 @@ foreach($datsort as $key => $val) {
     if ($plan == "1") {
       echo "</a>";
     }
-    echo "&nbsp;".HTML_smallTeamIcon($file,$teams[$teama[$st-1][$i]]," alt=''");             
+    echo "&nbsp;".HTML_smallTeamIcon($file,$teams[$teama[$st-1][$i]]," alt=''");
     ?>
     </td>
     <td align="center" width="10">-</td>
@@ -103,7 +103,7 @@ foreach($datsort as $key => $val) {
     <td width="2">&nbsp;</td>
     <td align="right"><?php echo applyFactor($goala[$st-1][$i],$goalfaktor); ?></td>
     <td align="center" width="8">:</td>
-    <td align="left"><?php echo applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td><?php  
+    <td align="left"><?php echo applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td><?php
     if($spez==1) {?>
     <td width="2">&nbsp;</td>
     <td><?php echo $mspez[$st-1][$i]; ?></td><?php
@@ -112,11 +112,11 @@ foreach($datsort as $key => $val) {
     <td width="2">/</td>
     <td align="right"><?php echo applyFactor($goalb[$st-1][$i],$goalfaktor); ?></td>
     <td align="center" width="8">:</td>
-    <td align="left"><?php echo applyFactor($goala[$st-1][$i],$goalfaktor); ?></td><?php  
+    <td align="left"><?php echo applyFactor($goala[$st-1][$i],$goalfaktor); ?></td><?php
     }?>
     <td width="2">&nbsp;</td>
-    <td class="nobr" align="left"><?php 
-    
+    <td class="nobr" align="left"><?php
+
     /** Mannschaftsicons finden
      */
     $lmo_teamaicon="";
@@ -139,7 +139,7 @@ foreach($datsort as $key => $val) {
      *
      */
     if ($mnote[$st-1][$i]!="" || $msieg[$st-1][$i]>0) {
- 
+
       $lmo_spielnotiz=$lmo_teamaicon."<strong>".$teams[$teama[$st-1][$i]]."</strong> - ".$lmo_teambicon."<strong>".$teams[$teamb[$st-1][$i]]."</strong> ".applyFactor($goala[$st-1][$i],$goalfaktor).":".applyFactor($goalb[$st-1][$i],$goalfaktor);
       //Beidseitiges Ergebnis
       if ($msieg[$st-1][$i]==3) {
@@ -170,12 +170,12 @@ foreach($datsort as $key => $val) {
       echo "&nbsp;";
     }
     ?></td>
-  </tr><?php 
+  </tr><?php
   }
 }
 
 if ($einzutore == 1) {?>
-  <tr>  
+  <tr>
     <td class="lmoFooter" align="center" width="100%" colspan="<?php echo $breite; ?>">&nbsp;<?php
   $zustat_file = str_replace(".l98", ".l98.php",  basename($file));
   $zustat_dir = basename($diroutput);
@@ -186,9 +186,9 @@ if ($einzutore == 1) {?>
     </td>
   </tr><?php
 }
-  
+
 if ($einspielfrei == 1) {?>
-  <tr>  
+  <tr>
     <td align="center" width="100%" colspan="<?php echo $breite; ?>"><?php
   //if (($anzteams-($anzst/2+1)) == 0) {
     $spielfreic = array_merge($spielfreia, $spielfreib);
@@ -213,11 +213,11 @@ if ($einspielfrei == 1) {?>
     if ($plan == "1") {
       echo "</a>";
     }
-      
+
     echo "&nbsp;".HTML_smallTeamIcon($file,$teams[$hoy8]," alt=''");
       }
     }
-  ?></td> 
+  ?></td>
   </tr><?php
 }?>
 </table>

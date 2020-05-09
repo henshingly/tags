@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,8 +16,8 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
-  
+
+
 
 require_once(PATH_TO_LMO."/lmo-admintest.php");
 if($file!=""){
@@ -64,8 +64,8 @@ if($file!=""){
           if($lmtype==0){
             $onrun=isset($_POST["xonrun"])?$_POST["xonrun"]:$onrun;
             $kurve=isset($_POST["xkurve"])?1:0;
-            $kreuz=isset($_POST["xkreuz"])?1:0;     
-            if ($tabonres==0) { 
+            $kreuz=isset($_POST["xkreuz"])?1:0;
+            if ($tabonres==0) {
               $tabelle=isset($_POST["xtabelle"])?1:0;
             }
             $ligastats=isset($_POST["xligastats"])?1:0;
@@ -73,7 +73,7 @@ if($file!=""){
             $klfin=isset($_POST["xklfin"])?1:0;
             $playdown=isset($_POST["xplaydown"])?1:0;
           }
-          
+
           $urlt=isset($_POST["xurlt"])?1:0;
           $urlb=isset($_POST["xurlb"])?1:0;
         }
@@ -86,7 +86,7 @@ if($file!=""){
           $direkt=isset($_POST["xdirekt"])?1:0;
           $kegel=isset($_POST["xkegel"])?1:0;
           $hands=isset($_POST["xhands"])?1:0;
-          
+
           $pns=isset($_POST["xpns"])?trim($_POST["xpns"]):$pns;
           $pnu=isset($_POST["xpnu"])?trim($_POST["xpnu"]):$pnu;
           $pnn=isset($_POST["xpnn"])?trim($_POST["xpnn"]):$pnn;
@@ -110,14 +110,14 @@ if($file!=""){
           $anzab=isset($_POST["xanzab"])?trim($_POST["xanzab"]):$anzab;
         }
         break;
-      
+
     }
     require(PATH_TO_LMO."/lmo-savefile.php");
   }
   $addr=$_SERVER['PHP_SELF']."?action=admin&amp;todo=edit&amp;file=".$file."&amp;st=";
   $addb=$_SERVER['PHP_SELF']."?action=admin&amp;todo=tabs&amp;file=".$file."&amp;st=";
 
-include(PATH_TO_LMO."/lmo-adminsubnavi.php"); 
+include(PATH_TO_LMO."/lmo-adminsubnavi.php");
 ?>
 
 <table class="lmoMiddle" cellspacing="0" cellpadding="0" border="0">
@@ -130,7 +130,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
         <tr><td align="right"><?php if ($show==0) {echo $text[183];}else{?><a onclick="return chklmolink();" href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=edit&amp;show=0&amp;file=$file&amp;st=-1";?>"><?php echo $text[183];?></a><?php }?></td></tr><?php
   if ($_SESSION['lmouserok']==2 || $_SESSION['lmouserokerweitert']==1) {?>
         <tr><td align="right"><?php if ($show==2) {echo $text[250];}else{?><a onclick="return chklmolink();" href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=edit&amp;show=2&amp;file=$file&amp;st=-1";?>"><?php echo $text[250];?></a><?php }?></td></tr><?php
-    if ($lmtype==0){?>  
+    if ($lmtype==0){?>
         <tr><td align="right"><?php if ($show==3) {echo $text[178];}else{?><a onclick="return chklmolink();" href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=edit&amp;show=3&amp;file=$file&amp;st=-1";?>"><?php echo $text[178];?></a><?php }?></td></tr>
         <tr><td align="right"><?php if ($show==4) {echo $text[40];}else{?><a onclick="return chklmolink();" href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=edit&amp;show=4&amp;file=$file&amp;st=-1";?>"><?php echo $text[40];?></a><?php }?></td></tr>
         <tr><td align="right"><a href='<?php echo "$addr-3"?>' onclick="return chklmolink();" title="<?php echo $text[339]?>"><?php echo $text[338]?></a></td></tr><?php
@@ -152,7 +152,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
           <tr>
             <td class="nobr" align="right"><input class="lmo-formular-input" type="text" name="xtitel" size="40" maxlength="60" value="<?php echo $titel; ?>" onChange="dolmoedit()"></td>
             <td class="nobr" align="left"><acronym title="<?php echo $text[118];?>"><?php echo $text[113];?></acronym></td>
-          </tr><?php 
+          </tr><?php
       if($lmtype==0){ ?>
           <tr>
             <td class="nobr" align="right"><input class="lmo-formular-input" type="text" name="xnamepkt" size="7" maxlength="60" value="<?php if($namepkt==""){echo $text[37];}else{echo $namepkt;} ?>" onChange="dolmoedit()"></td>
@@ -205,7 +205,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
               </select>
             </td>
             <td class="nobr" align="left"><acronym title="<?php echo $text[195];?>"><?php echo $text[194];?></acronym></td>
-          </tr><?php 
+          </tr><?php
     if($lmtype==0){ ?>
           <tr>
             <td class="nobr" align="right">
@@ -224,8 +224,8 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
       }?>
               </select>
             </td>
-            
-          </tr><?php 
+
+          </tr><?php
     }
   }elseif ($show==2) {
     if($_SESSION['lmouserok']==2 || $_SESSION['lmouserokerweitert']==1){ ?>
@@ -241,7 +241,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
           <tr>
             <td class="nobr" align="right"><acronym title="<?php echo $text[552];?>"><?php echo $text[551];?></acronym></td>
             <td class="nobr" align="left"><input type="checkbox" class="lmo-formular-input" name="xplaydown" onChange="dolmoedit()"<?php if($playdown==1){echo " checked";}?>></td>
-          </tr><?php 
+          </tr><?php
       }
       if($lmtype==0){ ?>
           <tr>
@@ -258,8 +258,8 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
                 <option value="7"<?php if ($mittore == '0')   {echo " disabled";}elseif($onrun==7){echo " selected";}?>><?php echo $text[485]?></option>
               </select>
             </td>
-          </tr><?php 
-      }?> 
+          </tr><?php
+      }?>
           <tr>
             <td class="nobr" align="right"><acronym title="<?php echo $text[254];?>"><?php echo $text[253];?></acronym>&nbsp;</td>
             <td class="nobr" align="left"><input type="checkbox" class="lmo-formular-input" name="xdatm" onChange="dolmoedit()"<?php if($datm==1){echo " checked";}?>></td>
@@ -327,7 +327,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
           <tr>
             <td class="nobr" align="right"><acronym title="<?php echo $text[256];?>"><?php echo $text[255];?></acronym>&nbsp;<input type="checkbox" class="lmo-formular-input" name="xdatc" onChange="dolmoedit()"<?php if($datc==1){echo " checked";}?>>&nbsp;</td>
             <td class="nobr" align="left">&nbsp;<input type="checkbox" class="lmo-formular-input" name="xplan" onChange="dolmoedit()"<?php if($plan==1){echo " checked";}?>>&nbsp;<acronym title="<?php echo $text[511];?>"><?php echo $text[12];?></acronym></td>
-          </tr><?php 
+          </tr><?php
       if($lmtype==0){ ?>
           <tr>
             <td class="nobr" align="right"><acronym title="<?php echo $text[468];?>"><?php echo $text[467];?></acronym>&nbsp;<input type="checkbox" class="lmo-formular-input" name="xkreuz" onChange="dolmoedit()"<?php if($kreuz==1){echo " checked";}?>>&nbsp;</td>
@@ -356,7 +356,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
           <tr>
             <td class="nobr" align="right"><input type="checkbox" class="lmo-formular-input" name="xurlb" onChange="dolmoedit()"<?php if($urlb==1){echo " checked";}?>></td>
             <td class="nobr" align="left"><acronym title="<?php echo $text[266];?>"><?php echo $text[265];?></acronym></td>
-          </tr><?php 
+          </tr><?php
     }
   }elseif ($show==3) {
     if(($_SESSION['lmouserok']==2  || $_SESSION['lmouserokerweitert']==1) && $lmtype==0){ ?>
@@ -416,7 +416,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
                 </tr>
               </table>
             </td>
-          </tr><?php 
+          </tr><?php
     }
   }elseif ($show==4) {
     if($_SESSION['lmouserok']==2 || $_SESSION['lmouserokerweitert']==1){ ?>
@@ -486,7 +486,7 @@ include(PATH_TO_LMO."/lmo-adminsubnavi.php");
               </select>&nbsp;
             </td>
             <td class="lmoTabelleAbsteiger" align="left">&nbsp;<acronym title="<?php echo $text[388];?>"><?php echo $text[387];?></acronym></td>
-          </tr><?php 
+          </tr><?php
     }
   }?>
           <tr>

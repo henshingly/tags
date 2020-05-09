@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,8 +16,8 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
-  
+
+
 require_once(PATH_TO_LMO."/lmo-admintest.php");
 $addi=$_SERVER['PHP_SELF']."?action=admin&amp;todo=edit&amp;file=";
 
@@ -39,14 +39,14 @@ while($files=readdir($verz)){
       }
     }
     if ($_SESSION['lmouserok']==2 || $hilfsadmin_berechtigung===TRUE) {
-      $ligadatei[$liga_counter]['file_date']=filemtime(PATH_TO_LMO."/".$dirliga.$files); //Datum 
+      $ligadatei[$liga_counter]['file_date']=filemtime(PATH_TO_LMO."/".$dirliga.$files); //Datum
       $ligadatei[$liga_counter]['file_name']=$files;
-  
+
       $ligadatei[$liga_counter]['liga_name']="";  //Liganame
       $ligadatei[$liga_counter]['aktueller_spieltag']="";  //Aktueller Spieltag
       $ligadatei[$liga_counter]['anz_teams']="";  //Anzahl der Mannschaften
       $ligadatei[$liga_counter]['rundenbezeichnung']=$text[2];  //Spieltag oder Pokalrunde
-  
+
       $sekt="";
       $datei = fopen(PATH_TO_LMO."/".$dirliga.$files,"rb");
       if ($datei) {
@@ -66,8 +66,8 @@ while($files=readdir($verz)){
               if($option_wert=="1"){$ligadatei[$liga_counter]['rundenbezeichnung']=$text[370];}
             }
             //Alle benötigten Werte gefunden -> Abbruch
-            if($ligadatei[$liga_counter]['liga_name']!="" && 
-               $ligadatei[$liga_counter]['aktueller_spieltag']!="" && 
+            if($ligadatei[$liga_counter]['liga_name']!="" &&
+               $ligadatei[$liga_counter]['aktueller_spieltag']!="" &&
                $ligadatei[$liga_counter]['anz_teams']!='')break;
           }
         }
@@ -96,7 +96,7 @@ while($files=readdir($verz)){
                 $ligadatei[$liga_counter]['rundenbezeichnung']=$text[371];
                 $ligadatei[$liga_counter]['aktueller_spieltag']='';
                 break;
-            } 
+            }
           }
         }else{
           $ligadatei[$liga_counter]['rundenbezeichnung']="";

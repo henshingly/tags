@@ -83,7 +83,7 @@
     }
     echo "</tr>";
   }
-  
+
 } else {
 
 ?>
@@ -114,10 +114,10 @@
       $k = "";
     }
     echo "<a href=\"".$addk.$k.$i.$md."\" title=\"".$text[172]."\">".$text[159+$i]."</a></th>";
-    
+
 
     $lmo_output_buffer[$i]=$lmo_stlink[$i]."<br>";
-  
+
     echo "</td>";
     if (($i == 6) || ($i == 12)) {
       echo "</tr><tr><td valign='top' height=\"150\">";

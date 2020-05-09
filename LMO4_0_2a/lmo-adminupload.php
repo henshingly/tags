@@ -7,7 +7,7 @@
   * modify it under the terms of the GNU General Public License as
   * published by the Free Software Foundation; either version 2 of
   * the License, or (at your option) any later version.
-  * 
+  *
   * This program is distributed in the hope that it will be useful,
   * but WITHOUT ANY WARRANTY; without even the implied warranty of
   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -16,21 +16,21 @@
   * REMOVING OR CHANGING THE COPYRIGHT NOTICES IS NOT ALLOWED!
   *
   */
-  
-  
+
+
 require_once(PATH_TO_LMO."/lmo-admintest.php");
 if (($action=="admin") && ($todo=="upload") && ($_SESSION['lmouserok']==2)) {
   $adda=$_SERVER['PHP_SELF']."?action=admin&amp;todo=";
   if (isset($_POST['upl']) && isset($_FILES['userfile'])) {
     $tempfilename = $_FILES['userfile']['tmp_name'];
-    $namefilename = $_FILES['userfile']['name']; 
+    $namefilename = $_FILES['userfile']['name'];
     $i=0;
     $ufile=$dirliga.$namefilename;
     while (file_exists($ufile)) {
       $i++;
       if ($i>0) {
         $ufile=$dirliga.$i."_".$namefilename;
-      } 
+      }
     }
     if (move_uploaded_file($tempfilename,$ufile)) {
       echo getMessage($text[303].":<br>".$ufile);
@@ -51,7 +51,7 @@ if (($action=="admin") && ($todo=="upload") && ($_SESSION['lmouserok']==2)) {
             <td align="center"><acronym title="<?php echo $text[302] ?>"><?php echo $text[300]; ?>:</acronym></td>
           </tr>
           <tr>
-            <td align="center">              
+            <td align="center">
               <input type="hidden" name="action" value="admin">
               <input type="hidden" name="todo" value="upload">
               <input type="hidden" name="upl" value="1">

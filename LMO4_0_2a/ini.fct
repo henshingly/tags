@@ -415,7 +415,7 @@ function DeleteIniItem($inifile, $section, $item) {
   }
 
   if ($ini_exists && $section_exists && $item_exists) {
-    
+
     $tempfile = tempnam(_TempDir_, _TempPrefix_);
 
     $file = fopen($inifile, _READ_);
@@ -487,7 +487,7 @@ function DeleteIniSection($inifile, $section, $recursive = FALSE, $DeleteIfEmpty
     $items = ReadIniItems($inifile, $section);
 
     if (!$items) {
-    
+
       $tempfile = tempnam(_TempDir_, _TempPrefix_);
 
       $file = fopen($inifile, _READ_);
@@ -508,7 +508,7 @@ function DeleteIniSection($inifile, $section, $recursive = FALSE, $DeleteIfEmpty
       $writing = copy($tempfile, $inifile);
       unlink($tempfile);
       CleanIni($inifile);
-    
+
       if (count($ini_sec) == 0 && $DeleteIfEmpty = TRUE) {
         unlink($inifile);
       }
@@ -548,7 +548,7 @@ function RenameIniSection($inifile, $OldSectionName, $NewSectionName) {
   }
 
   if ($ini_exists && $old_section_exists && !$new_section_exists) {
-    
+
     $tempfile = tempnam(_TempDir_, _TempPrefix_);
 
     $file = fopen($inifile, _READ_);
@@ -569,7 +569,7 @@ function RenameIniSection($inifile, $OldSectionName, $NewSectionName) {
     fclose($helpfile);
     $writing = copy($tempfile, $inifile);
     unlink($tempfile);
-    
+
   }
 
   return($writing);
@@ -614,7 +614,7 @@ function MoveSection($inifile, $section, $direction = "down", $upperOffset = 0, 
   }
 
   if ($ini_exists && $section_exists) {
-    
+
     $tempfile = tempnam(_TempDir_, _TempPrefix_);
 
     $file = fopen($inifile, _READ_);
@@ -634,7 +634,7 @@ function MoveSection($inifile, $section, $direction = "down", $upperOffset = 0, 
           $line = fgets($file, _LineLength_);
         }
       } // !IsSection
-        
+
 
       if (!IsSelectedSection($LastSection, $section) && !IsSelectedSection($line, $section)) {
 
@@ -643,21 +643,21 @@ function MoveSection($inifile, $section, $direction = "down", $upperOffset = 0, 
         }
 
       } else {
-      
+
         if ((IsSelectedSection($LastSection, $section) && $direction == "down")  ||
             (IsSelectedSection($line, $section) && $direction == "up")) {
-      
+
           fputs($helpfile, $line);          // write section to file
           $line = fgets($file, _LineLength_);
           while (!IsSection($line) && !feof($file)) {
             fputs($helpfile, $line);
             $line = fgets($file, _LineLength_);
           }
-        
+
           for ($i = 0; $i <count($arSection); $i++) {   // write array to file
             fputs($helpfile, $arSection[$i]);
           }
-        
+
           while (!feof($file)) {            // write rest of file
             fputs($helpfile, $line);
             $line = fgets($file, _LineLength_);
@@ -667,11 +667,11 @@ function MoveSection($inifile, $section, $direction = "down", $upperOffset = 0, 
 
         if ((IsSelectedSection($LastSection, $section) && $direction == "up")  ||
             (IsSelectedSection($line, $section) && $direction == "down")) {
-      
+
           for ($i = 0; $i <count($arSection); $i++) {   // write array to file
             fputs($helpfile, $arSection[$i]);
           }
-        
+
           $LastSection = $line;             // write section to array
           $arSection = array();
           $arSection[] = $LastSection;
@@ -687,11 +687,11 @@ function MoveSection($inifile, $section, $direction = "down", $upperOffset = 0, 
             fputs($helpfile, $line);
             $line = fgets($file, _LineLength_);
           }
-        
+
           for ($i = 0; $i <count($arSection); $i++) {   // write array to file
             fputs($helpfile, $arSection[$i]);
           }
-        
+
           while (!feof($file)) {            // write rest of file
             fputs($helpfile, $line);
             $line = fgets($file, _LineLength_);
@@ -699,14 +699,14 @@ function MoveSection($inifile, $section, $direction = "down", $upperOffset = 0, 
         }  // selection in array or at pointer
 
       }  // selection not in array or at pointer
-        
-      
+
+
     } // while !eof
     fclose($file);
     fclose($helpfile);
     $writing = copy($tempfile, $inifile);
     unlink($tempfile);
-    
+
   }  // if exist
 
   return($writing);
@@ -772,11 +772,11 @@ function MoveItem($inifile, $section, $item, $direction = "down") {
 	break;
 	}
   }
-	
+
 	if(!$is_limes) {
       $new_item = $ar_item_values[$new_index]['item'];
 	  $new_val = $ar_item_values[$new_index]['value'];
-	  
+
 	  $ar_item_values[$new_index]['item'] = $old_item;
 	  $ar_item_values[$new_index]['value'] = $old_val;
 	  $ar_item_values[$old_index]['item'] = $new_item;
@@ -859,7 +859,7 @@ function IsSection($line) {
   if (substr(trim($line), 0, 1) == _REMARK_) {
     return(FALSE);
   }
-  
+
   $start = strpos(trim($line), _SectionStart_);
   $stop = strrpos(trim($line), _SectionStop_);
 
@@ -884,7 +884,7 @@ function IsSelectedSection($line, $section) {
   $line = trim($line);
   $start = strpos($line, _SectionStart_);
   $stop = strrpos($line, _SectionStop_);
-  
+
   if (strcasecmp(strtolower(substr($line, $start + 1, $stop - 1)), strtolower("$section")) == 0) {
     return(TRUE);
   } else {
@@ -903,7 +903,7 @@ function IsFirstSection($inifile, $section, $offset=0) {
 
 
   $arSection = ReadIniSections($inifile);
-  
+
   if ($arSection[$offset] == $section) {
     return(TRUE);
   } else {
@@ -927,7 +927,7 @@ function IsLastSection($inifile, $section, $offset=0) {
     $offset = $offset * (-1);
   }
   $offset = count($arSection) - $offset - 1;
-  
+
   if ($arSection[$offset] == $section) {
     return(TRUE);
   } else {
@@ -947,7 +947,7 @@ function SectionExist($inifile, $section) {
 
   $arSection = ReadIniSections($inifile);
   $user_found = FALSE;
-  
+
   for($i = 0; $i < count($arSection); $i++) {
     if(strtolower($arSection[$i]) == strtolower($section)) {
 	  $user_found = TRUE;

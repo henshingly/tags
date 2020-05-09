@@ -163,7 +163,7 @@ if($lmtype==0 && $st>0){
      </tr><?php
     }?>
    </table>
-   <p><small><?php echo $text[582];?></small></p><?php 
+   <p><small><?php echo $text[582];?></small></p><?php
     if ($actual==$anzst){?>
     <p><strong><?php echo $text[568]?></strong></p><?php
     }else{

@@ -17,8 +17,8 @@
   *
   * $Id: lmo-showkoprogram.php 429 2007-04-10 11:14:57Z lmo-plastic $
   */
-  
-  
+
+
 if ($file != "") {
   $addp = $_SERVER['PHP_SELF']."?action=program&amp;file=".$file."&amp;selteam=";
   $addr = $_SERVER['PHP_SELF']."?action=results&amp;file=".$file."&amp;st=";
@@ -80,7 +80,7 @@ if ($file != "") {
       echo $teamk[$i];
     }
        ?></acronym>
-          </td>          
+          </td>
           <td>&nbsp;<?php echo HTML_smallTeamIcon($file,$teams[$i]," alt=''"); ?>&nbsp;</td>
         </tr><?php
   }?>
@@ -187,20 +187,20 @@ if ($file != "") {
              *
              */
             if ($mnote[$j][$i][$n]!="") {
-         
+
               $lmo_spielnotiz=$lmo_teamaicon."<strong>".$teams[$teama[$j][$i]]."</strong> - ".$lmo_teambicon."<strong>".$teams[$teamb[$j][$i]]."</strong> ".applyFactor($goala[$j][$i][$n],$goalfaktor).":".applyFactor($goalb[$j][$i][$n],$goalfaktor);
               //Allgemeine Notiz
-              
+
               $lmo_spielnotiz.="\n\n<strong>".$text[22].":</strong> ".$mnote[$j][$i][$n];
-              
+
               echo "<a href='#' onclick=\"alert('".mysql_escape_string(htmlentities(strip_tags($lmo_spielnotiz)))."');window.focus();return false;\"><span class='popup'>".nl2br($lmo_spielnotiz)."</span><img src='".URL_TO_IMGDIR."/lmo-st2.gif' width='10' height='12' border='0' alt=''></a>";
               $lmo_spielnotiz="";
             } else {
               echo "&nbsp;";
             }?>
-          </td><?php 
+          </td><?php
           }?>
-        </tr><?php 
+        </tr><?php
         }
       }
     }
