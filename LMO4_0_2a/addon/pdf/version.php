@@ -68,13 +68,13 @@ $Path_pdf = PATH_TO_ADDONDIR."/classlib/classes/pdf";
           <td width='30'>&nbsp</td>
           <td width='200'>Installed Version</td>
           <td width='30'>=</td>
-          <td width='300'><?PHP echo VERSION;?></td>
+          <td width='300'><?php echo VERSION;?></td>
         </tr>
         <tr>
           <td>&nbsp</td>
           <td>Installed in</td>
           <td>=</td>
-          <td><small><?PHP echo $Path;?></small></td>
+          <td><small><?php echo $Path;?></small></td>
         </tr>
         <tr>
           <td>&nbsp</td>
@@ -102,13 +102,13 @@ $Path_pdf = PATH_TO_ADDONDIR."/classlib/classes/pdf";
           <td width='30'>&nbsp</td>
           <td width='200'>Installed Version</td>
           <td width='30'>=</td>
-          <td width='300'><?PHP echo VERSIONA;?></td>
+          <td width='300'><?php echo VERSIONA;?></td>
         </tr>
         <tr>
           <td>&nbsp</td>
           <td>Installed in</td>
           <td>=</td>
-          <td><small><?PHP echo $Path;?></small></td>
+          <td><small><?php echo $Path;?></small></td>
         </tr>
         <tr>
           <td>&nbsp</td>
@@ -136,13 +136,13 @@ $Path_pdf = PATH_TO_ADDONDIR."/classlib/classes/pdf";
           <td width='30'>&nbsp</td>
           <td width='200'>Installed Version</td>
           <td width='30'>=</td>
-          <td width='300'><?PHP echo VERSIONPDF;?></td>
+          <td width='300'><?php echo VERSIONPDF;?></td>
         </tr>
         <tr>
           <td>&nbsp</td>
           <td>Installed in</td>
           <td>=</td>
-          <td><small><?PHP echo $Path_pdf;?></small></td>
+          <td><small><?php echo $Path_pdf;?></small></td>
         </tr>
         <tr>
           <td>&nbsp</td>
