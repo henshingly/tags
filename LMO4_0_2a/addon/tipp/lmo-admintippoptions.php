@@ -37,19 +37,19 @@ include(PATH_TO_ADDONDIR."/tipp/lmo-admintippmenu.php");
   <tr>
     <td valign="top">
       <table class="lmoMenu" cellspacing="0" cellpadding="0" border="0">
-        <tr><td align="right"><?php if ($show==0) {echo $text['tipp'][91]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=0";?>"><?php echo $text['tipp'][91]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==1) {echo $text[220]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=1";?>"><?php echo $text[220]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==2) {echo $text['tipp'][32]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=2";?>"><?php echo $text['tipp'][32]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==3) {echo $text['tipp'][240]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=3";?>"><?php echo $text['tipp'][240]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==4) {echo $text['tipp'][214]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=4";?>"><?php echo $text['tipp'][214]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==5) {echo $text['tipp'][239]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=5";?>"><?php echo $text['tipp'][239]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==6) {echo $text['tipp'][246]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=6";?>"><?php echo $text['tipp'][246]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==7) {echo $text['tipp'][157]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=7";?>"><?php echo $text['tipp'][157]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==8) {echo $text['tipp'][172]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=8";?>"><?php echo $text['tipp'][172]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==9) {echo $text['tipp'][247]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=9";?>"><?php echo $text['tipp'][247]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==10) {echo $text['tipp'][274]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=10";?>"><?php echo $text['tipp'][274]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==11) {echo $text['tipp'][163]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=11";?>"><?php echo $text['tipp'][163]; ?></a><?php}?></td></tr>
-        <tr><td align="right"><?php if ($show==12) {echo $text['tipp'][103]; ?><?php}else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=12";?>"><?php echo $text['tipp'][103]; ?></a><?php}?></td></tr>
+        <tr><td align="right"><?php if ($show==0) {echo $text['tipp'][91]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=0";?>"><?php echo $text['tipp'][91]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==1) {echo $text[220]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=1";?>"><?php echo $text[220]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==2) {echo $text['tipp'][32]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=2";?>"><?php echo $text['tipp'][32]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==3) {echo $text['tipp'][240]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=3";?>"><?php echo $text['tipp'][240]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==4) {echo $text['tipp'][214]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=4";?>"><?php echo $text['tipp'][214]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==5) {echo $text['tipp'][239]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=5";?>"><?php echo $text['tipp'][239]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==6) {echo $text['tipp'][246]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=6";?>"><?php echo $text['tipp'][246]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==7) {echo $text['tipp'][157]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=7";?>"><?php echo $text['tipp'][157]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==8) {echo $text['tipp'][172]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=8";?>"><?php echo $text['tipp'][172]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==9) {echo $text['tipp'][247]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=9";?>"><?php echo $text['tipp'][247]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==10) {echo $text['tipp'][274]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=10";?>"><?php echo $text['tipp'][274]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==11) {echo $text['tipp'][163]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=11";?>"><?php echo $text['tipp'][163]; ?></a><?php }?></td></tr>
+        <tr><td align="right"><?php if ($show==12) {echo $text['tipp'][103]; ?><?php }else{?><a href="<?php echo $_SERVER['PHP_SELF']."?action=admin&amp;todo=tippoptions&amp;show=12";?>"><?php echo $text['tipp'][103]; ?></a><?php }?></td></tr>
       </table>
     </td>
     <td align="center" valign="top">

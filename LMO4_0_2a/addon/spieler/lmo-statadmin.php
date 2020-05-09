@@ -381,7 +381,7 @@ function mark(el){
 						<form action="<?php echo  $_SERVER['PHP_SELF']?>" method="post" name="spieler">
 							<acronym title="<?php echo $text['spieler'][8]?>"><select name="wert" size="1"><?php
 								for ($x=0;$x<$spaltenzahl;$x++) {?>
-								<option value="<?php echo $x?>"<?php if ($x==0){?> disabled<?php}if ($x==1){?> selected<?php}?>><?php echo htmlentities(stripslashes($spalten[$x]),ENT_COMPAT);?></option><?php
+								<option value="<?php echo $x?>"<?php if ($x==0){?> disabled<?php }if ($x==1){?> selected<?php }?>><?php echo htmlentities(stripslashes($spalten[$x]),ENT_COMPAT);?></option><?php
 								}?>
 							</select></acronym>&nbsp;<input class="lmo-formular-button" type="submit" value=" &minus; ">
 							<input type="hidden" name="option" value="delcolumn">
@@ -430,7 +430,7 @@ function mark(el){
                   </th><?php
                 }?>
               </tr>
-            <?php}?>						
+            <?php }?>						
 						<tr>
 							<td align="right" colspan="<?php echo $spaltenzahl*2?>">
 								<input type="hidden" name="option" value="statupdate">
@@ -542,7 +542,7 @@ function mark(el){
 						<?php if($_SESSION['lmouserok']==2){?>
             <td align="left" class="nobr"><?php echo $text['spieler'][31]?>: </td>
 						<td align="left"><input type="checkbox" name="adminbereich_hilfsadmin_zulassen" onChange="mark(this)" value="<?php echo $spieler_adminbereich_hilfsadmin_zulassen?>" <?php if ($spieler_adminbereich_hilfsadmin_zulassen==1) echo "checked";?> onClick="if (this.checked==true) document.form1.adminbereich_hilfsadmin_fuer_spalten.disabled=false; else {document.form1.adminbereich_hilfsadmin_fuer_spalten.disabled=true;document.form1.adminbereich_hilfsadmin_fuer_spalten.checked=false;}"></td>
-            <?php}?>
+            <?php }?>
 					</tr>
           <tr>
             <td align="left" class="nobr" rowspan="2"><?php echo $text['spieler'][13]?>: </td>
@@ -550,7 +550,7 @@ function mark(el){
             <?php if($_SESSION['lmouserok']==2){?>
             <td align="left" class="nobr"><?php echo $text['spieler'][46]?>: </td>
 						<td align="left"><input <?php if ($spieler_adminbereich_hilfsadmin_fuer_spalten!=1) echo "disabled"?> type="checkbox" onChange="mark(this)" name="adminbereich_hilfsadmin_fuer_spalten" value="<?php echo $spieler_adminbereich_hilfsadmin_fuer_spalten?>" <?php if ($spieler_adminbereich_hilfsadmin_fuer_spalten==1) echo "checked";?>></td>
-            <?php}?>
+            <?php }?>
           </tr>
           <tr>
             <td align="left" colspan="2" class="nobr"><input type="radio" name="standard_richtung" onClick="mark(this)" value="0"<?php if ($spieler_standard_richtung==0) echo " checked";?>> <?php echo $text['spieler'][47]?></td>

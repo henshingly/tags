@@ -274,7 +274,7 @@ if ($file!="") {
             <th class="nobr" align="center" colspan="<?php if($tipp_showtendenzabs==1 && $tipp_showtendenzpro==1){echo "4";}else{echo "2";} ?>">
             <?php echo $text['tipp'][188]; /* Tipptendenz absolut */?>
             </th>
-<?php}
+<?php }
   
 /**ERGEBNISMODUS*/
   if($tipp_tippmodus==1){  
