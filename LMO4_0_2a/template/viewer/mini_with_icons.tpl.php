@@ -7,7 +7,7 @@
   background-color: yellow;
 }
 
-.viewer a { 
+.viewer a {
   text-decoration: none;
   color: black;
   }

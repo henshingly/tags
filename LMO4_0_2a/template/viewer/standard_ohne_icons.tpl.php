@@ -28,7 +28,7 @@
 }
 
 .viewer table {
-  
+
 }
 .viewer .vRow {
   font-size: 10px;

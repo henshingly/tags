@@ -7,7 +7,7 @@
   background-color: yellow;
 }
 
-.viewer a { 
+.viewer a {
   text-decoration: none;
   color: black;
   }
@@ -65,7 +65,7 @@ a:visited {
       </table>
     </td>
   </tr>
-  <tr>  
+  <tr>
   <td align="right"><small><!--VERSION--></small></td>
   </tr>
 </table>
