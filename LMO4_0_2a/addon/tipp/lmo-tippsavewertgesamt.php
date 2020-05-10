@@ -125,9 +125,9 @@ for($k = 0; $k < $anzligen; $k++) {
       $dum = explode('|', $tippdaten[$i-1]);
       $op1 = $dum[0];
       // Nick
-      $op3 = substr($dum[1], 2)-1;
+      $op3 = (int)substr($dum[1], 2)-1;
       // Spieltagsnummer
-      $op4 = substr($dum[1], 0, 2);
+      $op4 = (int)substr($dum[1], 0, 2);
       // PP
       if ($op4 == "TP") {
         $gef = 0;
